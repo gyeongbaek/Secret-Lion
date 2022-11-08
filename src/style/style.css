@@ -1,5 +1,13 @@
 @charset "utf-8";
 @import "reset.css";
+@import "page/loginPage.css";
+@import "page/mainPage.css";
+@import "page/postDetail.css";
+@import "page/postUpload.css";
+@import "page/signupPage.css";
+@import "page/testPage.css";
+@import "page/userEdit.css";
+@import "page/userInfo.css";
 
 :root {
     --main-color: #6327fe;
