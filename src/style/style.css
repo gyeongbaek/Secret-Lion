@@ -1,26 +1,30 @@
 @charset "utf-8";
-@import "reset.css";
-@import "page/loginPage.css";
-@import "page/mainPage.css";
-@import "page/postDetail.css";
-@import "page/postUpload.css";
-@import "page/signupPage.css";
-@import "page/testPage.css";
-@import "page/userEdit.css";
-@import "page/userInfo.css";
-@import "common/boardCard.css";
-@import "common/dropDown.css";
-@import "common/header.css";
+@import 'reset.css';
+@import 'page/loginPage.css';
+@import 'page/mainPage.css';
+@import 'page/postDetail.css';
+@import 'page/postUpload.css';
+@import 'page/signupPage.css';
+@import 'page/testPage.css';
+@import 'page/userEdit.css';
+@import 'page/userInfo.css';
+@import 'common/boardCard.css';
+@import 'common/dropDown.css';
+@import 'common/header.css';
 
 :root {
-    --main-color: #6327fe;
+    --main-color: #ffbd3e;
     --txt-color: #333333;
-    --border-color: #c4c4c4;
+    --border-color: #bdbdbd;
     --sub-border-color: #e0e0e0;
-    --bg-color: #f2f2f2;
-    --emphasis-txt-color: #eb5757;
-    --sub-txt-color: #828282;
-    --button-border: #bdbdbd;
+    --bg-color: #ffffff;
+
+    --cate-study-color: #b8e8fc;
+    --cate-love-color: #ffb9b9;
+    --cate-rel-color: #dcedc2;
+    --cate-life-color: #fdfdbd;
+    --cate-job-color: #b1afff;
+    --cate-talk-color: #ffdd6f;
 }
 
 div,
@@ -61,7 +65,7 @@ html {
 
 body,
 button {
-    font-family: "Spoqa Han Sans Neo", "sans-serif";
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
 }
 
 body {
