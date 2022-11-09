@@ -8,6 +8,9 @@
 @import "page/testPage.css";
 @import "page/userEdit.css";
 @import "page/userInfo.css";
+@import "common/boardCard.css";
+@import "common/dropDown.css";
+@import "common/header.css";
 
 :root {
     --main-color: #6327fe;
