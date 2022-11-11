@@ -2,9 +2,9 @@ export const productData = [
     // 임시 데이터입니다.
     {
         id: 1,
-        postTitle: '아이엠 그라운드',
+        postTitle: '아이엠 그라운드 아이엠 그라운드 ',
         postContent: '자기소개 하기',
-        thumbnail: '',
+        thumbnail: '/src/assets/test.jpg',
         category: '자유',
         date: '2022. 11. 09.',
         writer: 'IamIM',
