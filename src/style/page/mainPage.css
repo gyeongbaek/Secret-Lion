@@ -1,0 +1,128 @@
+.main_tmp_nav {
+    background-color: var(--main-color);
+    height: 64px;
+}
+
+.main_container {
+    padding: 60px 110px;
+}
+
+.main_sect_menu {
+    margin-bottom: 40px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.main_sect_menu button {
+    font-size: 24px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 8px;
+    background-color: white;
+    border-bottom: 1px solid black;
+}
+
+.main_sect_menu img {
+    width: 24px;
+    height: 24px;
+}
+
+.main_dropdown {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 8px;
+}
+
+.main_ul_post {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 80px;
+}
+
+.main_ul_post li {
+    position: relative;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas:
+        'thumb  thumb'
+        'tit    cat  '
+        'cont   cont '
+        'date   date '
+        'user   reac ';
+    align-items: center;
+    padding: 20px 20px 16px;
+    gap: 6px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.main_img_thumbnail {
+    grid-area: thumb;
+    margin-bottom: 6px;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    background-color: #ffd698;
+}
+
+.main_category {
+    grid-area: cat;
+    justify-self: end;
+    align-self: start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 24px;
+    background-color: var(--cate-rel-color);
+    border-radius: 10px;
+}
+
+.main_str_title {
+    grid-area: tit;
+    width: 250px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.main_p_content {
+    grid-area: cont;
+    height: 50px;
+    padding-left: 4px;
+}
+
+.main_p_date {
+    grid-area: date;
+    padding: 0px 4px 6px;
+    border-bottom: 1px solid var(--border-color);
+}
+.main_post_user {
+    grid-area: user;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.main_post_user img {
+    width: 22px;
+    height: 22px;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+.main_post_reac {
+    grid-area: reac;
+    justify-self: end;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.main_post_reac img {
+    width: 22px;
+    height: 22px;
+}
