@@ -1,14 +1,17 @@
-.header_div_wrapper{
+.header_div_wrapper {
     display: flex;
     align-items: center;
     justify-content: right;
     position: sticky;
     top: 0;
     height: 64px;
-    background-color: #FFBD3E;
+    background-color: #ffbd3e;
 }
 
-.header-a-searchLink img, .header-a-writeLink img, .header-a-notificationLink img, .header-a-userLink img{
+.header-a-searchLink img,
+.header-a-writeLink img,
+.header-a-notificationLink img,
+.header-a-userLink img {
     display: inline-block;
     vertical-align: top;
     width: 30px;
@@ -16,16 +19,16 @@
     margin: 18px 0 18px 18px;
 }
 
-.header-a-searchLink img{
+.header-a-searchLink img {
     width: 33px;
     height: 33px;
 }
 
-.header-a-writeLink img{
+.header-a-writeLink img {
     margin-bottom: 23px;
 }
 
-.header-a-userLink img{
+.header-a-userLink img {
     margin-right: 24px;
     width: 35px;
     height: 35px;
