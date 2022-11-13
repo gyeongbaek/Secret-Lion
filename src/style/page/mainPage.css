@@ -42,7 +42,8 @@
     gap: 80px;
 }
 
-.main_ul_post li {
+.main_post_item {
+    text-decoration: none;
     position: relative;
     display: grid;
     grid-template-columns: 2fr 1fr;
