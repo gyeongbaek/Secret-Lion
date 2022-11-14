@@ -12,6 +12,12 @@
 }
 
 /* main */
+.loginPage_bodyWrapper{
+    width: 100vw;
+    height: 100vh;
+    background-color: #FFBD3E;
+}
+
 .loginPage_main_wrapper{
     margin: 30px auto;
     padding: 100px 65px;
