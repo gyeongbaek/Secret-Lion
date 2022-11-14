@@ -5,8 +5,8 @@ class Header {
     
     render() {
         // wrapper
-        const headerWrapper = document.createElement("div");
-        headerWrapper.classList.add("header_div_wrapper");
+        const headerWrapper = document.createElement("header");
+        headerWrapper.classList.add("header_wrapper");
 
         // 검색
         const searchLink = document.createElement("a");
