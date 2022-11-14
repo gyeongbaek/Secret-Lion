@@ -1,0 +1,188 @@
+.main_post_container .post_span_category {
+    background-color: #dadd50;
+    padding: 5px 8px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.main_post_container .post_section_top {
+    margin-top: 30px;
+    position: relative;
+    border-bottom: 1px solid #bdbdbd;
+    padding-bottom: 24px;
+}
+
+.main_post_container .post_section_top .post_h2_tit {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.main_post_container .post_section_top .post_div_info_con {
+    margin-top: 27px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.post_section_top .post_div_info_con .post_img_profile {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+}
+
+.post_section_top .post_div_info_con .post_strong_writer_name {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.post_section_top .post_div_info_con .post_time_date {
+}
+
+.main_post_container .post_section_top .post_btn_trash {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    right: 0;
+    top: 0;
+    background-image: url('../../assets/delete.svg');
+    background-size: 24px 24px;
+    background-position: center;
+    background-color: transparent;
+}
+
+.main_post_container .post_section_mid {
+    padding: 14px 14px 25px 14px;
+    border-bottom: 1px solid #bdbdbd;
+    min-height: 400px;
+    position: relative;
+}
+
+.main_post_container .post_section_mid .post_img_content {
+    margin-bottom: 20px;
+    border-radius: 8px;
+    width: 40%;
+}
+
+.main_post_container .post_section_mid .post_p_content_txt {
+}
+
+/* 게시글 좋아요, 즐겨찾기 버튼 */
+.post_section_mid .post_div_likeFavorite_con {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+}
+.post_section_mid .post_div_likeFavorite_con .post_btn_like {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+}
+.post_div_likeFavorite_con .post_btn_like .post_img_like {
+    width: 30px;
+    height: 30px;
+}
+.post_section_mid .post_div_likeFavorite_con .post_btn_fav {
+    margin-left: 8px;
+    width: 30px;
+    height: 36px;
+    background-color: transparent;
+}
+
+/* chatting form */
+.main_post_container .post_form_chat {
+    margin-top: 30px;
+}
+
+.main_post_container .post_form_chat .post_div_chat_con {
+    width: 100%;
+    min-height: 200px;
+    border: 1px solid #bdbdbd;
+    padding: 18px;
+    position: relative;
+}
+.post_form_chat .post_div_chat_con .post_textarea_chat {
+    border: none;
+    resize: none;
+    width: 100%;
+    overflow: hidden;
+    min-height: 100px;
+    padding: 5px;
+    outline: none;
+}
+.post_form_chat .post_div_chat_con .post_div_prev_con {
+    width: 20%;
+    position: relative;
+}
+
+.post_div_chat_con .post_div_prev_con .post_img_chat {
+    border-radius: 8px;
+}
+
+.post_div_chat_con .post_div_prev_con .post_btn_prev_cancel {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: orange;
+    border-radius: 50%;
+    right: -10px;
+    top: -10px;
+}
+.post_form_chat .post_div_chat_con .post_div_btns_con {
+    position: absolute;
+    right: 0;
+    bottom: -40px;
+}
+
+/* comment bottom */
+.main_post_container .post_section_bottom {
+    margin-top: 70px;
+}
+
+.main_post_container .post_section_bottom .post_ul_comment {
+}
+
+/* 유저 이름 및 날짜 */
+.post_div_comment_left .post_div_comment_user_info .post_div_comment_name_date {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+/* 유저이름 */
+.post_div_comment_user_info .post_div_comment_name_date .post_strong_name {
+    font-size: 14px;
+}
+
+.post_div_comment_user_info .post_div_comment_name_date .post_time_comment {
+    font-size: 12px;
+}
+
+.post_section_bottom .post_ul_comment .post_li_comment {
+    padding: 14px;
+    border-top: 1px solid #bdbdbd;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.post_ul_comment .post_li_comment .post_div_comment_left {
+}
+.post_div_comment_user_info {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.post_img_comment_user {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+}
+
+.post_ul_comment .post_li_comment .post_img_comment {
+    width: 15%;
+    border-radius: 8px;
+    margin-left: auto;
+}
