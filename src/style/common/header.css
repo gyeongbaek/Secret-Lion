@@ -1,10 +1,12 @@
-.header_div_wrapper{
+.header_wrapper{
     display: flex;
     align-items: center;
     justify-content: right;
-    position: sticky;
+    position: fixed;
     top: 0;
-    height: 64px;
+    width: 100%;
+    z-index: 99;
+    height: 58px;
     background-color: #FFBD3E;
 }
 
