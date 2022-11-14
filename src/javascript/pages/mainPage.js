@@ -1,4 +1,4 @@
-import PostCard from '../components/PostCard/postCard.js';
+import PostCard from '../common/postCard.js';
 import Component from '../core/Component.js';
 import { productData } from '../data.js';
 
@@ -81,6 +81,7 @@ class MainPage extends Component {
         const postList = document.createElement('ul');
         postList.setAttribute('class', 'main_ul_post');
 
+        //
         this.post.forEach((item) => {
             // console.log(item);
             // 리스트 아이템 컨테이너
@@ -89,22 +90,10 @@ class MainPage extends Component {
             postItem.appendChild(postCard.render());
             postList.appendChild(postItem);
 
-            //
-            // // 썸네일
-            // const thumbnail = document.createElement('img');
-            // thumbnail.setAttribute('class', 'main_img_thumbnail');
-            // thumbnail.setAttribute('src', item.thumbnail);
-            // thumbnail.setAttribute('alt', '');
-
             // // 카테고리
             // const category = document.createElement('div');
             // category.setAttribute('class', 'main_category');
             // category.innerText = item.category;
-
-            // // 제목
-            // const title = document.createElement('strong');
-            // title.setAttribute('class', 'main_str_title');
-            // title.innerText = item.postTitle;
 
             // // 내용 미리보기
             // const content = document.createElement('p');

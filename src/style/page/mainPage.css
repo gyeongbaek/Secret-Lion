@@ -93,6 +93,7 @@
     grid-area: cont;
     height: 50px;
     padding-left: 4px;
+    font-size: 16px;
 }
 
 .main_p_date {
