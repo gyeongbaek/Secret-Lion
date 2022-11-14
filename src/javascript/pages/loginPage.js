@@ -2,8 +2,9 @@ class LoginPage {
     constructor() {}
     render() {
         const frag = document.createDocumentFragment();
-
-        document.body.style.backgroundColor = '#FFBD3E';
+        
+        const bodybgc = document.createElement('div');
+        bodybgc.classList.add('loginPage_bodyWrapper');
 
         //header
         const logInheader = document.createElement('header');
@@ -92,10 +93,11 @@ class LoginPage {
         //아이디비번찾기와 회원가입링크
         linkCont.appendChild(searchLink);
         linkCont.appendChild(signUpLink);
-
-        //전체
-        frag.appendChild(logInheader);
-        frag.appendChild(loginMain);
+        
+        //전체 
+        bodybgc.appendChild(logInheader);
+        bodybgc.appendChild(loginMain);
+        frag.appendChild(bodybgc);
 
         return frag;
     }
