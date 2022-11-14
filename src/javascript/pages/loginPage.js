@@ -1,10 +1,11 @@
 class LoginPage {
-    constructor(){}
+    constructor() {}
     render() {
         const frag = document.createDocumentFragment();
         
         const bodybgc = document.createElement('div');
         bodybgc.classList.add('loginPage_bodyWrapper');
+
 
         //header
         const logInheader = document.createElement('header');
@@ -21,11 +22,10 @@ class LoginPage {
         title.classList.add('loginPage_h1_title');
         title.textContent = '멋쟁이사자처럼 프론트엔드 스쿨의 비밀이야기';
 
-
-        //main 
+        //main
         const loginMain = document.createElement('main');
         loginMain.classList.add('loginPage_main_wrapper');
-        
+
         //main > div_wrapper
         const divWrapper = document.createElement('div');
         divWrapper.classList.add('loginPage_div_wrapper');
@@ -33,13 +33,13 @@ class LoginPage {
         //main > div_wrapper > h2
         const subTit = document.createElement('h2');
         subTit.classList.add('loginPage_h2_tit');
-        subTit.textContent= 'Log-in';
+        subTit.textContent = 'Log-in';
 
         //main > div_wrapper > formCont
         const formCont = document.createElement('div');
         formCont.classList.add('loginPage_div_formCont');
 
-        //main > div_wrapper > formCont > form 
+        //main > div_wrapper > formCont > form
         const inpCont = document.createElement('form');
         inpCont.classList.add('loginPage_form_inpCont');
 
@@ -49,7 +49,7 @@ class LoginPage {
         inpId.setAttribute('placeholder', '아이디');
         inpId.attributes['required'];
         inpId.classList.add('loginPage_inp_id');
-        
+
         const inpPwd = document.createElement('input');
         inpPwd.setAttribute('type', 'password');
         inpPwd.setAttribute('placeholder', '비밀번호');
@@ -59,9 +59,9 @@ class LoginPage {
         //main > div_wrapper > formCont > form > button
         const loginBtn = document.createElement('button');
         loginBtn.classList.add('loginPage_btn_login');
-        loginBtn.textContent= '로그인';
+        loginBtn.textContent = '로그인';
 
-        // 아이디비번 찾기 및 회원가입 링크 
+        // 아이디비번 찾기 및 회원가입 링크
         const linkCont = document.createElement('div');
         linkCont.classList.add('loginPage_div_linkCont');
 
@@ -79,22 +79,21 @@ class LoginPage {
         logInheader.appendChild(logoImg);
         logInheader.appendChild(title);
 
-        //main 
+        //main
         loginMain.appendChild(divWrapper);
         divWrapper.appendChild(subTit);
         divWrapper.appendChild(formCont);
         divWrapper.appendChild(linkCont);
 
-        //form과 버튼 
+        //form과 버튼
         formCont.appendChild(inpCont);
         formCont.appendChild(loginBtn);
         inpCont.appendChild(inpId);
         inpCont.appendChild(inpPwd);
 
-        //아이디비번찾기와 회원가입링크 
+        //아이디비번찾기와 회원가입링크
         linkCont.appendChild(searchLink);
         linkCont.appendChild(signUpLink);
-
         
         //전체 
         bodybgc.appendChild(logInheader);
@@ -102,10 +101,7 @@ class LoginPage {
         frag.appendChild(bodybgc);
 
         return frag;
-
     }
 }
 
 export default LoginPage;
-
-
