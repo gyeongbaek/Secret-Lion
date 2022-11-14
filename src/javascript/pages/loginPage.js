@@ -3,6 +3,8 @@ class LoginPage {
     render() {
         const frag = document.createDocumentFragment();
 
+        document.body.style.backgroundColor = "#FFBD3E";
+
         //header
         const logInheader = document.createElement('header');
         logInheader.classList.add('loginPage_header');
