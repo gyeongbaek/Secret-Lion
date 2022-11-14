@@ -22,7 +22,6 @@
     margin: 30px auto;
     padding: 100px 65px;
     width: 430px;
-    height: 380px;
     border-radius: 30px;
     background-color: #fff;
     box-shadow: 0px 5px 5px 5px rgba(0,0,0,0.2);
@@ -47,6 +46,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    /* margin: auto 30px; */
 }
 
 .loginPage_inp_id, .loginPage_inp_pwd{
@@ -54,14 +54,13 @@
     border-radius: 4px;
     border: 1px solid #d7d7d7;
     padding: 15px;
-    width: 400px;
-    height: 30px;
+    width: 300px;
 }
 
 .loginPage_btn_login{
     margin-top: 20px;
-    width: 430px;
-    height: 60px;
+    width: 300px;
+    height: 53px;
     border-radius: 4px;
     background-color: #fcc400;
     color: #fff;
@@ -74,6 +73,7 @@
     justify-content: space-between;
     margin-top: 30px;
     color: #6a6a6a;
+    /* 왜 color 적용 안 되지?.. */
 }
 
 /* // main */
