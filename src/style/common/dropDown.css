@@ -1,0 +1,69 @@
+.div_dropDown {
+    font-size: 12px;
+    margin: 10px;
+    font-weight: bold;
+    color: rgb(50, 50, 50);
+}
+
+.div_dropDown_wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.div_dropDown_wrapper .btn_drop {
+    display: block;
+    border: 2px solid var(--border-color);
+    border-radius: 4px;
+    font-weight: 400;
+    color: rgb(124, 124, 124);
+    padding: 12px;
+    width: 110px;
+    font-size: 12px;
+    z-index: 1;
+    background-color: #fcfcfc;
+    text-align: left;
+    cursor: pointer;
+    position: relative;
+}
+.div_dropDown_wrapper .btn_drop::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: 10px;
+    top: 9px;
+    background: url('../../assets/arrow_drop_down.svg') center/cover;
+}
+.div_dropDown_wrapper .ul_drop {
+    position: absolute;
+    display: none;
+    font-weight: 400;
+    background-color: #fcfcfc;
+    width: 110px;
+    height: 160px;
+    overflow: scroll;
+    box-shadow: 0px 0px 10px 3px rgba(190, 190, 190, 0.6);
+}
+.div_dropDown_wrapper .ul_drop::-webkit-scrollbar {
+    width: 5px;
+    height: 10px;
+}
+.div_dropDown_wrapper .ul_drop::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    background-color: rgb(194, 194, 194);
+}
+
+.div_dropDown_wrapper .ul_drop .li_drop {
+    display: block;
+    color: rgb(37, 37, 37);
+    font-size: 12px;
+    padding: 12px 20px;
+    cursor: pointer;
+}
+.div_dropDown_wrapper .ul_drop .li_drop:hover {
+    background-color: rgb(226, 226, 226);
+}
+
+.div_dropDown_wrapper .ul_drop.show {
+    display: block;
+}
