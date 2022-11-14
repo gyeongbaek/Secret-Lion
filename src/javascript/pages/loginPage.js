@@ -6,7 +6,6 @@ class LoginPage {
         const bodybgc = document.createElement('div');
         bodybgc.classList.add('loginPage_bodyWrapper');
 
-
         //header
         const logInheader = document.createElement('header');
         logInheader.classList.add('loginPage_header');
