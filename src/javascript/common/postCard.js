@@ -1,4 +1,4 @@
-import { PostTitle, PostImg, PostCont } from '../components/Post/index.js';
+import { PostTitle, PostImg, PostCont, PostCate, PostInfo, PostUser, PostDate } from '../components/Post/index.js';
 import Component from '../core/Component.js';
 
 class PostCard extends Component {
@@ -9,16 +9,19 @@ class PostCard extends Component {
         const postImg = new PostImg({ src: this.props.item.thumbnail });
         const postTitle = new PostTitle({ title: this.props.item.postTitle });
         const postCont = new PostCont({ content: this.props.item.postContent });
-
-        // const productPrice = new ProductPrice({
-        //     price: this.props.item.price,
-        //     discountRate: this.props.item.discountRate,
-        // });
-        // const productLikeButton = new ProductLikeButton({ productId: this.props.item.id });
+        const postCate = new PostCate({ category: this.props.item.category });
+        const postInfo = new PostInfo({ like: this.props.item.likeCount, comment: this.props.item.commentCount });
+        const postDate = new PostDate({ date: this.props.item.date });
+        const postUser = new PostUser({ user: this.props.item.writer });
 
         post.appendChild(postImg.render());
+        post.appendChild(postCate.render());
         post.appendChild(postTitle.render());
         post.appendChild(postCont.render());
+        post.appendChild(postUser.render());
+        post.appendChild(postInfo.render());
+
+        post.appendChild(postDate.render());
 
         // product.appendChild(productPrice.render());
         // product.appendChild(productLikeButton.initialize());

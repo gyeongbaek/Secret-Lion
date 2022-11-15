@@ -89,61 +89,6 @@ class MainPage extends Component {
             const postCard = new PostCard({ item: item });
             postItem.appendChild(postCard.render());
             postList.appendChild(postItem);
-
-            // // 카테고리
-            // const category = document.createElement('div');
-            // category.setAttribute('class', 'main_category');
-            // category.innerText = item.category;
-
-            // // 내용 미리보기
-            // const content = document.createElement('p');
-            // content.setAttribute('class', 'main_p_content');
-            // content.innerText = item.postContent;
-
-            // // 작성일
-            // const date = document.createElement('p');
-            // date.setAttribute('class', 'main_p_date');
-            // date.innerText = item.date;
-
-            // // 작성자
-            // const postUser = document.createElement('div');
-            // postUser.setAttribute('class', 'main_post_user');
-
-            // const profileImg = document.createElement('img');
-            // profileImg.setAttribute('src', '/src/assets/user.svg');
-            // profileImg.setAttribute('alt', '');
-
-            // const userName = document.createElement('p');
-            // userName.innerText = item.writer;
-            // postUser.append(profileImg);
-            // postUser.append(userName);
-
-            // // 좋아요/코멘트
-            // const postInfo = document.createElement('div');
-            // postInfo.setAttribute('class', 'main_post_reac');
-            // const imgLike = document.createElement('img');
-            // imgLike.setAttribute('src', '/src/assets/heart.svg');
-            // const cntLike = document.createElement('p');
-            // cntLike.innerText = item.likeCount;
-            // postInfo.appendChild(imgLike);
-            // postInfo.appendChild(cntLike);
-
-            // const imgComment = document.createElement('img');
-            // imgComment.setAttribute('src', '/src/assets/comment.svg');
-            // const cntComment = document.createElement('p');
-            // cntComment.innerText = item.commentCount;
-            // postInfo.appendChild(imgComment);
-            // postInfo.appendChild(cntComment);
-
-            // postItem.appendChild(thumbnail);
-            // postItem.appendChild(category);
-            // postItem.appendChild(title);
-            // postItem.appendChild(content);
-            // postItem.appendChild(date);
-            // postItem.appendChild(postUser);
-            // postItem.appendChild(postInfo);
-
-            // postList.append(postItem);
         });
 
         postSection.appendChild(postList);
