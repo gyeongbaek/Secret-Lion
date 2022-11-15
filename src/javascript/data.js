@@ -14,7 +14,7 @@ export const productData = [
     {
         id: 2,
         postTitle: '짝짝',
-        postContent: '나는 경현',
+        postContent: '나는 \n 경현',
         thumbnail: '/src/assets/test.jpg',
         category: '학습',
         date: '2022. 11. 09.',
@@ -47,7 +47,7 @@ export const productData = [
     {
         id: 5,
         postTitle: '박자는생명',
-        postContent: '아 수정이 누나 뭐하는데~~',
+        postContent: '아\n수정이 누나\n뭐하는데~~',
         thumbnail: '/src/assets/test.jpg',
         category: '취업',
         date: '2022. 11. 10.',

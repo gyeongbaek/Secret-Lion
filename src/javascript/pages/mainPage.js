@@ -73,6 +73,7 @@ class MainPage extends Component {
 
         // 게시판
         const postSection = document.createElement('section');
+        postSection.setAttribute('class', 'main_sect_post');
         const postTitle = document.createElement('h2');
         postTitle.setAttribute('class', 'ir');
         postTitle.innerText = '게시글 목록';

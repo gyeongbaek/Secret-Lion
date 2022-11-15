@@ -18,10 +18,9 @@ class PostCard extends Component {
         post.appendChild(postCate.render());
         post.appendChild(postTitle.render());
         post.appendChild(postCont.render());
+        post.appendChild(postDate.render());
         post.appendChild(postUser.render());
         post.appendChild(postInfo.render());
-
-        post.appendChild(postDate.render());
 
         // product.appendChild(productPrice.render());
         // product.appendChild(productLikeButton.initialize());
