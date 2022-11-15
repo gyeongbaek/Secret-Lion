@@ -40,13 +40,11 @@
 
 .main_post_container .post_section_top .post_btn_trash {
     position: absolute;
-    width: 24px;
-    height: 24px;
+    width: 30px;
+    height: 30px;
     right: 0;
     top: 0;
-    background-image: url('../../assets/delete.svg');
-    background-size: 24px 24px;
-    background-position: center;
+    background: url('../../assets/delete.svg') center/ 30px 30px;
     background-color: transparent;
 }
 
@@ -85,11 +83,13 @@
 }
 .post_section_mid .post_div_likeFavorite_con .post_btn_fav {
     margin-left: 8px;
-    width: 30px;
-    height: 36px;
+    margin-top: 5px;
     background-color: transparent;
 }
-
+.post_div_likeFavorite_con .post_btn_fav .post_img_fav {
+    width: 30px;
+    height: 33px;
+}
 /* chatting form */
 .main_post_container .post_form_chat {
     margin-top: 30px;
@@ -118,6 +118,7 @@
 
 .post_div_chat_con .post_div_prev_con .post_img_chat {
     border-radius: 8px;
+    width: 100%;
 }
 
 .post_div_chat_con .post_div_prev_con .post_btn_prev_cancel {

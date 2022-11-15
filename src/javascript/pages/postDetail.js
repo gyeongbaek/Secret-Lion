@@ -116,7 +116,7 @@ class PostDetail {
         postFavBtn.setAttribute('class', 'post_btn_fav');
 
         const postFavImg = document.createElement('img');
-        postFavImg.setAttribute('class', 'post_img_like');
+        postFavImg.setAttribute('class', 'post_img_fav');
         postFavImg.setAttribute('src', 'src/assets/scrap.svg');
         postFavImg.setAttribute('alt', '즐겨찾기');
 
