@@ -1,8 +1,8 @@
-.active{
+/* .active{
     display: none;
-}
+} */
 
-.loginPage_bodyWrapper{
+.signupPage_bodyWrapper{
     width: 100vw;
     height: 100vh;
     background-color: #FFBD3E;
@@ -41,12 +41,12 @@
     margin-top: 20px;
 }
 
-.signupPage_h2_tit{
+.signupPage_h2_welcome{
     font-size: 20px;
     font-weight: 700;
 }
 
-.signupPage_p_exp{
+.signupPage_p_detailPlz{
     margin: 10px auto 25px;
     font-size: 14px;
     color: #6a6a6a;
@@ -68,6 +68,7 @@
 }
 
 .signupPage_checkCont{
+    display: flex;
     margin-top: 10px;
 }
 
@@ -85,10 +86,10 @@
 
 /* textarea */
 .signupPage_textarea_rules{
+    padding: 20px;
     resize: none;
     border: 1px solid #d7d7d7;
     border-radius: 10px;
-    width: 400px;
-    height: 300px;
-    text-align: center;
+    width:370px;
+    height: 320px;
 }
