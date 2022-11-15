@@ -1,5 +1,6 @@
 .main_tmp_nav {
     background-color: var(--main-color);
+    width: 100%;
     height: 64px;
 }
 
@@ -24,7 +25,7 @@
     border-bottom: 1px solid black;
 }
 
-.main_sect_menu img {
+.main_sect_menu button img {
     width: 24px;
     height: 24px;
 }
@@ -35,34 +36,44 @@
     padding: 8px;
 }
 
+.main_sect_post {
+    padding: 10px 110px;
+}
+
 .main_ul_post {
+    width: 100%;
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
     gap: 80px;
 }
 
-.main_ul_post li {
+.main_post_item {
+    width: 360px;
+    height: 400px;
+    padding: 20px 20px 12px;
     position: relative;
+
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 3fr 1fr;
     grid-template-areas:
-        'thumb  thumb'
-        'tit    cat  '
-        'cont   cont '
-        'date   date '
-        'user   reac ';
+        'thumb thumb thumb'
+        'tit   tit   cat  '
+        'cont  cont  cont '
+        'date  date  date '
+        'user  user  reac ';
+
     align-items: center;
-    padding: 20px 20px 16px;
-    gap: 6px;
     border: 1px solid black;
     border-radius: 10px;
+    text-decoration: none;
 }
 
 .main_img_thumbnail {
     grid-area: thumb;
     margin-bottom: 6px;
-    width: 100%;
+    width: 320px;
     height: 200px;
     object-fit: cover;
     background-color: #ffd698;
@@ -70,8 +81,9 @@
 
 .main_category {
     grid-area: cat;
-    justify-self: end;
+    justify-self: center;
     align-self: start;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -83,28 +95,43 @@
 
 .main_str_title {
     grid-area: tit;
-    width: 250px;
     font-size: 24px;
     font-weight: 700;
+
+    /* 말줄임 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .main_p_content {
     grid-area: cont;
-    height: 50px;
-    padding-left: 4px;
+    margin: 0px 4px 20px;
+    height: 40px;
+    font-size: 16px;
+    line-height: 20px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 
 .main_p_date {
     grid-area: date;
     padding: 0px 4px 6px;
+    color: var(--txt-color);
     border-bottom: 1px solid var(--border-color);
 }
-.main_post_user {
-    grid-area: user;
 
+.main_post_user {
+    margin-top: 6px;
+    grid-area: user;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 6px;
+    font-size: 15px;
 }
 
 .main_post_user img {
@@ -116,13 +143,17 @@
 
 .main_post_reac {
     grid-area: reac;
-    justify-self: end;
+    justify-self: center;
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 4px;
 }
 
 .main_post_reac img {
     width: 22px;
     height: 22px;
+}
+
+.main_post_reac p + img {
+    margin-left: 6px;
 }
