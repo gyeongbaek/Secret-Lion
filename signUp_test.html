@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 페이지 테스트</title>
+    <link rel="stylesheet" href="src/style/reset.css">
+    <link rel="stylesheet" href="signupPage_text.css">
+</head>
+<body>
+    <div class="loginPage_bodyWrapper">
+        <header class="signupPage_header">
+            <h1 class="signupPage_h1_tit">회원가입</h1>
+            <p class="signupPage_p_subTit">프론트엔드스쿨의 비밀 이야기</p>
+        </header>
+        
+        <main class="signupPage_main_wrapper">
+            <div class="signupPage_div_titWrapper">
+                <h2 class="signupPage_h2_tit">비밀멋사에 오신 것을 환영합니다.</h2>
+                <p class="signupPage_p_exp">회원가입을 위해 아래의 세부 정보를 작성해주세요.</p>
+            </div>
+            <div class="signupPage_div_formCont">
+                <form class="signupPage_form">
+                    <div class="signupPage_div_inpCont">
+                        <input type="text" placeholder="아이디" name="id" id="signupPage_inp_id">
+                        <input type="text" placeholder="비밀번호" name="password" id="signupPage_inp_pwd">
+                        <input type="text" placeholder="비밀번호 확인" name="password-check" id="signupPage_inp_pwdCheck">
+                        <input type="text" placeholder="닉네임" name="nickname" id="signupPage_inp_nickname">
+                    </div>
+                    <input type="checkbox" id="signupPage_check_accept">
+                    <label for="signupPage_check_accept">비밀멋사 커뮤니티 규칙에 동의합니다.</label>
+                    <textarea class="signupPage_textarea_rules" cols="50" rows="20" readonly wrap="soft">
+                        비밀멋사는 누구나 기분 좋게 참여할 수 있는 커뮤니티를 만들기 위해 본 커뮤니티 이용규칙을 제정하여 운영합니다. 위반 시 게시물이 삭제되고 서비스 이용이 일정 기간 제한될 수 있습니다. 
+                        
+                        ※ 규칙 위반 행위 
+                        1. 타인의 권리를 침해하거나 불쾌감을 주는 행위
+                        2. 범죄, 불법 행위 등 법령을 위반하는 행위 
+                        3. 그밖에 사회통념상 허용될 수 없는 행위 
+                        
+                        모든 게시물은 이용자의 신고를 기반으로 하는 신고처리 시스템을 통해 처리됩니다. 커뮤니티 이용규칙에 어긋난다고 판단되는 게시물, 댓글 등을 발견하셨을 경우 신고버튼을 눌러 신고해주시기 바랍니다. 
+                        
+                    </textarea>
+                </form>
+                <button>회원가입</button>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

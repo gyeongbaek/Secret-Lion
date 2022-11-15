@@ -128,3 +128,79 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+
+button,
+input {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Customize reset */
+
+:root {
+    --main-color: #ffbd3e;
+    --txt-color: #333333;
+    --border-color: #bdbdbd;
+    --sub-border-color: #e0e0e0;
+    --bg-color: #ffffff;
+
+    --cate-study-color: #b8e8fc;
+    --cate-love-color: #ffb9b9;
+    --cate-rel-color: #dcedc2;
+    --cate-life-color: #fdfdbd;
+    --cate-job-color: #b1afff;
+    --cate-talk-color: #ffdd6f;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body,
+button {
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+}
+
+body {
+    font-weight: 400;
+    color: var(--txt-color);
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: #000;
+}
+
+table,
+thead,
+tbody,
+tr {
+    display: block;
+}
+
+/* Image Replacement 약자 스크린리더가 읽을 수 있도록 대체텍스트 */
+.ir {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
