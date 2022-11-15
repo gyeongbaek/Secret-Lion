@@ -1,14 +1,13 @@
 import PostCard from '../common/postCard.js';
 import Component from '../core/Component.js';
 import { productData } from '../data.js';
-
+import { Header, DropDown } from '../common/index.js';
 class MainPage extends Component {
     constructor(props) {
         super(props);
         this.mainElement = document.createElement('main');
         this.post = {};
     }
-
     async getPostData() {
         // 나중에 json 형태로 받아올 예정
         this.post = productData;
@@ -21,18 +20,21 @@ class MainPage extends Component {
         const docFrag = new DocumentFragment();
 
         // 페이지 연결 테스트 및 nav 위치 지정
-        const sectNav = document.createElement('section');
-        sectNav.setAttribute('class', 'main_tmp_nav');
-        const anchor = document.createElement('a');
-        anchor.href = '/';
+        // const sectNav = document.createElement('section');
+        // sectNav.setAttribute('class', 'main_tmp_nav');
+        // const anchor = document.createElement('a');
+        // anchor.href = '/';
 
-        const element = document.createElement('h1');
-        element.innerText = 'MainPage - 게시판 페이지 (클릭하면 이전페이지로 이동)';
+        // const element = document.createElement('h1');
+        // element.innerText = 'MainPage - 게시판 페이지 (클릭하면 이전페이지로 이동)';
 
-        anchor.appendChild(element);
-        sectNav.appendChild(anchor);
+        // anchor.appendChild(element);
+        // sectNav.appendChild(anchor);
 
-        docFrag.appendChild(sectNav);
+        // docFrag.appendChild(sectNav);
+
+        const header = new Header();
+        docFrag.appendChild(header.render());
 
         // 메인 페이지
         const mainElement = document.createElement('main');
@@ -63,13 +65,11 @@ class MainPage extends Component {
         btnRecent.innerText = '최신';
         btnRecent.appendChild(imgRecent);
 
-        const dropDown = document.createElement('div');
-        dropDown.setAttribute('class', 'main_dropdown');
-        dropDown.innerText = '카테고리 선택';
+        const dropDown = new DropDown();
 
         menuSection.appendChild(btnHot);
         menuSection.appendChild(btnRecent);
-        menuSection.appendChild(dropDown);
+        menuSection.appendChild(dropDown.render());
 
         // 게시판
         const postSection = document.createElement('section');

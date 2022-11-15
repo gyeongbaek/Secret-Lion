@@ -22,9 +22,6 @@ class PostCard extends Component {
         post.appendChild(postUser.render());
         post.appendChild(postInfo.render());
 
-        // product.appendChild(productPrice.render());
-        // product.appendChild(productLikeButton.initialize());
-
         return post;
     }
 }
