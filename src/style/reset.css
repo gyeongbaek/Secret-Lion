@@ -129,7 +129,7 @@ table {
     border-spacing: 0;
 }
 
-button,
+/* button,
 input {
     background: none;
     color: inherit;
@@ -138,7 +138,7 @@ input {
     font: inherit;
     cursor: pointer;
     outline: inherit;
-}
+} */
 
 a {
     color: inherit;
