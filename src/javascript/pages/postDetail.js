@@ -116,7 +116,7 @@ class PostDetail {
         postFavBtn.setAttribute('class', 'post_btn_fav');
 
         const postFavImg = document.createElement('img');
-        postFavImg.setAttribute('class', 'post_img_like');
+        postFavImg.setAttribute('class', 'post_img_fav');
         postFavImg.setAttribute('src', 'src/assets/scrap.svg');
         postFavImg.setAttribute('alt', '즐겨찾기');
 
@@ -127,7 +127,7 @@ class PostDetail {
 
         // midSection
         midSection.appendChild(postContenth2);
-        midSection.appendChild(postContentImg);
+        // midSection.appendChild(postContentImg);
         midSection.appendChild(postContentTxt);
         midSection.appendChild(postLikeFavorite);
 
@@ -254,7 +254,7 @@ class PostDetail {
         // chat form apch
         chattingForm.appendChild(chatInpCon);
         chatInpCon.appendChild(chatTextArea);
-        chatInpCon.appendChild(chatPreviewCon);
+        // chatInpCon.appendChild(chatPreviewCon); 프리뷰 사진 제거
         chatInpCon.appendChild(chatBtnCon);
 
         // topsection 안
@@ -265,8 +265,8 @@ class PostDetail {
         // 메인 안
         postDetailMain.appendChild(topSection);
         postDetailMain.appendChild(midSection);
-        postDetailMain.appendChild(chattingForm);
         postDetailMain.appendChild(commentCon);
+        postDetailMain.appendChild(chattingForm);
 
         // 전체
         fragCon.appendChild(header.render());
