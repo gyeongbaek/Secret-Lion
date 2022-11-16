@@ -1,11 +1,5 @@
 .DS_Store
-
 .vscode
-.loginPage_test.css
-.loginPage_test.html
-.signupPage_text.css
-.signupPage_test.html
 
 
-src/test
-
+# Test
