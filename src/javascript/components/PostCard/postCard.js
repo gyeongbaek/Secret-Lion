@@ -7,7 +7,7 @@ class PostCard extends Component {
 
         const post = document.createElement('a');
         post.setAttribute('href', `/post/${this.props.item.id}`);
-        post.setAttribute('class', 'main_post_item');
+        post.setAttribute('class', 'board_post_item');
 
         const postImg = new PostImg({ src: this.props.item.thumbnail });
         const postTitle = new PostTitle({ title: this.props.item.postTitle });

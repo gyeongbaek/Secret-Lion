@@ -3,7 +3,7 @@ import Component from '../../core/Component.js';
 class PostInfo extends Component {
     render() {
         const postInfo = document.createElement('div');
-        postInfo.setAttribute('class', 'main_post_reac');
+        postInfo.setAttribute('class', 'board_post_reac');
 
         const imgLike = document.createElement('img');
         imgLike.setAttribute('src', '/src/assets/heart.svg');
