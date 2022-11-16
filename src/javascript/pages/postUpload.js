@@ -1,5 +1,4 @@
-import DropDown from '../common/dropDown.js';
-import Header from '../common/header.js';
+import { DropDown, Header } from '../common/index.js';
 
 class PostUpload {
     render() {

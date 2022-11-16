@@ -1,7 +1,8 @@
-import PostCard from '../common/postCard.js';
+import PostBoard from '../common/postBoard.js';
 import Component from '../core/Component.js';
 import { productData } from '../data.js';
 import { Header, DropDown } from '../common/index.js';
+
 class MainPage extends Component {
     constructor(props) {
         super(props);
@@ -16,22 +17,7 @@ class MainPage extends Component {
     render() {
         this.getPostData();
         // console.log(this.post);
-
         const docFrag = new DocumentFragment();
-
-        // 페이지 연결 테스트 및 nav 위치 지정
-        // const sectNav = document.createElement('section');
-        // sectNav.setAttribute('class', 'main_tmp_nav');
-        // const anchor = document.createElement('a');
-        // anchor.href = '/';
-
-        // const element = document.createElement('h1');
-        // element.innerText = 'MainPage - 게시판 페이지 (클릭하면 이전페이지로 이동)';
-
-        // anchor.appendChild(element);
-        // sectNav.appendChild(anchor);
-
-        // docFrag.appendChild(sectNav);
 
         const header = new Header();
         docFrag.appendChild(header.render());
@@ -79,20 +65,8 @@ class MainPage extends Component {
         postTitle.innerText = '게시글 목록';
         postSection.appendChild(postTitle);
 
-        const postList = document.createElement('ul');
-        postList.setAttribute('class', 'main_ul_post');
-
-        //
-        this.post.forEach((item) => {
-            // console.log(item);
-            // 리스트 아이템 컨테이너
-            const postItem = document.createElement('li');
-            const postCard = new PostCard({ item: item });
-            postItem.appendChild(postCard.render());
-            postList.appendChild(postItem);
-        });
-
-        postSection.appendChild(postList);
+        const postBoard = new PostBoard({ posts: this.post });
+        postSection.appendChild(postBoard.render());
 
         mainElement.appendChild(menuSection);
         mainElement.appendChild(postSection);
