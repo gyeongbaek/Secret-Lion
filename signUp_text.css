@@ -1,3 +1,95 @@
-textarea{
+/* .active{
+    display: none;
+} */
+
+.signupPage_bodyWrapper{
+    width: 100vw;
+    height: 100vh;
+    background-color: #FFBD3E;
+}
+
+/* header */
+.signupPage_header{
+    padding-top: 100px;
     text-align: center;
+}
+
+.signupPage_h1_tit{
+    font-size: 60px;
+    font-weight: 700;
+    color: black;
+}
+
+.signupPage_p_subTit{
+    padding-top: 30px;
+    font-size: 18px;
+}
+
+
+/* main */
+.signupPage_main_wrapper{
+    margin: 30px auto;
+    padding: 40px 50px;
+    width: 430px;
+    border-radius: 30px;
+    background-color: #fff;
+    box-shadow: 0px 5px 5px 5px rgba(0,0,0,0.2);
+}
+
+/* title-Wrapper */
+.signupPage_div_titWrapper{
+    margin-top: 20px;
+}
+
+.signupPage_h2_welcome{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.signupPage_p_detailPlz{
+    margin: 10px auto 25px;
+    font-size: 14px;
+    color: #6a6a6a;
+}
+
+/* form-cont */
+.signupPage_div_formCont{
+    display: flex;
+    flex-direction: column;
+}
+
+/* input */
+#signupPage_inp_id, #signupPage_inp_pwd, #signupPage_inp_pwdCheck, #signupPage_inp_nickname{
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid #d7d7d7;
+    padding: 15px;
+    width: 100%;
+}
+
+.signupPage_checkCont{
+    display: flex;
+    margin-top: 10px;
+}
+
+/* signup button */
+.loginPage_btn_signUp{
+    margin-top: 20px;
+    padding: 15px auto;
+    width: 100%;
+    height: 50px;
+    border-radius: 4px;
+    background-color: #fcc400;
+    color: #fff;
+    font-size: 18px;
+}
+
+/* textarea */
+.signupPage_textarea_rules{
+    padding: 20px;
+    resize: none;
+    border: 1px solid #d7d7d7;
+    border-radius: 10px;
+    width:370px;
+    height: 320px;
 }
