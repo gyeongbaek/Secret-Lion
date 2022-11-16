@@ -1,0 +1,150 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/src/style/style.css">
+</head>
+<body class="vsc-initialized" cz-shortcut-listen="true">
+    <div id="root">
+        <section class="main_tmp_nav">
+            <a href="/">
+                <h1>MainPage - 게시판 페이지 (클릭하면 이전페이지로 이동)</h1>
+            </a>
+        </section>
+        <main class="main_container">
+            <section class="main_sect_menu">
+                <button class="main_btn_hot">HOT<img src="/src/assets/hot.svg" alt=""></button>
+                <button class="main_btn_recent">최신<img src="/src/assets/recent.svg" alt=""></button>
+                <div class="main_dropdown">카테고리 선택</div>
+            </section>
+            <section>
+                <h2 class="ir">게시글 목록</h2>
+                <ul class="main_ul_post">
+                    <li>
+                        <a href="/post/1" class="main_post_item">
+                            <img class="main_img_thumbnail" src="/src/assets/test.jpg" alt="">
+                            <div class="main_category">자유</div><strong class="main_str_title">아이엠 그라운드 아이엠 그라운드
+                            </strong>
+                            <p class="main_p_content">자기소개 하기</p>
+                            <div class="main_post_user"><img src="/src/assets/user.svg" alt="">
+                                <p>IamIM</p>
+                            </div>
+                            <div class="main_post_reac"><img src="/src/assets/heart.svg">
+                                <p>24</p><img src="/src/assets/comment.svg">
+                                <p>6</p>
+                            </div>
+                            <p class="main_p_date">2022. 11. 09.</p>
+                        </a>
+                    </li>
+                    <li><a href="/post/2" class="main_post_item"><img class="main_img_thumbnail"
+                                src="/src/assets/test.jpg" alt="">
+                            <div class="main_category">학습</div><strong class="main_str_title">짝짝</strong>
+                            <p class="main_p_content">나는 경현</p>
+                            <div class="main_post_user"><img src="/src/assets/user.svg" alt="">
+                                <p>카페인중독</p>
+                            </div>
+                            <div class="main_post_reac"><img src="/src/assets/heart.svg">
+                                <p>11</p><img src="/src/assets/comment.svg">
+                                <p>5</p>
+                            </div>
+                            <p class="main_p_date">2022. 11. 09.</p>
+                        </a></li>
+                    <li><a href="/post/3" class="main_post_item"><img class="main_img_thumbnail"
+                                src="/src/assets/test.jpg" alt="">
+                            <div class="main_category">일상</div><strong class="main_str_title">짝짝</strong>
+                            <p class="main_p_content">나는 민제</p>
+                            <div class="main_post_user"><img src="/src/assets/user.svg" alt="">
+                                <p>처리짱</p>
+                            </div>
+                            <div class="main_post_reac"><img src="/src/assets/heart.svg">
+                                <p>23</p><img src="/src/assets/comment.svg">
+                                <p>2</p>
+                            </div>
+                            <p class="main_p_date">2022. 11. 10.</p>
+                        </a></li>
+                    <li><a href="/post/4" class="main_post_item"><img class="main_img_thumbnail"
+                                src="/src/assets/test.jpg" alt="">
+                            <div class="main_category">학습</div><strong class="main_str_title">..짝짝</strong>
+                            <p class="main_p_content">나는 쑤정</p>
+                            <div class="main_post_user"><img src="/src/assets/user.svg" alt="">
+                                <p>멋쟁이토마토</p>
+                            </div>
+                            <div class="main_post_reac"><img src="/src/assets/heart.svg">
+                                <p>19</p><img src="/src/assets/comment.svg">
+                                <p>7</p>
+                            </div>
+                            <p class="main_p_date">2022. 11. 10.</p>
+                        </a></li>
+                    <li><a href="/post/5" class="main_post_item"><img class="main_img_thumbnail"
+                                src="/src/assets/test.jpg" alt="">
+                            <div class="main_category">취업</div><strong class="main_str_title">박자는생명</strong>
+                            <p class="main_p_content">아 수정이 누나 뭐하는데~~</p>
+                            <div class="main_post_user"><img src="/src/assets/user.svg" alt="">
+                                <p>MSG</p>
+                            </div>
+                            <div class="main_post_reac"><img src="/src/assets/heart.svg">
+                                <p>19</p><img src="/src/assets/comment.svg">
+                                <p>7</p>
+                            </div>
+                            <p class="main_p_date">2022. 11. 10.</p>
+                        </a></li>
+                    <li><a href="/post/6" class="main_post_item"><img class="main_img_thumbnail"
+                                src="/src/assets/test.jpg" alt="">
+                            <div class="main_category">연애</div><strong class="main_str_title">마시면서배우는</strong>
+                            <p class="main_p_content">재미난 게임</p>
+                            <div class="main_post_user"><img src="/src/assets/user.svg" alt="">
+                                <p>작지만강한우리</p>
+                            </div>
+                            <div class="main_post_reac"><img src="/src/assets/heart.svg">
+                                <p>52</p><img src="/src/assets/comment.svg">
+                                <p>46</p>
+                            </div>
+                            <p class="main_p_date">2022. 11. 10.</p>
+                        </a></li>
+                </ul>
+            </section>
+        </main>
+    </div>
+    <script type="module" src="./src/javascript/index.js"></script>
+    <!-- Code injected by live-server -->
+    <script>
+        // <![CDATA[  <-- For SVG support
+        if ('WebSocket' in window) {
+            (function () {
+                function refreshCSS() {
+                    var sheets = [].slice.call(document.getElementsByTagName("link"));
+                    var head = document.getElementsByTagName("head")[0];
+                    for (var i = 0; i < sheets.length; ++i) {
+                        var elem = sheets[i];
+                        var parent = elem.parentElement || head;
+                        parent.removeChild(elem);
+                        var rel = elem.rel;
+                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+                        }
+                        parent.appendChild(elem);
+                    }
+                }
+                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+                var address = protocol + window.location.host + window.location.pathname + '/ws';
+                var socket = new WebSocket(address);
+                socket.onmessage = function (msg) {
+                    if (msg.data == 'reload') window.location.reload();
+                    else if (msg.data == 'refreshcss') refreshCSS();
+                };
+                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+                    console.log('Live reload enabled.');
+                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+                }
+            })();
+        }
+        else {
+            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+        }
+	// ]]>
+    </script>
+</body>
+</html>

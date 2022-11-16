@@ -16,22 +16,7 @@ class MainPage extends Component {
     render() {
         this.getPostData();
         // console.log(this.post);
-
         const docFrag = new DocumentFragment();
-
-        // 페이지 연결 테스트 및 nav 위치 지정
-        // const sectNav = document.createElement('section');
-        // sectNav.setAttribute('class', 'main_tmp_nav');
-        // const anchor = document.createElement('a');
-        // anchor.href = '/';
-
-        // const element = document.createElement('h1');
-        // element.innerText = 'MainPage - 게시판 페이지 (클릭하면 이전페이지로 이동)';
-
-        // anchor.appendChild(element);
-        // sectNav.appendChild(anchor);
-
-        // docFrag.appendChild(sectNav);
 
         const header = new Header();
         docFrag.appendChild(header.render());
