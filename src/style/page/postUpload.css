@@ -35,13 +35,14 @@
 .main_post_container .post_img_con {
     border-radius: 5px;
     position: absolute;
-    bottom: -15px;
+    bottom: -26px;
 }
 
 .main_post_container .post_img_con .post_img_preview {
     border-radius: 5px;
     width: 80px;
     height: 80px;
+    object-fit: cover;
 }
 
 .main_post_container .post_img_con .post_btn_img_cancel {
@@ -57,7 +58,7 @@
 /* post 버튼 공통 */
 .post_btn {
     border-radius: 5px;
-    background-color: orange;
+    background-color: var(--main-color);
     padding: 8px 12px;
     color: white;
 }
@@ -65,3 +66,6 @@
     margin-right: 10px;
 }
 /* 끝 */
+/* .post_form_upload {
+    padding: 110px;
+} */

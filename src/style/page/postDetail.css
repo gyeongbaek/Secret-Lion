@@ -21,7 +21,7 @@
     margin-top: 27px;
     display: flex;
     align-items: center;
-    gap: 5px;
+    /* gap: 16px; */
 }
 
 .post_section_top .post_div_info_con .post_img_profile {
@@ -33,6 +33,7 @@
 .post_section_top .post_div_info_con .post_strong_writer_name {
     font-size: 20px;
     font-weight: 600;
+    margin: 0 16px 0 8px;
 }
 
 .post_section_top .post_div_info_con .post_time_date {
@@ -40,16 +41,16 @@
 
 .main_post_container .post_section_top .post_btn_trash {
     position: absolute;
-    width: 30px;
-    height: 30px;
+    width: 24px;
+    height: 24px;
     right: 0;
-    top: 0;
-    background: url('../../assets/delete.svg') center/ 30px 30px;
+    bottom: 27px;
+    background: url('../../assets/delete.svg') center/ 24px 24px;
     background-color: transparent;
 }
 
 .main_post_container .post_section_mid {
-    padding: 14px 14px 25px 14px;
+    padding: 30px 15px;
     border-bottom: 1px solid #bdbdbd;
     min-height: 400px;
     position: relative;
@@ -62,6 +63,7 @@
 }
 
 .main_post_container .post_section_mid .post_p_content_txt {
+    font-size: 19px;
 }
 
 /* 게시글 좋아요, 즐겨찾기 버튼 */
@@ -78,17 +80,18 @@
     align-items: center;
 }
 .post_div_likeFavorite_con .post_btn_like .post_img_like {
-    width: 30px;
-    height: 30px;
+    width: 24px;
+    height: 24px;
+    margin-right: 3px;
 }
 .post_section_mid .post_div_likeFavorite_con .post_btn_fav {
-    margin-left: 8px;
+    margin-left: 10px;
     margin-top: 5px;
     background-color: transparent;
 }
 .post_div_likeFavorite_con .post_btn_fav .post_img_fav {
-    width: 30px;
-    height: 33px;
+    width: 24px;
+    height: 27px;
 }
 /* chatting form */
 .main_post_container .post_form_chat {
@@ -133,7 +136,7 @@
 .post_form_chat .post_div_chat_con .post_div_btns_con {
     position: absolute;
     right: 0;
-    bottom: -40px;
+    bottom: -55px;
 }
 
 /* comment bottom */
@@ -162,10 +165,13 @@
 
 .post_section_bottom .post_ul_comment .post_li_comment {
     padding: 14px;
-    border-top: 1px solid #bdbdbd;
+    /* border-bottom: 1px solid #bdbdbd; */
     margin-top: 20px;
     display: flex;
     align-items: center;
+}
+.post_section_bottom .post_ul_comment .post_li_comment {
+    /* 마지막 자식 border-bottom 제거 */
 }
 
 .post_ul_comment .post_li_comment .post_div_comment_left {
