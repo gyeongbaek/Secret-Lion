@@ -16,9 +16,17 @@ class UserEdit {
         editProfile.setAttribute('class', 'edit_p_profile');
         editProfile.textContent = '프로필 사진과 닉네임을 변경할 수 있습니다.';
 
-        const profileImgTit = document.createElement('span');
-        profileImgTit.setAttribute('class', 'edit_spn_img');
+        // 프로필 이미지 폼
+        const imgForm = document.createElement('form');
+        imgForm.setAttribute('class', 'edit_form_img');
+
+        const profileImgTit = document.createElement('label');
+        profileImgTit.setAttribute('class', 'edit_lab_img');
         profileImgTit.textContent = '프로필 사진';
+
+        // const profileImgTit = document.createElement('span');
+        // profileImgTit.setAttribute('class', 'edit_spn_img');
+        // profileImgTit.textContent = '프로필 사진';
 
         const profileImg = document.createElement('img');
         profileImg.setAttribute(
@@ -31,6 +39,10 @@ class UserEdit {
         changeBtn.setAttribute('class', 'edit_btn_change');
         changeBtn.textContent = '이미지 변경';
 
+        const deleteBtn = document.createElement('button');
+        deleteBtn.setAttribute('class', 'edit_btn_delete');
+        deleteBtn.textContent = '이미지 삭제';
+
         const fileinp = document.createElement('input');
         fileinp.setAttribute('class', 'ir');
         fileinp.setAttribute('type', 'file');
@@ -39,12 +51,23 @@ class UserEdit {
         changeBtn.addEventListener('click', () => fileinp.click());
         fileinp.addEventListener('change', (e) => console.log(e.target.files));
 
-        const nicknameTit = document.createElement('span');
-        nicknameTit.setAttribute('class', 'edit_spn_nickname');
-        nicknameTit.textContent = '닉네임';
+        imgForm.appendChild(profileImgTit);
+        imgForm.appendChild(profileImg);
+        imgForm.appendChild(changeBtn);
+        imgForm.appendChild(deleteBtn);
+        imgForm.appendChild(fileinp);
+
+        // 닉네임 폼
+        const nicknameForm = document.createElement('form');
+        nicknameForm.setAttribute('class', 'edit_form_nickname');
+
+        // const nicknameTit = document.createElement('span');
+        // nicknameTit.setAttribute('class', 'edit_spn_nickname');
+        // nicknameTit.textContent = '닉네임';
 
         const nicknameLbl = document.createElement('label');
         nicknameLbl.setAttribute('for', 'edit_inp_nickname');
+        nicknameLbl.textContent = '닉네임';
 
         const nicknameInp = document.createElement('input');
         nicknameInp.setAttribute('type', 'text');
@@ -57,18 +80,18 @@ class UserEdit {
 
         const confirmBtn = document.createElement('button');
         confirmBtn.setAttribute('class', 'edit_btn_confirm');
-        confirmBtn.textContent = '수정 완료';
+        confirmBtn.textContent = '닉네임 변경';
 
+        nicknameForm.appendChild(nicknameLbl);
+        nicknameForm.appendChild(nicknameInp);
+        nicknameForm.appendChild(nicknameTxt);
+        nicknameForm.appendChild(confirmBtn);
+
+        // 메인 컨테이너 안
         editWrapper.appendChild(editStrong);
         editWrapper.appendChild(editProfile);
-        editWrapper.appendChild(profileImgTit);
-        editWrapper.appendChild(profileImg);
-        editWrapper.appendChild(changeBtn);
-        editWrapper.appendChild(nicknameTit);
-        editWrapper.appendChild(nicknameLbl);
-        editWrapper.appendChild(nicknameInp);
-        editWrapper.appendChild(nicknameTxt);
-        editWrapper.appendChild(confirmBtn);
+        editWrapper.appendChild(imgForm);
+        editWrapper.appendChild(nicknameForm);
 
         colorWrapper.appendChild(editWrapper);
 
