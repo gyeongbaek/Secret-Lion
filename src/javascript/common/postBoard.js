@@ -4,7 +4,7 @@ import Component from '../core/Component.js';
 class PostBoard extends Component {
     render() {
         const postBoard = document.createElement('ul');
-        postBoard.setAttribute('class', 'main_ul_post');
+        postBoard.setAttribute('class', 'board_ul_post');
 
         const frag = new DocumentFragment();
         this.props.posts.forEach((item) => {
