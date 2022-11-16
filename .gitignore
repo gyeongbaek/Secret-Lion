@@ -1,16 +1,11 @@
 .DS_Store
-<<<<<<< HEAD
+
 .vscode
-
-
-
-
-# mainPage
-src/test
-=======
 .loginPage_test.css
 .loginPage_test.html
 .signupPage_text.css
 .signupPage_test.html
-.vscode
->>>>>>> ec818938f6db3097dcddf079a1d141a59531c9f8
+
+
+src/test
+
