@@ -1,8 +1,8 @@
 import {
     LoginPage,
     MainPage,
-    PostDetail,
-    PostUpload,
+    PostDetailPage,
+    PostUploadpage,
     SignupPage,
     TestPage,
     UserEdit,
@@ -22,8 +22,8 @@ export default class App {
             "/login": LoginPage,
             "/signup": SignupPage,
             "/main": MainPage,
-            "/post": PostDetail,
-            "/upload": PostUpload,
+            "/post": PostDetailPage,
+            "/upload": PostUploadpage,
             "/user": UserInfo,
             "/setting": UserEdit,
         });

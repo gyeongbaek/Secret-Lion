@@ -1,7 +1,7 @@
 import { Header } from "../common/index.js";
 import { PostUploadForm } from "../components/PostUploadForm/index.js";
 
-class PostUpload {
+class PostUploadpage {
     render() {
         const header = new Header();
 
@@ -19,4 +19,4 @@ class PostUpload {
     }
 }
 
-export default PostUpload;
+export default PostUploadpage;
