@@ -16,6 +16,17 @@ class UserEdit {
         editProfile.setAttribute('class', 'edit_p_profile');
         editProfile.textContent = '프로필 사진과 닉네임을 변경할 수 있습니다.';
 
+        // userInfo로 이동하는 X 버튼
+        const InfoAnchor = document.createElement('a');
+        InfoAnchor.href = '/user';
+
+        const closeImg = document.createElement('img');
+        closeImg.setAttribute('src', 'src/assets/close.svg');
+        closeImg.setAttribute('alt', '페이지 닫는 버튼');
+        closeImg.setAttribute('class', 'edit_img_close');
+
+        InfoAnchor.appendChild(closeImg);
+
         // 프로필 이미지 폼
         const imgForm = document.createElement('form');
         imgForm.setAttribute('class', 'edit_form_img');
@@ -24,15 +35,12 @@ class UserEdit {
         profileImgTit.setAttribute('class', 'edit_lab_img');
         profileImgTit.textContent = '프로필 사진';
 
-        // const profileImgTit = document.createElement('span');
-        // profileImgTit.setAttribute('class', 'edit_spn_img');
-        // profileImgTit.textContent = '프로필 사진';
-
         const profileImg = document.createElement('img');
         profileImg.setAttribute(
             'src',
             'https://images.unsplash.com/photo-1606225457115-9b0de873c5db?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'
         );
+        profileImg.setAttribute('alt', '유저 프로필 이미지');
         profileImg.setAttribute('class', 'edit_img');
 
         const changeBtn = document.createElement('button');
@@ -61,16 +69,13 @@ class UserEdit {
         const nicknameForm = document.createElement('form');
         nicknameForm.setAttribute('class', 'edit_form_nickname');
 
-        // const nicknameTit = document.createElement('span');
-        // nicknameTit.setAttribute('class', 'edit_spn_nickname');
-        // nicknameTit.textContent = '닉네임';
-
         const nicknameLbl = document.createElement('label');
         nicknameLbl.setAttribute('for', 'edit_inp_nickname');
         nicknameLbl.textContent = '닉네임';
 
         const nicknameInp = document.createElement('input');
         nicknameInp.setAttribute('type', 'text');
+        nicknameInp.setAttribute('maxlength', '8');
         nicknameInp.setAttribute('placeholder', '닉네임을 입력해주세요.');
         nicknameInp.setAttribute('id', 'edit_inp_nickname');
 
@@ -90,6 +95,7 @@ class UserEdit {
         // 메인 컨테이너 안
         editWrapper.appendChild(editStrong);
         editWrapper.appendChild(editProfile);
+        editWrapper.appendChild(InfoAnchor);
         editWrapper.appendChild(imgForm);
         editWrapper.appendChild(nicknameForm);
 
