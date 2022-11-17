@@ -95,33 +95,29 @@
 }
 /* chatting form */
 .main_post_container .post_form_chat {
-    margin-top: 30px;
+    margin-top: 20px;
+    position: relative;
+    width: 100%;
 }
 
-.main_post_container .post_form_chat .post_div_chat_con {
-    width: 100%;
+/* .main_post_container .post_form_chat .post_div_chat_con {
     min-height: 200px;
-    border: 1px solid #bdbdbd;
+    
     padding: 18px;
-    position: relative;
-}
-.post_form_chat .post_div_chat_con .post_textarea_chat {
-    border: none;
+} */
+.post_form_chat .post_textarea_chat {
     resize: none;
-    width: 100%;
     overflow: hidden;
     min-height: 100px;
-    padding: 5px;
+    padding: 15px;
     outline: none;
+    width: 100%;
+    border: 1px solid #bdbdbd;
+    border-radius: 3px;
 }
-.post_form_chat .post_div_chat_con .post_div_prev_con {
+.post_form_chat .post_div_prev_con {
     width: 20%;
     position: relative;
-}
-
-.post_div_chat_con .post_div_prev_con .post_img_chat {
-    border-radius: 8px;
-    width: 100%;
 }
 
 .post_div_chat_con .post_div_prev_con .post_btn_prev_cancel {
@@ -133,18 +129,11 @@
     right: -10px;
     top: -10px;
 }
-.post_form_chat .post_div_chat_con .post_div_btns_con {
+
+.post_form_chat .post_btn {
     position: absolute;
     right: 0;
-    bottom: -55px;
-}
-
-/* comment bottom */
-.main_post_container .post_section_bottom {
-    margin-top: 70px;
-}
-
-.main_post_container .post_section_bottom .post_ul_comment {
+    bottom: -35px;
 }
 
 /* 유저 이름 및 날짜 */
@@ -186,10 +175,4 @@
     width: 34px;
     height: 34px;
     border-radius: 50%;
-}
-
-.post_ul_comment .post_li_comment .post_img_comment {
-    width: 15%;
-    border-radius: 8px;
-    margin-left: auto;
 }

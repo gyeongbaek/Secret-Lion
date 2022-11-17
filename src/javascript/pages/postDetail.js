@@ -127,17 +127,12 @@ class PostDetail {
 
         // midSection
         midSection.appendChild(postContenth2);
-        // midSection.appendChild(postContentImg);
         midSection.appendChild(postContentTxt);
         midSection.appendChild(postLikeFavorite);
 
         // 채팅입력 Form
         const chattingForm = document.createElement('form');
         chattingForm.setAttribute('class', 'post_form_chat');
-
-        // chat inputCon
-        const chatInpCon = document.createElement('div');
-        chatInpCon.setAttribute('class', 'post_div_chat_con');
 
         // chat textarea
         const chatTextArea = document.createElement('textarea');
@@ -166,20 +161,9 @@ class PostDetail {
         chatPreviewCon.appendChild(chatPreviewImg);
         chatPreviewCon.appendChild(prevCancelBtn);
 
-        // upload btn
-        const chatBtnCon = document.createElement('div');
-        chatBtnCon.setAttribute('class', 'post_div_btns_con');
-
         const chatUploadBtn = document.createElement('button');
         chatUploadBtn.setAttribute('class', 'post_btn');
         chatUploadBtn.textContent = '댓글 등록';
-
-        const chatImgBtn = document.createElement('button');
-        chatImgBtn.setAttribute('class', 'post_btn');
-        chatImgBtn.textContent = '파일 등록';
-
-        chatBtnCon.appendChild(chatImgBtn);
-        chatBtnCon.appendChild(chatUploadBtn);
 
         // 댓글
         const commentCon = document.createElement('section');
@@ -235,27 +219,15 @@ class PostDetail {
         commentLiLeft.appendChild(commentUserInfo);
         commentLiLeft.appendChild(commentP);
 
-        // 이미지가 존재하면 넣어준다.
-        const commentImg = document.createElement('img');
-        commentImg.setAttribute('class', 'post_img_comment');
-        commentImg.setAttribute(
-            'src',
-            ' https://cdn.pixabay.com/photo/2019/05/21/07/11/cat-4218424__480.jpg'
-        );
-        commentImg.setAttribute('alt', '');
-
         commentLi.appendChild(commentLiLeft);
-        commentLi.appendChild(commentImg);
 
         commentUl.appendChild(commentLi);
         commentCon.appendChild(commentH2);
         commentCon.appendChild(commentUl);
 
         // chat form apch
-        chattingForm.appendChild(chatInpCon);
-        chatInpCon.appendChild(chatTextArea);
-        // chatInpCon.appendChild(chatPreviewCon); 프리뷰 사진 제거
-        chatInpCon.appendChild(chatBtnCon);
+        chattingForm.appendChild(chatTextArea);
+        chattingForm.appendChild(chatUploadBtn);
 
         // topsection 안
         topSection.appendChild(postWriterInfoCon);
