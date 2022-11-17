@@ -1,8 +1,8 @@
 import {
     LoginPage,
     MainPage,
-    PostDetail,
-    PostUpload,
+    PostDetailPage,
+    PostUploadpage,
     SignupPage,
     TestPage,
     UserEdit,
@@ -18,12 +18,12 @@ export default class App {
         const { el } = this.props;
 
         const router = new Router({
-            "/": PostDetail,
+            "/": TestPage,
             "/login": LoginPage,
             "/signup": SignupPage,
             "/main": MainPage,
-            "/post": PostDetail,
-            "/upload": PostUpload,
+            "/post": PostDetailPage,
+            "/upload": PostUploadpage,
             "/user": UserInfo,
             "/setting": UserEdit,
         });
