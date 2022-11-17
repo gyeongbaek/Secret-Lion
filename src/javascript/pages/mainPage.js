@@ -1,7 +1,8 @@
-import PostCard from '../common/postCard.js';
+import PostBoard from '../common/postBoard.js';
 import Component from '../core/Component.js';
 import { productData } from '../data.js';
 import { Header, DropDown } from '../common/index.js';
+
 class MainPage extends Component {
     constructor(props) {
         super(props);
@@ -64,20 +65,8 @@ class MainPage extends Component {
         postTitle.innerText = '게시글 목록';
         postSection.appendChild(postTitle);
 
-        const postList = document.createElement('ul');
-        postList.setAttribute('class', 'main_ul_post');
-
-        //
-        this.post.forEach((item) => {
-            // console.log(item);
-            // 리스트 아이템 컨테이너
-            const postItem = document.createElement('li');
-            const postCard = new PostCard({ item: item });
-            postItem.appendChild(postCard.render());
-            postList.appendChild(postItem);
-        });
-
-        postSection.appendChild(postList);
+        const postBoard = new PostBoard({ posts: this.post });
+        postSection.appendChild(postBoard.render());
 
         mainElement.appendChild(menuSection);
         mainElement.appendChild(postSection);

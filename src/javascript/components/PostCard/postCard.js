@@ -1,11 +1,14 @@
-import { PostTitle, PostImg, PostCont, PostCate, PostInfo, PostUser, PostDate } from '../components/Post/index.js';
-import Component from '../core/Component.js';
+import { PostTitle, PostImg, PostCont, PostCate, PostInfo, PostUser, PostDate } from './index.js';
+import Component from '../../core/Component.js';
 
 class PostCard extends Component {
     render() {
+        const postItem = document.createElement('li');
+
         const post = document.createElement('a');
         post.setAttribute('href', `/post/${this.props.item.id}`);
-        post.setAttribute('class', 'main_post_item');
+        post.setAttribute('class', 'board_post_item');
+
         const postImg = new PostImg({ src: this.props.item.thumbnail });
         const postTitle = new PostTitle({ title: this.props.item.postTitle });
         const postCont = new PostCont({ content: this.props.item.postContent });
@@ -22,7 +25,8 @@ class PostCard extends Component {
         post.appendChild(postUser.render());
         post.appendChild(postInfo.render());
 
-        return post;
+        postItem.append(post);
+        return postItem;
     }
 }
 

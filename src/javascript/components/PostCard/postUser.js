@@ -4,7 +4,7 @@ class PostUser extends Component {
     render() {
         // // 작성자
         const postUser = document.createElement('div');
-        postUser.setAttribute('class', 'main_post_user');
+        postUser.setAttribute('class', 'board_post_user');
 
         const profileImg = document.createElement('img');
         profileImg.setAttribute('src', '/src/assets/user.svg');
