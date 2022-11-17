@@ -36,16 +36,13 @@
     margin: 0 16px 0 8px;
 }
 
-.post_section_top .post_div_info_con .post_time_date {
-}
-
 .main_post_container .post_section_top .post_btn_trash {
     position: absolute;
     width: 24px;
     height: 24px;
     right: 0;
     bottom: 27px;
-    background: url('../../assets/delete.svg') center/ 24px 24px;
+    background: url("../../assets/delete.svg") center/ 24px 24px;
     background-color: transparent;
 }
 
@@ -100,11 +97,6 @@
     width: 100%;
 }
 
-/* .main_post_container .post_form_chat .post_div_chat_con {
-    min-height: 200px;
-    
-    padding: 18px;
-} */
 .post_form_chat .post_textarea_chat {
     resize: none;
     overflow: hidden;
@@ -159,12 +151,7 @@
     display: flex;
     align-items: center;
 }
-.post_section_bottom .post_ul_comment .post_li_comment {
-    /* 마지막 자식 border-bottom 제거 */
-}
 
-.post_ul_comment .post_li_comment .post_div_comment_left {
-}
 .post_div_comment_user_info {
     display: flex;
     gap: 5px;
