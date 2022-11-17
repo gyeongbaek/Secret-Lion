@@ -1,26 +1,26 @@
 import Component from '../../core/Component.js';
 
-class PostInfo extends Component {
+class PostCardReaction extends Component {
     render() {
-        const postInfo = document.createElement('div');
-        postInfo.setAttribute('class', 'board_post_reac');
+        const postCardReaction = document.createElement('div');
+        postCardReaction.setAttribute('class', 'board_post_reac');
 
         const imgLike = document.createElement('img');
         imgLike.setAttribute('src', '/src/assets/heart.svg');
         const cntLike = document.createElement('p');
         cntLike.innerText = this.props.like;
-        postInfo.appendChild(imgLike);
-        postInfo.appendChild(cntLike);
+        postCardReaction.appendChild(imgLike);
+        postCardReaction.appendChild(cntLike);
 
         const imgComment = document.createElement('img');
         imgComment.setAttribute('src', '/src/assets/comment.svg');
         const cntComment = document.createElement('p');
         cntComment.innerText = this.props.comment;
-        postInfo.appendChild(imgComment);
-        postInfo.appendChild(cntComment);
+        postCardReaction.appendChild(imgComment);
+        postCardReaction.appendChild(cntComment);
 
-        return postInfo;
+        return postCardReaction;
     }
 }
 
-export default PostInfo;
+export default PostCardReaction;

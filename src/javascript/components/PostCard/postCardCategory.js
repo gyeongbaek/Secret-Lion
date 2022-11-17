@@ -1,10 +1,10 @@
 import Component from '../../core/Component.js';
 
-class PostCate extends Component {
+class postCardCategory extends Component {
     render() {
-        const postCate = document.createElement('div');
-        postCate.setAttribute('class', 'board_category');
-        postCate.innerText = this.props.category;
+        const postCardCategory = document.createElement('div');
+        postCardCategory.setAttribute('class', 'board_category');
+        postCardCategory.innerText = this.props.category;
 
         let bgColor = 'var(--bg-color)';
         switch (this.props.category) {
@@ -27,10 +27,10 @@ class PostCate extends Component {
                 bgColor = 'var(--cate-talk-color)';
                 break;
         }
-        postCate.style.backgroundColor = bgColor;
+        postCardCategory.style.backgroundColor = bgColor;
 
-        return postCate;
+        return postCardCategory;
     }
 }
 
-export default PostCate;
+export default postCardCategory;

@@ -1,4 +1,12 @@
-import { PostTitle, PostImg, PostCont, PostCate, PostInfo, PostUser, PostDate } from './index.js';
+import {
+    PostCardTitle,
+    PostCardThumbnail,
+    PostCardContent,
+    PostCardCategory,
+    PostCardReaction,
+    PostCardWriter,
+    PostCardDate,
+} from './index.js';
 import Component from '../../core/Component.js';
 
 class PostCard extends Component {
@@ -9,13 +17,16 @@ class PostCard extends Component {
         post.setAttribute('href', `/post/${this.props.item.id}`);
         post.setAttribute('class', 'board_post_item');
 
-        const postImg = new PostImg({ src: this.props.item.thumbnail });
-        const postTitle = new PostTitle({ title: this.props.item.postTitle });
-        const postCont = new PostCont({ content: this.props.item.postContent });
-        const postCate = new PostCate({ category: this.props.item.category });
-        const postInfo = new PostInfo({ like: this.props.item.likeCount, comment: this.props.item.commentCount });
-        const postDate = new PostDate({ date: this.props.item.date });
-        const postUser = new PostUser({ user: this.props.item.writer });
+        const postImg = new PostCardThumbnail({ src: this.props.item.thumbnail });
+        const postTitle = new PostCardTitle({ title: this.props.item.postTitle });
+        const postCont = new PostCardContent({ content: this.props.item.postContent });
+        const postCate = new PostCardCategory({ category: this.props.item.category });
+        const postInfo = new PostCardReaction({
+            like: this.props.item.likeCount,
+            comment: this.props.item.commentCount,
+        });
+        const postDate = new PostCardDate({ date: this.props.item.date });
+        const postUser = new PostCardWriter({ user: this.props.item.writer });
 
         post.appendChild(postImg.render());
         post.appendChild(postCate.render());
