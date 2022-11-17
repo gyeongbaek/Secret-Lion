@@ -13,63 +13,87 @@
     width: 740px;
     height: 600px;
     border: 1px solid #eaeaea;
-    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.16);
+    box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.2);
     border-radius: 12px;
     background-color: #fff;
 }
 
 .edit_strong {
     display: inline-block;
-    font-size: 20px;
+    font-size: 25px;
     line-height: 24px;
-    margin: 76px 0 0 92px;
+    margin: 100px 0 0 92px;
 }
 
 .edit_p_profile {
-    font-size: 14px;
+    font-size: 18px;
     line-height: 17px;
-    margin: 44px 0 0 144px;
+    margin: 20px 0 0 93px;
+    color: #6a6a6a;
 }
 
-.edit_spn_img {
-    display: block;
-    font-size: 14px;
-    line-height: 17px;
-    margin: 44px 0 0 158px;
+.edit_img_close {
+    position: relative;
+    top: -70px;
+    left: 625px;
+    width: 30px;
+    height: 30px;
+}
+
+/* 이미지 폼 */
+
+.edit_form_img {
+    position: relative;
+    top: -10px;
+}
+
+.edit_lab_img {
+    color: #3e3e3e;
+    position: absolute;
+    top: 60px;
+    left: 100px;
 }
 
 .edit_img {
     width: 72px;
     height: 72px;
     border-radius: 120px;
-    margin: 22px 30px 46px 158px;
-    background-size: contain;
+    margin: 100px 30px 60px 101px;
+    object-fit: cover;
 }
 
-.edit_btn_change {
+.edit_btn_change,
+.edit_btn_delete {
     position: relative;
-    top: -80px;
+    top: -90px;
     left: 0px;
     width: 85px;
     height: 28px;
     border: 1px solid #bcbcbc;
     border-radius: 4px;
     background-color: #fff;
-    font-size: 13px;
+    font-size: 14px;
     color: #909090;
-    cursor: pointer;
+    margin-left: 20px;
 }
 
-.edit_spn_nickname {
+/* 닉네임 폼 */
+
+.edit_form_nickname {
     position: relative;
-    left: -170px;
-    font-size: 14px;
-    line-height: 17px;
+    top: -10px;
+}
+
+.edit_form_nickname label {
+    color: #3e3e3e;
+    position: relative;
+    left: 115px;
 }
 
 #edit_inp_nickname {
-    margin-left: -121px;
-    width: 355px;
+    position: relative;
+    left: 181px;
+    width: 300px;
     height: 34px;
     padding: 8px;
     border: 1px solid #bcbcbc;
@@ -82,19 +106,22 @@
 }
 
 .edit_p_nickname {
-    margin: 10px 0 52px 260px;
+    position: relative;
+    top: 12px;
+    left: 222px;
     font-size: 12px;
     line-height: 15px;
     color: #909090;
 }
 
 .edit_btn_confirm {
-    margin: 40px 0 0 585px;
+    position: relative;
+    top: -47px;
+    left: 570px;
     background: #bcbcbc;
-    padding: 5px;
+    padding: 6px;
     border: 1px solid #bcbcbc;
     border-radius: 4px;
-    font-size: 13px;
+    font-size: 14px;
     color: #ffffff;
-    cursor: pointer;
 }

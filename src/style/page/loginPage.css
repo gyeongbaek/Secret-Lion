@@ -20,11 +20,22 @@
 
 .loginPage_main_wrapper{
     margin: 30px auto;
-    padding: 100px 65px;
+    padding: 80px 65px 100px;
     width: 430px;
     border-radius: 30px;
     background-color: #fff;
     box-shadow: 0px 5px 5px 5px rgba(0,0,0,0.2);
+}
+
+/* sub-title */
+.loginPage_p_subTit{
+    color: #000;
+    margin-bottom: 40px;
+}
+
+.loginPage_strong{
+    color: #000;
+    font-weight: 700;
 }
 
 /* form */

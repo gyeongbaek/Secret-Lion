@@ -1,10 +1,10 @@
 import Component from '../../core/Component.js';
 
-class PostUser extends Component {
+class PostCardWriter extends Component {
     render() {
         // // 작성자
-        const postUser = document.createElement('div');
-        postUser.setAttribute('class', 'main_post_user');
+        const postCardWriter = document.createElement('div');
+        postCardWriter.setAttribute('class', 'board_post_user');
 
         const profileImg = document.createElement('img');
         profileImg.setAttribute('src', '/src/assets/user.svg');
@@ -12,11 +12,11 @@ class PostUser extends Component {
 
         const userName = document.createElement('p');
         userName.innerText = this.props.user;
-        postUser.append(profileImg);
-        postUser.append(userName);
+        postCardWriter.append(profileImg);
+        postCardWriter.append(userName);
 
-        return postUser;
+        return postCardWriter;
     }
 }
 
-export default PostUser;
+export default PostCardWriter;
