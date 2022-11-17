@@ -1,16 +1,12 @@
 .start_bodyWrapper{
     /* width: 100vw; */
-    height: 100vh;
+    /* height: 100vh; */
     background-color: #FFBD3E;
 }
 
 .start_sec{
     padding-top: 180px;
     text-align: center;
-}
-
-.start_h1_logoCont{
-    /* margin: 200px auto; */
 }
 
 .start_img_logo{
