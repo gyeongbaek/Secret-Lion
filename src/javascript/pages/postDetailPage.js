@@ -1,4 +1,8 @@
 import Header from "../common/header.js";
+import {
+    PostDetailChat,
+    PostDetailChatForm,
+} from "../components/PostDetail/index.js";
 
 class PostDetailPage {
     constructor() {}
@@ -130,40 +134,18 @@ class PostDetailPage {
         midSection.appendChild(postContentTxt);
         midSection.appendChild(postLikeFavorite);
 
-        // 채팅입력 Form
-        const chattingForm = document.createElement("form");
-        chattingForm.setAttribute("class", "post_form_chat");
+        // // 채팅입력 Form
+        // const chattingForm = document.createElement("form");
+        // chattingForm.setAttribute("class", "post_form_chat");
 
-        // chat textarea
-        const chatTextArea = document.createElement("textarea");
-        chatTextArea.setAttribute("class", "post_textarea_chat");
-        chatTextArea.setAttribute("placeholder", "내용을 입력해주세요.");
+        // // chat textarea
+        // const chatTextArea = document.createElement("textarea");
+        // chatTextArea.setAttribute("class", "post_textarea_chat");
+        // chatTextArea.setAttribute("placeholder", "내용을 입력해주세요.");
 
-        // chat img con
-        const chatPreviewCon = document.createElement("div");
-        chatPreviewCon.setAttribute("class", "post_div_prev_con");
-
-        // chat img
-        const chatPreviewImg = document.createElement("img");
-        chatPreviewImg.setAttribute("class", "post_img_chat");
-        chatPreviewImg.setAttribute(
-            "src",
-            " https://cdn.pixabay.com/photo/2019/05/21/07/11/cat-4218424__480.jpg"
-        );
-        chatPreviewImg.setAttribute("alt", "");
-
-        // cancel btn
-        const prevCancelBtn = document.createElement("button");
-        prevCancelBtn.setAttribute("class", "post_btn_prev_cancel");
-        prevCancelBtn.textContent = "x";
-
-        // 프리뷰 사진 콘
-        chatPreviewCon.appendChild(chatPreviewImg);
-        chatPreviewCon.appendChild(prevCancelBtn);
-
-        const chatUploadBtn = document.createElement("button");
-        chatUploadBtn.setAttribute("class", "post_btn");
-        chatUploadBtn.textContent = "댓글 등록";
+        // const chatUploadBtn = document.createElement("button");
+        // chatUploadBtn.setAttribute("class", "post_btn");
+        // chatUploadBtn.textContent = "댓글 등록";
 
         // 댓글
         const commentCon = document.createElement("section");
@@ -176,58 +158,14 @@ class PostDetailPage {
         const commentUl = document.createElement("ul");
         commentUl.setAttribute("class", "post_ul_comment");
 
-        const commentLi = document.createElement("li");
-        commentLi.setAttribute("class", "post_li_comment");
+        const postDetailChat = new PostDetailChat();
 
-        // 유저 정보 및 댓글 내용
-        const commentLiLeft = document.createElement("div");
-        commentLiLeft.setAttribute("class", "post_div_comment_left");
-
-        const commentUserInfo = document.createElement("div");
-        commentUserInfo.setAttribute("class", "post_div_comment_user_info");
-
-        const commentUserImg = document.createElement("img");
-        commentUserImg.setAttribute("class", "post_img_comment_user");
-        commentUserImg.setAttribute(
-            "src",
-            "https://cdn.pixabay.com/photo/2019/05/21/07/11/cat-4218424__480.jpg"
-        );
-        commentUserImg.setAttribute("alt", "");
-
-        // 유저 이름 및 날짜
-        const commentUserNameDate = document.createElement("div");
-        commentUserNameDate.setAttribute("class", "post_div_comment_name_date");
-
-        const commentUserName = document.createElement("strong");
-        commentUserName.setAttribute("class", "post_strong_name");
-        commentUserName.textContent = "목짧은기린";
-
-        const commentDate = document.createElement("time");
-        commentDate.setAttribute("class", "post_time_comment");
-        commentDate.textContent = "2022.11.10";
-
-        commentUserNameDate.appendChild(commentUserName);
-        commentUserNameDate.appendChild(commentDate);
-
-        // 유저 정보 및 날짜
-        commentUserInfo.appendChild(commentUserImg);
-        commentUserInfo.appendChild(commentUserNameDate);
-
-        const commentP = document.createElement("p");
-        commentP.textContent = "고양이는 사람을 찢어요 님아";
-
-        commentLiLeft.appendChild(commentUserInfo);
-        commentLiLeft.appendChild(commentP);
-
-        commentLi.appendChild(commentLiLeft);
-
-        commentUl.appendChild(commentLi);
+        commentUl.appendChild(postDetailChat.render());
         commentCon.appendChild(commentH2);
         commentCon.appendChild(commentUl);
 
         // chat form apch
-        chattingForm.appendChild(chatTextArea);
-        chattingForm.appendChild(chatUploadBtn);
+        const postDetailChatForm = new PostDetailChatForm();
 
         // topsection 안
         topSection.appendChild(postWriterInfoCon);
@@ -238,7 +176,7 @@ class PostDetailPage {
         postDetailMain.appendChild(topSection);
         postDetailMain.appendChild(midSection);
         postDetailMain.appendChild(commentCon);
-        postDetailMain.appendChild(chattingForm);
+        postDetailMain.appendChild(postDetailChatForm.render());
 
         // 전체
         fragCon.appendChild(header.render());
