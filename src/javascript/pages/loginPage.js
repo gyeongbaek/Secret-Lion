@@ -1,3 +1,5 @@
+import { loginForm, loginLink } from "../components/Login/index.js";
+
 class LoginPage {
     constructor() {}
     render() {
@@ -39,40 +41,40 @@ class LoginPage {
         formCont.classList.add('loginPage_div_formCont');
 
         //main > formCont > form
-        const inpCont = document.createElement('form');
-        inpCont.classList.add('loginPage_form_inpCont');
+        // const inpCont = document.createElement('form');
+        // inpCont.classList.add('loginPage_form_inpCont');
 
-        //main > formCont > form > input
-        const inpId = document.createElement('input');
-        inpId.setAttribute('type', 'text');
-        inpId.setAttribute('placeholder', '아이디');
-        inpId.attributes['required'];
-        inpId.classList.add('loginPage_inp_id');
+        // //main > formCont > form > input
+        // const inpId = document.createElement('input');
+        // inpId.setAttribute('type', 'text');
+        // inpId.setAttribute('placeholder', '아이디');
+        // inpId.attributes['required'];
+        // inpId.classList.add('loginPage_inp_id');
 
-        const inpPwd = document.createElement('input');
-        inpPwd.setAttribute('type', 'password');
-        inpPwd.setAttribute('placeholder', '비밀번호');
-        inpPwd.attributes['required'];
-        inpPwd.classList.add('loginPage_inp_pwd');
+        // const inpPwd = document.createElement('input');
+        // inpPwd.setAttribute('type', 'password');
+        // inpPwd.setAttribute('placeholder', '비밀번호');
+        // inpPwd.attributes['required'];
+        // inpPwd.classList.add('loginPage_inp_pwd');
 
-        //main > formCont > form > button
-        const loginBtn = document.createElement('button');
-        loginBtn.classList.add('loginPage_btn_login');
-        loginBtn.textContent = '로그인';
+        // //main > formCont > form > button
+        // const loginBtn = document.createElement('button');
+        // loginBtn.classList.add('loginPage_btn_login');
+        // loginBtn.textContent = '로그인';
 
         // 아이디비번 찾기 및 회원가입 링크
-        const linkCont = document.createElement('div');
-        linkCont.classList.add('loginPage_div_linkCont');
+        // const linkCont = document.createElement('div');
+        // linkCont.classList.add('loginPage_div_linkCont');
 
-        const searchLink = document.createElement('a');
-        searchLink.setAttribute('href', '#');
-        searchLink.classList.add('loginPage_a_search');
-        searchLink.textContent = '아이디·비밀번호 찾기';
+        // const searchLink = document.createElement('a');
+        // searchLink.setAttribute('href', '#');
+        // searchLink.classList.add('loginPage_a_search');
+        // searchLink.textContent = '아이디·비밀번호 찾기';
 
-        const signUpLink = document.createElement('a');
-        signUpLink.setAttribute('href', 'src/javascript/pages/signupPage.js');
-        signUpLink.classList.add('loginPage_a_signUp');
-        signUpLink.textContent = '회원가입';
+        // const signUpLink = document.createElement('a');
+        // signUpLink.setAttribute('href', 'src/javascript/pages/signupPage.js');
+        // signUpLink.classList.add('loginPage_a_signUp');
+        // signUpLink.textContent = '회원가입';
 
         //header
         logInheader.appendChild(logoImg);
@@ -81,20 +83,23 @@ class LoginPage {
         //main
         loginMain.appendChild(subTit);
         loginMain.appendChild(formCont);
-        loginMain.appendChild(linkCont);
-
+        loginMain.appendChild(loginLink.rend());
+        
         //sub title
         subTit.appendChild(loginStrong);
-
+        
         //form
-        formCont.appendChild(inpCont);
-        formCont.appendChild(loginBtn);
-        inpCont.appendChild(inpId);
-        inpCont.appendChild(inpPwd);
-
+        const loginForm = new LoginForm();
+        formCont.appendChild(loginForm.render());
+        // inpCont.appendChild(inpId);
+        // inpCont.appendChild(inpPwd);
+        // inpCont.appendChild(loginBtn);
+        
+        const loginLink = new LoginLink();
+        formCont.appendChild(loginLink.rend());
         //아이디비번찾기와 회원가입링크
-        linkCont.appendChild(searchLink);
-        linkCont.appendChild(signUpLink);
+        // linkCont.appendChild(searchLink);
+        // linkCont.appendChild(signUpLink);
         
         //전체 
         bodybgc.appendChild(logInheader);
