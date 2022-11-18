@@ -84,12 +84,34 @@
     font-size: 18px;
 }
 
-/* textarea */
-.signupPage_textarea_rules{
-    padding: 20px;
-    resize: none;
-    border: 1px solid #d7d7d7;
-    border-radius: 10px;
-    width:370px;
-    height: 320px;
+/* accept check */
+.signupPage_div_accept{
+    display: flex;
+    flex-direction: row-reverse;
 }
+
+.signupPage_acceptLab{
+    margin: 10px 0 12px 10px;
+    line-height: 130%;
+}
+
+/* modal */
+.signupPage_art_modalCon{
+    width: 440px;
+    padding: 30px;
+    border-radius: 30px;
+    border: 1px solid #d7d7d7;
+    background-color: #fff;
+}
+
+.signupPage_h3_ruleTit{
+    margin-bottom:25px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.signupPage_art_modalCon p{
+    margin-bottom: 20px;
+    line-height: 135%;
+}
+

@@ -1,6 +1,6 @@
-/* .active{
-    display: none;
-} */
+.active{
+    display: block;
+}
 
 .signupPage_bodyWrapper{
     width: 100vw;
@@ -84,12 +84,37 @@
     font-size: 18px;
 }
 
-/* textarea */
-.signupPage_textarea_rules{
-    padding: 20px;
-    resize: none;
+/* accept check */
+.signupPage_div_acceptCont{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.signupPage_acceptLab{
+    margin: 10px 0 12px 10px;
+    line-height: 130%;
+}
+
+/* modal */
+.signupPage_art_modalCon, .active{
+    width: 440px;
+    padding: 30px;
+    border-radius: 30px;
     border: 1px solid #d7d7d7;
-    border-radius: 10px;
-    width:370px;
-    height: 320px;
+    background-color: #fff;
+    line-height: 135%;
+}
+
+.signupPage_h3_ruleTit{
+    margin-bottom:25px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.signupPage_art_modalCon p:first-child{
+    margin-bottom: 20px;
+}
+
+.signupPage_art_modalCon p:last-child{
+    margin-top: 20px;
 }
