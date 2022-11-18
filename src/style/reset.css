@@ -121,7 +121,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-    content: '';
+    content: "";
     content: none;
 }
 table {
@@ -129,7 +129,7 @@ table {
     border-spacing: 0;
 }
 
-/* button,
+button,
 input {
     background: none;
     color: inherit;
@@ -137,7 +137,7 @@ input {
     padding: 0;
     font: inherit;
     outline: inherit;
-} */
+}
 
 button {
     cursor: pointer;
@@ -177,7 +177,7 @@ html {
 
 body,
 button {
-    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+    font-family: "Spoqa Han Sans Neo", "sans-serif";
 }
 
 body {
