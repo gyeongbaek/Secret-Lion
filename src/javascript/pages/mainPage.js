@@ -1,7 +1,7 @@
 import PostBoard from '../common/postBoard.js';
 import Component from '../core/Component.js';
 import { productData } from '../data.js';
-import { Header, DropDown } from '../common/index.js';
+import { Header, DropDown, MainContainer } from '../common/index.js';
 
 class MainPage extends Component {
     constructor(props) {
@@ -23,8 +23,12 @@ class MainPage extends Component {
         docFrag.appendChild(header.render());
 
         // 메인 페이지
-        const mainElement = document.createElement('main');
-        mainElement.setAttribute('class', 'main_container');
+
+        const main = new MainContainer();
+        const mainEl = main.render();
+
+        // const mainElement = document.createElement('main');
+        // mainElement.setAttribute('class', 'main_container');
 
         // 게시판 선택 메뉴
         const menuSection = document.createElement('section');
@@ -68,9 +72,9 @@ class MainPage extends Component {
         const postBoard = new PostBoard({ posts: this.post });
         postSection.appendChild(postBoard.render());
 
-        mainElement.appendChild(menuSection);
-        mainElement.appendChild(postSection);
-        docFrag.appendChild(mainElement);
+        mainEl.appendChild(menuSection);
+        mainEl.appendChild(postSection);
+        docFrag.appendChild(mainEl);
 
         return docFrag; // test
         // return mainElement; // exec
