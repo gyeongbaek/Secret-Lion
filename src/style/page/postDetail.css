@@ -1,23 +1,23 @@
-.main_post_container .post_span_category {
+.post_span_category {
     background-color: #dadd50;
     padding: 5px 8px;
     border-radius: 5px;
     font-size: 12px;
 }
 
-.main_post_container .post_section_top {
+.post_section_top {
     margin-top: 30px;
     position: relative;
     border-bottom: 1px solid #bdbdbd;
     padding-bottom: 24px;
 }
 
-.main_post_container .post_section_top .post_h2_tit {
+.post_section_top .post_h2_tit {
     font-size: 30px;
     font-weight: 700;
 }
 
-.main_post_container .post_section_top .post_div_info_con {
+.post_section_top .post_div_info_con {
     margin-top: 27px;
     display: flex;
     align-items: center;
@@ -36,30 +36,30 @@
     margin: 0 16px 0 8px;
 }
 
-.main_post_container .post_section_top .post_btn_trash {
+.post_section_top .post_btn_trash {
     position: absolute;
     width: 24px;
     height: 24px;
     right: 0;
     bottom: 27px;
-    background: url("../../assets/delete.svg") center/ 24px 24px;
+    background: url('../../assets/delete.svg') center/ 24px 24px;
     background-color: transparent;
 }
 
-.main_post_container .post_section_mid {
+.post_section_mid {
     padding: 30px 15px;
     border-bottom: 1px solid #bdbdbd;
     min-height: 400px;
     position: relative;
 }
 
-.main_post_container .post_section_mid .post_img_content {
+.post_section_mid .post_img_content {
     margin-bottom: 20px;
     border-radius: 8px;
     width: 40%;
 }
 
-.main_post_container .post_section_mid .post_p_content_txt {
+.post_section_mid .post_p_content_txt {
     font-size: 19px;
 }
 
@@ -91,7 +91,7 @@
     height: 27px;
 }
 /* chatting form */
-.main_post_container .post_form_chat {
+.post_form_chat {
     margin-top: 20px;
     position: relative;
     width: 100%;
