@@ -38,7 +38,7 @@ export const productData = [
         postTitle: '..짝짝',
         postContent: '나는 쑤정',
         thumbnail: '/src/assets/test.jpg',
-        category: '일상',
+        category: '자유',
         date: '2022. 11. 10.',
         writer: '멋쟁이토마토',
         likeCount: 19,

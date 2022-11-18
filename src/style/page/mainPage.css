@@ -5,7 +5,7 @@
 } */
 
 .main_container {
-    padding: 60px 110px;
+    padding: 150px 200px;
 }
 
 .main_sect_menu {
@@ -37,5 +37,5 @@
 }
 
 .main_sect_post {
-    padding: 10px 110px;
+    /* padding: 10px 110px; */
 }
