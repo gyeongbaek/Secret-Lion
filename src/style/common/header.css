@@ -24,8 +24,13 @@
 }
 
 .header-a-searchLink img {
+    margin-top: 20px;
     width: 33px;
     height: 33px;
+}
+
+.header-a-notificationLink img{
+    margin-left: 23px;
 }
 
 .header-a-writeLink img {

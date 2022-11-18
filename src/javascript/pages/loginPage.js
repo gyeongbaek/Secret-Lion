@@ -10,13 +10,13 @@ class LoginPage {
         const logInheader = document.createElement('header');
         logInheader.classList.add('loginPage_header');
 
-        //header > img
+        //header > logoImg
         const logoImg = document.createElement('img');
         logoImg.setAttribute('src', 'src/assets/logo.svg');
         logoImg.setAttribute('alt', '비밀멋사 로고이미지');
         logoImg.classList.add('loginPage_img_headerLogo');
 
-        //header > h1
+        //header > title
         const title = document.createElement('h1');
         title.classList.add('loginPage_h1_title');
         title.textContent = '멋쟁이사자처럼 프론트엔드 스쿨의 비밀이야기';
@@ -25,24 +25,24 @@ class LoginPage {
         const loginMain = document.createElement('main');
         loginMain.classList.add('loginPage_main_wrapper');
 
-        //main > div_wrapper
-        const divWrapper = document.createElement('div');
-        divWrapper.classList.add('loginPage_div_wrapper');
+        //main > subTit
+        const subTit = document.createElement('p');
+        subTit.setAttribute('class', 'loginPage_p_subTit');
+        subTit.textContent = '지금 를 시작하세요!'
+        
+        const loginStrong = document.createElement('strong');
+        loginStrong.setAttribute('class', 'loginPage_strong');
+        loginStrong.textContent = '비밀멋사';
 
-        //main > div_wrapper > h2
-        const subTit = document.createElement('h2');
-        subTit.classList.add('loginPage_h2_tit');
-        subTit.textContent = 'Log-in';
-
-        //main > div_wrapper > formCont
+        //main > formCont
         const formCont = document.createElement('div');
         formCont.classList.add('loginPage_div_formCont');
 
-        //main > div_wrapper > formCont > form
+        //main > formCont > form
         const inpCont = document.createElement('form');
         inpCont.classList.add('loginPage_form_inpCont');
 
-        //main > div_wrapper > formCont > form > input
+        //main > formCont > form > input
         const inpId = document.createElement('input');
         inpId.setAttribute('type', 'text');
         inpId.setAttribute('placeholder', '아이디');
@@ -55,7 +55,7 @@ class LoginPage {
         inpPwd.attributes['required'];
         inpPwd.classList.add('loginPage_inp_pwd');
 
-        //main > div_wrapper > formCont > form > button
+        //main > formCont > form > button
         const loginBtn = document.createElement('button');
         loginBtn.classList.add('loginPage_btn_login');
         loginBtn.textContent = '로그인';
@@ -79,12 +79,14 @@ class LoginPage {
         logInheader.appendChild(title);
 
         //main
-        loginMain.appendChild(divWrapper);
-        divWrapper.appendChild(subTit);
-        divWrapper.appendChild(formCont);
-        divWrapper.appendChild(linkCont);
+        loginMain.appendChild(subTit);
+        loginMain.appendChild(formCont);
+        loginMain.appendChild(linkCont);
 
-        //form과 버튼
+        //sub title
+        subTit.appendChild(loginStrong);
+
+        //form
         formCont.appendChild(inpCont);
         formCont.appendChild(loginBtn);
         inpCont.appendChild(inpId);

@@ -1,0 +1,34 @@
+.start_bodyWrapper{
+    /* width: 100vw; */
+    /* height: 100vh; */
+    background-color: #FFBD3E;
+}
+
+.start_sec{
+    padding-top: 180px;
+    text-align: center;
+}
+
+.start_img_logo{
+    width: 500px;
+}
+
+.start_p_tit{
+    position: relative;
+    top: -30px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #000;   
+}
+
+.start_a_go{
+    margin: 70px auto 0;
+    padding: 20px;
+    width: 160px;
+    background-color: #fff;
+    font-size: 26px;
+    border-radius: 20px;
+    border: 1px solid #d7d7d7;
+    box-shadow: 0px 2px 2px 2px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
