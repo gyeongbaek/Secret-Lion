@@ -18,14 +18,14 @@ export default class App {
         const { el } = this.props;
 
         const router = new Router({
-            '/Secret-Lion/': TestPage,
-            '/Secret-Lion/login': LoginPage,
-            '/Secret-Lion/signup': SignupPage,
-            '/Secret-Lion/main': MainPage,
-            '/Secret-Lion/post': PostDetailPage,
-            '/Secret-Lion/upload': PostUploadpage,
-            '/Secret-Lion/user': UserInfo,
-            '/Secret-Lion/setting': UserEdit,
+            '/': TestPage,
+            '/login': LoginPage,
+            '/signup': SignupPage,
+            '/main': MainPage,
+            '/post': PostDetailPage,
+            '/upload': PostUploadpage,
+            '/user': UserInfo,
+            '/setting': UserEdit,
         });
         router.init(el);
     }
