@@ -1,6 +1,6 @@
-.active{
+/* .active{
     display: none;
-}
+} */
 
 .signupPage_bodyWrapper{
     width: 100vw;
@@ -30,7 +30,7 @@
 .signupPage_main_wrapper{
     margin: 30px auto;
     padding: 40px 50px;
-    width: 430px;
+    width: 435px;
     border-radius: 30px;
     background-color: #fff;
     box-shadow: 0px 5px 5px 5px rgba(0,0,0,0.2);
@@ -52,13 +52,12 @@
     color: #6a6a6a;
 }
 
-/* form-cont */
-.signupPage_div_formCont{
+/* input */
+.signupPage_form{
     display: flex;
     flex-direction: column;
 }
 
-/* input */
 #signupPage_inp_id, #signupPage_inp_pwd, #signupPage_inp_pwdCheck, #signupPage_inp_nickname{
     margin-bottom: 15px;
     border-radius: 4px;
@@ -85,7 +84,7 @@
 }
 
 /* accept check */
-.signupPage_div_accept{
+.signupPage_div_acceptCont{
     display: flex;
     flex-direction: row-reverse;
 }
@@ -95,23 +94,68 @@
     line-height: 130%;
 }
 
+.signupPage_btn_socialRule,
+.signupPage_btn_privacy{
+    border: none;
+    padding: 0;
+    font-size:14px;
+    text-decoration: underline;
+    background-color: #fff;
+}
 /* modal */
-.signupPage_art_modalCon{
+.signupPage_art_socialRuleModalCon,
+.signupPage_art_privacyModalCon{
+    position: relative;
     width: 440px;
     padding: 30px;
     border-radius: 30px;
     border: 1px solid #d7d7d7;
     background-color: #fff;
+    line-height: 130%;
 }
 
-.signupPage_h3_ruleTit{
+.signupPage_h3_socialRuleTit,
+.signupPage_h3_privacyTit{
     margin-bottom:25px;
     font-size: 20px;
     font-weight: 700;
 }
 
-.signupPage_art_modalCon p{
+.signupPage_art_socialRuleModalCon p, ol,
+.signupPage_art_privacyModalCon p{
     margin-bottom: 20px;
-    line-height: 135%;
 }
 
+.signupPage_str_socialRuleSubTit{
+    display: block;
+    font-size: 18px;
+    padding-bottom: 10px;
+}
+
+.signupPage_art_socialRuleModalCon li{
+    padding-left: 10px;
+    list-style-type: square;
+    list-style-position: inside;
+}
+
+.signupPage_art_privacyModalCon ul{
+    margin-bottom: 20px;
+}
+
+.signupPage_art_privacyModalCon li{
+    padding-left: 10px;
+    list-style-type: square;
+    list-style-position: inside;
+}
+
+.signupPage_btn_modalClose{
+    position: absolute;
+    bottom: 20px;
+    right: 25px;
+    border: #d7d7d7;
+    background-color: #fff;
+    font-size: 14px;
+    text-decoration: underline;
+    color:#6a6a6a;
+    cursor:pointer;
+}
