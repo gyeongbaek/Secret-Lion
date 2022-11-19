@@ -20,42 +20,49 @@
                 <h2 class="signupPage_h2_welcome">비밀멋사에 오신 것을 환영합니다.</h2>
                 <p class="signupPage_p_detailPlz">회원가입을 위해 아래의 세부 정보를 작성해주세요.</p>
             </div>
-            <div class="signupPage_div_formCont">
-                <form class="signupPage_form">
-                    <input type="text" placeholder="아이디" name="id" id="signupPage_inp_id" required>
-                    <input type="password" placeholder="비밀번호" name="password" id="signupPage_inp_pwd" required>
-                    <input type="password" placeholder="비밀번호 확인" name="password-check" id="signupPage_inp_pwdCheck" required>
-                    <input type="text" placeholder="닉네임" name="nickname" id="signupPage_inp_nickname" required>
-                    <div class="signupPage_div_acceptCont">
-                        <label for="signupPage_check_accept" class="signupPage_acceptLab">비밀멋사 커뮤니티 규칙과 개인정보 수집에 동의합니다.</label>
-                        <input type="checkbox" id="signupPage_check_accept">
-                    </div>
-                    <button class="loginPage_btn_signUp">회원가입</button>
-                </form>
-            </div>
+            <form class="signupPage_form">
+                <input type="text" placeholder="아이디" name="id" id="signupPage_inp_id" required>
+                <input type="password" placeholder="비밀번호" name="password" id="signupPage_inp_pwd" required>
+                <input type="password" placeholder="비밀번호 확인" name="password-check" id="signupPage_inp_pwdCheck" required>
+                <input type="text" placeholder="닉네임" name="nickname" id="signupPage_inp_nickname" required>
+                <div class="signupPage_div_acceptCont">
+                    <label for="signupPage_check_accept" class="signupPage_acceptLab">
+                        <button type="button" class="signupPage_btn_socialRule">비밀멋사 커뮤니티 규칙</button>과 <button type="button" class="signupPage_btn_privacy">개인정보 수집/이용</button>에 동의합니다.</label>
+                    <input type="checkbox" id="signupPage_check_accept">
+                </div>
+                <button class="loginPage_btn_signUp">회원가입</button>
+            </form>
         </main>
 
-        <!-- modal -->
-        <article class="signupPage_art_modalCon active">
-            <h3 class="signupPage_h3_ruleTit">※ 비밀멋사 커뮤니티 규칙</h3>
+        <!-- social rule modal -->
+        <article class="signupPage_art_socialRuleModalCon active">
+            <h3 class="signupPage_h3_socialRuleTit">※ 비밀멋사 커뮤니티 규칙</h3>
             <p>
                 비밀멋사는 누구나 기분 좋게 참여할 수 있는 커뮤니티를 만들기 위해 본 커뮤니티 이용규칙을 제정하여 운영합니다. 위반 시 게시물이 삭제되고 서비스 이용이 일정 기간 제한될 수 있습니다.
             </p>
-            <p>
-                ※ 규칙 위반 행위
-            </p>
-            <p>
-                1. 타인의 권리를 침해하거나 불쾌감을 주는 행위
-            </p>
-            <p>
-                2. 범죄, 불법 행위 등 법령을 위반하는 행위
-            </p>
-            <p>
-                3. 그밖에 사회통념상 허용될 수 없는 행위
-            </p>    
+            <strong class="signupPage_str_socialRuleSubTit">⦁ 규칙 위반 행위</strong>
+            <ol>
+                <li>타인의 권리를 침해하거나 불쾌감을 주는 행위</li>
+                <li>범죄, 불법 행위 등 법령을 위반하는 행위</li>
+                <li>그 밖의 사회통념상 허용될 수 없는 행위</li>
+            </ol> 
             <p>
                 모든 게시물은 이용자의 신고를 기반으로 하는 신고처리 시스템을 통해 처리됩니다. 커뮤니티 이용규칙에 어긋난다고 판단되는 게시물, 댓글 등을 발견하셨을 경우 신고버튼을 눌러 신고해주시기 바랍니다.
             </p>
+            <button class="signupPage_btn_modalClose">닫기</button>
+        </article>
+
+        <!-- privacy modal -->
+        <article class="signupPage_art_privacyModalCon active">
+            <h3 class="signupPage_h3_privacyTit">※ 개인정보 수집 및 이용 동의서</h3>
+            <p>
+                비밀멋사는 다음과 같이 귀하의 정보를 수집하고 이용합니다. 귀하의 정보는 정보통신망이용촉진 및 정보보호 등에 관한 법률에서 정한 바에 따라 수집 및 이용되며, 수집 및 이용 목적 달성 시 관련 법률에서 정한 바에 따른 보관 기간을 제외하고 재생 불가능한 상태로 파기됩니다. 
+            </p>
+            <ul>
+                <li>수집/이용 목적: 가입 및 탈퇴 의사 확인, 회원 식별 등 회원관리</li>
+                <li>수집/이용 항목: 아이디, 비밀번호, 닉네임 등</li>
+            </ul>
+            <button class="signupPage_btn_modalClose">닫기</button>
         </article>
     </div>
 </body>
