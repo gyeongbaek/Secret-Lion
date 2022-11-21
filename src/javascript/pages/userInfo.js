@@ -1,4 +1,5 @@
 import Header from '../common/header.js';
+import UserInfoIcon from '../components/UserInfoIcon/userInfoIcon.js';
 import PostBoard from '../common/postBoard.js';
 import { productData } from '../data.js';
 
@@ -51,57 +52,59 @@ class UserInfo {
         changeBtn.textContent = '프로필 수정';
 
         // 아이콘 컨테이너
-        const iconContainer = document.createElement('div');
-        iconContainer.setAttribute('class', 'info_div_iconWrap');
+        // const iconContainer = document.createElement('div');
+        // iconContainer.setAttribute('class', 'info_div_iconWrap');
 
         // 게시글 아이콘
-        const postDiv = document.createElement('div');
-        postDiv.setAttribute('class', 'info_div_post');
+        // const postDiv = document.createElement('div');
+        // postDiv.setAttribute('class', 'info_div_post');
 
-        const postImg = document.createElement('img');
-        postImg.setAttribute('src', 'src/assets/write.svg');
-        postImg.setAttribute('class', 'info_img_post');
+        // const postImg = document.createElement('img');
+        // postImg.setAttribute('src', 'src/assets/write.svg');
+        // postImg.setAttribute('class', 'info_img_post');
 
-        const postSpn = document.createElement('span');
-        postSpn.setAttribute('class', 'info_spn_post');
-        postSpn.textContent = '게시글';
+        // const postSpn = document.createElement('span');
+        // postSpn.setAttribute('class', 'info_spn_post');
+        // postSpn.textContent = '게시글';
 
-        postDiv.appendChild(postImg);
-        postDiv.appendChild(postSpn);
+        // postDiv.appendChild(postImg);
+        // postDiv.appendChild(postSpn);
 
         // 댓글 아이콘
-        const commentDiv = document.createElement('div');
-        commentDiv.setAttribute('class', 'info_div_comment');
+        // const commentDiv = document.createElement('div');
+        // commentDiv.setAttribute('class', 'info_div_comment');
 
-        const commentImg = document.createElement('img');
-        commentImg.setAttribute('src', 'src/assets/comment.svg');
-        commentImg.setAttribute('class', 'info_img_comment');
+        // const commentImg = document.createElement('img');
+        // commentImg.setAttribute('src', 'src/assets/comment.svg');
+        // commentImg.setAttribute('class', 'info_img_comment');
 
-        const commentSpn = document.createElement('span');
-        commentSpn.setAttribute('class', 'info_spn_comment');
-        commentSpn.textContent = '댓글';
+        // const commentSpn = document.createElement('span');
+        // commentSpn.setAttribute('class', 'info_spn_comment');
+        // commentSpn.textContent = '댓글';
 
-        commentDiv.appendChild(commentImg);
-        commentDiv.appendChild(commentSpn);
+        // commentDiv.appendChild(commentImg);
+        // commentDiv.appendChild(commentSpn);
 
         // 스크랩 아이콘
-        const scrapDiv = document.createElement('div');
-        scrapDiv.setAttribute('class', 'info_div_scrap');
+        // const scrapDiv = document.createElement('div');
+        // scrapDiv.setAttribute('class', 'info_div_scrap');
 
-        const scrapImg = document.createElement('img');
-        scrapImg.setAttribute('src', 'src/assets/scrap.svg');
-        scrapImg.setAttribute('class', 'info_img_scrap');
+        // const scrapImg = document.createElement('img');
+        // scrapImg.setAttribute('src', 'src/assets/scrap.svg');
+        // scrapImg.setAttribute('class', 'info_img_scrap');
 
-        const scrapSpn = document.createElement('span');
-        scrapSpn.setAttribute('class', 'info_spn_scrap');
-        scrapSpn.textContent = '스크랩';
+        // const scrapSpn = document.createElement('span');
+        // scrapSpn.setAttribute('class', 'info_spn_scrap');
+        // scrapSpn.textContent = '스크랩';
 
-        scrapDiv.appendChild(scrapImg);
-        scrapDiv.appendChild(scrapSpn);
+        // scrapDiv.appendChild(scrapImg);
+        // scrapDiv.appendChild(scrapSpn);
 
-        iconContainer.appendChild(postDiv);
-        iconContainer.appendChild(commentDiv);
-        iconContainer.appendChild(scrapDiv);
+        // iconContainer.appendChild(postDiv);
+        // iconContainer.appendChild(commentDiv);
+        // iconContainer.appendChild(scrapDiv);
+
+        const userInfoIcon = new UserInfoIcon();
 
         // 게시글 목록 섹션
         const postListSection = document.createElement('section');
@@ -118,7 +121,8 @@ class UserInfo {
         profileSection.appendChild(profileImg);
         profileSection.appendChild(nicknameTxt);
         profileSection.appendChild(changeBtn);
-        profileSection.appendChild(iconContainer);
+        profileSection.appendChild(userInfoIcon.render());
+        // profileSection.appendChild(iconContainer);
 
         // 게시글 목록 섹션 안
         postListSection.appendChild(posth2);

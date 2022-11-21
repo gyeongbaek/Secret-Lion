@@ -121,7 +121,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-    content: '';
+    content: "";
     content: none;
 }
 table {
@@ -129,7 +129,7 @@ table {
     border-spacing: 0;
 }
 
-/* button,
+button,
 input {
     background: none;
     color: inherit;
@@ -137,7 +137,7 @@ input {
     padding: 0;
     font: inherit;
     outline: inherit;
-} */
+}
 
 button {
     cursor: pointer;
@@ -160,9 +160,8 @@ a {
     --cate-study-color: #b8e8fc;
     --cate-love-color: #ffb9b9;
     --cate-rel-color: #dcedc2;
-    --cate-life-color: #fdfdbd;
     --cate-job-color: #b1afff;
-    --cate-talk-color: #ffdd6f;
+    --cate-free-color: #fdfdbd;
 }
 
 * {
@@ -177,7 +176,7 @@ html {
 
 body,
 button {
-    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+    font-family: "Spoqa Han Sans Neo", "sans-serif";
 }
 
 body {

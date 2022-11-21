@@ -7,8 +7,8 @@ import {
     TestPage,
     UserEdit,
     UserInfo,
-} from "./pages/index.js";
-import { Router } from "./utils/index.js";
+} from './pages/index.js';
+import { Router } from './utils/index.js';
 
 export default class App {
     constructor(props) {
@@ -18,14 +18,14 @@ export default class App {
         const { el } = this.props;
 
         const router = new Router({
-            "/": TestPage,
-            "/login": LoginPage,
-            "/signup": SignupPage,
-            "/main": MainPage,
-            "/post": PostDetailPage,
-            "/upload": PostUploadpage,
-            "/user": UserInfo,
-            "/setting": UserEdit,
+            '/': TestPage,
+            '/login': LoginPage,
+            '/signup': SignupPage,
+            '/main': MainPage,
+            '/post': PostDetailPage,
+            '/upload': PostUploadpage,
+            '/user': UserInfo,
+            '/setting': UserEdit,
         });
         router.init(el);
     }

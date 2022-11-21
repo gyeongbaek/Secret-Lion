@@ -1,11 +1,6 @@
 /* postUpload main */
 
-.main_post_container {
-    padding: 120px 110px 70px 110px;
-    position: relative;
-}
-
-.main_post_container .post_inp_tit {
+.post_inp_tit {
     width: 100%;
     padding: 10px 14px;
     font-size: 16px;
@@ -14,7 +9,7 @@
     border-radius: 5px;
 }
 
-.main_post_container .post_area_content {
+.post_area_content {
     width: 100%;
     height: 360px;
     border: 1px solid #bdbdbd;
@@ -23,29 +18,29 @@
     padding: 13px;
 }
 
-.main_post_container .post_btn_con {
+.post_btn_con {
     margin-top: 60px;
     float: right;
 }
 
-.main_post_container .post_btn_con .post_btn_upload {
+.post_btn_con .post_btn_upload {
     margin-left: 10px;
 }
 
-.main_post_container .post_img_con {
+.post_img_con {
     border-radius: 5px;
     position: absolute;
     bottom: -26px;
 }
 
-.main_post_container .post_img_con .post_img_preview {
+.post_img_con .post_img_preview {
     border-radius: 5px;
     width: 80px;
     height: 80px;
     object-fit: cover;
 }
 
-.main_post_container .post_img_con .post_btn_img_cancel {
+.post_img_con .post_btn_img_cancel {
     width: 25px;
     height: 25px;
     border-radius: 50%;
