@@ -1,4 +1,4 @@
-import { loginForm, loginLink } from "../components/Login/index.js";
+import { LoginForm, LoginLink } from "../components/Login/index.js";
 
 class LoginPage {
     constructor() {}
@@ -81,9 +81,10 @@ class LoginPage {
         logInheader.appendChild(title);
 
         //main
+        const loginLink = new LoginLink();
         loginMain.appendChild(subTit);
         loginMain.appendChild(formCont);
-        loginMain.appendChild(loginLink.rend());
+        loginMain.appendChild(loginLink.render());
         
         //sub title
         subTit.appendChild(loginStrong);
@@ -95,8 +96,7 @@ class LoginPage {
         // inpCont.appendChild(inpPwd);
         // inpCont.appendChild(loginBtn);
         
-        const loginLink = new LoginLink();
-        formCont.appendChild(loginLink.rend());
+        formCont.appendChild(loginLink.render());
         //아이디비번찾기와 회원가입링크
         // linkCont.appendChild(searchLink);
         // linkCont.appendChild(signUpLink);

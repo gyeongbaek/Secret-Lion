@@ -1,6 +1,6 @@
 import Component from "../../core/Component.js";
 
-class loginLink extends Component {
+class LoginLink extends Component {
     render() {
         const linkCont = document.createElement('div');
         linkCont.classList.add('loginPage_div_linkCont');
@@ -22,4 +22,4 @@ class loginLink extends Component {
     }
 }
 
-export default loginLink;
+export default LoginLink;

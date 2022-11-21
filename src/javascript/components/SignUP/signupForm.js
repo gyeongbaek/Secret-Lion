@@ -1,10 +1,8 @@
 import Component from "../../core/Component.js";
+import SignupModal from "./signupModal.js";
 
 class SignupForm extends Component {
     render(){
-        const formCont = document.createElement('div');
-        formCont.setAttribute('class', 'signupPage_div_formCont');
-
         const signupForm = document.createElement('form');
         signupForm.setAttribute('class','signupPage_form');
 
@@ -43,7 +41,7 @@ class SignupForm extends Component {
         const acceptLab = document.createElement('label');
         acceptLab.setAttribute('for', 'signupPage_check_accept');
         acceptLab.setAttribute('class', 'signupPage_acceptLab');
-        acceptLab.textContent = '비밀멋사 커뮤니티 규칙과 개인정보 수집에 동의합니다.';
+        acceptLab.innerHTML = '<button type="button" class="signupPage_btn_socialRule">비밀멋사 커뮤니티 규칙</button>과 <button type="button" class="signupPage_btn_privacy">개인정보 수집/이용</button>에 동의합니다.';
         
         const acceptCheck = document.createElement('input');
         acceptCheck.setAttribute('type', 'checkbox');
@@ -53,18 +51,24 @@ class SignupForm extends Component {
         signupBtn.setAttribute('class', 'loginPage_btn_signUp');
         signupBtn.textContent = '회원가입';
 
-        formCont.appendChild(signupForm);
-        formCont.appendChild(inpId);
-        formCont.appendChild(inpPwd);
-        formCont.appendChild(inpPwdCheck);
-        formCont.appendChild(inpNickname);
-        formCont.appendChild(acceptCont);
-        formCont.appendChild(signupBtn);
+        // 링크(버튼) 클릭하면 모달창 띄우고 ㄷ
+        // 동의는 (모달창 안 봐도) 바로 체크 가능 
+        const signupModal = new SignupModal();
+        acceptCont.addEventListener('click', function(){
+            signupModal.render().classList.toggle('active');
+        });
+        
+        signupForm.appendChild(inpId);
+        signupForm.appendChild(inpPwd);
+        signupForm.appendChild(inpPwdCheck);
+        signupForm.appendChild(inpNickname);
+        signupForm.appendChild(acceptCont);
+        signupForm.appendChild(signupBtn);
 
         acceptCont.appendChild(acceptLab);
         acceptCont.appendChild(acceptCheck);
 
-        return formCont;
+        return signupForm;
     }
 }
 
