@@ -153,6 +153,8 @@ class SignupPage {
         bodybgc.appendChild(signupMain);
         bodybgc.appendChild(signupModal.render());
 
+
+
         return frag;
     }
 }

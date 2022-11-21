@@ -1,4 +1,5 @@
 import Component from "../../core/Component.js";
+import { auth, createUserWithEmailAndPassword } from "../../firebase.js";
 import SignupModal from "./signupModal.js";
 
 class SignupForm extends Component {
@@ -58,6 +59,31 @@ class SignupForm extends Component {
             signupModal.render().classList.toggle('active');
         });
         
+        async function handleToDoSubmit(event){
+            event.preventDefault();
+            const newId = inpId.value;
+            console.log(newId);
+            
+            const newPwd = inpPwd.value;
+            console.log(newPwd);
+            
+            const newPwdCheck = inpPwdCheck.value;
+            console.log(newPwdCheck);
+            
+            const newNickname = inpNickname.value;
+            console.log(newNickname);
+            
+            await createUserWithEmailAndPassword(auth, newId, newPwd);
+
+            inpId.value = "";
+            inpPwd.value = "";
+            inpPwdCheck.value = "";
+            inpNickname.value = "";
+            console.log('완료!');
+        }
+
+        signupBtn.addEventListener('click', handleToDoSubmit);
+
         signupForm.appendChild(inpId);
         signupForm.appendChild(inpPwd);
         signupForm.appendChild(inpPwdCheck);
