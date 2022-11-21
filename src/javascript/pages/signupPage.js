@@ -1,4 +1,4 @@
-import { SignupForm, SignupModal, } from "../components/SignUP/index.js";
+import { SignupForm, SignupModal } from "../components/SignUp/index.js";
 
 class SignupPage {
     render() {
@@ -34,10 +34,6 @@ class SignupPage {
         const detailPlz = document.createElement('p');
         detailPlz.setAttribute('class', 'signupPage_p_detailPlz');
         detailPlz.textContent = '회원가입을 위해 아래의 세부 정보를 작성해주세요.';
-
-        // main > formCont 
-        // const formCont = document.createElement('div');
-        // formCont.setAttribute('class', 'signupPage_div_formCont');
 
         // const signupForm = document.createElement('form');
         // signupForm.setAttribute('class','signupPage_form');
@@ -115,9 +111,9 @@ class SignupPage {
         // ruleDec.textContent = '모든 게시물은 이용자의 신고를 기반으로 하는 신고처리 시스템을 통해 처리됩니다. 커뮤니티 이용규칙에 어긋난다고 판단되는 게시물, 댓글 등을 발견하셨을 경우 신고버튼을 눌러 신고해주시기 바랍니다.';
 
         // // 모달 버튼
-        acceptCont.addEventListener('click', function(){
-            signupModal.classList.toggle('active');
-        });
+        // acceptCont.addEventListener('click', function(){
+        //     signupModal.classList.toggle('active');
+        // });
 
         //header
         signupHeader.appendChild(signupTit);
@@ -131,7 +127,6 @@ class SignupPage {
         titWrapper.appendChild(welcome);
         titWrapper.appendChild(detailPlz);
         
-        // formCont.appendChild(signupForm);
         // formCont.appendChild(inpId);
         // formCont.appendChild(inpPwd);
         // formCont.appendChild(inpPwdCheck);

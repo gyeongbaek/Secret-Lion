@@ -1,6 +1,6 @@
 import Component from "../../core/Component.js";
 
-class loginForm extends Component {
+class LoginForm extends Component {
     render() {
         const inpCont = document.createElement('form');
         inpCont.classList.add('loginPage_form_inpCont');
@@ -29,4 +29,4 @@ class loginForm extends Component {
     }
 }
 
-export default loginForm;
+export default LoginForm;
