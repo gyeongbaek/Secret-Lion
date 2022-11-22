@@ -18,7 +18,8 @@ export default class App {
         const { el } = this.props;
 
         const router = new Router({
-            '/': TestPage,
+            // '/': TestPage,
+            '/': UserEdit,
             '/login': LoginPage,
             '/signup': SignupPage,
             '/main': MainPage,
