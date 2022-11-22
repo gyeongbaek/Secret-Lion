@@ -1,3 +1,6 @@
+import { ProfileImgForm } from '../components/UserEditForm/index.js';
+import { NicknameForm } from '../components/UserEditForm/index.js';
+
 class UserEdit {
     render() {
         // 배경색용 div
@@ -17,87 +20,28 @@ class UserEdit {
         editProfile.textContent = '프로필 사진과 닉네임을 변경할 수 있습니다.';
 
         // userInfo로 이동하는 X 버튼
-        const InfoAnchor = document.createElement('a');
-        InfoAnchor.href = '/user';
+        const infoAnchor = document.createElement('a');
+        infoAnchor.setAttribute('class', 'edit_a_move');
+        infoAnchor.href = '/user';
 
-        const closeImg = document.createElement('img');
-        closeImg.setAttribute('src', 'src/assets/close.svg');
-        closeImg.setAttribute('alt', '페이지 닫는 버튼');
-        closeImg.setAttribute('class', 'edit_img_close');
+        const anchorTxt = document.createElement('span');
+        anchorTxt.textContent = '유저 정보 페이지로 이동';
+        anchorTxt.setAttribute('class', 'ir');
 
-        InfoAnchor.appendChild(closeImg);
+        infoAnchor.appendChild(anchorTxt);
 
         // 프로필 이미지 폼
-        const imgForm = document.createElement('form');
-        imgForm.setAttribute('class', 'edit_form_img');
-
-        const profileImgTit = document.createElement('label');
-        profileImgTit.setAttribute('class', 'edit_lab_img');
-        profileImgTit.textContent = '프로필 사진';
-
-        const profileImg = document.createElement('img');
-        profileImg.setAttribute(
-            'src',
-            'https://images.unsplash.com/photo-1606225457115-9b0de873c5db?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'
-        );
-        profileImg.setAttribute('alt', '유저 프로필 이미지');
-        profileImg.setAttribute('class', 'edit_img');
-
-        const changeBtn = document.createElement('button');
-        changeBtn.setAttribute('class', 'edit_btn_change');
-        changeBtn.textContent = '이미지 변경';
-
-        const deleteBtn = document.createElement('button');
-        deleteBtn.setAttribute('class', 'edit_btn_delete');
-        deleteBtn.textContent = '이미지 삭제';
-
-        const fileinp = document.createElement('input');
-        fileinp.setAttribute('class', 'ir');
-        fileinp.setAttribute('type', 'file');
-
-        // 버튼으로 파일 선택 가능
-        changeBtn.addEventListener('click', () => fileinp.click());
-        fileinp.addEventListener('change', (e) => console.log(e.target.files));
-
-        imgForm.appendChild(profileImgTit);
-        imgForm.appendChild(profileImg);
-        imgForm.appendChild(changeBtn);
-        imgForm.appendChild(deleteBtn);
-        imgForm.appendChild(fileinp);
+        const profileImgForm = new ProfileImgForm();
 
         // 닉네임 폼
-        const nicknameForm = document.createElement('form');
-        nicknameForm.setAttribute('class', 'edit_form_nickname');
-
-        const nicknameLbl = document.createElement('label');
-        nicknameLbl.setAttribute('for', 'edit_inp_nickname');
-        nicknameLbl.textContent = '닉네임';
-
-        const nicknameInp = document.createElement('input');
-        nicknameInp.setAttribute('type', 'text');
-        nicknameInp.setAttribute('maxlength', '8');
-        nicknameInp.setAttribute('placeholder', '닉네임을 입력해주세요.');
-        nicknameInp.setAttribute('id', 'edit_inp_nickname');
-
-        const nicknameTxt = document.createElement('p');
-        nicknameTxt.setAttribute('class', 'edit_p_nickname');
-        nicknameTxt.textContent = '최대 8글자(공백포함)까지 등록 가능합니다.';
-
-        const confirmBtn = document.createElement('button');
-        confirmBtn.setAttribute('class', 'edit_btn_confirm');
-        confirmBtn.textContent = '닉네임 변경';
-
-        nicknameForm.appendChild(nicknameLbl);
-        nicknameForm.appendChild(nicknameInp);
-        nicknameForm.appendChild(nicknameTxt);
-        nicknameForm.appendChild(confirmBtn);
+        const nicknameForm = new NicknameForm();
 
         // 메인 컨테이너 안
         editWrapper.appendChild(editStrong);
         editWrapper.appendChild(editProfile);
-        editWrapper.appendChild(InfoAnchor);
-        editWrapper.appendChild(imgForm);
-        editWrapper.appendChild(nicknameForm);
+        editWrapper.appendChild(infoAnchor);
+        editWrapper.appendChild(profileImgForm.render());
+        editWrapper.appendChild(nicknameForm.render());
 
         colorWrapper.appendChild(editWrapper);
 

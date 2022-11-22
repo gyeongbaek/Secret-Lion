@@ -32,16 +32,17 @@
     color: #6a6a6a;
 }
 
-.edit_img_close {
+.edit_a_move {
     position: relative;
     top: -70px;
     left: 625px;
     width: 30px;
     height: 30px;
+    background-image: url('/src/assets/close.svg');
+    background-size: contain;
 }
 
 /* 이미지 폼 */
-
 .edit_form_img {
     position: relative;
     top: -10px;
@@ -78,7 +79,6 @@
 }
 
 /* 닉네임 폼 */
-
 .edit_form_nickname {
     position: relative;
     top: -10px;
