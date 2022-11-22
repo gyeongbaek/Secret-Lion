@@ -8,7 +8,7 @@ class PostUploadForm extends Component {
         super(props);
         this.dropDownContainer = new DropDown();
         this.state = {
-            prevPhoto: {},
+            prevPhoto: null,
         };
         this.photoData = null;
     }
@@ -31,6 +31,7 @@ class PostUploadForm extends Component {
         await setDoc(newPostRef, data);
         console.log('완료');
     }
+
     render() {
         const postUploadForm = document.createElement('form');
         postUploadForm.setAttribute('class', 'post_form_upload');
@@ -70,19 +71,36 @@ class PostUploadForm extends Component {
             e.preventDefault();
             fileinp.click();
         });
+        // const fileDOM = document.querySelector('#file');
+        const preview = document.createElement('img');
+
+        fileinp.addEventListener('change', (e) => {
+            const reader = new FileReader();
+            reader.onload = ({ target }) => {
+                this.setState({ prevPhoto: target.result });
+            };
+            reader.readAsDataURL(e.target.files[0]);
+            this.photoData = e.target.files[0];
+            console.log(this.photoData);
+        });
 
         btnContainer.appendChild(fileBtn);
         btnContainer.appendChild(uploadBtn);
 
         // 파일 미리보기
-        const postUploadPreview = new PostUploadPreview();
 
         postUploadForm.appendChild(this.dropDownContainer.render());
         postUploadForm.appendChild(inputTit);
         postUploadForm.appendChild(postContent);
+        postUploadForm.appendChild(preview);
 
         postUploadForm.appendChild(btnContainer);
-        postUploadForm.appendChild(postUploadPreview.render());
+        if (this.state.prevPhoto) {
+            const postUploadPreview = new PostUploadPreview(
+                this.state.prevPhoto
+            );
+            postUploadForm.appendChild(postUploadPreview.render());
+        }
 
         return postUploadForm;
     }
