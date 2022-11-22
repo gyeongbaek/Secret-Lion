@@ -1,5 +1,5 @@
 import Component from "../../core/Component.js";
-import { auth, createUserWithEmailAndPassword } from "../../firebase.js";
+import { auth, createUserWithEmailAndPassword, db, doc, setDoc } from "../../firebase.js";
 import SignupModal from "./signupModal.js";
 
 class SignupForm extends Component {
@@ -73,7 +73,16 @@ class SignupForm extends Component {
             const newNickname = inpNickname.value;
             console.log(newNickname);
             
-            await createUserWithEmailAndPassword(auth, newId, newPwd);
+            
+            const createUser = await createUserWithEmailAndPassword(auth, newId, newPwd);
+            const userData = {
+                displayName : newNickname,
+                photoURL : null,
+                email: newId,
+                uid: createUser.user.uid
+            };
+            console.log(createUser);
+            await setDoc(doc(db, 'users', createUser.user.uid), userData);
 
             inpId.value = "";
             inpPwd.value = "";
