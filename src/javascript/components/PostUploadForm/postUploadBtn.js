@@ -1,12 +1,42 @@
 import Component from '../../core/Component.js';
+import { auth } from '../../firebase.js';
 
 class PostUploadBtn extends Component {
-    constructor(props, a) {
+    constructor(props) {
         super(props);
-        this.a = a;
     }
+    async postUpload() {
+        const inputTit = document.querySelector('.post_inp_tit');
+        const contents = document.querySelector('.post_area_content');
+
+        const data = {
+            title: inputTit.value,
+            contents: contents.value,
+            category: this.props.dropClick(),
+            writerId: auth.currentUser.uid,
+            date: new Date(),
+            img: this.photoData,
+            active: false,
+            like: [],
+            scrap: [],
+        };
+        // const newPostRef = doc(collection(db, 'posts'));
+        // await setDoc(newPostRef, data);
+        console.log(data);
+        console.log('완료');
+    }
+
+    handlePrevImg(e) {
+        const reader = new FileReader();
+        reader.onload = ({ target }) => {
+            this.setState({ prevPhoto: target.result });
+        };
+        reader.readAsDataURL(e.target.files[0]);
+        this.photoData = e.target.files[0];
+        console.log(this.photoData);
+    }
+
     render() {
-        console.log('hi');
         const btnContainer = document.createElement('div');
         btnContainer.setAttribute('class', 'post_btn_con');
 
@@ -22,35 +52,20 @@ class PostUploadBtn extends Component {
         fileinp.setAttribute('class', 'ir');
         fileinp.setAttribute('type', 'file');
 
-        // 버튼으로 파일 선택 가능
-        fileBtn.addEventListener('click', () => fileinp.click());
-        fileinp.addEventListener('change', (e) => console.log(e.target.files));
-
         uploadBtn.addEventListener('click', async (e) => {
             e.preventDefault();
-            console.log(this.a);
+            this.postUpload();
+        });
+        // 버튼으로 파일 선택 가능
+        fileBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            fileinp.click();
         });
 
-        // uploadBtn.addEventListener('click', async (e) => {
-        //     e.preventDefault();
-        //     const data = {
-        //         title: inputTit.value,
-        //         contents: postContent.value,
-        //         category: dropDownContainer.dropClick(),
-        //         writerId: auth.currentUser.uid,
-        //         date: new Date(),
-        //         img: null,
-        //         active: false,
-        //         like: [],
-        //         scrap: [],
-        //     };
-        //     console.log(data);
-        //     const newCityRef = doc(collection(db, 'posts'));
-
-        //     // later...
-        //     await setDoc(newCityRef, data);
-        //     console.log('완료');
-        // });
+        fileinp.addEventListener('change', (e) => {
+            e.preventDefault();
+            this.handlePrevImg(e);
+        });
 
         btnContainer.appendChild(fileBtn);
         btnContainer.appendChild(uploadBtn);
