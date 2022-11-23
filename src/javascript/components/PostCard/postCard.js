@@ -8,25 +8,25 @@ import {
     PostCardDate,
 } from './index.js';
 import Component from '../../core/Component.js';
+import { db, getDoc, getDocs, query, where } from '../../firebase.js';
 
 class PostCard extends Component {
     render() {
         const postItem = document.createElement('li');
-
         const post = document.createElement('a');
         post.setAttribute('href', `/post/${this.props.item.id}`);
         post.setAttribute('class', 'board_post_item');
 
-        const postImg = new PostCardThumbnail({ src: this.props.item.thumbnail });
-        const postTitle = new PostCardTitle({ title: this.props.item.postTitle });
-        const postCont = new PostCardContent({ content: this.props.item.postContent });
+        const postImg = new PostCardThumbnail({ src: this.props.item.img });
+        const postTitle = new PostCardTitle({ title: this.props.item.title });
+        const postCont = new PostCardContent({ content: this.props.item.content });
         const postCate = new PostCardCategory({ category: this.props.item.category });
         const postInfo = new PostCardReaction({
-            like: this.props.item.likeCount,
-            comment: this.props.item.commentCount,
+            like: this.props.item.like.length,
+            comment: this.props.item.scrap.length,
         });
         const postDate = new PostCardDate({ date: this.props.item.date });
-        const postUser = new PostCardWriter({ user: this.props.item.writer });
+        const postUser = new PostCardWriter({ user: this.props.item.writerId }); //유저아이디->유저정보 가져오기
 
         post.appendChild(postImg.render());
         post.appendChild(postCate.render());
