@@ -2,21 +2,38 @@ import PostBoard from '../common/postBoard.js';
 import Component from '../core/Component.js';
 import { productData } from '../data.js';
 import { Header, DropDown, MainContainer } from '../common/index.js';
+import { collection, db, getDocs, orderBy, query } from '../firebase.js';
 
 class MainPage extends Component {
     constructor(props) {
         super(props);
-        this.mainElement = document.createElement('main');
-        this.post = {};
+        this.post = [];
     }
     async getPostData() {
         // 나중에 json 형태로 받아올 예정
         this.post = productData;
     }
 
+    async getTestData() {
+        const posts = [];
+        const postRef = collection(db, 'test-post');
+        const q = query(
+            postRef,
+            // where('category','==','아침'),
+            orderBy('date', 'desc')
+        );
+
+        const querySnapshot = await getDocs(q);
+        querySnapshot.forEach((doc) => {
+            posts.push(doc.data());
+        });
+        return posts;
+    }
+
     render() {
         this.getPostData();
         // console.log(this.post);
+
         const docFrag = new DocumentFragment();
 
         const header = new Header();
@@ -26,9 +43,6 @@ class MainPage extends Component {
 
         const main = new MainContainer();
         const mainEl = main.render();
-
-        // const mainElement = document.createElement('main');
-        // mainElement.setAttribute('class', 'main_container');
 
         // 게시판 선택 메뉴
         const menuSection = document.createElement('section');
@@ -68,14 +82,15 @@ class MainPage extends Component {
         postTitle.setAttribute('class', 'ir');
         postTitle.innerText = '게시글 목록';
         postSection.appendChild(postTitle);
-
-        const postBoard = new PostBoard({ posts: this.post });
-        postSection.appendChild(postBoard.render());
+        this.getTestData().then((posts) => {
+            this.post = posts;
+            const postBoard = new PostBoard({ posts: this.post });
+            postSection.appendChild(postBoard.render());
+        });
 
         mainEl.appendChild(menuSection);
         mainEl.appendChild(postSection);
         docFrag.appendChild(mainEl);
-
         return docFrag; // test
         // return mainElement; // exec
     }

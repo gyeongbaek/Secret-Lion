@@ -5,12 +5,10 @@ class PostBoard extends Component {
     render() {
         const postBoard = document.createElement('ul');
         postBoard.setAttribute('class', 'board_ul_post');
-
         const frag = new DocumentFragment();
+
         this.props.posts.forEach((item) => {
-            const postCard = new PostCard({
-                item: item,
-            });
+            const postCard = new PostCard({ item: item });
             frag.appendChild(postCard.render());
         });
         postBoard.appendChild(frag);
