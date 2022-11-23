@@ -31,9 +31,8 @@ class MainPage extends Component {
     }
 
     render() {
-        this.getPostData();
+        // this.getPostData();
         // console.log(this.post);
-
         const docFrag = new DocumentFragment();
 
         const header = new Header();
