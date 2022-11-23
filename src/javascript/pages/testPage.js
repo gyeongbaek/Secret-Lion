@@ -5,6 +5,11 @@ class TestPage {
         element.innerText = "테스트 페이지입니다";
         container.appendChild(element);
 
+        const start = document.createElement("a");
+        start.href = "/start";
+        start.innerText = "start 화면";
+        container.appendChild(start);
+
         const login = document.createElement("a");
         login.href = "/login";
         login.innerText = "Login 로그인화면";
