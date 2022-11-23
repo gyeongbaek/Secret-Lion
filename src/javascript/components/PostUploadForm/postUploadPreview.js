@@ -4,8 +4,8 @@ class PostUploadPreview extends Component {
     constructor(props) {
         super(props);
     }
+
     render() {
-        console.log(this.props);
         const previewImgCon = document.createElement('div');
         previewImgCon.setAttribute('class', 'post_img_con');
 
@@ -20,7 +20,7 @@ class PostUploadPreview extends Component {
         previewImgCon.appendChild(previewImg);
         previewImgCon.appendChild(imgCancelBtn);
 
-        return previewImgCon;
+        return [previewImgCon, imgCancelBtn];
     }
 }
 export default PostUploadPreview;
