@@ -17,6 +17,8 @@ class MainPage extends Component {
     render() {
         this.getPostData();
         // console.log(this.post);
+        const data = this.realData();
+        console.log(data);
         const docFrag = new DocumentFragment();
 
         const header = new Header();
