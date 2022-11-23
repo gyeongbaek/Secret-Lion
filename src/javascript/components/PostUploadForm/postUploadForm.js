@@ -21,7 +21,6 @@ class PostUploadForm extends Component {
         };
         this.photoData = null;
         this.dropDown = new DropDown();
-        this.metaData = null;
     }
     async postUpload() {
         const inputTit = document.querySelector('.post_inp_tit');
@@ -65,6 +64,7 @@ class PostUploadForm extends Component {
                     postId: postRef.id,
                 };
                 await setDoc(postRef, postData);
+                this.setState({ prevPhoto: null });
                 console.log('완료');
             });
         });
@@ -77,9 +77,21 @@ class PostUploadForm extends Component {
         };
         reader.readAsDataURL(e.target.files[0]);
         this.photoData = e.target.files[0];
-        this.metaData = { contentType: e.target.files[0].type };
-        console.log(this.photoData);
     }
+
+    // handlePrevImgCancel() {
+    //     const postUploadForm = document.querySelector('.post_form_upload');
+    //     console.log('hi', postUploadForm);
+    //     const postUploadPreview = new PostUploadPreview(this.state.prevPhoto);
+    //     const [postUploadPreviewEl, imgCancelBtn] =
+    //         postUploadPreview.intialize();
+    //     postUploadForm.appendChild(postUploadPreviewEl);
+    //     imgCancelBtn.addEventListener('click', (e) => {
+    //         e.preventDefault();
+    //         this.setState({ prevPhoto: null });
+    //         this.photoData = null;
+    //     });
+    // }
 
     render() {
         const postUploadForm = document.createElement('form');
@@ -101,15 +113,6 @@ class PostUploadForm extends Component {
         uploadBtn.setAttribute('class', 'post_btn');
         uploadBtn.setAttribute('type', 'submit');
         uploadBtn.textContent = '게시물 등록';
-
-        postUploadForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            if (this.photoData) {
-                this.photoUpload();
-            } else {
-                this.postUpload();
-            }
-        });
 
         const fileBtn = document.createElement('button');
         fileBtn.setAttribute('class', 'post_btn');
@@ -136,14 +139,21 @@ class PostUploadForm extends Component {
         postUploadForm.appendChild(this.dropDown.render());
         postUploadForm.appendChild(inputTit);
         postUploadForm.appendChild(postContent);
-
         // postUploadForm.appendChild(btnContainer.intialize());
         postUploadForm.appendChild(btnContainer);
         if (this.state.prevPhoto) {
             const postUploadPreview = new PostUploadPreview(
                 this.state.prevPhoto
             );
-            postUploadForm.appendChild(postUploadPreview.render());
+            const [postUploadPreviewEl, imgCancelBtn] =
+                postUploadPreview.intialize();
+            postUploadForm.appendChild(postUploadPreviewEl);
+            imgCancelBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                this.setState({ prevPhoto: null });
+                this.photoData = null;
+            });
+            // this.handlePrevImgCancel();
         }
 
         return postUploadForm;

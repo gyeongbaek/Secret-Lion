@@ -2,7 +2,7 @@ class DropDown {
     constructor(props) {
         this.props = props;
     }
-    dropClick(e) {
+    dropClick() {
         const txt = document.querySelector('.span_drop_content');
         return txt.textContent;
     }
@@ -32,10 +32,8 @@ class DropDown {
         };
 
         dropbtn.addEventListener('click', (e) => {
-            {
-                e.preventDefault();
-                dropdown();
-            }
+            e.preventDefault();
+            dropdown();
         });
 
         // 드롭다운 콘텐츠이름을 선택한 콘텐츠 내용으로 바꾼다.
