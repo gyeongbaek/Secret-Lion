@@ -5,54 +5,55 @@ class Header {
     
     render() {
         // wrapper
-        const headerWrapper = document.createElement("header");
-        headerWrapper.classList.add("header_wrapper");
+        const headerWrapper = document.createElement('header');
+        headerWrapper.setAttribute('class', 'header_wrapper');
 
         // 검색
-        const searchLink = document.createElement("a");
-        searchLink.setAttribute("href", "#");
-        searchLink.classList.add("header-a-searchLink");
+        const searchLink = document.createElement('a');
+        searchLink.setAttribute('class', 'header_a_searchLink');
+        // searchLink.href = '/'
 
-        const searchImg = document.createElement("img");
-        searchImg.setAttribute("src", "src/assets/search.svg");
-        searchImg.setAttribute("alt", "검색 버튼");
-
-        searchLink.appendChild(searchImg);
+        const searchLinkIr = document.createElement('span');
+        searchLinkIr.setAttribute('class', 'ir');
+        searchLinkIr.textContent = '검색 버튼';
         
+
         // 글 작성
-        const writeLink = document.createElement("a");
-        writeLink.setAttribute("href", "src/javascript/pages/postUpload.js");
-        writeLink.classList.add("header-a-writeLink");
+        const writeLink = document.createElement('a');
+        writeLink.setAttribute('class', 'header_a_writeLink');
+        writeLink.href = '/upload';
 
-        const writeImg = document.createElement("img");
-        writeImg.setAttribute("src", "src/assets/write.svg");
-        writeImg.setAttribute("alt", "글 작성 버튼");
+        const writeLinkIr = document.createElement('span');
+        writeLinkIr.setAttribute('class', 'ir');
+        writeLinkIr.textContent = '글 작성페이지로 가기 버튼';
 
-        writeLink.appendChild(writeImg);
 
         // 알림
-        const notificationLink = document.createElement("a");
-        notificationLink.setAttribute("href", "#");
-        notificationLink.classList.add("header-a-notificationLink");
+        const notificationLink = document.createElement('a');
+        notificationLink.setAttribute('class', 'header_a_notificationLink');
+        //notificationLink.href = '/u';
 
-        const notificationImg = document.createElement("img");
-        notificationImg.setAttribute("src", "src/assets/notifications.svg");
-        notificationImg.setAttribute("alt", "알림 버튼");
+        const notificationLinkIr = document.createElement('span');
+        notificationLinkIr.setAttribute('class', 'ir');
+        notificationLinkIr.textContent = '알림창으로 가기 버튼';
 
-        notificationLink.appendChild(notificationImg);
 
         // 프로필
-        const userLink = document.createElement("a");
-        userLink.setAttribute("href", "src/javascript/pages/userInfo.js");
-        userLink.classList.add("header-a-userLink");
+        const userLink = document.createElement('a');
+        userLink.setAttribute('class', 'header_a_userLink');
+        userLink.href ='/user';
 
-        const userImg = document.createElement("img");
-        userImg.setAttribute("src", "src/assets/user.svg");
-        userImg.setAttribute("alt", "프로필 버튼");
+        const userLinkIr = document.createElement('span');
+        userLinkIr.setAttribute('class', 'ir');
+        userLinkIr.textContent = '나의 프로필로 가기 버튼';
+  
+        // ir 
+        searchLink.appendChild(searchLinkIr);
+        writeLink.appendChild(writeLinkIr);
+        notificationLink.appendChild(notificationLinkIr);
+        userLink.appendChild(userLinkIr);
 
-        userLink.appendChild(userImg);
-
-        // wrapper appendChild
+        // wrapper
         headerWrapper.appendChild(searchLink);
         headerWrapper.appendChild(writeLink);
         headerWrapper.appendChild(notificationLink);
