@@ -79,6 +79,20 @@ class PostUploadForm extends Component {
         this.photoData = e.target.files[0];
     }
 
+    // handlePrevImgCancel() {
+    //     const postUploadForm = document.querySelector('.post_form_upload');
+    //     console.log('hi', postUploadForm);
+    //     const postUploadPreview = new PostUploadPreview(this.state.prevPhoto);
+    //     const [postUploadPreviewEl, imgCancelBtn] =
+    //         postUploadPreview.intialize();
+    //     postUploadForm.appendChild(postUploadPreviewEl);
+    //     imgCancelBtn.addEventListener('click', (e) => {
+    //         e.preventDefault();
+    //         this.setState({ prevPhoto: null });
+    //         this.photoData = null;
+    //     });
+    // }
+
     render() {
         const postUploadForm = document.createElement('form');
         postUploadForm.setAttribute('class', 'post_form_upload');
@@ -99,15 +113,6 @@ class PostUploadForm extends Component {
         uploadBtn.setAttribute('class', 'post_btn');
         uploadBtn.setAttribute('type', 'submit');
         uploadBtn.textContent = '게시물 등록';
-
-        postUploadForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            // if (this.photoData) {
-            //     this.photoUpload();
-            // } else {
-            //     this.postUpload();
-            // }
-        });
 
         const fileBtn = document.createElement('button');
         fileBtn.setAttribute('class', 'post_btn');
@@ -147,9 +152,8 @@ class PostUploadForm extends Component {
                 e.preventDefault();
                 this.setState({ prevPhoto: null });
                 this.photoData = null;
-                console.log(this.state.prevPhoto, ' d', this.photoData);
-                console.log('hi');
             });
+            // this.handlePrevImgCancel();
         }
 
         return postUploadForm;
