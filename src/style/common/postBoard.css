@@ -102,6 +102,10 @@
     border-radius: 50%;
 }
 
+.board_post_user p {
+    overflow: hidden;
+}
+
 .board_post_reac {
     grid-area: reac;
     justify-self: center;
