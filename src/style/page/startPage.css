@@ -1,11 +1,11 @@
 .start_bodyWrapper{
-    /* width: 100vw; */
-    /* height: 100vh; */
+    width: 100vw;
+    height: 100vh;
     background-color: #FFBD3E;
 }
 
 .start_sec{
-    padding-top: 180px;
+    padding-top: 160px;
     text-align: center;
 }
 

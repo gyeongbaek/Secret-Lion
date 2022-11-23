@@ -1,4 +1,5 @@
 import {
+    StartPage,
     LoginPage,
     MainPage,
     PostDetailPage,
@@ -19,6 +20,7 @@ export default class App {
 
         const router = new Router({
             '/': TestPage,
+            '/start': StartPage,
             '/login': LoginPage,
             '/signup': SignupPage,
             '/main': MainPage,
