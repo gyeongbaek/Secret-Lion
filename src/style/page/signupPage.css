@@ -1,6 +1,11 @@
-/* .active{
-    display: none;
-} */
+.blind{
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
 
 .signupPage_bodyWrapper{
     width: 100vw;
@@ -86,7 +91,6 @@
 /* accept check */
 .signupPage_div_acceptCont{
     display: flex;
-    flex-direction: row-reverse;
 }
 
 .signupPage_acceptLab{
@@ -105,6 +109,7 @@
 /* modal */
 .signupPage_art_socialRuleModalCon,
 .signupPage_art_privacyModalCon{
+    position: relative;
     width: 440px;
     padding: 30px;
     border-radius: 30px;
@@ -127,13 +132,35 @@
 
 .signupPage_str_socialRuleSubTit{
     display: block;
-    font-size: 18px;
     padding-bottom: 10px;
+    font-size: 18px;
+    font-weight: 700;
 }
 
-.signupPage_art_privacyModalCon li{
-    margin-bottom: 10px;
+.signupPage_art_socialRuleModalCon li{
     padding-left: 10px;
     list-style-type: square;
     list-style-position: inside;
+}
+
+.signupPage_art_privacyModalCon ul{
+    margin-bottom: 20px;
+}
+
+.signupPage_art_privacyModalCon li{
+    padding-left: 10px;
+    list-style-type: square;
+    list-style-position: inside;
+}
+
+.signupPage_btn_modalClose{
+    position: absolute;
+    bottom: 20px;
+    right: 25px;
+    border: #d7d7d7;
+    background-color: #fff;
+    font-size: 14px;
+    text-decoration: underline;
+    color:#6a6a6a;
+    cursor:pointer;
 }

@@ -27,8 +27,12 @@
                 <input type="text" placeholder="닉네임" name="nickname" id="signupPage_inp_nickname" required>
                 <div class="signupPage_div_acceptCont">
                     <label for="signupPage_check_accept" class="signupPage_acceptLab">
-                        <button type="button" class="signupPage_btn_socialRule">비밀멋사 커뮤니티 규칙</button>과 <button type="button" class="signupPage_btn_privacy">개인정보 수집/이용</button>에 동의합니다.</label>
-                    <input type="checkbox" id="signupPage_check_accept">
+                        <input type="checkbox" id="signupPage_check_accept">
+                    </label> 
+                    <button type="button" class="signupPage_btn_socialRule">비밀멋사 커뮤니티 규칙</button>
+                    <span>과 </span> 
+                    <button type="button" class="signupPage_btn_privacy">개인정보 수집/이용</button>
+                    <span>에 동의합니다.</span>
                 </div>
                 <button class="loginPage_btn_signUp">회원가입</button>
             </form>
@@ -40,7 +44,7 @@
             <p>
                 비밀멋사는 누구나 기분 좋게 참여할 수 있는 커뮤니티를 만들기 위해 본 커뮤니티 이용규칙을 제정하여 운영합니다. 위반 시 게시물이 삭제되고 서비스 이용이 일정 기간 제한될 수 있습니다.
             </p>
-            <strong class="signupPage_str_socialRuleSubTit">⦁ 규칙 위반 행위</strong>
+            <strong class="signupPage_str_socialRuleSubTit"> 규칙 위반 행위</strong>
             <ol>
                 <li>타인의 권리를 침해하거나 불쾌감을 주는 행위</li>
                 <li>범죄, 불법 행위 등 법령을 위반하는 행위</li>
@@ -49,7 +53,7 @@
             <p>
                 모든 게시물은 이용자의 신고를 기반으로 하는 신고처리 시스템을 통해 처리됩니다. 커뮤니티 이용규칙에 어긋난다고 판단되는 게시물, 댓글 등을 발견하셨을 경우 신고버튼을 눌러 신고해주시기 바랍니다.
             </p>
-            <button class="signupPage_btn_modalClose">닫기</button>
+            <button type="button" class="signupPage_btn_modalClose">닫기</button>
         </article>
 
         <!-- privacy modal -->

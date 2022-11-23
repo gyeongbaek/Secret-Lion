@@ -1,4 +1,4 @@
-import { SignupForm, SignupModal } from "../components/SignUp/index.js";
+import { SignupForm, SocialRuleModal, PrivacyModal } from "../components/SignUp/index.js";
 
 class SignupPage {
     render() {
@@ -137,7 +137,8 @@ class SignupPage {
         // acceptCont.appendChild(acceptLab);
         // acceptCont.appendChild(acceptCheck);
         
-        const signupModal = new SignupModal();
+        const socialRuleModal = new SocialRuleModal();
+        const privacyModal = new PrivacyModal();
         // modal
         // modalCon.appendChild(ruleTit);
         // modalCon.appendChild(rule);
@@ -151,7 +152,8 @@ class SignupPage {
         frag.appendChild(bodybgc);
         bodybgc.appendChild(signupHeader);
         bodybgc.appendChild(signupMain);
-        bodybgc.appendChild(signupModal.render());
+        bodybgc.appendChild(socialRuleModal.render());
+        bodybgc.appendChild(privacyModal.render());
 
 
 
