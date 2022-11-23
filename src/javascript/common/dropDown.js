@@ -2,6 +2,10 @@ class DropDown {
     constructor(props) {
         this.props = props;
     }
+    dropClick(e) {
+        const txt = document.querySelector('.span_drop_content');
+        return txt.textContent;
+    }
     render() {
         const dropDownWrapper = document.createElement('div');
 

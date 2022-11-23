@@ -1,5 +1,6 @@
 @charset "utf-8";
 @import 'reset.css';
+@import 'page/startPage.css';
 @import 'page/loginPage.css';
 @import 'page/mainPage.css';
 @import 'page/postDetail.css';
