@@ -1,8 +1,29 @@
 import Component from '../../core/Component.js';
+import { auth, db, doc, updateDoc, updateProfile } from '../../firebase.js';
 
 class NicknameForm extends Component {
     constructor(props) {
         super(props);
+    }
+    // 닉네임 변경 함수
+    async changeNickname(event) {
+        // form이 기본적으로 제출하고 리로드하는 것 방지
+        event.preventDefault();
+        const nameInp = document.querySelector('#edit_inp_nickname');
+        updateProfile(auth.currentUser, {
+            displayName: nameInp.value,
+        });
+        const userProfile = doc(db, 'users', auth.currentUser.uid);
+        await updateDoc(userProfile, {
+            displayName: nameInp.value,
+        });
+        console.log('완료');
+
+        // 닉네임 변경 로직
+
+        // updateProfile : auth에서 닉네임 변경
+        // userProfile : firestore database에서 유저의 고유번호에 맞는 데이터를 가져옴
+        // updateDoc : 그 데이터에서 유저의 닉네임 부분만 변경
     }
     render() {
         // 닉네임 폼
@@ -26,6 +47,9 @@ class NicknameForm extends Component {
         const confirmBtn = document.createElement('button');
         confirmBtn.setAttribute('class', 'edit_btn_confirm');
         confirmBtn.textContent = '닉네임 변경';
+
+        // 닉네임 변경
+        confirmBtn.addEventListener('click', this.changeNickname);
 
         nameForm.appendChild(nameLbl);
         nameForm.appendChild(nameInp);
