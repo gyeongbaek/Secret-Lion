@@ -53,7 +53,12 @@ class PostDetailTop extends Component {
         trashBtnlIr.setAttribute('class', 'ir');
         trashBtnlIr.textContent = '삭제하기';
 
+        topSection.appendChild(postWriterInfoCon);
+        topSection.appendChild(postWriterInfoCon);
+        topSection.appendChild(trashlBtn);
+
         trashlBtn.appendChild(trashBtnlIr);
+        // // topsection 안
 
         return topSection;
     }
