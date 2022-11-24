@@ -2,9 +2,12 @@ import Component from "../../core/Component.js";
 
 class SocialRuleModal extends Component {
     render(){
-        const socialRuleModalCon = document.createElement('article');
-        socialRuleModalCon.setAttribute('class','signupPage_art_socialRuleModalCon');
-        socialRuleModalCon.setAttribute('class','blind');
+        const socialRuleModalCon = document.createElement('div');
+        socialRuleModalCon.setAttribute('class','modalCon');
+    
+        const socialRuleModal = document.createElement('article');
+        socialRuleModal.setAttribute('class','signupPage_art_socialRuleModalCon');
+        // socialRuleModalCon.setAttribute('class','blind');
 
         const socialRuleTit = document.createElement('h3');
         socialRuleTit.setAttribute('class','signupPage_h3_socialRuleTit');
@@ -36,18 +39,20 @@ class SocialRuleModal extends Component {
         closeBtn.setAttribute('class', 'signupPage_btn_modalClose');
         closeBtn.textContent = '닫기';
 
-        //모달창 함수
+        //모달창 닫기 함수
         function closeModal(){
-            socialRuleModalCon.style.display = "none"
+            socialRuleModal.style.display = "none"
         }
         closeBtn.addEventListener('click', closeModal);
         
-        socialRuleModalCon.appendChild(socialRuleTit);
-        socialRuleModalCon.appendChild(socialRuleDec1);
-        socialRuleModalCon.appendChild(socialRuleSubtit);
-        socialRuleModalCon.appendChild(socialRuleList);
-        socialRuleModalCon.appendChild(socialRuleDec2);
-        socialRuleModalCon.appendChild(closeBtn);
+        socialRuleModalCon.appendChild(socialRuleModal);
+        
+        socialRuleModal.appendChild(socialRuleTit);
+        socialRuleModal.appendChild(socialRuleDec1);
+        socialRuleModal.appendChild(socialRuleSubtit);
+        socialRuleModal.appendChild(socialRuleList);
+        socialRuleModal.appendChild(socialRuleDec2);
+        socialRuleModal.appendChild(closeBtn);
         
         socialRuleList.appendChild(socialRuleItem1);
         socialRuleList.appendChild(socialRuleItem2);

@@ -1,7 +1,13 @@
 import Component from "../../core/Component.js";
 import { auth, createUserWithEmailAndPassword, db, doc, setDoc } from "../../firebase.js";
+import PrivacyModal from "./privacyModal.js";
+import SocialRuleModal from "./socialRuleModal.js";
 
 class SignupForm extends Component {
+    constructor(props){
+        super(props);
+    }
+    
     render(){
         const signupForm = document.createElement('form');
         signupForm.setAttribute('class','signupPage_form');
@@ -38,6 +44,9 @@ class SignupForm extends Component {
         const acceptCont = document.createElement('div');
         acceptCont.setAttribute('class', 'signupPage_div_acceptCont');
 
+        const div1 = document.createElement('div');
+        div1.setAttribute('class', 'socialRuleDiv1');
+        
         const acceptLab = document.createElement('label');
         acceptLab.setAttribute('for', 'signupPage_check_accept');
         acceptLab.setAttribute('class', 'signupPage_acceptLab');
@@ -53,6 +62,9 @@ class SignupForm extends Component {
 
         const firstSpan = document.createElement('span');
         firstSpan.textContent = '과 ';
+
+        const div2 = document.createElement('div');
+        div2.setAttribute('class', 'privacyDiv2');
 
         const privacyModalBtn = document.createElement('button');
         privacyModalBtn.type = 'button';
@@ -107,14 +119,17 @@ class SignupForm extends Component {
         signupForm.appendChild(acceptCont);
         signupForm.appendChild(signupBtn);
 
-        acceptCont.appendChild(acceptLab);
-        acceptLab.appendChild(acceptCheck);
-        acceptCont.appendChild(socialRuleModalBtn);
-        acceptCont.appendChild(firstSpan);
-        acceptCont.appendChild(privacyModalBtn);
-        acceptCont.appendChild(secSpan);
+        div1.appendChild(acceptCheck);
+        div1.appendChild(socialRuleModalBtn);
+        div1.appendChild(firstSpan);
+        acceptCont.appendChild(div1);
+        
+        div2.appendChild(privacyModalBtn);
+        div2.appendChild(secSpan);
+        acceptCont.appendChild(div2);
 
         return [signupForm, socialRuleModalBtn, privacyModalBtn];
+        // return signupForm;
     }
 }
 

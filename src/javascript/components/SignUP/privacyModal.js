@@ -26,7 +26,11 @@ class PrivacyModal extends Component {
         closeBtn.setAttribute('class', 'signupPage_btn_modalClose');
         closeBtn.textContent = '닫기';
 
-        //
+        //모달창 닫기 함수 
+        function closeModal(){
+            privacyModalCon.style.display = "none"
+        }
+        closeBtn.addEventListener('click', closeModal);
 
         privacyModalCon.appendChild(privacyTit);
         privacyModalCon.appendChild(privacyDec);
