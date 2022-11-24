@@ -2,6 +2,7 @@ import { Header, MainContainer } from '../common/index.js';
 import {
     PostDetailChat,
     PostDetailChatForm,
+    PostDetailTop,
 } from '../components/PostDetail/index.js';
 
 class PostDetailPage {
@@ -15,23 +16,21 @@ class PostDetailPage {
         const main = new MainContainer();
         const mainEl = main.render();
 
-        // const postDetailMain = document.createElement('main');
-        // postDetailMain.setAttribute('class', 'main_post_container');
-
         const postDetailh1 = document.createElement('h1');
         postDetailh1.setAttribute('class', 'ir');
         postDetailh1.textContent = '게시판 상세 페이지';
         mainEl.appendChild(postDetailh1);
 
         // 카테고리 span
-        const categorySpan = document.createElement('span');
-        categorySpan.setAttribute('class', 'post_span_category');
-        categorySpan.textContent = '고민상담';
-        mainEl.appendChild(categorySpan);
 
         // topSection
         const topSection = document.createElement('section');
         topSection.setAttribute('class', 'post_section_top');
+
+        const categorySpan = document.createElement('span');
+        categorySpan.setAttribute('class', 'post_span_category');
+        categorySpan.textContent = '고민상담';
+        topSection.appendChild(categorySpan);
 
         // 제목
         const postTit = document.createElement('h2');
@@ -76,6 +75,8 @@ class PostDetailPage {
         trashBtnlIr.textContent = '삭제하기';
 
         trashlBtn.appendChild(trashBtnlIr);
+
+        // const topSection = new PostDetailTop();
 
         // section mid
         const midSection = document.createElement('section');
@@ -137,19 +138,6 @@ class PostDetailPage {
         midSection.appendChild(postContentTxt);
         midSection.appendChild(postLikeFavorite);
 
-        // // 채팅입력 Form
-        // const chattingForm = document.createElement("form");
-        // chattingForm.setAttribute("class", "post_form_chat");
-
-        // // chat textarea
-        // const chatTextArea = document.createElement("textarea");
-        // chatTextArea.setAttribute("class", "post_textarea_chat");
-        // chatTextArea.setAttribute("placeholder", "내용을 입력해주세요.");
-
-        // const chatUploadBtn = document.createElement("button");
-        // chatUploadBtn.setAttribute("class", "post_btn");
-        // chatUploadBtn.textContent = "댓글 등록";
-
         // 댓글
         const commentCon = document.createElement('section');
         commentCon.setAttribute('class', 'post_section_bottom');
@@ -190,3 +178,16 @@ class PostDetailPage {
 }
 
 export default PostDetailPage;
+
+// // 채팅입력 Form
+// const chattingForm = document.createElement("form");
+// chattingForm.setAttribute("class", "post_form_chat");
+
+// // chat textarea
+// const chatTextArea = document.createElement("textarea");
+// chatTextArea.setAttribute("class", "post_textarea_chat");
+// chatTextArea.setAttribute("placeholder", "내용을 입력해주세요.");
+
+// const chatUploadBtn = document.createElement("button");
+// chatUploadBtn.setAttribute("class", "post_btn");
+// chatUploadBtn.textContent = "댓글 등록";
