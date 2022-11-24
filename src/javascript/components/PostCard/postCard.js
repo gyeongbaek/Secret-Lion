@@ -19,8 +19,12 @@ class PostCard extends Component {
 
         const postImg = new PostCardThumbnail({ src: this.props.item.img });
         const postTitle = new PostCardTitle({ title: this.props.item.title });
-        const postCont = new PostCardContent({ content: this.props.item.content });
-        const postCate = new PostCardCategory({ category: this.props.item.category });
+        const postCont = new PostCardContent({
+            content: this.props.item.content,
+        });
+        const postCate = new PostCardCategory({
+            category: this.props.item.category,
+        });
         const postInfo = new PostCardReaction({
             like: this.props.item.like.length,
             comment: this.props.item.scrap.length,
