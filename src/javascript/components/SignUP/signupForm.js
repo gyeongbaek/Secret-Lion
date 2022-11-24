@@ -1,8 +1,13 @@
 import Component from "../../core/Component.js";
 import { auth, createUserWithEmailAndPassword, db, doc, setDoc } from "../../firebase.js";
-import SignupModal from "./signupModal.js";
+import PrivacyModal from "./privacyModal.js";
+import SocialRuleModal from "./socialRuleModal.js";
 
 class SignupForm extends Component {
+    constructor(props){
+        super(props);
+    }
+    
     render(){
         const signupForm = document.createElement('form');
         signupForm.setAttribute('class','signupPage_form');
@@ -39,25 +44,39 @@ class SignupForm extends Component {
         const acceptCont = document.createElement('div');
         acceptCont.setAttribute('class', 'signupPage_div_acceptCont');
 
+        const div1 = document.createElement('div');
+        div1.setAttribute('class', 'socialRuleDiv1');
+        
         const acceptLab = document.createElement('label');
         acceptLab.setAttribute('for', 'signupPage_check_accept');
         acceptLab.setAttribute('class', 'signupPage_acceptLab');
-        acceptLab.innerHTML = '<button type="button" class="signupPage_btn_socialRule">비밀멋사 커뮤니티 규칙</button>과 <button type="button" class="signupPage_btn_privacy">개인정보 수집/이용</button>에 동의합니다.';
         
         const acceptCheck = document.createElement('input');
         acceptCheck.setAttribute('type', 'checkbox');
         acceptCheck.setAttribute('id', 'signupPage_check_accept');
+        
+        const socialRuleModalBtn = document.createElement('button');
+        socialRuleModalBtn.type = 'button';
+        socialRuleModalBtn.setAttribute('class', 'signupPage_btn_socialRule');
+        socialRuleModalBtn.textContent = '비밀멋사 커뮤니티 규칙';
 
+        const firstSpan = document.createElement('span');
+        firstSpan.textContent = '과 ';
+
+        const div2 = document.createElement('div');
+        div2.setAttribute('class', 'privacyDiv2');
+
+        const privacyModalBtn = document.createElement('button');
+        privacyModalBtn.type = 'button';
+        privacyModalBtn.setAttribute('class', 'signupPage_btn_privacy') ;
+        privacyModalBtn.textContent = '개인정보 수집/이용';
+
+        const secSpan = document.createElement('span');
+        secSpan.textContent = '에 동의합니다.';
+        
         const signupBtn = document.createElement('button');
         signupBtn.setAttribute('class', 'loginPage_btn_signUp');
         signupBtn.textContent = '회원가입';
-
-        // 링크(버튼) 클릭하면 모달창 띄우고 ㄷ
-        // 동의는 (모달창 안 봐도) 바로 체크 가능 
-        const signupModal = new SignupModal();
-        acceptCont.addEventListener('click', function(){
-            signupModal.render().classList.toggle('active');
-        });
         
         async function handleToDoSubmit(event){
             event.preventDefault();
@@ -100,10 +119,17 @@ class SignupForm extends Component {
         signupForm.appendChild(acceptCont);
         signupForm.appendChild(signupBtn);
 
-        acceptCont.appendChild(acceptLab);
-        acceptCont.appendChild(acceptCheck);
+        div1.appendChild(acceptCheck);
+        div1.appendChild(socialRuleModalBtn);
+        div1.appendChild(firstSpan);
+        acceptCont.appendChild(div1);
+        
+        div2.appendChild(privacyModalBtn);
+        div2.appendChild(secSpan);
+        acceptCont.appendChild(div2);
 
-        return signupForm;
+        return [signupForm, socialRuleModalBtn, privacyModalBtn];
+        // return signupForm;
     }
 }
 
