@@ -2,8 +2,14 @@ import Component from '../../core/Component.js';
 
 class PostDetailTop extends Component {
     render() {
+        // topSection
         const topSection = document.createElement('section');
         topSection.setAttribute('class', 'post_section_top');
+
+        const categorySpan = document.createElement('span');
+        categorySpan.setAttribute('class', 'post_span_category');
+        categorySpan.textContent = '고민상담';
+        topSection.appendChild(categorySpan);
 
         // 제목
         const postTit = document.createElement('h2');
