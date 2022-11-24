@@ -24,23 +24,45 @@ class ProfileImgForm extends Component {
             `user_images/${auth.currentUser.uid}`
         );
 
-        uploadBytes(userStorageRef, e.target.files[0]).then((snapshot) => {
-            console.log('Uploaded a blob or file!');
-            getDownloadURL(userStorageRef).then(async (downloadURL) => {
-                // 얻은거 storage 저장
-                // downloadURL을 얻었다
-                // auth 정보 변경
-                // database 정보 변경
-                updateProfile(auth.currentUser, {
-                    photoURL: downloadURL,
-                });
-                const userProfile = doc(db, 'users', auth.currentUser.uid);
-                await updateDoc(userProfile, {
-                    photoURL: downloadURL,
+        // uploadBytes(userStorageRef, e.target.files[0]).then((snapshot) => {
+        //     console.log('Uploaded a blob or file!');
+        //     getDownloadURL(userStorageRef).then(async (downloadURL) => {
+        //         // 얻은거 storage 저장
+        //         // downloadURL을 얻었다
+        //         // auth 정보 변경
+        //         // database 정보 변경
+        //         updateProfile(auth.currentUser, {
+        //             photoURL: downloadURL,
+        //         });
+        //         const userProfile = doc(db, 'users', auth.currentUser.uid);
+        //         await updateDoc(userProfile, {
+        //             photoURL: downloadURL,
+        //         });
+        //     });
+        // });
+        // console.log('완료');
+
+        // 예외 처리
+        try {
+            uploadBytes(userStorageRef, e.target.files[0]).then((snapshot) => {
+                getDownloadURL(userStorageRef).then(async (downloadURL) => {
+                    // 얻은거 storage 저장
+                    // downloadURL을 얻었다
+                    // auth 정보 변경
+                    // database 정보 변경
+                    updateProfile(auth.currentUser, {
+                        photoURL: downloadURL,
+                    });
+                    const userProfile = doc(db, 'users', auth.currentUser.uid);
+                    await updateDoc(userProfile, {
+                        photoURL: downloadURL,
+                    });
                 });
             });
-        });
-        console.log('완료');
+            console.log('이미지 변경 완료');
+        } catch (error) {
+            console.log(error);
+        }
 
         // 프로필 이미지 변경 로직
 
