@@ -22,6 +22,25 @@ class PostCard extends Component {
         post.setAttribute('href', `/post/${this.props.item.id}`);
         post.setAttribute('class', 'board_post_item');
 
+        if (!this.props.item.img) {
+            switch (this.props.item.category) {
+                case '학습':
+                    this.props.item.img = 'src/assets/thumbnail/study.png';
+                    break;
+                case '연애':
+                    this.props.item.img = 'src/assets/thumbnail/love.png';
+                    break;
+                case '관계':
+                    this.props.item.img = 'src/assets/thumbnail/relation.png';
+                    break;
+                case '취업':
+                    this.props.item.img = 'src/assets/thumbnail/job.png';
+                    break;
+                case '자유':
+                    this.props.item.img = 'src/assets/thumbnail/free.png';
+                    break;
+            }
+        }
         const postImg = new PostCardThumbnail({ src: this.props.item.img });
         const postTitle = new PostCardTitle({ title: this.props.item.title });
         const postCont = new PostCardContent({ content: this.props.item.content });

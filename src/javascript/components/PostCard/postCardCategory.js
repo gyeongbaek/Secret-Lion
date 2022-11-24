@@ -17,9 +17,6 @@ class postCardCategory extends Component {
             case '관계':
                 bgColor = 'var(--cate-rel-color)';
                 break;
-            case '일상':
-                bgColor = 'var(--cate-life-color)';
-                break;
             case '취업':
                 bgColor = 'var(--cate-job-color)';
                 break;
