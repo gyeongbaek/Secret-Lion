@@ -8,7 +8,7 @@ class LoginForm extends Component {
 
         const inpId = document.createElement('input');
         inpId.setAttribute('type', 'text');
-        inpId.setAttribute('placeholder', '아이디');
+        inpId.setAttribute('placeholder', '이메일');
         inpId.setAttribute('class', 'loginPage_inp_id');
         inpId.attributes['required'];
 
@@ -35,16 +35,15 @@ class LoginForm extends Component {
             const newId = inpId.value;           
             const newPwd = inpPwd.value;
 
+            inpId.value = "";
+            inpPwd.value = "";
+
             try{
                 await signInWithEmailAndPassword(auth, newId, newPwd);
                 console.log('로그인 완료');
             } catch(error){
                 console.log(error);
             }
-
-            inpId.value = "";
-            inpPwd.value = "";
-            console.log('완료!');
         }
 
         loginBtn.addEventListener('click', login);
