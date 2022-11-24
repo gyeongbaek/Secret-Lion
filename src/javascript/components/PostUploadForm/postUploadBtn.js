@@ -10,8 +10,6 @@ import {
     storage,
     uploadBytes,
 } from '../../firebase.js';
-import UserInfo from '../../pages/userInfo.js';
-import Router from '../../utils/router.js';
 
 class PostUploadBtn extends Component {
     constructor(props) {
@@ -20,13 +18,13 @@ class PostUploadBtn extends Component {
 
     async postUpload() {
         const inputTit = document.querySelector('.post_inp_tit');
-        const contents = document.querySelector('.post_area_content');
+        const content = document.querySelector('.post_area_content');
         const dropTxt = document.querySelector('.span_drop_content');
 
         const newPostRef = doc(collection(db, 'posts'));
         const postData = {
             title: inputTit.value,
-            contents: contents.value,
+            content: content.value,
             category: dropTxt.textContent,
             writerId: auth.currentUser.uid,
             date: new Date(),
@@ -37,12 +35,13 @@ class PostUploadBtn extends Component {
             postId: newPostRef.id,
         };
         await setDoc(newPostRef, postData);
+        console.log('완료');
         history.go(-1);
     }
 
     photoUpload() {
         const inputTit = document.querySelector('.post_inp_tit');
-        const contents = document.querySelector('.post_area_content');
+        const content = document.querySelector('.post_area_content');
         const dropTxt = document.querySelector('.span_drop_content');
 
         const postRef = doc(collection(db, 'posts'));
@@ -51,7 +50,7 @@ class PostUploadBtn extends Component {
             getDownloadURL(postStorageRef).then(async (downloadURL) => {
                 const postData = {
                     title: inputTit.value,
-                    contents: contents.value,
+                    content: content.value,
                     category: dropTxt.textContent,
                     writerId: auth.currentUser.uid,
                     date: new Date(),

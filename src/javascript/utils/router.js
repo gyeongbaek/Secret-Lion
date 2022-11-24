@@ -1,13 +1,15 @@
 class Router {
     constructor(routes) {
         if (!routes) {
-            console.error("Can not initialize routes, need routes!");
+            console.error('Can not initialize routes, need routes!');
         }
         this.routes = routes;
     }
     init(rootElementId) {
         if (!rootElementId) {
-            console.error("Can not initialize Routes, not define rootElementId!");
+            console.error(
+                'Can not initialize Routes, not define rootElementId!'
+            );
             return null;
         }
         this.rootElementId = rootElementId;
@@ -16,8 +18,8 @@ class Router {
         //routing 메소드는 주소를 파싱하고 주소에 해당하는 컴포넌트를 가져와서 렌더링을 진행한다.
         this.routing(window.location.pathname);
 
-        window.addEventListener("click", (e) => {
-            if (e.target.tagName.toLowerCase() === "a") {
+        window.addEventListener('click', (e) => {
+            if (e.target.tagName.toLowerCase() === 'a') {
                 e.preventDefault();
                 this.routePush(e.target.href); //url 변경
             }
@@ -30,13 +32,16 @@ class Router {
         window.history.pushState({}, null, pathname);
         this.routing(window.location.pathname);
     }
-
+    // 10 분
     routing(pathname) {
-        const [_, routeName, ...param] = pathname.split("/");
+        const [_, routeName, ...param] = pathname.split('/');
 
-        let page = "";
+        let page = '';
         if (this.routes[pathname]) {
             const component = new this.routes[pathname]();
+            page = component.render();
+        } else if (param) {
+            const component = new this.routes['/' + routeName](param);
             page = component.render();
         }
 
@@ -47,7 +52,7 @@ class Router {
 
     render(page) {
         const rootElement = document.querySelector(this.rootElementId);
-        rootElement.innerHTML = "";
+        rootElement.innerHTML = '';
         rootElement.appendChild(page);
     }
 }

@@ -24,7 +24,7 @@ export default class App {
             '/login': LoginPage,
             '/signup': SignupPage,
             '/main': MainPage,
-            '/post': PostDetailPage,
+            // '/post': PostDetailPage,
             '/upload': PostUploadpage,
             '/user': UserInfo,
             '/setting': UserEdit,
