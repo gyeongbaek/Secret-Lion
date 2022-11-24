@@ -1,4 +1,5 @@
 import {
+    StartPage,
     LoginPage,
     MainPage,
     PostDetailPage,
@@ -18,7 +19,8 @@ export default class App {
         const { el } = this.props;
 
         const router = new Router({
-            '/': SignupPage,
+            '/': TestPage,
+            '/start': StartPage,
             '/login': LoginPage,
             '/signup': SignupPage,
             '/main': MainPage,

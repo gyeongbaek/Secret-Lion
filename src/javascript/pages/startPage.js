@@ -23,7 +23,8 @@ class StartPage {
 
         const startLink = document.createElement('a');
         startLink.setAttribute('class', 'start_a_go');
-        startLink.setAttribute('href', 'src/javascript/pages/loginPage.js');
+        startLink.textContent = '시작하기';
+        startLink.href = '/login';
         
         //start Section
         startSection.appendChild(logoCont);
