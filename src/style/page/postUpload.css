@@ -30,21 +30,20 @@
 .post_img_con {
     border-radius: 5px;
     position: absolute;
-    bottom: -26px;
+    bottom: 43px;
 }
 
 .post_img_con .post_img_preview {
     border-radius: 5px;
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     object-fit: cover;
 }
 
 .post_img_con .post_btn_img_cancel {
     width: 25px;
     height: 25px;
-    border-radius: 50%;
-    background-color: orange;
+    background: url('../../assets/cancel.svg') center / cover;
     position: absolute;
     right: -12px;
     top: -10px;
