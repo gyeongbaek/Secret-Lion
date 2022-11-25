@@ -46,21 +46,27 @@ class MainPage extends Component {
         return a.date - b.date;
     }
 
+    printTitle(posts) {
+        posts.forEach((el) => console.log(el.title));
+        console.log('===============');
+    }
+
     changeHotRecent(flag) {
         if (flag) {
             // Hot
             const hotList = [...this.state.displayPost].sort((a, b) => {
                 return b.like.length + b.scrap.length - a.like.length - a.scrap.length;
             });
-            console.log(hotList);
+            this.printTitle(hotList);
 
             return hotList;
         } else {
             // Recent
             const recList = [...this.state.displayPost].sort((a, b) => {
-                return a.date - b.date;
+                return b.date - a.date;
             });
-            console.log(recList);
+            this.printTitle(recList);
+
             return recList;
         }
     }
