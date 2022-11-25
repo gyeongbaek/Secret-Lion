@@ -13,20 +13,12 @@ class PostDetailTop extends Component {
         const day = date.getDate();
         return `${year}.${month}.${day}`;
     }
-    async getUser() {
-        const docRef = doc(db, 'users', this.props.postData.writerId);
-        const docSnap = await getDoc(docRef);
-        console.log(docSnap.data());
-        // return docSnap.data().displayName;
-    }
+
     render() {
         if (this.props.postData.date !== undefined) {
             this.date = this.getDate(this.props.postData.date);
         }
-        console.log(this.props);
-        // this.getUser();
-        // console.log(this.props.postData);
-        // topSection
+
         const topSection = document.createElement('section');
         topSection.setAttribute('class', 'post_section_top');
 

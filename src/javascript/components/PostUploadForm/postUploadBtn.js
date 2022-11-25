@@ -31,8 +31,14 @@ class PostUploadBtn extends Component {
             date: serverTimestamp(),
             img: null,
             active: false,
-            like: [],
-            scrap: [],
+            like: {
+                participants: [],
+                participateCount: 0,
+            },
+            scrap: {
+                participants: [],
+                participateCount: 0,
+            },
             postId: newPostRef.id,
         };
         await setDoc(newPostRef, postData);
@@ -57,8 +63,14 @@ class PostUploadBtn extends Component {
                     date: serverTimestamp(),
                     img: downloadURL,
                     active: false,
-                    like: [],
-                    scrap: [],
+                    like: {
+                        participants: [],
+                        participateCount: 0,
+                    },
+                    scrap: {
+                        participants: [],
+                        participateCount: 0,
+                    },
                     postId: postRef.id,
                 };
                 await setDoc(postRef, postData);

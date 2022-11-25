@@ -22,7 +22,7 @@ class PostDetailMain extends Component {
     }
     async getPostData() {
         const unsub = onSnapshot(
-            doc(db, 'posts', 'ip358TWbiDczCFL4P6vW'),
+            doc(db, 'posts', '531nYLWPQ5QKArn7dGFd'),
             async (postDoc) => {
                 const writer = await this.getUser(postDoc.data().writerId);
                 this.writer = writer;
@@ -58,7 +58,13 @@ class PostDetailMain extends Component {
         });
 
         // section mid
-        const postDetailMid = new PostDetailMid();
+        const postDetailMid = new PostDetailMid({
+            content: this.state.postData.content,
+            like: this.state.postData.like,
+            scrap: this.state.postData.scrap,
+            img: this.state.postData.img,
+            postId: this.state.postData.postId,
+        });
 
         // 댓글
         const commentCon = document.createElement('section');
