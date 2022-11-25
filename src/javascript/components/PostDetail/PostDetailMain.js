@@ -33,8 +33,9 @@ class PostDetailMain extends Component {
     }
     async getPostData() {
         const unsub = onSnapshot(
-            doc(db, 'posts', '531nYLWPQ5QKArn7dGFd'),
+            doc(db, 'posts', '6gWmPsRdcnevnvadCLEE'), // url id값넣어주기
             async (postDoc) => {
+                console.log(postDoc.data());
                 const writer = await this.getUser(postDoc.data().writerId);
                 this.writer = writer;
                 this.getChat(postDoc.data().postId);

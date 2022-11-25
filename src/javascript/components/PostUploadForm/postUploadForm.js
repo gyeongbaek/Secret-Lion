@@ -10,31 +10,33 @@ class PostUploadForm extends Component {
             prevPhoto: null,
             photoData: null,
         };
-        // this.photoData = null;
-        this.dropDown = new DropDown();
+        this.dropDown = new DropDown().render();
+        this.inputTit = document.createElement('input');
+        this.postContent = document.createElement('textarea');
     }
 
     handlePrevImg(e) {
         const reader = new FileReader();
         reader.onload = ({ target }) => {
-            this.setState({ prevPhoto: target.result });
+            this.setState({ ...this.state, prevPhoto: target.result });
         };
         reader.readAsDataURL(e.target.files[0]);
-        this.setState({ photoData: e.target.files[0] });
+        this.setState({ ...this.state, photoData: e.target.files[0] });
+        console.log('hi');
     }
 
     render() {
         const postUploadForm = document.createElement('form');
         postUploadForm.setAttribute('class', 'post_form_upload');
 
-        const inputTit = document.createElement('input');
-        inputTit.setAttribute('type', 'text');
-        inputTit.setAttribute('placeholder', '제목을 입력해주세요.');
-        inputTit.setAttribute('class', 'post_inp_tit');
+        // const inputTit = document.createElement('input');
+        this.inputTit.setAttribute('type', 'text');
+        this.inputTit.setAttribute('placeholder', '제목을 입력해주세요.');
+        this.inputTit.setAttribute('class', 'post_inp_tit');
 
-        const postContent = document.createElement('textarea');
-        postContent.setAttribute('class', 'post_area_content');
-        postContent.setAttribute('placeholder', '내용을 입력해주세요.');
+        // const postContent = document.createElement('textarea');
+        this.postContent.setAttribute('class', 'post_area_content');
+        this.postContent.setAttribute('placeholder', '내용을 입력해주세요.');
 
         const btnContainer = document.createElement('div');
         btnContainer.setAttribute('class', 'post_btn_con');
@@ -50,10 +52,8 @@ class PostUploadForm extends Component {
 
         postUploadForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            if (this.photoData) {
+            if (this.state.prevPhoto) {
                 btnContainertest.photoUpload();
-                this.setState({ prevPhoto: null });
-                this.setState({ photoData: null });
             } else {
                 btnContainertest.postUpload();
             }
@@ -65,9 +65,10 @@ class PostUploadForm extends Component {
         });
 
         // 파일 미리보기
-        postUploadForm.appendChild(this.dropDown.render());
-        postUploadForm.appendChild(inputTit);
-        postUploadForm.appendChild(postContent);
+        // console.log(this.dropDown);
+        postUploadForm.appendChild(this.dropDown);
+        postUploadForm.appendChild(this.inputTit);
+        postUploadForm.appendChild(this.postContent);
 
         postUploadForm.appendChild(btnContainertestRender);
 
