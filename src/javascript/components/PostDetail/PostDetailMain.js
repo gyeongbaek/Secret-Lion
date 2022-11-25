@@ -3,8 +3,8 @@ import Component from '../../core/Component.js';
 import {
     PostDetailTop,
     PostDetailMid,
-    PostDetailChat,
     PostDetailChatForm,
+    PostDetailChatUl,
 } from './index.js';
 import { db, doc, getDoc, onSnapshot } from '../../firebase.js';
 
@@ -77,11 +77,13 @@ class PostDetailMain extends Component {
         const commentUl = document.createElement('ul');
         commentUl.setAttribute('class', 'post_ul_comment');
 
-        const postDetailChat = new PostDetailChat();
+        const postDetailChatUl = new PostDetailChatUl({
+            postId: this.state.postData.postId,
+        });
 
-        commentUl.appendChild(postDetailChat.render());
         commentCon.appendChild(commentH2);
         commentCon.appendChild(commentUl);
+        commentCon.appendChild(postDetailChatUl.intialize());
 
         // console.log(this.state.postData.postId);
         // chat form apch
@@ -103,8 +105,6 @@ class PostDetailMain extends Component {
         } else {
             return mainEl;
         }
-
-        return mainEl;
     }
 }
 

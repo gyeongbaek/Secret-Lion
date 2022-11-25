@@ -27,7 +27,6 @@ class PostDetailChatForm extends Component {
     }
     render() {
         // 채팅입력 Form
-        console.log(this.props.postId);
         const chattingForm = document.createElement('form');
         chattingForm.setAttribute('class', 'post_form_chat');
 
@@ -42,7 +41,6 @@ class PostDetailChatForm extends Component {
 
         chattingForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            // console.log(this.props.postId);
             this.submitChat(this.props.postId);
         });
 
