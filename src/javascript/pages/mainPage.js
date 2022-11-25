@@ -30,7 +30,20 @@ class MainPage extends Component {
         return posts;
     }
 
+    hotScore(el) {
+        return el.like.length + el.scrap.length;
+    }
+    hotSortedPost(posts) {
+        let result = [...posts].sort((a, b) => {
+            return this.hotScore(b) - this.hotScore(a);
+        });
+        console.log(result);
+        return result;
+    }
+
     render() {
+        let displayPost = [];
+
         // this.getPostData();
         // console.log(this.post);
         const docFrag = new DocumentFragment();
@@ -83,7 +96,12 @@ class MainPage extends Component {
         postSection.appendChild(postTitle);
         this.getTestData().then((posts) => {
             this.post = posts;
-            const postBoard = new PostBoard({ posts: this.post });
+            console.log(this.post);
+            // 기본 정렬 조건이 HOT
+
+            displayPost = this.hotSortedPost(this.post);
+
+            const postBoard = new PostBoard({ posts: displayPost });
             postSection.appendChild(postBoard.render());
         });
 
