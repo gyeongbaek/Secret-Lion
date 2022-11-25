@@ -1,20 +1,43 @@
 import Component from '../../core/Component.js';
+import { db, doc, getDoc } from '../../firebase.js';
 
 class PostDetailTop extends Component {
+    constructor(props) {
+        super(props);
+        this.date = null;
+    }
+    getDate(time) {
+        const date = time.toDate();
+        const year = date.getFullYear();
+        const month = date.getMonth() + 1;
+        const day = date.getDate();
+        return `${year}.${month}.${day}`;
+    }
+    async getUser() {
+        const docRef = doc(db, 'users', this.props.postData.writerId);
+        const docSnap = await getDoc(docRef);
+        console.log(docSnap.data());
+        // return docSnap.data().displayName;
+    }
     render() {
+        if (this.props.postData.date !== undefined) {
+            this.date = this.getDate(this.props.postData.date);
+        }
+        this.getUser();
+        // console.log(this.props.postData);
         // topSection
         const topSection = document.createElement('section');
         topSection.setAttribute('class', 'post_section_top');
 
         const categorySpan = document.createElement('span');
         categorySpan.setAttribute('class', 'post_span_category');
-        categorySpan.textContent = '고민상담';
+        categorySpan.textContent = this.props.postData.category;
         topSection.appendChild(categorySpan);
 
         // 제목
         const postTit = document.createElement('h2');
         postTit.setAttribute('class', 'post_h2_tit');
-        postTit.textContent = '안녕하세요 고민있습니다ㅠ';
+        postTit.textContent = this.props.postData.title;
         topSection.appendChild(postTit);
 
         // 유저정보 및 게시날짜
@@ -33,12 +56,13 @@ class PostDetailTop extends Component {
         // 유저 이름
         const writerName = document.createElement('strong');
         writerName.setAttribute('class', 'post_strong_writer_name');
-        writerName.textContent = '목짧은기린';
+        writerName.textContent = this.props.postData.writerName;
 
         // 게시 날짜
         const writeDate = document.createElement('time');
         writeDate.setAttribute('class', 'post_time_date');
-        writeDate.textContent = '2022.11.09';
+        writeDate.textContent = this.date;
+        // console.log(this.props.postData.date);
 
         // 유저 정보 및 날짜
         postWriterInfoCon.appendChild(writerProfileImg);

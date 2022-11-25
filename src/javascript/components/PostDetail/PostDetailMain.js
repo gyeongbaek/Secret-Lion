@@ -6,40 +6,38 @@ import {
     PostDetailChat,
     PostDetailChatForm,
 } from './index.js';
-import {
-    collection,
-    db,
-    getDocs,
-    orderBy,
-    query,
-    where,
-} from '../../firebase.js';
+import { db, doc, getDoc, onSnapshot } from '../../firebase.js';
 
 class PostDetailMain extends Component {
     constructor(props) {
         super(props);
         this.state = {
             postData: [],
+            isLoding: true,
         };
+        this.data = [];
+        this.date = '';
         this.getPostData();
     }
     async getPostData() {
-        const post = [];
-        const postRef = collection(db, 'posts');
-        const q = query(
-            postRef,
-            // where('category','==','아침'),
-            orderBy('date', 'desc')
+        // const docRef = doc(db, 'posts', '2GbJkUznWNpg0dqcpCsW');
+        // const docSnap = await getDoc(docRef);
+        // this.setState({
+        //     postData: doc.data({ serverTimestamps: 'estimate' }),
+        //     isLoding: false,
+        // });
+        const unsub = onSnapshot(
+            doc(db, 'posts', 'ip358TWbiDczCFL4P6vW'),
+            (doc) => {
+                this.setState({
+                    postData: doc.data({ serverTimestamps: 'estimate' }),
+                    isLoding: false,
+                });
+            }
         );
-
-        const querySnapshot = await getDocs(q);
-        querySnapshot.forEach((doc) => {
-            post.push(doc.data());
-        });
-        this.setState({ postData: post });
     }
+
     render() {
-        console.log(this.state.postData);
         const main = new MainContainer();
         const mainEl = main.render();
 
@@ -49,7 +47,9 @@ class PostDetailMain extends Component {
         mainEl.appendChild(postDetailh1);
 
         // section top
-        const postDetailTop = new PostDetailTop();
+        const postDetailTop = new PostDetailTop({
+            postData: this.state.postData,
+        });
 
         // section mid
         const postDetailMid = new PostDetailMid();
@@ -79,6 +79,15 @@ class PostDetailMain extends Component {
         mainEl.appendChild(postDetailMid.render());
         mainEl.appendChild(commentCon);
         mainEl.appendChild(postDetailChatForm.render());
+
+        const loadingEl = document.createElement('div');
+        loadingEl.setAttribute('class', 'loading');
+        loadingEl.textContent = '로딩중...';
+        if (this.state.isLoding) {
+            return loadingEl;
+        } else {
+            return mainEl;
+        }
 
         return mainEl;
     }

@@ -1,13 +1,6 @@
 import { Header, MainContainer } from '../common/index.js';
-import {
-    PostDetailChat,
-    PostDetailChatForm,
-    PostDetailMain,
-    PostDetailMid,
-    PostDetailTop,
-} from '../components/PostDetail/index.js';
+import { PostDetailMain } from '../components/PostDetail/index.js';
 import Component from '../core/Component.js';
-import { collection, db, getDocs, orderBy, query, where } from '../firebase.js';
 
 class PostDetailPage extends Component {
     render() {

@@ -163,3 +163,8 @@
     height: 34px;
     border-radius: 50%;
 }
+
+.loading {
+    margin-top: 350px;
+    text-align: center;
+}
