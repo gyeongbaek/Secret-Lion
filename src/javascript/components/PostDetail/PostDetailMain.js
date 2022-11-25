@@ -83,8 +83,11 @@ class PostDetailMain extends Component {
         commentCon.appendChild(commentH2);
         commentCon.appendChild(commentUl);
 
+        // console.log(this.state.postData.postId);
         // chat form apch
-        const postDetailChatForm = new PostDetailChatForm();
+        const postDetailChatForm = new PostDetailChatForm({
+            postId: this.state.postData.postId,
+        });
 
         // 메인 안
         mainEl.appendChild(postDetailTop.render());
