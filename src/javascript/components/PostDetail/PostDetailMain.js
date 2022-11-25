@@ -15,26 +15,31 @@ class PostDetailMain extends Component {
             postData: [],
             isLoding: true,
         };
+        this.writer = [];
         this.data = [];
         this.date = '';
         this.getPostData();
     }
     async getPostData() {
-        // const docRef = doc(db, 'posts', '2GbJkUznWNpg0dqcpCsW');
-        // const docSnap = await getDoc(docRef);
-        // this.setState({
-        //     postData: doc.data({ serverTimestamps: 'estimate' }),
-        //     isLoding: false,
-        // });
         const unsub = onSnapshot(
             doc(db, 'posts', 'ip358TWbiDczCFL4P6vW'),
-            (doc) => {
+            async (postDoc) => {
+                const writer = await this.getUser(postDoc.data().writerId);
+                this.writer = writer;
                 this.setState({
-                    postData: doc.data({ serverTimestamps: 'estimate' }),
+                    postData: postDoc.data({ serverTimestamps: 'estimate' }),
                     isLoding: false,
                 });
             }
         );
+    }
+    async getUser(key) {
+        const docRef = doc(db, 'users', key);
+        const docSnap = await getDoc(docRef);
+        return {
+            displayName: docSnap.data().displayName,
+            photoURL: docSnap.data().photoURL,
+        };
     }
 
     render() {
@@ -49,6 +54,7 @@ class PostDetailMain extends Component {
         // section top
         const postDetailTop = new PostDetailTop({
             postData: this.state.postData,
+            writer: this.writer,
         });
 
         // section mid

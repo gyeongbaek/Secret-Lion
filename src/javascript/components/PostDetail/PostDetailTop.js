@@ -23,7 +23,8 @@ class PostDetailTop extends Component {
         if (this.props.postData.date !== undefined) {
             this.date = this.getDate(this.props.postData.date);
         }
-        this.getUser();
+        console.log(this.props);
+        // this.getUser();
         // console.log(this.props.postData);
         // topSection
         const topSection = document.createElement('section');
@@ -49,14 +50,15 @@ class PostDetailTop extends Component {
         writerProfileImg.setAttribute('class', 'post_img_profile');
         writerProfileImg.setAttribute(
             'src',
-            'https://cdn.pixabay.com/photo/2014/03/29/09/17/cat-300572_1280.jpg'
+            this.props.writer.photoURL ||
+                'https://cdn.pixabay.com/photo/2014/03/29/09/17/cat-300572_1280.jpg'
         );
         writerProfileImg.setAttribute('class', 'post_img_profile');
 
         // 유저 이름
         const writerName = document.createElement('strong');
         writerName.setAttribute('class', 'post_strong_writer_name');
-        writerName.textContent = this.props.postData.writerName;
+        writerName.textContent = this.props.writer.displayName;
 
         // 게시 날짜
         const writeDate = document.createElement('time');
