@@ -134,6 +134,9 @@
     flex-direction: column;
     justify-content: space-around;
 }
+.post_div_comment_left p {
+    margin-left: 10px;
+}
 
 /* 유저이름 */
 .post_div_comment_user_info .post_div_comment_name_date .post_strong_name {
@@ -150,11 +153,15 @@
     margin-top: 20px;
     display: flex;
     align-items: center;
+    border-bottom: 1px solid #bdbdbd;
+}
+.post_section_bottom .post_ul_comment .post_li_comment:last-child {
+    border-bottom: none;
 }
 
 .post_div_comment_user_info {
     display: flex;
-    gap: 5px;
+    gap: 10px;
     margin-bottom: 20px;
 }
 
