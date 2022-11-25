@@ -4,9 +4,18 @@ import {
     PostDetailTop,
     PostDetailMid,
     PostDetailChatForm,
-    PostDetailChatUl,
+    PostDetailChat,
 } from './index.js';
-import { db, doc, getDoc, onSnapshot } from '../../firebase.js';
+import {
+    collectionGroup,
+    db,
+    doc,
+    getDoc,
+    onSnapshot,
+    orderBy,
+    query,
+    where,
+} from '../../firebase.js';
 
 class PostDetailMain extends Component {
     constructor(props) {
@@ -14,7 +23,9 @@ class PostDetailMain extends Component {
         this.state = {
             postData: [],
             isLoding: true,
+            chatList: [],
         };
+
         this.writer = [];
         this.data = [];
         this.date = '';
@@ -26,7 +37,9 @@ class PostDetailMain extends Component {
             async (postDoc) => {
                 const writer = await this.getUser(postDoc.data().writerId);
                 this.writer = writer;
+                this.getChat(postDoc.data().postId);
                 this.setState({
+                    ...this.state,
                     postData: postDoc.data({ serverTimestamps: 'estimate' }),
                     isLoding: false,
                 });
@@ -40,6 +53,31 @@ class PostDetailMain extends Component {
             displayName: docSnap.data().displayName,
             photoURL: docSnap.data().photoURL,
         };
+    }
+    async getChat(id) {
+        const q = query(
+            collectionGroup(db, 'post'),
+            where('id', '==', id),
+            orderBy('CreateAt', 'asc')
+        );
+        onSnapshot(q, (querySnapshot) => {
+            const newarr = [];
+            const zs = [];
+            querySnapshot.docs.forEach(async (result, i) => {
+                newarr.push(
+                    Object.assign(
+                        result.data({ serverTimestamps: 'estimate' }),
+                        await this.getUser(result.data().writerId)
+                    )
+                );
+                if (i === querySnapshot.docs.length - 1) {
+                    this.setState({
+                        ...this.state,
+                        chatList: [...newarr],
+                    });
+                }
+            });
+        });
     }
 
     render() {
@@ -76,17 +114,23 @@ class PostDetailMain extends Component {
 
         const commentUl = document.createElement('ul');
         commentUl.setAttribute('class', 'post_ul_comment');
+        const frag = document.createDocumentFragment();
 
-        const postDetailChatUl = new PostDetailChatUl({
-            postId: this.state.postData.postId,
+        this.state.chatList.map((chat) => {
+            const postDetailChat = new PostDetailChat({
+                date: chat.CreateAt,
+                comment: chat.comment,
+                writerId: chat.writerId,
+                displayName: chat.displayName,
+                photoURL: chat.photoURL,
+            });
+            frag.appendChild(postDetailChat.intialize());
         });
 
         commentCon.appendChild(commentH2);
         commentCon.appendChild(commentUl);
-        commentCon.appendChild(postDetailChatUl.intialize());
+        commentUl.appendChild(frag);
 
-        // console.log(this.state.postData.postId);
-        // chat form apch
         const postDetailChatForm = new PostDetailChatForm({
             postId: this.state.postData.postId,
         });
