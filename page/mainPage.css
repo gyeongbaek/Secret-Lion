@@ -1,0 +1,41 @@
+/* .main_tmp_nav {
+    background-color: var(--main-color);
+    width: 100%;
+    height: 64px;
+} */
+
+.main_container {
+    padding: 150px 200px;
+}
+
+.main_sect_menu {
+    margin-bottom: 40px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.main_sect_menu button {
+    font-size: 24px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 8px;
+    background-color: white;
+    border-bottom: 1px solid black;
+}
+
+.main_sect_menu button img {
+    width: 24px;
+    height: 24px;
+}
+
+.main_dropdown {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 8px;
+}
+
+.main_sect_post {
+    /* padding: 10px 110px; */
+}

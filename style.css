@@ -1,0 +1,14 @@
+@import 'reset.css';
+@import 'page/startPage.css';
+@import 'page/loginPage.css';
+@import 'page/mainPage.css';
+@import 'page/postDetail.css';
+@import 'page/postUpload.css';
+@import 'page/signupPage.css';
+@import 'page/testPage.css';
+@import 'page/userEdit.css';
+@import 'page/userInfo.css';
+@import 'common/postBoard.css';
+@import 'common/dropDown.css';
+@import 'common/header.css';
+@import 'common/main.css';

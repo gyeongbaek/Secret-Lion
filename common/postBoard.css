@@ -1,0 +1,125 @@
+.board_ul_post {
+    width: 100%;
+    /* display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    gap: 80px; */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.board_post_item {
+    width: 340px;
+    height: 400px;
+    padding: 20px 20px 12px;
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas:
+        'thumb thumb thumb'
+        'tit   tit   cat  '
+        'cont  cont  cont '
+        'date  date  date '
+        'user  user  reac ';
+
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.board_img_thumbnail {
+    grid-area: thumb;
+    margin-bottom: 6px;
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    background-color: #ffd698;
+}
+
+.board_category {
+    grid-area: cat;
+    justify-self: center;
+    align-self: start;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 24px;
+    background-color: var(--cate-rel-color);
+    border-radius: 10px;
+}
+
+.board_str_title {
+    grid-area: tit;
+    font-size: 24px;
+    font-weight: 700;
+
+    /* 말줄임 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.board_p_content {
+    grid-area: cont;
+    margin: 0px 4px 20px;
+    height: 40px;
+    font-size: 16px;
+    line-height: 20px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.board_p_date {
+    grid-area: date;
+    padding: 0px 4px 6px;
+    color: var(--txt-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.board_post_user {
+    margin-top: 6px;
+    grid-area: user;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 15px;
+}
+
+.board_post_user img {
+    width: 22px;
+    height: 22px;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+.board_post_user p {
+    /* 테스트용 */
+    overflow: hidden;
+}
+
+.board_post_reac {
+    grid-area: reac;
+    justify-self: center;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.board_post_reac img {
+    width: 22px;
+    height: 22px;
+}
+
+.board_post_reac p + img {
+    margin-left: 6px;
+}

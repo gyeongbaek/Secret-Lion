@@ -1,0 +1,127 @@
+.edit_div_colorwrap {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--main-color);
+}
+
+/* 메인 컨테이너 */
+.edit_main_wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 740px;
+    height: 600px;
+    border: 1px solid #eaeaea;
+    box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    background-color: #fff;
+}
+
+.edit_strong {
+    display: inline-block;
+    font-size: 25px;
+    line-height: 24px;
+    margin: 100px 0 0 92px;
+}
+
+.edit_p_profile {
+    font-size: 18px;
+    line-height: 17px;
+    margin: 20px 0 0 93px;
+    color: #6a6a6a;
+}
+
+.edit_a_move {
+    position: relative;
+    top: -70px;
+    left: 625px;
+    width: 30px;
+    height: 30px;
+    background-image: url('/src/assets/close.svg');
+    background-size: contain;
+}
+
+/* 이미지 폼 */
+.edit_form_img {
+    position: relative;
+    top: -10px;
+}
+
+.edit_lab_img {
+    color: #3e3e3e;
+    position: absolute;
+    top: 60px;
+    left: 100px;
+}
+
+.edit_img {
+    width: 72px;
+    height: 72px;
+    border-radius: 120px;
+    margin: 100px 30px 60px 101px;
+    object-fit: cover;
+}
+
+.edit_btn_change,
+.edit_btn_delete {
+    position: relative;
+    top: -90px;
+    left: 0px;
+    width: 85px;
+    height: 28px;
+    border: 1px solid #bcbcbc;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 14px;
+    color: #909090;
+    margin-left: 20px;
+}
+
+/* 닉네임 폼 */
+.edit_form_nickname {
+    position: relative;
+    top: -10px;
+}
+
+.edit_form_nickname label {
+    color: #3e3e3e;
+    position: relative;
+    left: 115px;
+}
+
+#edit_inp_nickname {
+    position: relative;
+    left: 181px;
+    width: 300px;
+    height: 34px;
+    padding: 8px;
+    border: 1px solid #bcbcbc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+#edit_inp_nickname::placeholder {
+    opacity: 0.3;
+}
+
+.edit_p_nickname {
+    position: relative;
+    top: 12px;
+    left: 222px;
+    font-size: 12px;
+    line-height: 15px;
+    color: #909090;
+}
+
+.edit_btn_confirm {
+    position: relative;
+    top: -47px;
+    left: 570px;
+    background: #bcbcbc;
+    padding: 6px;
+    border: 1px solid #bcbcbc;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #ffffff;
+}
