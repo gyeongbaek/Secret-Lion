@@ -57,6 +57,8 @@ class ProfileImgForm extends Component {
                     await updateDoc(userProfile, {
                         photoURL: downloadURL,
                     });
+                    const image = document.querySelector('.edit_img');
+                    image.src = downloadURL;
                 });
             });
             console.log('이미지 변경 완료');
