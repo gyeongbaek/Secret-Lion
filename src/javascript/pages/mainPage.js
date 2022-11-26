@@ -1,8 +1,8 @@
-import PostBoard from '../common/postBoard.js';
 import Component from '../core/Component.js';
-import { productData } from '../data.js';
-import { Header, DropDown, MainContainer } from '../common/index.js';
+// import { productData } from '../data.js';
+import { Header, MainContainer } from '../common/index.js';
 import { collection, db, getDocs, orderBy, query } from '../firebase.js';
+import { MainPost } from '../components/mainPost/index.js';
 
 class MainPage extends Component {
     constructor(props) {
@@ -10,11 +10,6 @@ class MainPage extends Component {
         this.post = [];
     }
     async getPostData() {
-        // 나중에 json 형태로 받아올 예정
-        this.post = productData;
-    }
-
-    async getTestData() {
         const posts = [];
         const postRef = collection(db, 'test-post');
         const q = query(
@@ -30,65 +25,27 @@ class MainPage extends Component {
         return posts;
     }
 
+    checkHot(a, b) {
+        return b.like.length + b.scrap.length - a.like.length - a.scrap.length;
+    }
+
     render() {
-        // this.getPostData();
-        // console.log(this.post);
         const docFrag = new DocumentFragment();
 
         const header = new Header();
         docFrag.appendChild(header.render());
 
         // 메인 페이지
-
         const main = new MainContainer();
         const mainEl = main.render();
 
-        // 게시판 선택 메뉴
-        const menuSection = document.createElement('section');
-        menuSection.setAttribute('class', 'main_sect_menu');
-        const menuTitle = document.createElement('h2');
-        menuTitle.setAttribute('class', 'ir');
-        menuTitle.innerText = '게시판 분류 선택';
-
-        // 핫게시판 버튼
-        const btnHot = document.createElement('button');
-        btnHot.setAttribute('class', 'main_btn_hot');
-        const imgHot = document.createElement('img');
-        imgHot.setAttribute('src', '/src/assets/hot.svg');
-        imgHot.setAttribute('alt', '');
-        btnHot.innerText = 'HOT';
-        btnHot.appendChild(imgHot);
-
-        // 최신순 게시판 버튼
-        const btnRecent = document.createElement('button');
-        btnRecent.setAttribute('class', 'main_btn_recent');
-        const imgRecent = document.createElement('img');
-        imgRecent.setAttribute('src', '/src/assets/recent.svg');
-        imgRecent.setAttribute('alt', '');
-        btnRecent.innerText = '최신';
-        btnRecent.appendChild(imgRecent);
-
-        const dropDown = new DropDown();
-
-        menuSection.appendChild(btnHot);
-        menuSection.appendChild(btnRecent);
-        menuSection.appendChild(dropDown.render());
-
-        // 게시판
-        const postSection = document.createElement('section');
-        postSection.setAttribute('class', 'main_sect_post');
-        const postTitle = document.createElement('h2');
-        postTitle.setAttribute('class', 'ir');
-        postTitle.innerText = '게시글 목록';
-        postSection.appendChild(postTitle);
-        this.getTestData().then((posts) => {
+        this.getPostData().then((posts) => {
             this.post = posts;
-            const postBoard = new PostBoard({ posts: this.post });
-            postSection.appendChild(postBoard.render());
+            const mainPost = new MainPost({ posts: this.post });
+            mainEl.appendChild(mainPost.initialize());
         });
 
-        mainEl.appendChild(menuSection);
-        mainEl.appendChild(postSection);
+        // mainEl.appendChild(mainPost);
         docFrag.appendChild(mainEl);
         return docFrag; // test
         // return mainElement; // exec

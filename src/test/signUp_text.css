@@ -86,7 +86,6 @@
 /* accept check */
 .signupPage_div_acceptCont{
     display: flex;
-    flex-direction: row-reverse;
 }
 
 .signupPage_acceptLab{
