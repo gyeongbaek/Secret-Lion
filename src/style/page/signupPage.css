@@ -119,22 +119,28 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     position: absolute;
     width: 100%;
     height: 100%;
     left: 0;
     top: 0;
-    background-color: red;
+    padding-top: 240px;
+    background: rgba(0, 0, 0, 0.3);
+    
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(1.5px);
 }
 
 .signupPage_art_socialRuleModalCon,
 .signupPage_art_privacyModalCon{
     position: relative;
     width: 440px;
-    padding: 30px;
+    height: 554px;
+    padding: 50px 25px;
     border-radius: 30px;
     border: 1px solid #d7d7d7;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     background-color: #fff;
     line-height: 130%;
 }
@@ -151,7 +157,7 @@
     margin-bottom: 20px;
 }
 
-.signupPage_str_socialRuleSubTit{
+.signupPage_art_socialRuleModalCon strong{
     display: block;
     padding-bottom: 10px;
     font-size: 18px;
@@ -176,8 +182,8 @@
 
 .signupPage_btn_modalClose{
     position: absolute;
-    bottom: 20px;
-    right: 25px;
+    bottom: 40px;
+    right: 30px;
     border: #d7d7d7;
     background-color: #fff;
     font-size: 14px;

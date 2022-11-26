@@ -1,6 +1,6 @@
 import Component from '../../core/Component.js';
 import {
-    addDoc,
+    // addDoc,
     auth,
     collection,
     db,
