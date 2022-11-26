@@ -8,7 +8,8 @@ import {
     PostCardDate,
 } from './index.js';
 import Component from '../../core/Component.js';
-import { db, doc, getDoc } from '../../firebase.js';
+import { doc, getDoc } from '@firebase/firestore';
+import { db } from '../../firebase.js';
 
 class PostCard extends Component {
     async getUser() {
@@ -25,19 +26,24 @@ class PostCard extends Component {
         if (!this.props.item.img) {
             switch (this.props.item.category) {
                 case '학습':
-                    this.props.item.img = 'src/assets/thumbnail/study.png';
+                    this.props.item.img =
+                        'https://cdn.pixabay.com/photo/2017/02/20/18/03/cat-2083492_1280.jpg';
                     break;
                 case '연애':
-                    this.props.item.img = 'src/assets/thumbnail/love.png';
+                    this.props.item.img =
+                        'https://cdn.pixabay.com/photo/2017/02/20/18/03/cat-2083492_1280.jpg';
                     break;
                 case '관계':
-                    this.props.item.img = 'src/assets/thumbnail/relation.png';
+                    this.props.item.img =
+                        'https://cdn.pixabay.com/photo/2017/02/20/18/03/cat-2083492_1280.jpg';
                     break;
                 case '취업':
-                    this.props.item.img = 'src/assets/thumbnail/job.png';
+                    this.props.item.img =
+                        'https://cdn.pixabay.com/photo/2017/02/20/18/03/cat-2083492_1280.jpg';
                     break;
                 case '자유':
-                    this.props.item.img = 'src/assets/thumbnail/free.png';
+                    this.props.item.img =
+                        'https://cdn.pixabay.com/photo/2017/02/20/18/03/cat-2083492_1280.jpg';
                     break;
                 default:
                     break;

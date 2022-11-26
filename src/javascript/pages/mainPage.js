@@ -2,7 +2,8 @@ import PostBoard from '../common/postBoard.js';
 import Component from '../core/Component.js';
 import { productData } from '../data.js';
 import { Header, DropDown, MainContainer } from '../common/index.js';
-import { collection, db, getDocs, orderBy, query } from '../firebase.js';
+import { collection, getDocs, orderBy, query } from '@firebase/firestore';
+import { db } from '../firebase.js';
 
 class MainPage extends Component {
     constructor(props) {
@@ -16,7 +17,7 @@ class MainPage extends Component {
 
     async getTestData() {
         const posts = [];
-        const postRef = collection(db, 'test-post');
+        const postRef = collection(db, 'posts');
         const q = query(
             postRef,
             // where('category','==','아침'),
@@ -54,7 +55,10 @@ class MainPage extends Component {
         const btnHot = document.createElement('button');
         btnHot.setAttribute('class', 'main_btn_hot');
         const imgHot = document.createElement('img');
-        imgHot.setAttribute('src', '/src/assets/hot.svg');
+        imgHot.setAttribute(
+            'src',
+            'https://cdn.pixabay.com/photo/2017/02/20/18/03/cat-2083492_1280.jpg'
+        );
         imgHot.setAttribute('alt', '');
         btnHot.innerText = 'HOT';
         btnHot.appendChild(imgHot);
@@ -63,7 +67,10 @@ class MainPage extends Component {
         const btnRecent = document.createElement('button');
         btnRecent.setAttribute('class', 'main_btn_recent');
         const imgRecent = document.createElement('img');
-        imgRecent.setAttribute('src', '/src/assets/recent.svg');
+        imgRecent.setAttribute(
+            'src',
+            'https://cdn.pixabay.com/photo/2017/02/20/18/03/cat-2083492_1280.jpg'
+        );
         imgRecent.setAttribute('alt', '');
         btnRecent.innerText = '최신';
         btnRecent.appendChild(imgRecent);

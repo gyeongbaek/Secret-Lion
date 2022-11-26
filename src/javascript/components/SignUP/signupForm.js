@@ -1,16 +1,15 @@
-import Component from "../../core/Component.js";
-import { auth, createUserWithEmailAndPassword, db, doc, setDoc } from "../../firebase.js";
-import PrivacyModal from "./privacyModal.js";
-import SocialRuleModal from "./socialRuleModal.js";
+import Component from '../../core/Component.js';
+import PrivacyModal from './privacyModal.js';
+import SocialRuleModal from './socialRuleModal.js';
 
 class SignupForm extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
     }
-    
-    render(){
+
+    render() {
         const signupForm = document.createElement('form');
-        signupForm.setAttribute('class','signupPage_form');
+        signupForm.setAttribute('class', 'signupPage_form');
 
         const inpId = document.createElement('input');
         inpId.setAttribute('type', 'text');
@@ -63,16 +62,16 @@ class SignupForm extends Component {
 
         const div1 = document.createElement('div');
         div1.setAttribute('class', 'socialRuleDiv1');
-        
+
         const acceptLab = document.createElement('label');
         acceptLab.setAttribute('for', 'signupPage_check_accept');
         acceptLab.setAttribute('class', 'signupPage_acceptLab');
-        
+
         const acceptCheck = document.createElement('input');
         acceptCheck.setAttribute('type', 'checkbox');
         acceptCheck.setAttribute('id', 'signupPage_check_accept');
         acceptCheck.required = true;
-        
+
         const socialRuleModalBtn = document.createElement('button');
         socialRuleModalBtn.type = 'button';
         socialRuleModalBtn.setAttribute('class', 'signupPage_btn_socialRule');
@@ -86,12 +85,12 @@ class SignupForm extends Component {
 
         const privacyModalBtn = document.createElement('button');
         privacyModalBtn.type = 'button';
-        privacyModalBtn.setAttribute('class', 'signupPage_btn_privacy') ;
+        privacyModalBtn.setAttribute('class', 'signupPage_btn_privacy');
         privacyModalBtn.textContent = '개인정보 수집/이용';
 
         const secSpan = document.createElement('span');
         secSpan.textContent = '에 동의합니다.';
-        
+
         const unchecked = document.createElement('p');
         unchecked.style.color = 'red';
         unchecked.style.fontSize = '14px';
@@ -99,52 +98,60 @@ class SignupForm extends Component {
         const signupBtn = document.createElement('button');
         signupBtn.setAttribute('class', 'loginPage_btn_signUp');
         signupBtn.textContent = '회원가입';
-        
-        async function handleToDoSubmit(event){
+
+        async function handleToDoSubmit(event) {
             event.preventDefault();
             const newId = inpId.value;
             const newPwd = inpPwd.value;
-            const newPwdCheck = inpPwdCheck.value;   
+            const newPwdCheck = inpPwdCheck.value;
             const newNickname = inpNickname.value;
-            
-            try{const createUser = await createUserWithEmailAndPassword(auth, newId, newPwd);
+
+            try {
+                const createUser = await createUserWithEmailAndPassword(
+                    auth,
+                    newId,
+                    newPwd
+                );
                 const userData = {
-                    displayName : newNickname,
-                    photoURL : null,
+                    displayName: newNickname,
+                    photoURL: null,
                     email: newId,
-                    uid: createUser.user.uid
+                    uid: createUser.user.uid,
                 };
                 console.log(createUser);
                 console.log('회원가입 완.');
                 await setDoc(doc(db, 'users', createUser.user.uid), userData);
-            }catch(error){
+            } catch (error) {
                 // console.log(error.code);
-                if(error.code === 'auth/invalid-email'){
+                if (error.code === 'auth/invalid-email') {
                     emailErr.textContent = '올바른 이메일 형식이 아닙니다.';
                     emailErr.style.margin = '0 0 15px 5px';
-                }else if(error.code==='auth/invalid-password' || error.code==='auth/weak-password'){
+                } else if (
+                    error.code === 'auth/invalid-password' ||
+                    error.code === 'auth/weak-password'
+                ) {
                     pwdErr.textContent = '최소 6자 이상 입력해주세요.';
                     pwdErr.style.margin = '0 0 15px 5px';
-                }else if(newPwd!==newPwdCheck){
+                } else if (newPwd !== newPwdCheck) {
                     pwdCheckErr.textContent = '비밀번호가 일치하지 않습니다.';
                     pwdCheckErr.style.margin = '0 0 15px 5px';
-                }else if(error.code === 'auth/email-already-in-use'){
+                } else if (error.code === 'auth/email-already-in-use') {
                     emailErr.textContent = '이미 가입된 이메일 입니다.';
                     emailErr.style.margin = '0 0 15px 5px';
-                }else if(newNickname===''){
+                } else if (newNickname === '') {
                     // error.code === 'auth/invalid-display-name'
                     nickNameErr.textContent = '필수항목입니다.';
                     nickNameErr.style.margin = '0 0 15px 5px';
-                }else if(acceptCheck.checked === false){
+                } else if (acceptCheck.checked === false) {
                     unchecked.textContent = '필수항목입니다.';
                     nickNameErr.style.margin = '0 0 15px 5px';
                 }
             }
 
-            inpId.value = "";
-            inpPwd.value = "";
-            inpPwdCheck.value = "";
-            inpNickname.value = "";
+            inpId.value = '';
+            inpPwd.value = '';
+            inpPwdCheck.value = '';
+            inpNickname.value = '';
             // console.log('완료!');
         }
 
@@ -166,11 +173,10 @@ class SignupForm extends Component {
         div1.appendChild(socialRuleModalBtn);
         div1.appendChild(firstSpan);
         acceptCont.appendChild(div1);
-        
+
         div2.appendChild(privacyModalBtn);
         div2.appendChild(secSpan);
         acceptCont.appendChild(div2);
-        
 
         return [signupForm, socialRuleModalBtn, privacyModalBtn];
         // return signupForm;

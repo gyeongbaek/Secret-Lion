@@ -1,5 +1,4 @@
 import Component from '../../core/Component.js';
-import { db, doc, getDoc } from '../../firebase.js';
 
 class PostDetailTop extends Component {
     constructor(props) {

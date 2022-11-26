@@ -1,5 +1,5 @@
 import Component from '../../core/Component.js';
-import { auth, db, doc, updateDoc } from '../../firebase.js';
+import { auth } from '../../firebase.js';
 
 class PostDetailMid extends Component {
     constructor(props) {
@@ -81,8 +81,8 @@ class PostDetailMid extends Component {
         postLikeImg.setAttribute(
             'src',
             this.isLikeParty
-                ? 'src/assets/heart_fill.svg'
-                : 'src/assets/heart.svg'
+                ? 'https://cdn.pixabay.com/photo/2017/02/20/18/03/cat-2083492_1280.jpg'
+                : 'https://cdn.pixabay.com/photo/2017/02/20/18/03/cat-2083492_1280.jpg'
         );
 
         const postLikeCount = document.createElement('span');
@@ -111,8 +111,8 @@ class PostDetailMid extends Component {
         postFavImg.setAttribute(
             'src',
             this.isScrapParty
-                ? 'src/assets/scrap_fill.svg'
-                : 'src/assets/scrap.svg'
+                ? 'https://cdn.pixabay.com/photo/2017/02/20/18/03/cat-2083492_1280.jpg'
+                : 'https://cdn.pixabay.com/photo/2017/02/20/18/03/cat-2083492_1280.jpg'
         );
 
         postFavBtn.appendChild(postFavImg);

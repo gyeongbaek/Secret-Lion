@@ -1,7 +1,6 @@
-import App from "./app.js";
-
+import App from './app.js';
 const config = {
-    el: "#root",
+    el: '#root',
 };
 
 new App(config).setup();

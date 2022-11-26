@@ -19,19 +19,19 @@ class UserInfoIcon extends Component {
         // 아이콘 이미지
         const postImg = new IconImg(
             'props',
-            'src/assets/write.svg',
+            'https://cdn.pixabay.com/photo/2017/02/20/18/03/cat-2083492_1280.jpg',
             '게시글 아이콘',
             'info_img_post'
         );
         const commentImg = new IconImg(
             'props',
-            'src/assets/comment.svg',
+            'https://cdn.pixabay.com/photo/2017/02/20/18/03/cat-2083492_1280.jpg',
             '댓글 아이콘',
             'info_img_comment'
         );
         const scrapImg = new IconImg(
             'props',
-            'src/assets/scrap.svg',
+            'https://cdn.pixabay.com/photo/2017/02/20/18/03/cat-2083492_1280.jpg',
             '스크랩 아이콘',
             'info_img_scrap'
         );

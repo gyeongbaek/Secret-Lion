@@ -1,5 +1,7 @@
+import { updateProfile } from '@firebase/auth';
+import { doc, updateDoc } from '@firebase/firestore';
 import Component from '../../core/Component.js';
-import { auth, db, doc, updateDoc, updateProfile } from '../../firebase.js';
+import { auth, db } from '../../firebase.js';
 
 class NicknameForm extends Component {
     constructor(props) {

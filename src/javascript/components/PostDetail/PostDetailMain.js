@@ -7,16 +7,16 @@ import {
     PostDetailChat,
 } from './index.js';
 import {
-    auth,
     collectionGroup,
-    db,
     doc,
     getDoc,
+    getDocs,
     onSnapshot,
     orderBy,
     query,
     where,
-} from '../../firebase.js';
+} from 'firebase/firestore';
+import { db } from '../../firebase';
 
 class PostDetailMain extends Component {
     constructor(props) {
@@ -36,7 +36,7 @@ class PostDetailMain extends Component {
         const unsub = onSnapshot(
             doc(db, 'posts', '6gWmPsRdcnevnvadCLEE'), // url id값넣어주기
             async (postDoc) => {
-                console.log(postDoc.data());
+                // console.log(postDoc.data());
                 const writer = await this.getUser(postDoc.data().writerId);
                 this.writer = writer;
                 this.getChat(postDoc.data().postId);
@@ -60,7 +60,7 @@ class PostDetailMain extends Component {
         const q = query(
             collectionGroup(db, 'post'),
             where('id', '==', id),
-            orderBy('CreateAt', 'asc')
+            orderBy('CreateAt', 'desc')
         );
         onSnapshot(q, (querySnapshot) => {
             const newarr = [];
@@ -78,7 +78,8 @@ class PostDetailMain extends Component {
                         chatList: [...newarr],
                     });
                 }
-            });
+            }),
+                (error) => console.log(error);
         });
     }
 

@@ -1,16 +1,8 @@
+import { updateProfile } from '@firebase/auth';
+import { doc, updateDoc } from '@firebase/firestore';
+import { getDownloadURL, ref, uploadBytes } from '@firebase/storage';
 import Component from '../../core/Component.js';
-import {
-    auth,
-    db,
-    doc,
-    getDownloadURL,
-    getStorage,
-    ref,
-    storage,
-    updateDoc,
-    updateProfile,
-    uploadBytes,
-} from '../../firebase.js';
+import { auth, db, storage } from '../../firebase.js';
 
 class ProfileImgForm extends Component {
     constructor(props) {

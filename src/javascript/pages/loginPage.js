@@ -1,7 +1,7 @@
-import { LoginForm, LoginLink } from "../components/Login/index.js";
+import { LoginForm, LoginLink } from '../components/Login/index.js';
 
 class LoginPage {
-    constructor() { }
+    constructor() {}
     render() {
         const frag = document.createDocumentFragment();
 
@@ -12,7 +12,10 @@ class LoginPage {
         const logo = document.createElement('h1');
 
         const logoImg = document.createElement('img');
-        logoImg.setAttribute('src', 'src/assets/logo.svg');
+        logoImg.setAttribute(
+            'src',
+            'https://cdn.pixabay.com/photo/2017/02/20/18/03/cat-2083492_1280.jpg'
+        );
         logoImg.setAttribute('alt', '비밀멋사 로고이미지');
         logoImg.setAttribute('class', 'loginPage_img_headerLogo');
 
@@ -28,7 +31,8 @@ class LoginPage {
         //main > subTit
         const subTit = document.createElement('p');
         subTit.setAttribute('class', 'loginPage_p_subTit');
-        subTit.innerHTML = '지금 <strong class="loginPage_strong">비밀멋사</strong>를 시작하세요!';
+        subTit.innerHTML =
+            '지금 <strong class="loginPage_strong">비밀멋사</strong>를 시작하세요!';
 
         // logoImg
         logo.appendChild(logoImg);
@@ -40,7 +44,7 @@ class LoginPage {
         loginMain.appendChild(loginForm.render());
         loginMain.appendChild(loginLink.render());
 
-        //전체 
+        //전체
         bodybgc.appendChild(logo);
         bodybgc.appendChild(title);
         bodybgc.appendChild(loginMain);

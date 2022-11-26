@@ -3,7 +3,8 @@ import UserInfoIcon from '../components/UserInfoIcon/userInfoIcon.js';
 import PostBoard from '../common/postBoard.js';
 import Component from '../core/Component.js';
 import { productData } from '../data.js';
-import { collection, db, getDocs, orderBy, query, where } from '../firebase.js';
+import { collection, getDocs, orderBy, query } from '@firebase/firestore';
+import { db } from '../firebase.js';
 
 class UserInfo extends Component {
     constructor(props) {

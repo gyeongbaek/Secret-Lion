@@ -1,11 +1,6 @@
+import { addDoc, collection, serverTimestamp } from '@firebase/firestore';
 import Component from '../../core/Component.js';
-import {
-    addDoc,
-    auth,
-    collection,
-    db,
-    serverTimestamp,
-} from '../../firebase.js';
+import { auth, db } from '../../firebase.js';
 
 class PostDetailChatForm extends Component {
     constructor(props) {

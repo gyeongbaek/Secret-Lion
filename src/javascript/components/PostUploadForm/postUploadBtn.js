@@ -1,20 +1,15 @@
-import Component from '../../core/Component.js';
 import {
-    auth,
     collection,
-    db,
     doc,
     getDocs,
-    getDownloadURL,
     orderBy,
     query,
-    ref,
     serverTimestamp,
     setDoc,
-    storage,
-    updateDoc,
-    uploadBytes,
-} from '../../firebase.js';
+} from '@firebase/firestore';
+import { getDownloadURL, ref, uploadBytes } from '@firebase/storage';
+import Component from '../../core/Component.js';
+import { auth, db, storage } from '../../firebase.js';
 
 class PostUploadBtn extends Component {
     constructor(props) {
