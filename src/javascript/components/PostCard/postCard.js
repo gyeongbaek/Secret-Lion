@@ -14,12 +14,12 @@ class PostCard extends Component {
     async getUser() {
         const docRef = doc(db, 'users', this.props.item.writerId);
         const docSnap = await getDoc(docRef);
-        return docSnap.data().displayName;
+        return docSnap.data();
     }
     render() {
         const postItem = document.createElement('li');
         const post = document.createElement('a');
-        post.setAttribute('href', `/post/${this.props.item.id}`);
+        post.setAttribute('href', `/post/${this.props.item.postId}`);
         post.setAttribute('class', 'board_post_item');
 
         if (!this.props.item.img) {
@@ -52,8 +52,8 @@ class PostCard extends Component {
             category: this.props.item.category,
         });
         const postInfo = new PostCardReaction({
-            like: this.props.item.like.length,
-            comment: this.props.item.scrap.length,
+            like: this.props.item.like.participateCount,
+            comment: this.props.item.scrap.participateCount,
         });
         const postDate = new PostCardDate({ date: this.props.item.date });
 
@@ -63,6 +63,7 @@ class PostCard extends Component {
         post.appendChild(postCont.render());
         post.appendChild(postDate.render());
         post.appendChild(postInfo.render());
+
         this.getUser().then((el) => {
             const postUser = new PostCardWriter({ user: el });
             post.appendChild(postUser.render());

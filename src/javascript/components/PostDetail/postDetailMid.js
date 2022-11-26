@@ -4,23 +4,17 @@ import { auth, db, doc, updateDoc } from '../../firebase.js';
 class PostDetailMid extends Component {
     constructor(props) {
         super(props);
-        this.isLikeParty =
-            this.props.like && this.included(this.props.like.participants);
-        this.isScrapParty =
-            this.props.scrap && this.included(this.props.scrap.participants);
+        this.isLikeParty = this.props.like && this.included(this.props.like.participants);
+        this.isScrapParty = this.props.scrap && this.included(this.props.scrap.participants);
     }
     included(participants) {
-        const include = participants.find(
-            (participant) => participant === auth.currentUser.uid
-        );
+        const include = participants.find((participant) => participant === auth.currentUser.uid);
         return include;
     }
     async partyBtn(isParty, participants, party, icon) {
         let newParty;
         if (isParty) {
-            const cancel = participants.filter(
-                (v) => v !== auth.currentUser.uid
-            );
+            const cancel = participants.filter((v) => v !== auth.currentUser.uid);
             newParty = {
                 ...party,
                 participants: [...cancel],
@@ -65,12 +59,7 @@ class PostDetailMid extends Component {
         postLikeBtn.setAttribute('class', 'post_btn_like');
 
         postLikeBtn.addEventListener('click', (e) => {
-            this.partyBtn(
-                this.isLikeParty,
-                this.props.like.participants,
-                this.props.like,
-                'like'
-            );
+            this.partyBtn(this.isLikeParty, this.props.like.participants, this.props.like, 'like');
         });
 
         const postLikeImg = document.createElement('img');
@@ -78,17 +67,11 @@ class PostDetailMid extends Component {
         postLikeImg.setAttribute('alt', '좋아요');
         //좋아요 리스트에 내가 포함되어있으면 이미지 변경해준다.
         // 좋아요리스트에 내 uid와 비교
-        postLikeImg.setAttribute(
-            'src',
-            this.isLikeParty
-                ? 'src/assets/heart_fill.svg'
-                : 'src/assets/heart.svg'
-        );
+        postLikeImg.setAttribute('src', this.isLikeParty ? '/src/assets/heart_fill.svg' : '/src/assets/heart.svg');
 
         const postLikeCount = document.createElement('span');
         postLikeCount.setAttribute('class', 'post_btn_lie_count');
-        postLikeCount.textContent =
-            this.props.like && this.props.like.participateCount;
+        postLikeCount.textContent = this.props.like && this.props.like.participateCount;
 
         postLikeBtn.appendChild(postLikeImg);
         postLikeBtn.appendChild(postLikeCount);
@@ -97,23 +80,13 @@ class PostDetailMid extends Component {
         postFavBtn.setAttribute('class', 'post_btn_fav');
 
         postFavBtn.addEventListener('click', () => {
-            this.partyBtn(
-                this.isScrapParty,
-                this.props.scrap.participants,
-                this.props.scrap,
-                'scrap'
-            );
+            this.partyBtn(this.isScrapParty, this.props.scrap.participants, this.props.scrap, 'scrap');
         });
 
         const postFavImg = document.createElement('img');
         postFavImg.setAttribute('class', 'post_img_fav');
         postFavImg.setAttribute('alt', '즐겨찾기');
-        postFavImg.setAttribute(
-            'src',
-            this.isScrapParty
-                ? 'src/assets/scrap_fill.svg'
-                : 'src/assets/scrap.svg'
-        );
+        postFavImg.setAttribute('src', this.isScrapParty ? '/src/assets/scrap_fill.svg' : '/src/assets/scrap.svg');
 
         postFavBtn.appendChild(postFavImg);
 
