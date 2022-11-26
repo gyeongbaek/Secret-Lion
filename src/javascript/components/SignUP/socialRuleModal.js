@@ -41,7 +41,7 @@ class SocialRuleModal extends Component {
 
         //모달창 닫기 함수
         function closeModal(){
-            socialRuleModal.style.display = "none"
+            socialRuleModalCon.style.display = "none"
         }
         closeBtn.addEventListener('click', closeModal);
         
