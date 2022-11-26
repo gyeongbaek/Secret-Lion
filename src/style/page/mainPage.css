@@ -25,6 +25,10 @@
     border-bottom: 1px solid black;
 }
 
+.main_sect_menu button.on {
+    border-bottom: 5px solid var(--main-color);
+    transform: scale(1.1);
+}
 .main_sect_menu button img {
     width: 24px;
     height: 24px;
