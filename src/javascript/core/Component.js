@@ -6,6 +6,10 @@ class Component {
 
     setState(newState) {
         this.state = newState;
+        this.updater();
+    }
+
+    updater() {
         const rendered = this.render();
         this.lastRendered.replaceWith(rendered);
         this.lastRendered = rendered;
@@ -13,7 +17,7 @@ class Component {
 
     render() {}
 
-    intialize() {
+    initialize() {
         const rendered = this.render();
         this.lastRendered = rendered;
         return this.lastRendered;

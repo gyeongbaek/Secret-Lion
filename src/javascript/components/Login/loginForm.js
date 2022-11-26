@@ -1,5 +1,5 @@
-import Component from "../../core/Component.js";
-import { auth, signInWithEmailAndPassword, signOut } from "../../firebase.js";
+import Component from '../../core/Component.js';
+import { auth, signInWithEmailAndPassword, signOut } from '../../firebase.js';
 
 class LoginForm extends Component {
     render() {
@@ -30,31 +30,30 @@ class LoginForm extends Component {
         formCont.appendChild(loginBtn);
         formCont.appendChild(logoutBtn);
 
-        async function login(event){
+        async function login(event) {
             event.preventDefault();
-            const newId = inpId.value;           
+            const newId = inpId.value;
             const newPwd = inpPwd.value;
 
-            inpId.value = "";
-            inpPwd.value = "";
+            inpId.value = '';
+            inpPwd.value = '';
 
-            try{
+            try {
                 await signInWithEmailAndPassword(auth, newId, newPwd);
                 console.log('로그인 완료');
-            } catch(error){
+            } catch (error) {
                 console.log(error);
             }
         }
 
         loginBtn.addEventListener('click', login);
-        logoutBtn.addEventListener('click', (e)=>{
+        logoutBtn.addEventListener('click', (e) => {
             e.preventDefault();
             signOut(auth);
-            console.log("로그아웃!");
-        })
+            console.log('로그아웃!');
+        });
         return formCont;
     }
-
 }
 
 export default LoginForm;

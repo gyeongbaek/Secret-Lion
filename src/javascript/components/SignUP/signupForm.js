@@ -106,8 +106,28 @@ class SignupForm extends Component {
             const newPwd = inpPwd.value;
             const newPwdCheck = inpPwdCheck.value;   
             const newNickname = inpNickname.value;
-            
-            try{const createUser = await createUserWithEmailAndPassword(auth, newId, newPwd);
+
+            try{
+                const createUser = await createUserWithEmailAndPassword(auth, newId, newPwd);
+                emailErr.textContent = '';
+                emailErr.style.margin = '0';
+                pwdErr.textContent = '';
+                pwdErr.style.margin = '0';
+                if(newPwd!==newPwdCheck){
+                    pwdCheckErr.textContent = '비밀번호가 일치하지 않습니다.';
+                    pwdCheckErr.style.margin = '0 0 15px 5px';
+                    return
+                }else if(newNickname===''){
+                    nickNameErr.textContent = '닉네임은 필수항목입니다.';
+                    nickNameErr.style.margin = '0 0 15px 5px';
+                    return 
+                }else if(acceptCheck.checked === false){
+                    unchecked.textContent = '커뮤니티 규칙과 개인정보 수집 및 이용에 대한 안내에 동의해주세요.';
+                    unchecked.style.margin = '20px 0 0 5px';
+                    unchecked.style.lineHeight = '130%';
+                    return
+                }
+
                 const userData = {
                     displayName : newNickname,
                     photoURL : null,
@@ -118,34 +138,28 @@ class SignupForm extends Component {
                 console.log('회원가입 완.');
                 await setDoc(doc(db, 'users', createUser.user.uid), userData);
             }catch(error){
-                // console.log(error.code);
-                if(error.code === 'auth/invalid-email'){
+                console.log(error.code);
+                if(error.code === 'auth/invalid-email' || error.code === 'auth/internal-error'){
                     emailErr.textContent = '올바른 이메일 형식이 아닙니다.';
+                    emailErr.style.margin = '0 0 15px 5px';
+                }else if(error.code === 'auth/email-already-in-use'){
+                    emailErr.textContent = '이미 가입된 이메일 입니다.';
                     emailErr.style.margin = '0 0 15px 5px';
                 }else if(error.code==='auth/invalid-password' || error.code==='auth/weak-password'){
                     pwdErr.textContent = '최소 6자 이상 입력해주세요.';
                     pwdErr.style.margin = '0 0 15px 5px';
-                }else if(newPwd!==newPwdCheck){
-                    pwdCheckErr.textContent = '비밀번호가 일치하지 않습니다.';
-                    pwdCheckErr.style.margin = '0 0 15px 5px';
-                }else if(error.code === 'auth/email-already-in-use'){
-                    emailErr.textContent = '이미 가입된 이메일 입니다.';
-                    emailErr.style.margin = '0 0 15px 5px';
-                }else if(newNickname===''){
-                    // error.code === 'auth/invalid-display-name'
-                    nickNameErr.textContent = '필수항목입니다.';
-                    nickNameErr.style.margin = '0 0 15px 5px';
-                }else if(acceptCheck.checked === false){
-                    unchecked.textContent = '필수항목입니다.';
-                    nickNameErr.style.margin = '0 0 15px 5px';
                 }
             }
 
-            inpId.value = "";
-            inpPwd.value = "";
-            inpPwdCheck.value = "";
-            inpNickname.value = "";
-            // console.log('완료!');
+            // inpId.value = "";
+            // inpPwd.value = "";
+            // inpPwdCheck.value = "";
+            // inpNickname.value = "";
+
+            pwdCheckErr.textContent = '';
+            pwdCheckErr.style.margin = '0';
+            nickNameErr.textContent = '';
+            nickNameErr.style.margin = '0';
         }
 
         signupBtn.addEventListener('click', handleToDoSubmit);
