@@ -1,7 +1,8 @@
-import { LoginForm, LoginLink } from "../components/Login/index.js";
+import { LoginForm, LoginLink } from '../components/Login/index.js';
+import { auth } from '../firebase.js';
 
 class LoginPage {
-    constructor() { }
+    constructor() {}
     render() {
         const frag = document.createDocumentFragment();
 
@@ -40,7 +41,7 @@ class LoginPage {
         loginMain.appendChild(loginForm.render());
         loginMain.appendChild(loginLink.render());
 
-        //전체 
+        //전체
         bodybgc.appendChild(logo);
         bodybgc.appendChild(title);
         bodybgc.appendChild(loginMain);

@@ -19,7 +19,11 @@ export default class App {
         const { el } = this.props;
 
         const router = new Router({
-            '/': TestPage,
+            // '/': TestPage,
+            // 작업용
+            // '/': LoginPage,
+            '/': MainPage,
+            // //작업용
             '/start': StartPage,
             '/login': LoginPage,
             '/signup': SignupPage,
