@@ -4,11 +4,15 @@ import {
     collection,
     db,
     doc,
+    getDocs,
     getDownloadURL,
+    orderBy,
+    query,
     ref,
     serverTimestamp,
     setDoc,
     storage,
+    updateDoc,
     uploadBytes,
 } from '../../firebase.js';
 
@@ -42,7 +46,7 @@ class PostUploadBtn extends Component {
             postId: newPostRef.id,
         };
         await setDoc(newPostRef, postData);
-        console.log(postData);
+
         console.log('완료');
         history.go(-1);
     }
@@ -82,9 +86,32 @@ class PostUploadBtn extends Component {
             });
         });
     }
+    async getTestData() {
+        const posts = [];
+        const postRef = collection(db, 'posts');
+        const q = query(
+            postRef,
+            // where('category','==','아침'),
+            orderBy('date', 'desc')
+        );
+
+        const querySnapshot = await getDocs(q);
+        querySnapshot.forEach((doc) => {
+            posts.push(doc.data());
+        });
+        const list = [];
+        posts.forEach((v) => {
+            if (v.like.participants.length > 0) {
+                v.like.participants.find((a) => {
+                    console.log(a);
+                });
+            }
+        });
+        return posts;
+    }
 
     render() {
-        console.log(this.props);
+        this.getTestData();
         const btnContainer = document.createElement('div');
         btnContainer.setAttribute('class', 'post_btn_con');
 

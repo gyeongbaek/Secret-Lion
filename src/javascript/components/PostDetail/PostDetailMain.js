@@ -7,6 +7,7 @@ import {
     PostDetailChat,
 } from './index.js';
 import {
+    auth,
     collectionGroup,
     db,
     doc,
