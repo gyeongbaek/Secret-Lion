@@ -45,7 +45,7 @@ class Router {
         if (this.routes[pathname]) {
             const component = new this.routes[pathname]();
             page = component.render();
-            console.log(page);
+
         } else if (param) {
             // detail/:id 페이지를 처리하기 위해
             console.log(param, routeName);

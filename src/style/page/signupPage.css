@@ -96,11 +96,6 @@
     margin-top: 8px;
 }
 
-.signupPage_acceptLab{
-    margin: 10px 10px 12px 0;
-    line-height: 130%;
-}
-
 #signupPage_check_accept{
     margin-right: 10px;
     cursor: pointer;
@@ -130,6 +125,7 @@
     height: 100%;
     left: 0;
     top: 0;
+    background-color: red;
 }
 
 .signupPage_art_socialRuleModalCon,
