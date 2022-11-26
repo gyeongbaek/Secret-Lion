@@ -8,13 +8,11 @@ class MainPage extends Component {
     constructor(props) {
         super(props);
         this.post = [];
+        this.state = {
+            displayPost: [],
+        };
     }
     async getPostData() {
-        // 나중에 json 형태로 받아올 예정
-        this.post = productData;
-    }
-
-    async getTestData() {
         const posts = [];
         const postRef = collection(db, 'test-post');
         const q = query(
@@ -28,6 +26,49 @@ class MainPage extends Component {
             posts.push(doc.data());
         });
         return posts;
+    }
+
+    setState(newState) {
+        this.state = newState;
+        const rendered = this.render();
+        this.lastRendered.replaceWith(rendered);
+    }
+
+    /**
+     * 함수로 빼는게 나을지 고민중
+     * 굳이 함수 실행할 필요가 있나 싶기도 하고
+     * 캡슐화?해야되지 않나 싶기도함
+     */
+    checkHot(a, b) {
+        return b.like.length + b.scrap.length - a.like.length - a.scrap.length;
+    }
+    checkRecent(a, b) {
+        return a.date - b.date;
+    }
+
+    printTitle(posts) {
+        posts.forEach((el) => console.log(el.title));
+        console.log('===============');
+    }
+
+    changeHotRecent(flag) {
+        if (flag) {
+            // Hot
+            const hotList = [...this.state.displayPost].sort((a, b) => {
+                return b.like.length + b.scrap.length - a.like.length - a.scrap.length;
+            });
+            this.printTitle(hotList);
+
+            return hotList;
+        } else {
+            // Recent
+            const recList = [...this.state.displayPost].sort((a, b) => {
+                return b.date - a.date;
+            });
+            this.printTitle(recList);
+
+            return recList;
+        }
     }
 
     render() {
@@ -52,12 +93,17 @@ class MainPage extends Component {
 
         // 핫게시판 버튼
         const btnHot = document.createElement('button');
-        btnHot.setAttribute('class', 'main_btn_hot');
+        btnHot.setAttribute('class', 'main_btn_hot on');
         const imgHot = document.createElement('img');
         imgHot.setAttribute('src', '/src/assets/hot.svg');
         imgHot.setAttribute('alt', '');
         btnHot.innerText = 'HOT';
         btnHot.appendChild(imgHot);
+        btnHot.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            this.changeHotRecent(true);
+        });
 
         // 최신순 게시판 버튼
         const btnRecent = document.createElement('button');
@@ -67,6 +113,11 @@ class MainPage extends Component {
         imgRecent.setAttribute('alt', '');
         btnRecent.innerText = '최신';
         btnRecent.appendChild(imgRecent);
+        btnRecent.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            this.changeHotRecent(false);
+        });
 
         const dropDown = new DropDown();
 
@@ -81,9 +132,14 @@ class MainPage extends Component {
         postTitle.setAttribute('class', 'ir');
         postTitle.innerText = '게시글 목록';
         postSection.appendChild(postTitle);
-        this.getTestData().then((posts) => {
+
+        this.getPostData().then((posts) => {
             this.post = posts;
-            const postBoard = new PostBoard({ posts: this.post });
+            this.state.displayPost = posts;
+
+            this.state.displayPost = this.changeHotRecent(true);
+
+            const postBoard = new PostBoard({ posts: this.state.displayPost });
             postSection.appendChild(postBoard.render());
         });
 
@@ -92,6 +148,12 @@ class MainPage extends Component {
         docFrag.appendChild(mainEl);
         return docFrag; // test
         // return mainElement; // exec
+    }
+    initialize() {
+        const rendered = this.render();
+        this.lastRendered = rendered;
+
+        return rendered;
     }
 }
 
