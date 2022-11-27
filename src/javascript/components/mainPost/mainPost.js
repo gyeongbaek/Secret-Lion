@@ -6,33 +6,28 @@ class MainPost extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            orderHot: true,
-            category: null,
-            displayPost: [],
+            displayPost: this.checkCategory(),
         };
     }
 
-    checkHot(a, b) {
-        return b.like.length + b.scrap.length - a.like.length - a.scrap.length;
-    }
-    checkRecent(a, b) {
-        return a.date - b.date;
-    }
-
-    setDisplayPost() {
-        let newList = [...this.props.posts];
-
-        if (!this.state.orderHot) {
-            newList = [...this.props.posts].sort((a, b) => this.checkRecent(a, b));
+    checkCategory() {
+        if (!localStorage.getItem('selectCategory')) {
+            localStorage.setItem('selectCategory', null);
         }
-        if (this.state.category) {
-            newList = newList.filter((el) => el.category === this.state.category);
+        const category = localStorage.getItem('selectCategory');
+        console.log(category);
+        if (category == '전체') {
+            return this.props.posts;
+        } else {
+            return this.props.posts.filter((el) => el.category === category);
         }
-        return newList;
     }
 
-    changeDisplay() {
-        this.setState({ displayPost: this.setDisplayPost() });
+    changePost(value) {
+        localStorage.setItem('selectCategory', value);
+        const newList = this.checkCategory();
+        // this.props.posts.filter((el) => el.category === value);
+        this.setState({ displayPost: newList });
     }
 
     render() {
@@ -54,13 +49,6 @@ class MainPost extends Component {
         imgHot.setAttribute('alt', '');
         btnHot.innerText = 'HOT';
         btnHot.appendChild(imgHot);
-        btnHot.addEventListener('click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            console.log('hot');
-            this.state.orderHot = true;
-            this.changeDisplay();
-        });
 
         // 최신순 게시판 버튼
         const btnRecent = document.createElement('button');
@@ -70,20 +58,14 @@ class MainPost extends Component {
         imgRecent.setAttribute('alt', '');
         btnRecent.innerText = '최신';
         btnRecent.appendChild(imgRecent);
-        btnRecent.addEventListener('click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            console.log('recent');
-            this.state.orderHot = false;
-            this.changeDisplay();
-        });
+
         const dropMenu = document.createElement('select');
         const defMenu = document.createElement('option');
-        defMenu.setAttribute('value', null);
+        defMenu.setAttribute('value', '룰루');
         defMenu.innerText = '카테고리 선택';
         dropMenu.appendChild(defMenu);
 
-        const categoryList = ['학습', '연애', '관계', '취업', '자유'];
+        const categoryList = ['전체', '학습', '연애', '관계', '취업', '자유'];
         categoryList.forEach((el) => {
             const selectMenu = document.createElement('option');
             selectMenu.setAttribute('value', el);
@@ -98,8 +80,7 @@ class MainPost extends Component {
 
         dropMenu.addEventListener('change', (e) => {
             this.state.category = dropMenu.value;
-            console.log(dropMenu.value);
-            console.log(this.state.category);
+            this.changePost(dropMenu.value);
         });
 
         // 게시판
@@ -109,7 +90,7 @@ class MainPost extends Component {
         postTitle.setAttribute('class', 'ir');
         postTitle.innerText = '게시글 목록';
         postSection.appendChild(postTitle);
-        this.state.displayPost = this.setDisplayPost();
+
         const postBoard = new PostBoard({
             posts: this.state.displayPost,
         });
