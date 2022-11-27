@@ -12,7 +12,7 @@ class PostDetailPage extends Component {
 
         // 전체
         fragCon.appendChild(header.render());
-        fragCon.appendChild(postDetailMain.intialize());
+        fragCon.appendChild(postDetailMain.initialize());
 
         return fragCon;
     }

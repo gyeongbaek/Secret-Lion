@@ -125,7 +125,7 @@ class PostDetailMain extends Component {
                 displayName: chat.displayName,
                 photoURL: chat.photoURL,
             });
-            frag.appendChild(postDetailChat.intialize());
+            frag.appendChild(postDetailChat.initialize());
         });
 
         commentCon.appendChild(commentH2);

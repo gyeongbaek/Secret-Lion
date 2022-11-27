@@ -14,7 +14,7 @@ class PostUploadpage {
 
         const postUploadForm = new PostUploadForm();
 
-        mainEl.appendChild(postUploadForm.intialize());
+        mainEl.appendChild(postUploadForm.initialize());
         frag.appendChild(header.render());
         frag.appendChild(mainEl);
         return frag;
