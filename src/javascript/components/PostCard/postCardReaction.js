@@ -13,7 +13,7 @@ class PostCardReaction extends Component {
         postCardReaction.appendChild(cntLike);
 
         const imgComment = document.createElement('img');
-        imgComment.setAttribute('src', '/src/assets/comment.svg');
+        imgComment.setAttribute('src', '/src/assets/scrap.svg');
         const cntComment = document.createElement('p');
         cntComment.innerText = this.props.comment;
         postCardReaction.appendChild(imgComment);

@@ -1,7 +1,7 @@
 import Component from '../core/Component.js';
 // import { productData } from '../data.js';
 import { Header, MainContainer } from '../common/index.js';
-import { collection, db, getDocs, orderBy, query } from '../firebase.js';
+import { auth, collection, db, getDocs, orderBy, query } from '../firebase.js';
 import { MainPost } from '../components/mainPost/index.js';
 
 class MainPage extends Component {
@@ -11,7 +11,7 @@ class MainPage extends Component {
     }
     async getPostData() {
         const posts = [];
-        const postRef = collection(db, 'test-post');
+        const postRef = collection(db, 'posts');
         const q = query(
             postRef,
             // where('category','==','아침'),

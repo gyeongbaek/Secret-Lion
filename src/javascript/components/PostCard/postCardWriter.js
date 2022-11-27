@@ -7,11 +7,15 @@ class PostCardWriter extends Component {
         postCardWriter.setAttribute('class', 'board_post_user');
 
         const profileImg = document.createElement('img');
-        profileImg.setAttribute('src', '/src/assets/user.svg');
+        if (this.props.user.photoURL) {
+            profileImg.setAttribute('src', this.props.user.photoURL);
+        } else {
+            profileImg.setAttribute('src', '/src/assets/user.svg');
+        }
         profileImg.setAttribute('alt', '');
 
         const userName = document.createElement('p');
-        userName.innerText = this.props.user;
+        userName.innerText = this.props.user.displayName;
         postCardWriter.append(profileImg);
         postCardWriter.append(userName);
 

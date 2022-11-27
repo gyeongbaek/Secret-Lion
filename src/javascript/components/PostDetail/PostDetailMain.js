@@ -1,21 +1,7 @@
 import MainContainer from '../../common/mainContainer.js';
 import Component from '../../core/Component.js';
-import {
-    PostDetailTop,
-    PostDetailMid,
-    PostDetailChatForm,
-    PostDetailChat,
-} from './index.js';
-import {
-    collectionGroup,
-    db,
-    doc,
-    getDoc,
-    onSnapshot,
-    orderBy,
-    query,
-    where,
-} from '../../firebase.js';
+import { PostDetailTop, PostDetailMid, PostDetailChatForm, PostDetailChat } from './index.js';
+import { collectionGroup, db, doc, getDoc, onSnapshot, orderBy, query, where } from '../../firebase.js';
 
 class PostDetailMain extends Component {
     constructor(props) {
@@ -56,11 +42,7 @@ class PostDetailMain extends Component {
         };
     }
     async getChat(id) {
-        const q = query(
-            collectionGroup(db, 'post'),
-            where('id', '==', id),
-            orderBy('CreateAt', 'asc')
-        );
+        const q = query(collectionGroup(db, 'post'), where('id', '==', id), orderBy('CreateAt', 'asc'));
         onSnapshot(q, (querySnapshot) => {
             const newarr = [];
             const zs = [];
