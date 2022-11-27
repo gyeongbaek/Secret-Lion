@@ -1,3 +1,4 @@
+import { auth } from './firebase.js';
 import {
     StartPage,
     LoginPage,

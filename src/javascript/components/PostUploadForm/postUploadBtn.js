@@ -15,6 +15,7 @@ import {
 class PostUploadBtn extends Component {
     constructor(props) {
         super(props);
+        this.a = document.createElement('a');
     }
 
     async postUpload() {
@@ -44,7 +45,7 @@ class PostUploadBtn extends Component {
         await setDoc(newPostRef, postData);
         console.log(postData);
         console.log('완료');
-        history.go(-1);
+        this.a.click();
     }
 
     photoUpload() {
@@ -78,7 +79,7 @@ class PostUploadBtn extends Component {
                 await setDoc(postRef, postData);
 
                 console.log('완료');
-                history.go(-1);
+                this.a.click();
             });
         });
     }
@@ -108,6 +109,9 @@ class PostUploadBtn extends Component {
 
         btnContainer.appendChild(fileBtn);
         btnContainer.appendChild(uploadBtn);
+        btnContainer.appendChild(this.a);
+        this.a.setAttribute('href', '/user');
+        this.a.setAttribute('class', 'ir');
 
         return [btnContainer, fileinp];
     }
