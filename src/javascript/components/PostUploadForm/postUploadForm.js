@@ -48,7 +48,7 @@ class PostUploadForm extends Component {
 
         const btnContainertest = new PostUploadBtn(this.state.photoData);
 
-        const [btnContainertestRender, fileinp] = btnContainertest.intialize();
+        const [btnContainertestRender, fileinp] = btnContainertest.initialize();
 
         postUploadForm.addEventListener('submit', (e) => {
             e.preventDefault();
