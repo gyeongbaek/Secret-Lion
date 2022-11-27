@@ -30,7 +30,7 @@
 /* sub-title */
 .loginPage_p_subTit{
     color: #000;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .loginPage_strong{
@@ -55,7 +55,7 @@
 
 .loginPage_form_inpCont{
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     flex-direction: column;
     /* margin: auto 30px; */
 }
@@ -69,7 +69,6 @@
 }
 
 .loginPage_btn_login{
-    margin-top: 20px;
     width: 300px;
     height: 53px;
     border-radius: 4px;
