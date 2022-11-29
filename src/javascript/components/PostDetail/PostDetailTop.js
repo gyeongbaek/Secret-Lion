@@ -1,5 +1,5 @@
 import Component from '../../core/Component.js';
-import { db, doc, getDoc } from '../../firebase.js';
+import { db, deleteDoc, doc, getDoc } from '../../firebase.js';
 
 class PostDetailTop extends Component {
     constructor(props) {
@@ -12,6 +12,13 @@ class PostDetailTop extends Component {
         const month = date.getMonth() + 1;
         const day = date.getDate();
         return `${year}.${month}.${day}`;
+    }
+
+    async delPost() {
+        const result = window.confirm('게시글을 삭제하시겠습니까?');
+        if (result) {
+            await deleteDoc(doc(db, 'posts', this.props.postData.postId));
+        }
     }
 
     render() {
@@ -66,6 +73,8 @@ class PostDetailTop extends Component {
         // vertical 버튼
         const trashlBtn = document.createElement('button');
         trashlBtn.setAttribute('class', 'post_btn_trash');
+
+        trashlBtn.addEventListener('click', () => this.delPost());
 
         const trashBtnlIr = document.createElement('span');
         trashBtnlIr.setAttribute('class', 'ir');
