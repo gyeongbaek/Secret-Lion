@@ -85,7 +85,6 @@ class PostUploadBtn extends Component {
     }
 
     render() {
-        console.log(this.props);
         const btnContainer = document.createElement('div');
         btnContainer.setAttribute('class', 'post_btn_con');
 

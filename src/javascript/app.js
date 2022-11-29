@@ -1,4 +1,3 @@
-import { auth } from './firebase.js';
 import {
     StartPage,
     LoginPage,
@@ -20,7 +19,7 @@ export default class App {
         const { el } = this.props;
 
         const router = new Router({
-            '/': PostUploadpage,
+            '/': LoginPage,
             '/start': StartPage,
             '/login': LoginPage,
             '/signup': SignupPage,
