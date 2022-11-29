@@ -41,9 +41,10 @@ class DropDown {
             dropContent.innerText = value;
             dropContent.style.color = '#252525';
             dropdown();
+            return value;
         };
 
-        const testList = ['취업', '연애', '아침', '점심', '저녁', '기타..'];
+        const testList = ['자유', '학습', '취업', '연애', '관계'];
 
         const testFrag = document.createDocumentFragment();
 
@@ -56,6 +57,7 @@ class DropDown {
 
             dropItem.addEventListener('click', (e) => {
                 showMenu(e.target.dataset.name);
+                console.log(e.target.dataset.name);
             });
             testFrag.appendChild(dropItem);
         });

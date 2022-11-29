@@ -5,6 +5,7 @@ import { DropDown, MainContainer, TestDrop } from '../../common/index.js';
 class MainPost extends Component {
     constructor(props) {
         super(props);
+        this.dropDown = new DropDown().render();
         this.state = {
             displayPost: this.checkCategory(),
         };
@@ -60,6 +61,7 @@ class MainPost extends Component {
         btnRecent.appendChild(imgRecent);
 
         const dropMenu = document.createElement('select');
+        dropMenu.setAttribute('class', 'testDrop');
         const defMenu = document.createElement('option');
         defMenu.setAttribute('value', '룰루');
         defMenu.innerText = '카테고리 선택';
@@ -73,10 +75,15 @@ class MainPost extends Component {
             dropMenu.appendChild(selectMenu);
         });
 
+        /**
+         * DropDown에다가 addEventListener->로컬 승토리지에 저장
+         * 로컬 스토리지가 바뀔 때, displayPost 다시 렌더링
+         */
+
         menuSection.appendChild(btnHot);
         menuSection.appendChild(btnRecent);
         menuSection.appendChild(dropMenu);
-        // dropDown.dropClick();
+        menuSection.appendChild(this.dropDown);
 
         dropMenu.addEventListener('change', (e) => {
             this.state.category = dropMenu.value;
