@@ -50,8 +50,9 @@ class LoginForm extends Component {
                 emailErr.style.margin = '0';
                 pwdErr.textContent = '';
                 pwdErr.style.margin = '0';
-                await signInWithEmailAndPassword(auth, newId, newPwd);
-                console.log('로그인 완료');
+                const userInfo = await signInWithEmailAndPassword(auth, newId, newPwd);
+                // console.log(userInfo.user.uid);
+                localStorage.setItem('token', userInfo.user.uid);
             } catch (error) {
                 console.log(error);
                 if(error.code === 'auth/invalid-email'){
@@ -73,6 +74,7 @@ class LoginForm extends Component {
             e.preventDefault();
             signOut(auth);
             console.log('로그아웃!');
+            localStorage.removeItem('token');
         });
         return formCont;
     }
