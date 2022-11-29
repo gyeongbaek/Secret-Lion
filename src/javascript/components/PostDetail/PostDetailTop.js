@@ -5,6 +5,7 @@ class PostDetailTop extends Component {
     constructor(props) {
         super(props);
         this.date = null;
+        this.token = localStorage.getItem('token');
     }
     getDate(time) {
         const date = time.toDate();
@@ -82,7 +83,11 @@ class PostDetailTop extends Component {
 
         topSection.appendChild(postWriterInfoCon);
         topSection.appendChild(postWriterInfoCon);
-        topSection.appendChild(trashlBtn);
+
+        console.log(this.props.postData.writerId);
+        console.log(this.token);
+        this.props.postData.writerId === this.token &&
+            topSection.appendChild(trashlBtn);
 
         trashlBtn.appendChild(trashBtnlIr);
         // // topsection 안
