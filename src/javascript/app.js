@@ -5,7 +5,6 @@ import {
     PostDetailPage,
     PostUploadpage,
     SignupPage,
-    TestPage,
     UserEdit,
     UserInfo,
 } from './pages/index.js';
@@ -14,15 +13,15 @@ import { Router } from './utils/index.js';
 export default class App {
     constructor(props) {
         this.props = props;
+        this.token = localStorage.getItem('token');
     }
     async setup() {
         const { el } = this.props;
-
+        console.log(this.token);
         const router = new Router({
             '/': LoginPage,
             '/start': StartPage,
-            '/login': LoginPage,
-            '/signup': SignupPage,
+            '/signup': MainPage,
             '/main': MainPage,
             '/post/:id': PostDetailPage,
             '/upload': PostUploadpage,
