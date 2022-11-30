@@ -55,7 +55,7 @@ class UserInfoIcon extends Component {
         scrapDiv.appendChild(scrapImg.render());
         scrapDiv.appendChild(scrapTitle.render());
 
-        return iconContainer;
+        return [iconContainer, commentDiv];
     }
 }
 

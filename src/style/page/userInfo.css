@@ -1,5 +1,6 @@
 .info_main_container {
-    padding: 50px 140px;
+    padding: 140px 200px;
+    position: relative;
 }
 
 /* 유저 프로필 섹션 */
