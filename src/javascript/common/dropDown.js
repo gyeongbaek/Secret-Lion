@@ -46,6 +46,7 @@ class DropDown {
 
         let testList = ['자유', '학습', '취업', '연애', '관계'];
         if (this.props.page === 1) {
+            // 메인 페이지일 때, 전체 옵션을 추가
             testList.unshift('전체');
         }
         const testFrag = document.createDocumentFragment();
@@ -59,8 +60,6 @@ class DropDown {
 
             dropItem.addEventListener('click', (e) => {
                 showMenu(e.target.dataset.name);
-                console.log(e.target.dataset.name);
-                localStorage.setItem('DropDown Test', e.target.dataset.name);
             });
             testFrag.appendChild(dropItem);
         });
@@ -74,7 +73,7 @@ class DropDown {
         dropDownWrapper.appendChild(dropLabel);
         dropDownWrapper.appendChild(dropDownContentsWrapper);
 
-        return dropDownWrapper;
+        return [dropDownWrapper, dropListsWrapper];
     }
 }
 
