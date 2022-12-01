@@ -76,7 +76,7 @@ class MainPost extends Component {
         });
 
         /**
-         * DropDown에다가 addEventListener->로컬 승토리지에 저장
+         * DropDown에다가 addEventListener->로컬 승토리지에 category 저장
          * 로컬 스토리지가 바뀔 때, displayPost 다시 렌더링
          */
 
