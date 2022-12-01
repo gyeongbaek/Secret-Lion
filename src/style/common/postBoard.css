@@ -5,6 +5,7 @@
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: auto;
     gap: 80px; */
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     gap: 30px;

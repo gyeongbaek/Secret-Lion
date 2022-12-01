@@ -11,22 +11,23 @@ class MainPost extends Component {
     }
 
     checkCategory() {
+        const categoryList = ['자유', '학습', '취업', '연애', '관계'];
         if (!localStorage.getItem('selectCategory')) {
-            localStorage.setItem('selectCategory', null);
+            localStorage.setItem('selectCategory', '전체');
         }
         const category = localStorage.getItem('selectCategory');
-        console.log(category);
-        if (category == '전체') {
-            return this.props.posts;
-        } else {
+        if (categoryList.includes(category)) {
             return this.props.posts.filter((el) => el.category === category);
+        } else {
+            // 쿠키 값 컨트롤 방지
+            localStorage.setItem('selectCategory', '전체');
+            return this.props.posts;
         }
     }
 
     changePost(value) {
         localStorage.setItem('selectCategory', value);
         const newList = this.checkCategory();
-        // this.props.posts.filter((el) => el.category === value);
         this.setState({ displayPost: newList });
     }
 
@@ -59,7 +60,9 @@ class MainPost extends Component {
         btnRecent.innerText = '최신';
         btnRecent.appendChild(imgRecent);
 
+        /** 테스트 */
         const dropMenu = document.createElement('select');
+        dropMenu.setAttribute('class', 'testDrop');
         const defMenu = document.createElement('option');
         defMenu.setAttribute('value', '룰루');
         defMenu.innerText = '카테고리 선택';
@@ -73,15 +76,28 @@ class MainPost extends Component {
             dropMenu.appendChild(selectMenu);
         });
 
-        menuSection.appendChild(btnHot);
-        menuSection.appendChild(btnRecent);
-        menuSection.appendChild(dropMenu);
-        // dropDown.dropClick();
-
         dropMenu.addEventListener('change', (e) => {
             this.state.category = dropMenu.value;
             this.changePost(dropMenu.value);
         });
+
+        menuSection.appendChild(dropMenu);
+        /** //테스트 */
+
+        /**
+         * DropDown에다가 addEventListener->로컬 승토리지에 category 저장
+         * 로컬 스토리지가 바뀔 때, displayPost 다시 렌더링
+         */
+        const [dropDown, dropItem] = new DropDown({ page: 1 }).render();
+        dropItem.addEventListener('click', (e) => {
+            console.log(e.target.dataset.name);
+            localStorage.setItem('selectCategory', e.target.dataset.name);
+
+            this.changePost(e.target.dataset.name);
+        });
+        menuSection.appendChild(btnHot);
+        menuSection.appendChild(btnRecent);
+        menuSection.appendChild(dropDown);
 
         // 게시판
         const postSection = document.createElement('section');
