@@ -60,30 +60,6 @@ class MainPost extends Component {
         btnRecent.innerText = '최신';
         btnRecent.appendChild(imgRecent);
 
-        /** 테스트 */
-        const dropMenu = document.createElement('select');
-        dropMenu.setAttribute('class', 'testDrop');
-        const defMenu = document.createElement('option');
-        defMenu.setAttribute('value', '룰루');
-        defMenu.innerText = '카테고리 선택';
-        dropMenu.appendChild(defMenu);
-
-        const categoryList = ['전체', '학습', '연애', '관계', '취업', '자유'];
-        categoryList.forEach((el) => {
-            const selectMenu = document.createElement('option');
-            selectMenu.setAttribute('value', el);
-            selectMenu.innerText = el;
-            dropMenu.appendChild(selectMenu);
-        });
-
-        dropMenu.addEventListener('change', (e) => {
-            this.state.category = dropMenu.value;
-            this.changePost(dropMenu.value);
-        });
-
-        menuSection.appendChild(dropMenu);
-        /** //테스트 */
-
         /**
          * DropDown에다가 addEventListener->로컬 승토리지에 category 저장
          * 로컬 스토리지가 바뀔 때, displayPost 다시 렌더링
