@@ -8,9 +8,9 @@ class PostCardWriter extends Component {
 
         const profileImg = document.createElement('img');
         if (this.props.user.photoURL) {
-            profileImg.setAttribute('src',       .photoURL);
-        } else {    
-            profileㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜImg.setAttribute('src', '/src/assets/user.svg');
+            profileImg.setAttribute('src', this.props.user.photoURL);
+        } else {
+            profileImg.setAttribute('src', '/src/assets/user.svg');
         }
         profileImg.setAttribute('alt', '');
 

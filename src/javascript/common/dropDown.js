@@ -44,8 +44,10 @@ class DropDown {
             return value;
         };
 
-        const testList = ['자유', '학습', '취업', '연애', '관계'];
-
+        let testList = ['자유', '학습', '취업', '연애', '관계'];
+        if (this.props.page === 1) {
+            testList.unshift('전체');
+        }
         const testFrag = document.createDocumentFragment();
 
         // 카테고리 데이터 돌면서 ul에 추가
@@ -58,6 +60,7 @@ class DropDown {
             dropItem.addEventListener('click', (e) => {
                 showMenu(e.target.dataset.name);
                 console.log(e.target.dataset.name);
+                localStorage.setItem('DropDown Test', e.target.dataset.name);
             });
             testFrag.appendChild(dropItem);
         });

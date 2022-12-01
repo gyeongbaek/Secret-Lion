@@ -5,22 +5,37 @@ import { DropDown, MainContainer, TestDrop } from '../../common/index.js';
 class MainPost extends Component {
     constructor(props) {
         super(props);
-        this.dropDown = new DropDown().render();
         this.state = {
             displayPost: this.checkCategory(),
         };
     }
 
     checkCategory() {
-        if (!localStorage.getItem('selectCategory')) {
-            localStorage.setItem('selectCategory', null);
+        // const categoryList = ['자유', '학습', '취업', '연애', '관계'];
+        // if (!localStorage.getItem('selectCategory')) {
+        //     localStorage.setItem('selectCategory', '전체');
+        // }
+        // const category = localStorage.getItem('selectCategory');
+        // if (categoryList.includes(category)) {
+        //     return this.props.posts.filter((el) => el.category === category);
+        // } else {
+        //     // 쿠키 값 컨트롤 방지
+        //     localStorage.setItem('selectCategory', '전체');
+        //     return this.props.posts;
+        // }
+
+        // DropDown
+        const categoryList = ['자유', '학습', '취업', '연애', '관계'];
+        if (!localStorage.getItem('DropDown Test')) {
+            localStorage.setItem('DropDown Test', '전체');
         }
-        const category = localStorage.getItem('selectCategory');
-        console.log(category);
-        if (category == '전체') {
-            return this.props.posts;
-        } else {
+        const category = localStorage.getItem('DropDown Test');
+        if (categoryList.includes(category)) {
             return this.props.posts.filter((el) => el.category === category);
+        } else {
+            // 쿠키 값 컨트롤 방지
+            localStorage.setItem('DropDown Test', '전체');
+            return this.props.posts;
         }
     }
 
@@ -60,6 +75,7 @@ class MainPost extends Component {
         btnRecent.innerText = '최신';
         btnRecent.appendChild(imgRecent);
 
+        /** 테스트 */
         const dropMenu = document.createElement('select');
         dropMenu.setAttribute('class', 'testDrop');
         const defMenu = document.createElement('option');
@@ -75,20 +91,22 @@ class MainPost extends Component {
             dropMenu.appendChild(selectMenu);
         });
 
-        /**
-         * DropDown에다가 addEventListener->로컬 승토리지에 category 저장
-         * 로컬 스토리지가 바뀔 때, displayPost 다시 렌더링
-         */
-
-        menuSection.appendChild(btnHot);
-        menuSection.appendChild(btnRecent);
-        menuSection.appendChild(dropMenu);
-        menuSection.appendChild(this.dropDown);
-
         dropMenu.addEventListener('change', (e) => {
             this.state.category = dropMenu.value;
             this.changePost(dropMenu.value);
         });
+
+        menuSection.appendChild(dropMenu);
+        /** //테스트 */
+
+        /**
+         * DropDown에다가 addEventListener->로컬 승토리지에 category 저장
+         * 로컬 스토리지가 바뀔 때, displayPost 다시 렌더링
+         */
+        const dropDown = new DropDown({ page: 1 });
+        menuSection.appendChild(btnHot);
+        menuSection.appendChild(btnRecent);
+        menuSection.appendChild(dropDown.render());
 
         // 게시판
         const postSection = document.createElement('section');
