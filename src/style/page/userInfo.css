@@ -1,5 +1,6 @@
 .info_main_container {
-    padding: 50px 140px;
+    padding: 140px 200px;
+    position: relative;
 }
 
 /* 유저 프로필 섹션 */
@@ -27,14 +28,17 @@
     line-height: 34px;
 }
 
-.info_btn_change {
+.info_a_move {
     position: relative;
-    top: -145px;
+    top: -173px;
+    left: 550px;
     width: 84px;
     height: 30px;
     border: 1px solid #bcbcbc;
     border-radius: 4px;
     font-size: 14px;
+    line-height: 30px;
+    text-align: center;
     background-color: #fff;
     color: #909090;
 }
