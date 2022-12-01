@@ -10,8 +10,8 @@ class UserInfoIcon extends Component {
         const postDiv = document.createElement('div');
         postDiv.setAttribute('class', 'info_div_post');
 
-        const commentDiv = document.createElement('div');
-        commentDiv.setAttribute('class', 'info_div_comment');
+        const likeDiv = document.createElement('div');
+        likeDiv.setAttribute('class', 'info_div_like');
 
         const scrapDiv = document.createElement('div');
         scrapDiv.setAttribute('class', 'info_div_scrap');
@@ -23,11 +23,11 @@ class UserInfoIcon extends Component {
             '게시글 아이콘',
             'info_img_post'
         );
-        const commentImg = new IconImg(
+        const likeImg = new IconImg(
             'props',
-            'src/assets/comment.svg',
-            '댓글 아이콘',
-            'info_img_comment'
+            'src/assets/heart.svg',
+            '좋아요 아이콘',
+            'info_img_like'
         );
         const scrapImg = new IconImg(
             'props',
@@ -38,24 +38,24 @@ class UserInfoIcon extends Component {
 
         // 아이콘 타이틀
         const postTitle = new IconTitle('props', '게시글', 'info_spn_post');
-        const commentTitle = new IconTitle('props', '댓글', 'info_spn_comment');
+        const likeTitle = new IconTitle('props', '좋아요', 'info_spn_like');
         const scrapTitle = new IconTitle('props', '스크랩', 'info_spn_scrap');
 
         // 아이콘 컨테이너 안
         iconContainer.appendChild(postDiv);
-        iconContainer.appendChild(commentDiv);
+        iconContainer.appendChild(likeDiv);
         iconContainer.appendChild(scrapDiv);
 
         postDiv.appendChild(postImg.render());
         postDiv.appendChild(postTitle.render());
 
-        commentDiv.appendChild(commentImg.render());
-        commentDiv.appendChild(commentTitle.render());
+        likeDiv.appendChild(likeImg.render());
+        likeDiv.appendChild(likeTitle.render());
 
         scrapDiv.appendChild(scrapImg.render());
         scrapDiv.appendChild(scrapTitle.render());
 
-        return [iconContainer, commentDiv];
+        return [iconContainer, likeDiv];
     }
 }
 
