@@ -67,4 +67,5 @@
 
 .div_dropDown_wrapper .ul_drop.show {
     display: block;
+    z-index: 5;
 }
