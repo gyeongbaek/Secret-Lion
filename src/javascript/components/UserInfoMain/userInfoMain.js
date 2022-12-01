@@ -8,6 +8,7 @@ import {
     db,
     doc,
     getDocs,
+    getDoc,
     orderBy,
     query,
     where,
@@ -24,10 +25,8 @@ class UserInfoMain extends Component {
         this.post = productData;
     }
     async getTestData() {
-        const userProfile = doc(db, 'users', this.token);
         const posts = [];
         const postRef = collection(db, 'posts');
-        // console.log(userProfile);
 
         getDocs(postRef).then((snapshot) => {
             snapshot.docs.forEach((doc) => {
@@ -41,16 +40,15 @@ class UserInfoMain extends Component {
         });
         return posts;
     }
-    // async getUser() {
-    //     const userProfile = doc(db, 'users', this.token);
-    //     console.log(userProfile);
-    //     console.log(this.token);
-    //     // const docSnap = await getDocs(docRef);
-    //     // return {
-    //     //     photoURL: docSnap.data().photoURL,
-    //     // };
-    //     // console.log(photoURL);
-    // }
+    async getUser() {
+        const docRef = doc(db, 'users', this.token);
+        const docSnap = await getDoc(docRef);
+
+        this.displayName = docSnap.data().displayName;
+        this.photoURL = docSnap.data().photoURL;
+
+        return;
+    }
     render() {
         this.getPostData();
 
@@ -72,22 +70,20 @@ class UserInfoMain extends Component {
         profileh2.textContent = '유저 프로필';
 
         const profileImg = document.createElement('img');
-        // profileImg.setAttribute(
-        //     'src',
-        //     'https://images.unsplash.com/photo-1606225457115-9b0de873c5db?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'
-        // );
-        // profileImg.setAttribute(
-        //     'src',
-        //     this.props.photoURL
-        //         ? this.props.photoURL
-        //         : 'https://images.unsplash.com/photo-1606225457115-9b0de873c5db?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'
-        // );
         profileImg.setAttribute('class', 'info_img_profile');
         profileImg.setAttribute('alt', '유저 프로필 이미지');
 
         const nicknameTxt = document.createElement('strong');
         nicknameTxt.setAttribute('class', 'info_strong_nickname');
-        nicknameTxt.textContent = '목짧은기린';
+
+        this.getUser().then(() => {
+            nicknameTxt.textContent = this.displayName;
+            if (this.photoURL) {
+                profileImg.setAttribute('src', this.photoURL);
+            } else {
+                profileImg.setAttribute('src', '/src/assets/user.svg');
+            }
+        });
 
         const editAnchor = document.createElement('a');
         // changeBtn.setAttribute('type', 'button');
@@ -98,7 +94,7 @@ class UserInfoMain extends Component {
 
         const userInfoIcon = new UserInfoIcon();
         const [icon, btn] = userInfoIcon.render();
-        console.log(btn);
+        // console.log(btn);
         btn.addEventListener('click', () => this.getTestData());
 
         // 게시글 목록 섹션
