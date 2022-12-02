@@ -54,7 +54,7 @@
 }
 
 .info_div_post,
-.info_div_comment,
+.info_div_like,
 .info_div_scrap {
     display: flex;
     flex-direction: column;
@@ -63,7 +63,7 @@
 }
 
 .info_img_post,
-.info_img_comment,
+.info_img_like,
 .info_img_scrap {
     width: 30px;
     height: 30px;
@@ -73,7 +73,7 @@
     gap: 13px;
 }
 
-.info_div_comment,
+.info_div_like,
 .info_div_scrap {
     gap: 8px;
 }
