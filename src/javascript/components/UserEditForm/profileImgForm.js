@@ -110,6 +110,13 @@ class ProfileImgForm extends Component {
             fileinp.click();
         });
 
+        // 기본 이미지로 변경하기
+        deleteBtn.addEventListener('click', () => {
+            event.preventDefault();
+            profileImg.src =
+                'https://images.unsplash.com/photo-1606225457115-9b0de873c5db?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80';
+        });
+
         fileinp.addEventListener('change', this.changeProfileImg);
 
         imgForm.appendChild(profileImgTit);

@@ -7,6 +7,7 @@ import {
     SignupPage,
     UserEdit,
     UserInfo,
+    TestPage,
 } from './pages/index.js';
 import { Router } from './utils/index.js';
 
@@ -19,9 +20,10 @@ export default class App {
         const { el } = this.props;
         console.log(this.token);
         const router = new Router({
-            '/': PostDetailPage,
+            '/': PostUploadpage,
             '/start': StartPage,
-            '/signup': MainPage,
+            '/login': LoginPage,
+            '/signup': SignupPage,
             '/main': MainPage,
             '/post/:id': PostDetailPage,
             '/upload': PostUploadpage,

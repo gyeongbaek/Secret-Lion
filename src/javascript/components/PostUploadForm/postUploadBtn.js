@@ -13,21 +13,21 @@ import {
 } from '../../firebase.js';
 
 class PostUploadBtn extends Component {
-    constructor(props) {
+    constructor(props, dropDown) {
         super(props);
         this.a = document.createElement('a');
+        this.dropDown = dropDown;
+        this.category = null;
     }
 
     async postUpload() {
         const inputTit = document.querySelector('.post_inp_tit');
         const content = document.querySelector('.post_area_content');
-        const dropTxt = document.querySelector('.span_drop_content');
-
         const newPostRef = doc(collection(db, 'posts'));
         const postData = {
             title: inputTit.value,
             content: content.value,
-            category: dropTxt.textContent,
+            category: this.category,
             writerId: auth.currentUser.uid,
             date: serverTimestamp(),
             img: null,
@@ -51,7 +51,6 @@ class PostUploadBtn extends Component {
     photoUpload() {
         const inputTit = document.querySelector('.post_inp_tit');
         const content = document.querySelector('.post_area_content');
-        const dropTxt = document.querySelector('.span_drop_content');
 
         const postRef = doc(collection(db, 'posts'));
         const postStorageRef = ref(storage, `posts_images/${postRef.id}`);
@@ -61,7 +60,7 @@ class PostUploadBtn extends Component {
                 const postData = {
                     title: inputTit.value,
                     content: content.value,
-                    category: dropTxt.textContent,
+                    category: this.category,
                     writerId: auth.currentUser.uid,
                     date: serverTimestamp(),
                     img: downloadURL,
@@ -104,6 +103,9 @@ class PostUploadBtn extends Component {
         fileBtn.addEventListener('click', (e) => {
             e.preventDefault();
             fileinp.click();
+        });
+        this.dropDown.addEventListener('click', (e) => {
+            this.category = e.target.dataset.name;
         });
 
         btnContainer.appendChild(fileBtn);
