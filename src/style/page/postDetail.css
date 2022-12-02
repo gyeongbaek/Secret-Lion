@@ -134,11 +134,16 @@
     right: 0;
     bottom: -35px;
 }
-
+.post_div_comment_right {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
 /* 유저이름 */
 .post_div_comment_right .post_strong_name {
     font-size: 18px;
     font-weight: 600;
+    /* margin-bottom: 28px; */
 }
 
 .post_li_comment .post_time_comment {
