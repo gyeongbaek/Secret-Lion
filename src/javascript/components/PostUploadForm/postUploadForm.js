@@ -83,7 +83,7 @@ class PostUploadForm extends Component {
                 this.state.prevPhoto
             );
             const [postUploadPreviewEl, imgCancelBtn] =
-                postUploadPreview.intialize();
+                postUploadPreview.initialize();
 
             postUploadForm.appendChild(postUploadPreviewEl);
             imgCancelBtn.addEventListener('click', (e) => {
