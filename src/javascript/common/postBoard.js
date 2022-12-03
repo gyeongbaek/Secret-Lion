@@ -9,7 +9,6 @@ class PostBoard extends Component {
 
         this.props.posts.forEach((item) => {
             const postCard = new PostCard({ item: item });
-            console.log('item-----', item);
             frag.appendChild(postCard.render());
         });
         postBoard.appendChild(frag);
