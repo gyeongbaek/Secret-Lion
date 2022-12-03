@@ -137,7 +137,9 @@ class SignupForm extends Component {
                 console.log(createUser);
                 console.log('회원가입 완.');
                 await setDoc(doc(db, 'users', createUser.user.uid), userData);
+                
                 localStorage.setItem('token', userData.uid);
+
             }catch(error){
                 console.log(error.code);
                 if(error.code === 'auth/invalid-email' || error.code === 'auth/internal-error'){
