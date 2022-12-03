@@ -10,7 +10,7 @@ class PostUploadForm extends Component {
             prevPhoto: null,
             photoData: null,
         };
-        this.dropDown = new DropDown().render();
+        this.dropDown = new DropDown({ page: 0 }).render();
         this.inputTit = document.createElement('input');
         this.postContent = document.createElement('textarea');
     }
@@ -73,11 +73,8 @@ class PostUploadForm extends Component {
         postUploadForm.appendChild(btnContainertestRender);
 
         if (this.state.prevPhoto) {
-            const postUploadPreview = new PostUploadPreview(
-                this.state.prevPhoto
-            );
-            const [postUploadPreviewEl, imgCancelBtn] =
-                postUploadPreview.intialize();
+            const postUploadPreview = new PostUploadPreview(this.state.prevPhoto);
+            const [postUploadPreviewEl, imgCancelBtn] = postUploadPreview.intialize();
             postUploadForm.appendChild(postUploadPreviewEl);
             imgCancelBtn.addEventListener('click', (e) => {
                 e.preventDefault();

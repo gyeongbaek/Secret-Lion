@@ -41,10 +41,14 @@ class DropDown {
             dropContent.innerText = value;
             dropContent.style.color = '#252525';
             dropdown();
+            return value;
         };
 
-        const testList = ['취업', '연애', '아침', '점심', '저녁', '기타..'];
-
+        let testList = ['자유', '학습', '취업', '연애', '관계'];
+        if (this.props.page === 1) {
+            // 메인 페이지일 때, 전체 옵션을 추가
+            testList.unshift('전체');
+        }
         const testFrag = document.createDocumentFragment();
 
         // 카테고리 데이터 돌면서 ul에 추가
@@ -69,7 +73,7 @@ class DropDown {
         dropDownWrapper.appendChild(dropLabel);
         dropDownWrapper.appendChild(dropDownContentsWrapper);
 
-        return dropDownWrapper;
+        return [dropDownWrapper, dropListsWrapper];
     }
 }
 

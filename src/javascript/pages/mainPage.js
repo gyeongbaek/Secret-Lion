@@ -47,6 +47,7 @@ class MainPage extends Component {
 
         // mainEl.appendChild(mainPost);
         docFrag.appendChild(mainEl);
+
         return docFrag; // test
         // return mainElement; // exec
     }
