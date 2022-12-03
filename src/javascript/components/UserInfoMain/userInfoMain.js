@@ -17,18 +17,18 @@ import {
 class UserInfoMain extends Component {
     constructor(props) {
         super(props);
-        this.post = {};
+        this.posts = [];
         this.token = localStorage.getItem('token');
     }
     async getPostData() {
         // 나중에 json 형태로 받아올 예정
-        this.post = productData;
+        this.posts = productData;
     }
     async getTestData() {
         const posts = [];
         const postRef = collection(db, 'posts');
 
-        getDocs(postRef).then((snapshot) => {
+        await getDocs(postRef).then((snapshot) => {
             snapshot.docs.forEach((doc) => {
                 for (let i = 0; i < doc.data().like.participateCount; i++) {
                     if (doc.data().like.participants[i] === this.token) {
@@ -95,7 +95,13 @@ class UserInfoMain extends Component {
         const userInfoIcon = new UserInfoIcon();
         const [icon, btn] = userInfoIcon.render();
         // console.log(btn);
-        btn.addEventListener('click', () => this.getTestData());
+        btn.addEventListener('click', () => {
+            this.getTestData().then((posts) => {
+                this.posts = posts;
+                const postBoard = new PostBoard({ posts: this.posts });
+                postListSection.appendChild(postBoard.render());
+            });
+        });
 
         // 게시글 목록 섹션
         const postListSection = document.createElement('section');
@@ -104,12 +110,6 @@ class UserInfoMain extends Component {
         const posth2 = document.createElement('h2');
         posth2.setAttribute('class', 'ir');
         posth2.textContent = '게시글 목록';
-
-        this.getTestData().then((posts) => {
-            this.post = posts;
-            const postBoard = new PostBoard({ posts: this.post });
-            postListSection.appendChild(postBoard.render());
-        });
 
         // 유저 프로필 섹션 안
         profileSection.appendChild(profileh2);

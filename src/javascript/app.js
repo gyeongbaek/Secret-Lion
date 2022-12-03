@@ -17,27 +17,37 @@ export default class App {
         this.token = localStorage.getItem('token');
     }
 
-    loginCheck(){
-        if(this.token === null){
+    loginCheck() {
+        if (this.token === null) {
             return {
                 '/': StartPage,
                 '/login': LoginPage,
                 '/signup': SignupPage,
-            }
-        }else{
-            return{
+            };
+        } else {
+            return {
                 '/': MainPage,
                 '/post/:id': PostDetailPage,
                 '/upload': PostUploadpage,
                 '/user': UserInfo,
                 '/setting': UserEdit,
-            }
+            };
         }
     }
     async setup() {
         const { el } = this.props;
         console.log(this.token);
-        const router = new Router(this.loginCheck());
+        const router = new Router({
+            '/': TestPage,
+            '/start': StartPage,
+            '/login': LoginPage,
+            '/signup': SignupPage,
+            '/main': MainPage,
+            '/post/:id': PostDetailPage,
+            '/upload': PostUploadpage,
+            '/user': UserInfo,
+            '/setting': UserEdit,
+        });
         router.init(el);
     }
 }
