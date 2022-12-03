@@ -1,5 +1,6 @@
 import { Header, MainContainer } from '../common/index.js';
 import { PostUploadForm } from '../components/PostUploadForm/index.js';
+import { auth } from '../firebase.js';
 
 class PostUploadpage {
     render() {
@@ -7,13 +8,10 @@ class PostUploadpage {
 
         const main = new MainContainer();
         const mainEl = main.render();
-        // const postUploadMain = document.createElement("main");
-        // postUploadMain.setAttribute("class", "main_post_container");
 
         const frag = document.createDocumentFragment();
 
         const postUploadForm = new PostUploadForm();
-
         mainEl.appendChild(postUploadForm.initialize());
         frag.appendChild(header.render());
         frag.appendChild(mainEl);

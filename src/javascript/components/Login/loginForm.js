@@ -1,5 +1,5 @@
 import Component from '../../core/Component.js';
-import { auth, signInWithEmailAndPassword, signOut } from '../../firebase.js';
+import { auth, doc, signInWithEmailAndPassword, signOut } from '../../firebase.js';
 
 class LoginForm extends Component {
     render() {
@@ -30,6 +30,9 @@ class LoginForm extends Component {
         loginBtn.setAttribute('class', 'loginPage_btn_login');
         loginBtn.textContent = '로그인';
 
+        const loginLink = document.createElement('a');
+        
+
         const logoutBtn = document.createElement('button');
         logoutBtn.textContent = '로그아웃!';
 
@@ -53,6 +56,8 @@ class LoginForm extends Component {
                 const userInfo = await signInWithEmailAndPassword(auth, newId, newPwd);
                 // console.log(userInfo.user.uid);
                 localStorage.setItem('token', userInfo.user.uid);
+                //url main페이지로 가게 만들어줘야 한다 
+                
             } catch (error) {
                 console.log(error);
                 if(error.code === 'auth/invalid-email'){

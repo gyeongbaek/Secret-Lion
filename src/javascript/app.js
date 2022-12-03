@@ -16,6 +16,24 @@ export default class App {
         this.props = props;
         this.token = localStorage.getItem('token');
     }
+
+    loginCheck() {
+        if (this.token === null) {
+            return {
+                '/': StartPage,
+                '/login': LoginPage,
+                '/signup': SignupPage,
+            };
+        } else {
+            return {
+                '/': MainPage,
+                '/post/:id': PostDetailPage,
+                '/upload': PostUploadpage,
+                '/user': UserInfo,
+                '/setting': UserEdit,
+            };
+        }
+    }
     async setup() {
         const { el } = this.props;
         console.log(this.token);

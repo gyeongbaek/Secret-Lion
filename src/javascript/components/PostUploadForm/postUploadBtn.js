@@ -13,20 +13,21 @@ import {
 } from '../../firebase.js';
 
 class PostUploadBtn extends Component {
-    constructor(props) {
+    constructor(props, dropDown) {
         super(props);
+        this.a = document.createElement('a');
+        this.dropDown = dropDown;
+        this.category = null;
     }
 
     async postUpload() {
         const inputTit = document.querySelector('.post_inp_tit');
         const content = document.querySelector('.post_area_content');
-        const dropTxt = document.querySelector('.span_drop_content');
-
         const newPostRef = doc(collection(db, 'posts'));
         const postData = {
             title: inputTit.value,
             content: content.value,
-            category: dropTxt.textContent,
+            category: this.category,
             writerId: auth.currentUser.uid,
             date: serverTimestamp(),
             img: null,
@@ -44,13 +45,12 @@ class PostUploadBtn extends Component {
         await setDoc(newPostRef, postData);
         console.log(postData);
         console.log('완료');
-        history.go(-1);
+        this.a.click();
     }
 
     photoUpload() {
         const inputTit = document.querySelector('.post_inp_tit');
         const content = document.querySelector('.post_area_content');
-        const dropTxt = document.querySelector('.span_drop_content');
 
         const postRef = doc(collection(db, 'posts'));
         const postStorageRef = ref(storage, `posts_images/${postRef.id}`);
@@ -60,7 +60,7 @@ class PostUploadBtn extends Component {
                 const postData = {
                     title: inputTit.value,
                     content: content.value,
-                    category: dropTxt.textContent,
+                    category: this.category,
                     writerId: auth.currentUser.uid,
                     date: serverTimestamp(),
                     img: downloadURL,
@@ -78,13 +78,12 @@ class PostUploadBtn extends Component {
                 await setDoc(postRef, postData);
 
                 console.log('완료');
-                history.go(-1);
+                this.a.click();
             });
         });
     }
 
     render() {
-        console.log(this.props);
         const btnContainer = document.createElement('div');
         btnContainer.setAttribute('class', 'post_btn_con');
 
@@ -105,9 +104,15 @@ class PostUploadBtn extends Component {
             e.preventDefault();
             fileinp.click();
         });
+        this.dropDown.addEventListener('click', (e) => {
+            this.category = e.target.dataset.name;
+        });
 
         btnContainer.appendChild(fileBtn);
         btnContainer.appendChild(uploadBtn);
+        btnContainer.appendChild(this.a);
+        this.a.setAttribute('href', '/user');
+        this.a.setAttribute('class', 'ir');
 
         return [btnContainer, fileinp];
     }
