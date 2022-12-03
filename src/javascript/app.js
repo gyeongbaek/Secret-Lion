@@ -7,6 +7,7 @@ import {
     SignupPage,
     UserEdit,
     UserInfo,
+    TestPage,
 } from './pages/index.js';
 import { Router } from './utils/index.js';
 

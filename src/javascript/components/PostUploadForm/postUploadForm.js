@@ -10,7 +10,7 @@ class PostUploadForm extends Component {
             prevPhoto: null,
             photoData: null,
         };
-        this.dropDown = new DropDown().render();
+        this.dropDown = new DropDown({ page: 0 }).render();
         this.inputTit = document.createElement('input');
         this.postContent = document.createElement('textarea');
     }
@@ -46,8 +46,15 @@ class PostUploadForm extends Component {
         uploadBtn.setAttribute('type', 'submit');
         uploadBtn.textContent = '게시물 등록';
 
-        const btnContainertest = new PostUploadBtn(this.state.photoData);
+        const [dropDown, dropItem] = new DropDown({ page: 0 }).render();
+        // dropItem.addEventListener('click', (e) => {
+        //     console.log(e.target.dataset.name);
+        // });
 
+        const btnContainertest = new PostUploadBtn(
+            this.state.photoData,
+            dropItem
+        );
         const [btnContainertestRender, fileinp] = btnContainertest.initialize();
 
         postUploadForm.addEventListener('submit', (e) => {
@@ -65,8 +72,7 @@ class PostUploadForm extends Component {
         });
 
         // 파일 미리보기
-        // console.log(this.dropDown);
-        postUploadForm.appendChild(this.dropDown);
+        postUploadForm.appendChild(dropDown);
         postUploadForm.appendChild(this.inputTit);
         postUploadForm.appendChild(this.postContent);
 
@@ -77,7 +83,8 @@ class PostUploadForm extends Component {
                 this.state.prevPhoto
             );
             const [postUploadPreviewEl, imgCancelBtn] =
-                postUploadPreview.intialize();
+                postUploadPreview.initialize();
+
             postUploadForm.appendChild(postUploadPreviewEl);
             imgCancelBtn.addEventListener('click', (e) => {
                 e.preventDefault();
