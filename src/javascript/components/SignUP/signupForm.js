@@ -99,6 +99,11 @@ class SignupForm extends Component {
         const signupBtn = document.createElement('button');
         signupBtn.setAttribute('class', 'loginPage_btn_signUp');
         signupBtn.textContent = '회원가입';
+
+        //url main페이지로 가게 만들어줘야 한다 
+        const loginLink = document.createElement('a');
+        loginLink.setAttribute('class','ir');
+        loginLink.setAttribute('href','/');
         
         async function handleToDoSubmit(event){
             event.preventDefault();
@@ -139,6 +144,8 @@ class SignupForm extends Component {
                 await setDoc(doc(db, 'users', createUser.user.uid), userData);
                 
                 localStorage.setItem('token', userData.uid);
+                loginLink.click();
+                location.reload();
 
             }catch(error){
                 console.log(error.code);
@@ -178,6 +185,7 @@ class SignupForm extends Component {
         signupForm.appendChild(acceptCont);
         signupForm.appendChild(unchecked);
         signupForm.appendChild(signupBtn);
+        signupForm.appendChild(loginLink);
 
         div1.appendChild(acceptCheck);
         div1.appendChild(socialRuleModalBtn);
