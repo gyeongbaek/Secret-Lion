@@ -73,7 +73,7 @@ class DropDown {
         dropDownWrapper.appendChild(dropLabel);
         dropDownWrapper.appendChild(dropDownContentsWrapper);
 
-        return [dropDownWrapper, dropListsWrapper];
+        return [dropDownWrapper, dropContent, dropListsWrapper];
     }
 }
 
