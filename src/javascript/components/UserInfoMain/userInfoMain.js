@@ -78,7 +78,7 @@ class UserInfoMain extends Component {
             } else {
                 profileImg.setAttribute(
                     'src',
-                    '/src/assets/profile/profile.png'
+                    '../../../assets/profile/profile.png'
                 );
             }
         });
