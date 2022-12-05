@@ -10,7 +10,7 @@ class PostUploadForm extends Component {
             prevPhoto: null,
             photoData: null,
         };
-        this.dropDown = new DropDown({ page: 0 }).render();
+        // this.dropDown = new DropDown({ page: 0 }).render();
         this.inputTit = document.createElement('input');
         this.postContent = document.createElement('textarea');
     }
@@ -22,7 +22,6 @@ class PostUploadForm extends Component {
         };
         reader.readAsDataURL(e.target.files[0]);
         this.setState({ ...this.state, photoData: e.target.files[0] });
-        console.log('hi');
     }
 
     render() {
@@ -46,14 +45,13 @@ class PostUploadForm extends Component {
         uploadBtn.setAttribute('type', 'submit');
         uploadBtn.textContent = '게시물 등록';
 
-        const [dropDown, dropItem] = new DropDown({ page: 0 }).render();
-        // dropItem.addEventListener('click', (e) => {
-        //     console.log(e.target.dataset.name);
-        // });
+        const [dropDown, dropItem, dropList] = new DropDown({
+            page: 0,
+        }).render();
 
         const btnContainertest = new PostUploadBtn(
             this.state.photoData,
-            dropItem
+            dropList
         );
         const [btnContainertestRender, fileinp] = btnContainertest.initialize();
 
