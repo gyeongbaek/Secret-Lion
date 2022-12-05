@@ -12,7 +12,9 @@ class PostUploadForm extends Component {
         };
         // this.dropDown = new DropDown({ page: 0 }).render();
         this.inputTit = document.createElement('input');
+        this.inputTit.setAttribute('required', 'true');
         this.postContent = document.createElement('textarea');
+        this.postContent.setAttribute('required', 'true');
     }
 
     handlePrevImg(e) {
