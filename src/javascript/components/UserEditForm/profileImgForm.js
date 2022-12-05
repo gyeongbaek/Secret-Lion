@@ -104,10 +104,6 @@ class ProfileImgForm extends Component {
         profileImgTit.textContent = '프로필 사진';
 
         const profileImg = document.createElement('img');
-        // profileImg.setAttribute(
-        //     'src',
-        //     'https://images.unsplash.com/photo-1606225457115-9b0de873c5db?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'
-        // );
         profileImg.setAttribute('alt', '유저 프로필 이미지');
         profileImg.setAttribute('class', 'edit_img');
 
