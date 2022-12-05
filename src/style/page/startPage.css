@@ -1,11 +1,14 @@
 .start_bodyWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100vw;
     height: 100vh;
     background-color: #FFBD3E;
 }
 
 .start_sec{
-    padding-top: 160px;
+    /* padding-top: 160px; */
     text-align: center;
 }
 
