@@ -14,7 +14,7 @@ class StartPage {
 
         const logoImg = document.createElement('img');
         logoImg.setAttribute('class', 'start_img_logo');
-        logoImg.setAttribute('src', 'src/assets/logo.svg');
+        logoImg.setAttribute('src', 'src/assets/logo300.svg');
         logoImg.setAttribute('alt', '비밀멋사 로고 이미지');
 
         const startTit = document.createElement('p');

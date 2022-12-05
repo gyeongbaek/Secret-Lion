@@ -2,11 +2,12 @@
 .loginPage_img_headerLogo{
     display: block;
     margin: 0 auto;
-    width: 300px;
-    height: 200px;
+    width: 120px;
+    height: 120px;
 }
 
 .loginPage_h1_title{
+    margin-top: 10px;
     text-align: center;
     font-size: 18px;
 }
