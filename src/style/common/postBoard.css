@@ -1,15 +1,14 @@
 .board_ul_post {
     width: 100%;
     position: relative;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 20px;
 }
 
 .board_post_item {
-    width: 340px;
-    height: 400px;
+    width: 320px;
+    height: 420px;
     padding: 20px 20px 12px;
     position: relative;
 
