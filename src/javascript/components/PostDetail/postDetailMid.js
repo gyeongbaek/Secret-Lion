@@ -103,6 +103,11 @@ class PostDetailMid extends Component {
             );
         });
 
+        const postFavCount = document.createElement('span');
+        postFavCount.setAttribute('class', 'post_btn_fav_count');
+        postFavCount.textContent =
+            this.props.scrap && this.props.scrap.participateCount;
+
         const postFavImg = document.createElement('img');
         postFavImg.setAttribute('class', 'post_img_fav');
         postFavImg.setAttribute('alt', '즐겨찾기');
@@ -114,6 +119,7 @@ class PostDetailMid extends Component {
         );
 
         postFavBtn.appendChild(postFavImg);
+        postFavBtn.appendChild(postFavCount);
 
         postLikeFavorite.appendChild(postLikeBtn);
         postLikeFavorite.appendChild(postFavBtn);
