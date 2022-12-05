@@ -34,9 +34,6 @@ class LoginForm extends Component {
         loginBtn.setAttribute('class', 'loginPage_btn_login');
         loginBtn.textContent = '로그인';
 
-        // const logoutBtn = document.createElement('button');
-        // logoutBtn.textContent = '로그아웃!';
-
         //url main페이지로 가게 만들어줘야 한다
         const loginLink = document.createElement('a');
         loginLink.setAttribute('class', 'ir');
@@ -47,7 +44,6 @@ class LoginForm extends Component {
         formCont.appendChild(inpPwd);
         formCont.appendChild(pwdErr);
         formCont.appendChild(loginBtn);
-        // formCont.appendChild(logoutBtn);
         formCont.appendChild(loginLink);
 
         async function login(event) {
@@ -82,14 +78,7 @@ class LoginForm extends Component {
         }
 
         loginBtn.addEventListener('click', login);
-        // logoutBtn.addEventListener('click', (e) => {
-        //     e.preventDefault();
-        //     signOut(auth);
-        //     console.log('로그아웃!');
-        //     localStorage.removeItem('token');
-        // });
         const frag = document.createDocumentFragment()
-        // formCont.appendChild(this.a);
         frag.appendChild(formCont);
 
         return formCont;

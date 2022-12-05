@@ -161,11 +161,6 @@ class SignupForm extends Component {
                 }
             }
 
-            // inpId.value = "";
-            // inpPwd.value = "";
-            // inpPwdCheck.value = "";
-            // inpNickname.value = "";
-
             pwdCheckErr.textContent = '';
             pwdCheckErr.style.margin = '0';
             nickNameErr.textContent = '';
@@ -198,7 +193,6 @@ class SignupForm extends Component {
         
 
         return [signupForm, socialRuleModalBtn, privacyModalBtn];
-        // return signupForm;
     }
 }
 
