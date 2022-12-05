@@ -1,7 +1,7 @@
 .header_wrapper{
     display: flex;
     align-items: center;
-    justify-content: right;
+    justify-content: space-between;
     position: fixed;
     top: 0;
     width: 100%;
@@ -12,6 +12,12 @@
     background-color: #ffbd3e;
 }
 
+.header_a_mainGo{
+    width: 180px;
+    height: 180px;
+    background: url(../../assets/home-logo.svg) center/ 180px 180px;
+}
+
 .header_a_searchLink{
     display: inline-block;
     vertical-align: top;
@@ -19,6 +25,7 @@
     height: 33px;
     margin: 20px 0 18px 18px;
     background: url(../../assets/search.svg) center/ 33px 33px;
+    cursor: pointer;
 }
 
 .header_a_writeLink{
@@ -28,6 +35,7 @@
     height: 30px;
     margin: 20px 0 23px 18px;
     background: url(../../assets/write.svg) center/ 30px 30px;
+    cursor: pointer;
 }
 
 .header_a_notificationLink{
@@ -37,6 +45,7 @@
     height: 31px;
     margin: 20px 0 18px 23px;
     background: url(../../assets/notifications.svg) center/ 31px 31px;
+    cursor: pointer;
 }
 
 .header_a_userLink{
@@ -46,4 +55,5 @@
     height: 35px;
     margin: 18px 24px 18px 18px;
     background: url(../../assets/user.svg) center/ 35px 35px;
+    cursor: pointer;
 }

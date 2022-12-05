@@ -8,10 +8,21 @@ class Header {
         const headerWrapper = document.createElement('header');
         headerWrapper.setAttribute('class', 'header_wrapper');
 
+        // 메인 이동 로고 
+        const logoCon = document.createElement('div');
+
+        const mainGoLink = document.createElement('a');
+        mainGoLink.setAttribute('class', 'header_a_mainGo');
+        mainGoLink.href='/';
+
+        // 링크 
+        const linkCon = document.createElement('div');
+
         // 검색
         const searchLink = document.createElement('a');
         searchLink.setAttribute('class', 'header_a_searchLink');
-        // searchLink.href = '/'
+        searchLink.href='#';
+        searchLink.addEventListener('click', linkAlert);
 
         const searchLinkIr = document.createElement('span');
         searchLinkIr.setAttribute('class', 'ir');
@@ -31,7 +42,8 @@ class Header {
         // 알림
         const notificationLink = document.createElement('a');
         notificationLink.setAttribute('class', 'header_a_notificationLink');
-        //notificationLink.href = '/u';
+        notificationLink.href='#';
+        notificationLink.addEventListener('click', linkAlert);
 
         const notificationLinkIr = document.createElement('span');
         notificationLinkIr.setAttribute('class', 'ir');
@@ -54,10 +66,19 @@ class Header {
         userLink.appendChild(userLinkIr);
 
         // wrapper
-        headerWrapper.appendChild(searchLink);
-        headerWrapper.appendChild(writeLink);
-        headerWrapper.appendChild(notificationLink);
-        headerWrapper.appendChild(userLink);
+        headerWrapper.appendChild(logoCon);
+        headerWrapper.appendChild(linkCon);
+
+        logoCon.appendChild(mainGoLink);
+        
+        linkCon.appendChild(searchLink);
+        linkCon.appendChild(writeLink);
+        linkCon.appendChild(notificationLink);
+        linkCon.appendChild(userLink);
+
+        function linkAlert(){
+            alert('아직 개발중입니다 히히');
+        }
 
         return headerWrapper;
     }
