@@ -81,7 +81,10 @@ class UserInfoMain extends Component {
             if (this.photoURL) {
                 profileImg.setAttribute('src', this.photoURL);
             } else {
-                profileImg.setAttribute('src', '/src/assets/user.svg');
+                profileImg.setAttribute(
+                    'src',
+                    '/src/assets/profile/profile.png'
+                );
             }
         });
 
