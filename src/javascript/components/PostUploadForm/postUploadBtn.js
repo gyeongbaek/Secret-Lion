@@ -23,6 +23,10 @@ class PostUploadBtn extends Component {
     async postUpload() {
         const inputTit = document.querySelector('.post_inp_tit');
         const content = document.querySelector('.post_area_content');
+        if (this.category === null) {
+            alert('카테고리를 선택해주세요.');
+            return;
+        }
         const newPostRef = doc(collection(db, 'posts'));
         const postData = {
             title: inputTit.value,
@@ -49,7 +53,10 @@ class PostUploadBtn extends Component {
     photoUpload() {
         const inputTit = document.querySelector('.post_inp_tit');
         const content = document.querySelector('.post_area_content');
-
+        if (this.category === null) {
+            alert('카테고리를 선택해주세요.');
+            return;
+        }
         const postRef = doc(collection(db, 'posts'));
         const postStorageRef = ref(storage, `posts_images/${postRef.id}`);
         uploadBytes(postStorageRef, this.props).then(() => {
