@@ -34,8 +34,8 @@ class LoginForm extends Component {
         loginBtn.setAttribute('class', 'loginPage_btn_login');
         loginBtn.textContent = '로그인';
 
-        const logoutBtn = document.createElement('button');
-        logoutBtn.textContent = '로그아웃!';
+        // const logoutBtn = document.createElement('button');
+        // logoutBtn.textContent = '로그아웃!';
 
         //url main페이지로 가게 만들어줘야 한다
         const loginLink = document.createElement('a');
@@ -47,7 +47,7 @@ class LoginForm extends Component {
         formCont.appendChild(inpPwd);
         formCont.appendChild(pwdErr);
         formCont.appendChild(loginBtn);
-        formCont.appendChild(logoutBtn);
+        // formCont.appendChild(logoutBtn);
         formCont.appendChild(loginLink);
 
         async function login(event) {
@@ -68,24 +68,27 @@ class LoginForm extends Component {
                 console.log(error);
                 if (error.code === 'auth/invalid-email') {
                     emailErr.textContent = '올바른 이메일 형식이 아닙니다.';
-                    emailErr.style.marginBottom = '15px';
-                } else if (error.code === 'auth/wrong-password') {
+                    emailErr.style.marginTop = '7px';
+                }else if(error.code === 'auth/user-not-found'){
+                    emailErr.textContent = '존재하지 않는 이메일입니다.';
+                    emailErr.style.marginTop = '7px';
+                }else if(error.code==='auth/wrong-password'){
                     pwdErr.textContent = '비밀번호가 틀립니다.';
-                    pwdErr.style.marginBottom = '15px';
-                } else if (error.code === 'auth/too-many-requests') {
+                    pwdErr.style.marginTop = '7px';
+                }else if(error.code==='auth/too-many-requests'){
                     window.alert('비밀번호 3회 이상 틀렸습니다. 잠시 후 시도하세요.');
                 }
             }
         }
 
         loginBtn.addEventListener('click', login);
-        logoutBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            signOut(auth);
-            console.log('로그아웃!');
-            localStorage.removeItem('token');
-        });
-        const frag = document.createDocumentFragment();
+        // logoutBtn.addEventListener('click', (e) => {
+        //     e.preventDefault();
+        //     signOut(auth);
+        //     console.log('로그아웃!');
+        //     localStorage.removeItem('token');
+        // });
+        const frag = document.createDocumentFragment()
         // formCont.appendChild(this.a);
         frag.appendChild(formCont);
 
