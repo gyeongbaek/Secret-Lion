@@ -14,8 +14,8 @@
 
 .header_a_mainGo{
     width: 180px;
-    height: 180px;
-    background: url(../../assets/home-logo.svg) center/ 180px 180px;
+    height: 160px;
+    background: url(../../assets/home-logo.svg) center/ 160px 180px;
 }
 
 .header_a_searchLink{
