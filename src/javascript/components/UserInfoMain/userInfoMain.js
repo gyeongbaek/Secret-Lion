@@ -92,6 +92,10 @@ class UserInfoMain extends Component {
         editAnchor.setAttribute('class', 'info_a_move');
         editAnchor.textContent = '프로필 수정';
 
+        const logOutBtn = document.createElement('a');
+        logOutBtn.setAttribute('class', 'info_a_logout');
+        logOutBtn.textContent = '로그아웃';
+
         const userInfoIcon = new UserInfoIcon();
         const [icon, btn] = userInfoIcon.render();
         // console.log(btn);
@@ -116,6 +120,7 @@ class UserInfoMain extends Component {
         profileSection.appendChild(profileImg);
         profileSection.appendChild(nicknameTxt);
         profileSection.appendChild(editAnchor);
+        profileSection.appendChild(logOutBtn);
         // profileSection.appendChild(userInfoIcon.render());
         profileSection.appendChild(icon);
         // 게시글 목록 섹션 안
