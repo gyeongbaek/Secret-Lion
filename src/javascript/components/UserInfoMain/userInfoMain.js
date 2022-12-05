@@ -12,6 +12,8 @@ import {
     orderBy,
     query,
     where,
+    getAuth,
+    signOut,
 } from '../../firebase.js';
 
 class UserInfoMain extends Component {
@@ -20,10 +22,6 @@ class UserInfoMain extends Component {
         this.posts = [];
         this.token = localStorage.getItem('token');
     }
-    // async getPostData() {
-    //     // 나중에 json 형태로 받아올 예정
-    //     this.posts = productData;
-    // }
     async getPostsData() {
         const posts = [];
         const postRef = collection(db, 'posts');
@@ -36,7 +34,6 @@ class UserInfoMain extends Component {
                     }
                 }
             });
-            // console.log(posts);
         });
         return posts;
     }
@@ -50,15 +47,9 @@ class UserInfoMain extends Component {
         return;
     }
     render() {
-        // this.getPostData();
-
         // 메인 컨테이너
-
         const mainCont = new MainContainer();
         const mainEl = mainCont.render();
-
-        // const userInfoMain = document.createElement('main');
-        // userInfoMain.setAttribute('class', 'info_main_container');
 
         const userInfoh1 = document.createElement('h1');
         userInfoh1.setAttribute('class', 'ir');
@@ -103,16 +94,30 @@ class UserInfoMain extends Component {
         logOutBtn.setAttribute('class', 'info_a_logout');
         logOutBtn.textContent = '로그아웃';
 
+        // 로그아웃 함수
+        const auth = getAuth();
+        logOutBtn.addEventListener('click', () => {
+            signOut(auth).then(() => {
+                localStorage.removeItem('token');
+                alert('로그아웃되었습니다');
+                location.href = '/';
+            });
+        });
+
         const userInfoIcon = new UserInfoIcon();
-        const [icon, btn] = userInfoIcon.render();
-        // console.log(btn);
-        btn.addEventListener('click', () => {
+        const [icons, postIcon, likeIcon, scrapIcon] = userInfoIcon.render();
+
+        // postIcon.addEventListener
+
+        likeIcon.addEventListener('click', () => {
             this.getPostsData().then((posts) => {
                 this.posts = posts;
                 const postBoard = new PostBoard({ posts: this.posts });
                 postListSection.appendChild(postBoard.render());
             });
         });
+
+        // scrapIcon.addEventListener
 
         // 게시글 목록 섹션
         const postListSection = document.createElement('section');
@@ -128,11 +133,9 @@ class UserInfoMain extends Component {
         profileSection.appendChild(nicknameTxt);
         profileSection.appendChild(editAnchor);
         profileSection.appendChild(logOutBtn);
-        // profileSection.appendChild(userInfoIcon.render());
-        profileSection.appendChild(icon);
+        profileSection.appendChild(icons);
         // 게시글 목록 섹션 안
         postListSection.appendChild(posth2);
-        // postListSection.appendChild(postBoard.render());
 
         // 메인 안
         mainEl.appendChild(profileSection);
