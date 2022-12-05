@@ -1,7 +1,11 @@
 import Component from '../../core/Component.js';
-import { auth, signInWithEmailAndPassword, signOut } from '../../firebase.js';
+import { auth, doc, signInWithEmailAndPassword, signOut } from '../../firebase.js';
 
 class LoginForm extends Component {
+    constructor(props){
+        super(props);
+    }
+
     render() {
         const formCont = document.createElement('form');
         formCont.setAttribute('class', 'loginPage_form_inpCont');
@@ -33,12 +37,18 @@ class LoginForm extends Component {
         const logoutBtn = document.createElement('button');
         logoutBtn.textContent = '로그아웃!';
 
+        //url main페이지로 가게 만들어줘야 한다 
+        const loginLink = document.createElement('a');
+        loginLink.setAttribute('class','ir');
+        loginLink.setAttribute('href','/');
+
         formCont.appendChild(inpId);
         formCont.appendChild(emailErr);
         formCont.appendChild(inpPwd);
         formCont.appendChild(pwdErr);
         formCont.appendChild(loginBtn);
         formCont.appendChild(logoutBtn);
+        formCont.appendChild(loginLink);
 
         async function login(event) {
             event.preventDefault();
@@ -51,8 +61,10 @@ class LoginForm extends Component {
                 pwdErr.textContent = '';
                 pwdErr.style.margin = '0';
                 const userInfo = await signInWithEmailAndPassword(auth, newId, newPwd);
-                // console.log(userInfo.user.uid);
                 localStorage.setItem('token', userInfo.user.uid);
+                loginLink.click();
+                location.reload();
+
             } catch (error) {
                 console.log(error);
                 if(error.code === 'auth/invalid-email'){
@@ -65,8 +77,7 @@ class LoginForm extends Component {
                     window.alert('비밀번호 3회 이상 틀렸습니다. 잠시 후 시도하세요.');
                 }
             }
-            // inpId.value = "";
-            // inpPwd.value = "";
+            
         }
 
         loginBtn.addEventListener('click', login);
@@ -76,6 +87,10 @@ class LoginForm extends Component {
             console.log('로그아웃!');
             localStorage.removeItem('token');
         });
+        const frag = document.createDocumentFragment()
+        // formCont.appendChild(this.a);
+        frag.appendChild(formCont)
+        
         return formCont;
     }
 }
