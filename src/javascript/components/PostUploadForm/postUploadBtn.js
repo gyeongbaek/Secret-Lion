@@ -43,8 +43,6 @@ class PostUploadBtn extends Component {
             postId: newPostRef.id,
         };
         await setDoc(newPostRef, postData);
-        console.log(postData);
-        console.log('완료');
         this.a.click();
     }
 
@@ -56,7 +54,6 @@ class PostUploadBtn extends Component {
         const postStorageRef = ref(storage, `posts_images/${postRef.id}`);
         uploadBytes(postStorageRef, this.props).then(() => {
             getDownloadURL(postStorageRef).then(async (downloadURL) => {
-                console.log(downloadURL);
                 const postData = {
                     title: inputTit.value,
                     content: content.value,
@@ -75,10 +72,9 @@ class PostUploadBtn extends Component {
                     },
                     postId: postRef.id,
                 };
-                await setDoc(postRef, postData);
-
-                console.log('완료');
                 this.a.click();
+                await setDoc(postRef, postData);
+                console.log('완료');
             });
         });
     }
@@ -111,7 +107,7 @@ class PostUploadBtn extends Component {
         btnContainer.appendChild(fileBtn);
         btnContainer.appendChild(uploadBtn);
         btnContainer.appendChild(this.a);
-        this.a.setAttribute('href', '/user');
+        this.a.setAttribute('href', '/');
         this.a.setAttribute('class', 'ir');
 
         return [btnContainer, fileinp];
