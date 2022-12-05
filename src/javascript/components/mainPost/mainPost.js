@@ -5,14 +5,13 @@ import { DropDown, MainContainer, TestDrop } from '../../common/index.js';
 class MainPost extends Component {
     constructor(props) {
         super(props);
+        this.categoryList = ['자유', '학습', '취업', '연애', '관계'];
         this.state = {
             displayPost: this.checkCategory(),
         };
     }
 
     checkCategory() {
-        const categoryList = ['자유', '학습', '취업', '연애', '관계'];
-
         if (!localStorage.getItem('selectCategory')) {
             localStorage.setItem('selectCategory', '전체');
         }
@@ -24,7 +23,7 @@ class MainPost extends Component {
         const order = localStorage.getItem('postOrder');
 
         let newList = [];
-        if (categoryList.includes(category)) {
+        if (this.categoryList.includes(category)) {
             newList = this.props.posts.filter((el) => el.category === category);
         } else {
             // 쿠키 값 컨트롤 방지
@@ -71,7 +70,7 @@ class MainPost extends Component {
         menuTitle.setAttribute('class', 'ir');
         menuTitle.innerText = '게시판 분류 선택';
 
-        // 핫게시판 버튼
+        // 인기게시판 버튼
         const btnHot = document.createElement('button');
         btnHot.setAttribute('class', 'main_btn_hot on');
         btnHot.setAttribute('data-order', '인기');
@@ -81,10 +80,10 @@ class MainPost extends Component {
         btnHot.innerText = '인기';
         btnHot.appendChild(imgHot);
 
-        btnHot.addEventListener('click', (e) => {
-            localStorage.setItem('postOrder', e.currentTarget.dataset.order);
-            this.changeOrder(e.currentTarget.dataset.order);
-        });
+        // btnHot.addEventListener('click', (e) => {
+        //     localStorage.setItem('postOrder', e.currentTarget.dataset.order);
+        //     this.changeOrder(e.currentTarget.dataset.order);
+        // });
 
         // 최신순 게시판 버튼
         const btnRecent = document.createElement('button');
@@ -96,10 +95,16 @@ class MainPost extends Component {
         btnRecent.innerText = '최신';
         btnRecent.appendChild(imgRecent);
 
-        btnRecent.addEventListener('click', (e) => {
-            localStorage.setItem('postOrder', e.currentTarget.dataset.order);
-            this.changeOrder(e.currentTarget.dataset.order);
+        [btnHot, btnRecent].forEach((el) => {
+            el.addEventListener('click', (e) => {
+                localStorage.setItem('postOrder', e.currentTarget.dataset.order);
+                this.changeOrder(e.currentTarget.dataset.order);
+            });
         });
+        // btnRecent.addEventListener('click', (e) => {
+        //     localStorage.setItem('postOrder', e.currentTarget.dataset.order);
+        //     this.changeOrder(e.currentTarget.dataset.order);
+        // });
 
         const [dropDown, dropContent, dropItem] = new DropDown({ page: 1 }).render();
         dropItem.addEventListener('click', (e) => {
