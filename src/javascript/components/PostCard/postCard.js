@@ -23,7 +23,7 @@ class PostCard extends Component {
     render() {
         const postItem = document.createElement('li');
         const post = document.createElement('a');
-        post.setAttribute('href', `/Secrit-Lion/post/${this.props.item.postId}`);
+        post.setAttribute('href', `/post/${this.props.item.postId}`);
         post.setAttribute('class', 'board_post_item');
 
         if (!this.props.item.img) {
@@ -35,7 +35,8 @@ class PostCard extends Component {
                     this.props.item.img = '../../../assets/thumbnail/love.png';
                     break;
                 case '관계':
-                    this.props.item.img = '../../../assets/thumbnail/relation.png';
+                    this.props.item.img =
+                        '../../../assets/thumbnail/relation.png';
                     break;
                 case '취업':
                     this.props.item.img = '../../../assets/thumbnail/job.png';
