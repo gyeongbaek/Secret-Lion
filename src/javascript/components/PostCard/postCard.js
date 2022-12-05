@@ -11,6 +11,10 @@ import Component from '../../core/Component.js';
 import { db, doc, getDoc } from '../../firebase.js';
 
 class PostCard extends Component {
+    constructor(props) {
+        super(props);
+        this.date = null;
+    }
     async getUser() {
         const docRef = doc(db, 'users', this.props.item.writerId);
         const docSnap = await getDoc(docRef);
