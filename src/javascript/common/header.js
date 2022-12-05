@@ -11,7 +11,8 @@ class Header {
         // 검색
         const searchLink = document.createElement('a');
         searchLink.setAttribute('class', 'header_a_searchLink');
-        // searchLink.href = '/'
+        searchLink.href='#';
+        searchLink.addEventListener('click', linkAlert);
 
         const searchLinkIr = document.createElement('span');
         searchLinkIr.setAttribute('class', 'ir');
@@ -31,7 +32,8 @@ class Header {
         // 알림
         const notificationLink = document.createElement('a');
         notificationLink.setAttribute('class', 'header_a_notificationLink');
-        //notificationLink.href = '/u';
+        notificationLink.href='#';
+        notificationLink.addEventListener('click', linkAlert);
 
         const notificationLinkIr = document.createElement('span');
         notificationLinkIr.setAttribute('class', 'ir');
@@ -58,6 +60,10 @@ class Header {
         headerWrapper.appendChild(writeLink);
         headerWrapper.appendChild(notificationLink);
         headerWrapper.appendChild(userLink);
+
+        function linkAlert(){
+            alert('아직 개발중입니다 히히');
+        }
 
         return headerWrapper;
     }
