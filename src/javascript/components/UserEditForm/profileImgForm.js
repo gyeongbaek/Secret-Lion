@@ -3,6 +3,7 @@ import {
     auth,
     db,
     doc,
+    getDoc,
     getDownloadURL,
     getStorage,
     ref,
@@ -10,11 +11,21 @@ import {
     updateDoc,
     updateProfile,
     uploadBytes,
+    deleteObject,
 } from '../../firebase.js';
 
 class ProfileImgForm extends Component {
     constructor(props) {
         super(props);
+        this.token = localStorage.getItem('token');
+    }
+    async getUserImg() {
+        const docRef = doc(db, 'users', auth.currentUser.uid);
+        const docSnap = await getDoc(docRef);
+
+        this.photoURL = docSnap.data().photoURL;
+
+        return;
     }
     // 프로필 이미지 변경 함수
     async changeProfileImg(e) {
@@ -22,25 +33,8 @@ class ProfileImgForm extends Component {
         const userStorageRef = ref(
             storage,
             `user_images/${auth.currentUser.uid}`
+            // `user_images/${this.token}`
         );
-
-        // uploadBytes(userStorageRef, e.target.files[0]).then((snapshot) => {
-        //     console.log('Uploaded a blob or file!');
-        //     getDownloadURL(userStorageRef).then(async (downloadURL) => {
-        //         // 얻은거 storage 저장
-        //         // downloadURL을 얻었다
-        //         // auth 정보 변경
-        //         // database 정보 변경
-        //         updateProfile(auth.currentUser, {
-        //             photoURL: downloadURL,
-        //         });
-        //         const userProfile = doc(db, 'users', auth.currentUser.uid);
-        //         await updateDoc(userProfile, {
-        //             photoURL: downloadURL,
-        //         });
-        //     });
-        // });
-        // console.log('완료');
 
         // 예외 처리
         try {
@@ -75,6 +69,28 @@ class ProfileImgForm extends Component {
         // updateProfile : auth에서 유저 이미지 변경
         // updateDoc : firestore database에서 유저 이미지 변경
     }
+    async deleteImg() {
+        const docRef = doc(db, 'users', auth.currentUser.uid);
+        const docSnap = await getDoc(docRef);
+
+        const storage = getStorage();
+
+        updateProfile(auth.currentUser, {
+            photoURL: null,
+        });
+
+        await updateDoc(docRef, {
+            photoURL: null,
+        });
+
+        const userImgRef = ref(storage, `user_images/${auth.currentUser.uid}`);
+
+        deleteObject(userImgRef).then(() => {
+            const image = document.querySelector('.edit_img');
+            image.src = '/src/assets/user.svg';
+            console.log('삭제 완!!!');
+        });
+    }
     render() {
         // 프로필 이미지 폼
         const imgForm = document.createElement('form');
@@ -85,12 +101,20 @@ class ProfileImgForm extends Component {
         profileImgTit.textContent = '프로필 사진';
 
         const profileImg = document.createElement('img');
-        profileImg.setAttribute(
-            'src',
-            'https://images.unsplash.com/photo-1606225457115-9b0de873c5db?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'
-        );
+        // profileImg.setAttribute(
+        //     'src',
+        //     'https://images.unsplash.com/photo-1606225457115-9b0de873c5db?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'
+        // );
         profileImg.setAttribute('alt', '유저 프로필 이미지');
         profileImg.setAttribute('class', 'edit_img');
+
+        this.getUserImg().then(() => {
+            if (this.photoURL) {
+                profileImg.setAttribute('src', this.photoURL);
+            } else {
+                profileImg.setAttribute('src', '/src/assets/user.svg');
+            }
+        });
 
         const changeBtn = document.createElement('button');
         changeBtn.setAttribute('class', 'edit_btn_change');
@@ -113,8 +137,7 @@ class ProfileImgForm extends Component {
         // 기본 이미지로 변경하기
         deleteBtn.addEventListener('click', () => {
             event.preventDefault();
-            profileImg.src =
-                'https://images.unsplash.com/photo-1606225457115-9b0de873c5db?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80';
+            this.deleteImg();
         });
 
         fileinp.addEventListener('change', this.changeProfileImg);

@@ -64,6 +64,7 @@ class PostCard extends Component {
             comment: this.props.item.scrap.participateCount,
         });
         post.appendChild(postInfo.render());
+
         if (this.props.item.date) {
             const postDate = new PostCardDate({ date: this.props.item.date });
             post.appendChild(postDate.render());
