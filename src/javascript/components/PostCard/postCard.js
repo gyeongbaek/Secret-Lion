@@ -43,33 +43,24 @@ class PostCard extends Component {
                     break;
             }
         }
-        if (this.props.item.img) {
-            const postImg = new PostCardThumbnail({ src: this.props.item.img });
-            post.appendChild(postImg.render());
-        }
-        if (this.props.item.title) {
-            const postTitle = new PostCardTitle({ title: this.props.item.title });
-            post.appendChild(postTitle.render());
-        }
-        if (this.props.item.content) {
-            const postCont = new PostCardContent({
-                content: this.props.item.content,
-            });
-            post.appendChild(postCont.render());
-        }
-        if (this.props.item.category) {
-            const postCate = new PostCardCategory({
-                category: this.props.item.category,
-            });
-            post.appendChild(postCate.render());
-        }
-        if (this.props.item.like.participateCount && this.props.item.scrap.participateCount) {
-            const postInfo = new PostCardReaction({
-                like: this.props.item.like.participateCount,
-                comment: this.props.item.scrap.participateCount,
-            });
-            post.appendChild(postInfo.render());
-        }
+        const postImg = new PostCardThumbnail({ src: this.props.item.img });
+        post.appendChild(postImg.render());
+        const postTitle = new PostCardTitle({ title: this.props.item.title });
+        post.appendChild(postTitle.render());
+        const postCont = new PostCardContent({
+            content: this.props.item.content,
+        });
+        post.appendChild(postCont.render());
+        const postCate = new PostCardCategory({
+            category: this.props.item.category,
+        });
+        post.appendChild(postCate.render());
+        const postInfo = new PostCardReaction({
+            like: this.props.item.like.participateCount,
+            comment: this.props.item.scrap.participateCount,
+        });
+        post.appendChild(postInfo.render());
+
         if (this.props.item.date) {
             const postDate = new PostCardDate({ date: this.props.item.date });
             post.appendChild(postDate.render());
