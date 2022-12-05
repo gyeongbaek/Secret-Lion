@@ -6,27 +6,32 @@
 
 /* header */
 .signupPage_header{
-    padding-top: 100px;
+    padding-top: 50px;
     text-align: center;
 }
 
 .signupPage_h1_tit{
-    font-size: 60px;
+    font-size: 50px;
     font-weight: 700;
     color: black;
 }
 
 .signupPage_p_subTit{
-    padding-top: 30px;
+    padding-top: 20px;
     font-size: 18px;
 }
 
 
 /* main */
 .signupPage_main_wrapper{
+    /* display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column; */
     margin: 30px auto;
-    padding: 40px 50px;
-    width: 440px;
+    padding: 30px 50px;
+    width: 430px;
     z-index: -1;
     border-radius: 30px;
     background-color: #fff;
@@ -35,7 +40,7 @@
 
 /* title-Wrapper */
 .signupPage_div_titWrapper{
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .signupPage_h2_welcome{
@@ -44,7 +49,7 @@
 }
 
 .signupPage_p_detailPlz{
-    margin: 10px auto 25px;
+    margin: 10px auto 15px;
     font-size: 14px;
     color: #6a6a6a;
 }
@@ -52,15 +57,24 @@
 /* input */
 .signupPage_form{
     display: flex;
+    /* justify-content: center; */
     flex-direction: column;
 }
 
 #signupPage_inp_id, #signupPage_inp_pwd, #signupPage_inp_pwdCheck, #signupPage_inp_nickname{
-    margin-bottom: 15px;
+    margin-top: 15px;
     border-radius: 4px;
     border: 1px solid #d7d7d7;
-    padding: 15px;
+    padding: 13px;
     width: 100%;
+}
+
+#signupPage_inp_id{
+    margin-top: 0;
+}
+
+#signupPage_inp_nickname{
+    margin-bottom: 15px;
 }
 
 .signupPage_checkCont{
@@ -125,9 +139,8 @@
     height: 100%;
     left: 0;
     top: 0;
-    padding-top: 240px;
+    padding-top: 160px;
     background: rgba(0, 0, 0, 0.3);
-    
     backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(1.5px);
 }
@@ -136,7 +149,6 @@
 .signupPage_art_privacyModalCon{
     position: relative;
     width: 440px;
-    height: 554px;
     padding: 50px 25px;
     border-radius: 30px;
     border: 1px solid #d7d7d7;

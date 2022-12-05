@@ -3,7 +3,7 @@
     display: block;
     margin: 0 auto;
     width: 300px;
-    height: 230px;
+    height: 200px;
 }
 
 .loginPage_h1_title{
@@ -13,6 +13,10 @@
 
 /* main */
 .loginPage_bodyWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     width: 100vw;
     height: 100vh;
     background-color: #FFBD3E;
@@ -20,7 +24,7 @@
 
 .loginPage_main_wrapper{
     margin: 30px auto;
-    padding: 80px 65px 100px;
+    padding: 70px 65px;
     width: 430px;
     border-radius: 30px;
     background-color: #fff;
@@ -30,7 +34,7 @@
 /* sub-title */
 .loginPage_p_subTit{
     color: #000;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 
 .loginPage_strong{
@@ -42,6 +46,7 @@
 .loginPage_div_formCont{
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
 }
 
@@ -55,13 +60,12 @@
 
 .loginPage_form_inpCont{
     display: flex;
-    /* align-items: center; */
+    justify-content: center;
     flex-direction: column;
-    /* margin: auto 30px; */
 }
 
 .loginPage_inp_id, .loginPage_inp_pwd{
-    margin-bottom: 20px;
+    margin-top: 20px;
     border-radius: 4px;
     border: 1px solid #d7d7d7;
     padding: 15px;
@@ -69,6 +73,7 @@
 }
 
 .loginPage_btn_login{
+    margin-top: 20px;
     width: 300px;
     height: 53px;
     border-radius: 4px;
