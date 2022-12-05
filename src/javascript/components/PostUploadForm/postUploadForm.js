@@ -51,18 +51,15 @@ class PostUploadForm extends Component {
             page: 0,
         }).render();
 
-        const btnContainertest = new PostUploadBtn(
-            this.state.photoData,
-            dropList
-        );
-        const [btnContainertestRender, fileinp] = btnContainertest.initialize();
+        const btnsContainer = new PostUploadBtn(this.state.photoData, dropList);
+        const [btnsContainerRender, fileinp] = btnsContainer.initialize();
 
         postUploadForm.addEventListener('submit', (e) => {
             e.preventDefault();
             if (this.state.prevPhoto) {
-                btnContainertest.photoUpload();
+                btnsContainer.photoUpload();
             } else {
-                btnContainertest.postUpload();
+                btnsContainer.postUpload();
             }
         });
 
@@ -76,7 +73,7 @@ class PostUploadForm extends Component {
         postUploadForm.appendChild(this.inputTit);
         postUploadForm.appendChild(this.postContent);
 
-        postUploadForm.appendChild(btnContainertestRender);
+        postUploadForm.appendChild(btnsContainerRender);
 
         if (this.state.prevPhoto) {
             const postUploadPreview = new PostUploadPreview(
