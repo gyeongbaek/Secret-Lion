@@ -20,11 +20,11 @@ class UserInfoMain extends Component {
         this.posts = [];
         this.token = localStorage.getItem('token');
     }
-    async getPostData() {
-        // 나중에 json 형태로 받아올 예정
-        this.posts = productData;
-    }
-    async getTestData() {
+    // async getPostData() {
+    //     // 나중에 json 형태로 받아올 예정
+    //     this.posts = productData;
+    // }
+    async getPostsData() {
         const posts = [];
         const postRef = collection(db, 'posts');
 
@@ -50,7 +50,7 @@ class UserInfoMain extends Component {
         return;
     }
     render() {
-        this.getPostData();
+        // this.getPostData();
 
         // 메인 컨테이너
         const userInfoMain = document.createElement('main');
@@ -96,7 +96,7 @@ class UserInfoMain extends Component {
         const [icon, btn] = userInfoIcon.render();
         // console.log(btn);
         btn.addEventListener('click', () => {
-            this.getTestData().then((posts) => {
+            this.getPostsData().then((posts) => {
                 this.posts = posts;
                 const postBoard = new PostBoard({ posts: this.posts });
                 postListSection.appendChild(postBoard.render());

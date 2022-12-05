@@ -35,7 +35,9 @@ class MainPost extends Component {
 
     orderPost(list, flag) {
         if (flag === '최신') {
-            return list;
+            return list.sort((a, b) => {
+                return b.date - a.date;
+            });
         } else {
             return list.sort((a, b) => {
                 return (
@@ -79,7 +81,10 @@ class MainPost extends Component {
         imgHot.setAttribute('alt', '');
         btnHot.innerText = '인기';
         btnHot.appendChild(imgHot);
-
+        btnHot.addEventListener('click', (e) => {
+            localStorage.setItem('postOrder', e.currentTarget.dataset.order);
+            this.changeOrder(e.currentTarget.dataset.order);
+        });
         // btnHot.addEventListener('click', (e) => {
         //     localStorage.setItem('postOrder', e.currentTarget.dataset.order);
         //     this.changeOrder(e.currentTarget.dataset.order);
@@ -94,12 +99,9 @@ class MainPost extends Component {
         imgRecent.setAttribute('alt', '');
         btnRecent.innerText = '최신';
         btnRecent.appendChild(imgRecent);
-
-        [btnHot, btnRecent].forEach((el) => {
-            el.addEventListener('click', (e) => {
-                localStorage.setItem('postOrder', e.currentTarget.dataset.order);
-                this.changeOrder(e.currentTarget.dataset.order);
-            });
+        btnRecent.addEventListener('click', (e) => {
+            localStorage.setItem('postOrder', e.currentTarget.dataset.order);
+            this.changeOrder(e.currentTarget.dataset.order);
         });
         // btnRecent.addEventListener('click', (e) => {
         //     localStorage.setItem('postOrder', e.currentTarget.dataset.order);
