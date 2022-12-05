@@ -2,7 +2,7 @@ import Component from '../../core/Component.js';
 import { auth, doc, signInWithEmailAndPassword, signOut } from '../../firebase.js';
 
 class LoginForm extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
     }
 
@@ -19,7 +19,7 @@ class LoginForm extends Component {
         const emailErr = document.createElement('p');
         emailErr.style.color = 'red';
         emailErr.style.fontSize = '14px';
-        
+
         const inpPwd = document.createElement('input');
         inpPwd.setAttribute('type', 'password');
         inpPwd.setAttribute('placeholder', '비밀번호');
@@ -37,10 +37,10 @@ class LoginForm extends Component {
         // const logoutBtn = document.createElement('button');
         // logoutBtn.textContent = '로그아웃!';
 
-        //url main페이지로 가게 만들어줘야 한다 
+        //url main페이지로 가게 만들어줘야 한다
         const loginLink = document.createElement('a');
-        loginLink.setAttribute('class','ir');
-        loginLink.setAttribute('href','/');
+        loginLink.setAttribute('class', 'ir');
+        loginLink.setAttribute('href', '/');
 
         formCont.appendChild(inpId);
         formCont.appendChild(emailErr);
@@ -64,10 +64,9 @@ class LoginForm extends Component {
                 localStorage.setItem('token', userInfo.user.uid);
                 loginLink.click();
                 location.reload();
-
             } catch (error) {
                 console.log(error);
-                if(error.code === 'auth/invalid-email'){
+                if (error.code === 'auth/invalid-email') {
                     emailErr.textContent = '올바른 이메일 형식이 아닙니다.';
                     emailErr.style.marginTop = '7px';
                 }else if(error.code === 'auth/user-not-found'){
@@ -91,8 +90,8 @@ class LoginForm extends Component {
         // });
         const frag = document.createDocumentFragment()
         // formCont.appendChild(this.a);
-        frag.appendChild(formCont)
-        
+        frag.appendChild(formCont);
+
         return formCont;
     }
 }
