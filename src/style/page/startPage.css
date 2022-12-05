@@ -13,23 +13,24 @@
 }
 
 .start_img_logo{
-    width: 500px;
+    width: 230px;
+    padding: 20px;
 }
 
 .start_p_tit{
     position: relative;
-    top: -30px;
+    top: 10px;
     font-size: 20px;
     font-weight: 700;
     color: #000;   
 }
 
 .start_a_go{
-    margin: 70px auto 0;
-    padding: 20px;
-    width: 160px;
+    margin: 60px auto 0;
+    padding: 15px;
+    width: 140px;
     background-color: #fff;
-    font-size: 26px;
+    font-size: 22px;
     border-radius: 20px;
     border: 1px solid #d7d7d7;
     box-shadow: 0px 2px 2px 2px rgba(0,0,0,0.2);
