@@ -1,6 +1,6 @@
 import Component from '../../core/Component.js';
 import { UserInfoIcon } from '../UserInfoIcon/index.js';
-import { PostBoard } from '../../common/index.js';
+import { PostBoard, MainContainer } from '../../common/index.js';
 import { productData } from '../../data.js';
 import {
     auth,
@@ -12,6 +12,8 @@ import {
     orderBy,
     query,
     where,
+    getAuth,
+    signOut,
 } from '../../firebase.js';
 
 class UserInfoMain extends Component {
@@ -20,10 +22,6 @@ class UserInfoMain extends Component {
         this.posts = [];
         this.token = localStorage.getItem('token');
     }
-    // async getPostData() {
-    //     // 나중에 json 형태로 받아올 예정
-    //     this.posts = productData;
-    // }
     async getPostsData() {
         const posts = [];
         const postRef = collection(db, 'posts');
@@ -36,7 +34,6 @@ class UserInfoMain extends Component {
                     }
                 }
             });
-            console.log(posts);
         });
         return posts;
     }
@@ -50,16 +47,14 @@ class UserInfoMain extends Component {
         return;
     }
     render() {
-        // this.getPostData();
-
         // 메인 컨테이너
-        const userInfoMain = document.createElement('main');
-        userInfoMain.setAttribute('class', 'info_main_container');
+        const mainCont = new MainContainer();
+        const mainEl = mainCont.render();
 
         const userInfoh1 = document.createElement('h1');
         userInfoh1.setAttribute('class', 'ir');
         userInfoh1.textContent = '유저 프로필 페이지';
-        userInfoMain.appendChild(userInfoh1);
+        mainEl.appendChild(userInfoh1);
 
         // 유저 프로필 섹션
         const profileSection = document.createElement('section');
@@ -81,7 +76,10 @@ class UserInfoMain extends Component {
             if (this.photoURL) {
                 profileImg.setAttribute('src', this.photoURL);
             } else {
-                profileImg.setAttribute('src', '/src/assets/user.svg');
+                profileImg.setAttribute(
+                    'src',
+                    '/src/assets/profile/profile.png'
+                );
             }
         });
 
@@ -92,16 +90,34 @@ class UserInfoMain extends Component {
         editAnchor.setAttribute('class', 'info_a_move');
         editAnchor.textContent = '프로필 수정';
 
+        const logOutBtn = document.createElement('a');
+        logOutBtn.setAttribute('class', 'info_a_logout');
+        logOutBtn.textContent = '로그아웃';
+
+        // 로그아웃 함수
+        const auth = getAuth();
+        logOutBtn.addEventListener('click', () => {
+            signOut(auth).then(() => {
+                localStorage.removeItem('token');
+                alert('로그아웃되었습니다');
+                location.href = '/';
+            });
+        });
+
         const userInfoIcon = new UserInfoIcon();
-        const [icon, btn] = userInfoIcon.render();
-        // console.log(btn);
-        btn.addEventListener('click', () => {
+        const [icons, postIcon, likeIcon, scrapIcon] = userInfoIcon.render();
+
+        // postIcon.addEventListener
+
+        likeIcon.addEventListener('click', () => {
             this.getPostsData().then((posts) => {
                 this.posts = posts;
                 const postBoard = new PostBoard({ posts: this.posts });
                 postListSection.appendChild(postBoard.render());
             });
         });
+
+        // scrapIcon.addEventListener
 
         // 게시글 목록 섹션
         const postListSection = document.createElement('section');
@@ -116,17 +132,16 @@ class UserInfoMain extends Component {
         profileSection.appendChild(profileImg);
         profileSection.appendChild(nicknameTxt);
         profileSection.appendChild(editAnchor);
-        // profileSection.appendChild(userInfoIcon.render());
-        profileSection.appendChild(icon);
+        profileSection.appendChild(logOutBtn);
+        profileSection.appendChild(icons);
         // 게시글 목록 섹션 안
         postListSection.appendChild(posth2);
-        // postListSection.appendChild(postBoard.render());
 
         // 메인 안
-        userInfoMain.appendChild(profileSection);
-        userInfoMain.appendChild(postListSection);
+        mainEl.appendChild(profileSection);
+        mainEl.appendChild(postListSection);
 
-        return userInfoMain;
+        return mainEl;
     }
 }
 
