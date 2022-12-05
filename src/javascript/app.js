@@ -19,28 +19,21 @@ export default class App {
     }
 
     loginCheck() {
-        // try{
-            if (this.token === null) {
-                return {
-                    '/': StartPage,
-                    '/login': LoginPage,
-                    '/signup': SignupPage,
-                };
-            } else {
-                return {
-                    '/': MainPage,
-                    '/post/:id': PostDetailPage,
-                    '/upload': PostUploadpage,
-                    '/user': UserInfo,
-                    '/setting': UserEdit,
-                };
-            }
-        // }catch{
-            // return{
-            //     '/': Error404Page
-            // }
-        // }
-        
+        if (this.token === null) {
+            return {
+                '/': StartPage,
+                '/login': LoginPage,
+                '/signup': SignupPage,
+            };
+        } else {
+            return {
+                '/': MainPage,
+                '/post/:id': PostDetailPage,
+                '/upload': PostUploadpage,
+                '/user': UserInfo,
+                '/setting': UserEdit,
+            };
+        }
     }
     async setup() {
         const { el } = this.props;
