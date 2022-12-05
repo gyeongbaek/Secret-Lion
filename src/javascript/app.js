@@ -8,6 +8,7 @@ import {
     UserEdit,
     UserInfo,
     TestPage,
+    // Error404Page
 } from './pages/index.js';
 import { Router } from './utils/index.js';
 
@@ -18,21 +19,28 @@ export default class App {
     }
 
     loginCheck() {
-        if (this.token === null) {
-            return {
-                '/Secret-Lion/': StartPage,
-                '/Secret-Lion/login': LoginPage,
-                '/Secret-Lion/signup': SignupPage,
-            };
-        } else {
-            return {
-                '/Secret-Lion/': MainPage,
-                '/Secret-Lion/post/:id': PostDetailPage,
-                '/Secret-Lion/upload': PostUploadpage,
-                '/Secret-Lion/user': UserInfo,
-                '/Secret-Lion/setting': UserEdit,
-            };
-        }
+        // try{
+            if (this.token === null) {
+                return {
+                    '/': StartPage,
+                    '/login': LoginPage,
+                    '/signup': SignupPage,
+                };
+            } else {
+                return {
+                    '/': MainPage,
+                    '/post/:id': PostDetailPage,
+                    '/upload': PostUploadpage,
+                    '/user': UserInfo,
+                    '/setting': UserEdit,
+                };
+            }
+        // }catch{
+            // return{
+            //     '/': Error404Page
+            // }
+        // }
+        
     }
     async setup() {
         const { el } = this.props;
