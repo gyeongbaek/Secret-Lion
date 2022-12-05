@@ -20,17 +20,17 @@ export default class App {
     loginCheck() {
         if (this.token === null) {
             return {
-                '/Secret-Lion/': StartPage,
-                '/Secret-Lion/login': LoginPage,
-                '/Secret-Lion/signup': SignupPage,
+                '/': StartPage,
+                '/login': LoginPage,
+                '/signup': SignupPage,
             };
         } else {
             return {
-                '/Secret-Lion/': MainPage,
-                '/Secret-Lion/post/:id': PostDetailPage,
-                '/Secret-Lion/upload': PostUploadpage,
-                '/Secret-Lion/user': UserInfo,
-                '/Secret-Lion/setting': UserEdit,
+                '/': MainPage,
+                '/post/:id': PostDetailPage,
+                '/upload': PostUploadpage,
+                '/user': UserInfo,
+                '/setting': UserEdit,
             };
         }
     }
