@@ -3,22 +3,26 @@ import { PostDetailMain } from '../components/PostDetail/index.js';
 import Component from '../core/Component.js';
 import { auth } from '../firebase.js';
 
-class PostDetailPage extends Component {
-    render() {
-        const fragCon = document.createDocumentFragment();
+class PostDetailPage {
+  constructor(id) {
+    this.id = id;
+  }
+  render() {
+    const fragCon = document.createDocumentFragment();
+    const header = new Header();
 
-        const header = new Header();
+    const postDetailMain = new PostDetailMain({
+      id: this.id,
+    });
+    const a = document.createElement('a');
+    a.setAttribute('href', '/login');
+    fragCon.appendChild(a);
+    // 전체
+    fragCon.appendChild(header.render());
+    fragCon.appendChild(postDetailMain.initialize());
 
-        const postDetailMain = new PostDetailMain();
-        const a = document.createElement('a');
-        a.setAttribute('href', '/login');
-        fragCon.appendChild(a);
-        // 전체
-        fragCon.appendChild(header.render());
-        fragCon.appendChild(postDetailMain.initialize());
-
-        return fragCon;
-    }
+    return fragCon;
+  }
 }
 
 export default PostDetailPage;

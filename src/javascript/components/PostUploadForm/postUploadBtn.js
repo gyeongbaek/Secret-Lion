@@ -23,6 +23,10 @@ class PostUploadBtn extends Component {
     async postUpload() {
         const inputTit = document.querySelector('.post_inp_tit');
         const content = document.querySelector('.post_area_content');
+        if (this.category === null) {
+            alert('카테고리를 선택해주세요.');
+            return;
+        }
         const newPostRef = doc(collection(db, 'posts'));
         const postData = {
             title: inputTit.value,
@@ -43,20 +47,20 @@ class PostUploadBtn extends Component {
             postId: newPostRef.id,
         };
         await setDoc(newPostRef, postData);
-        console.log(postData);
-        console.log('완료');
         this.a.click();
     }
 
     photoUpload() {
         const inputTit = document.querySelector('.post_inp_tit');
         const content = document.querySelector('.post_area_content');
-
+        if (this.category === null) {
+            alert('카테고리를 선택해주세요.');
+            return;
+        }
         const postRef = doc(collection(db, 'posts'));
         const postStorageRef = ref(storage, `posts_images/${postRef.id}`);
         uploadBytes(postStorageRef, this.props).then(() => {
             getDownloadURL(postStorageRef).then(async (downloadURL) => {
-                console.log(downloadURL);
                 const postData = {
                     title: inputTit.value,
                     content: content.value,
@@ -75,10 +79,9 @@ class PostUploadBtn extends Component {
                     },
                     postId: postRef.id,
                 };
-                await setDoc(postRef, postData);
-
-                console.log('완료');
                 this.a.click();
+                await setDoc(postRef, postData);
+                console.log('완료');
             });
         });
     }
@@ -111,7 +114,7 @@ class PostUploadBtn extends Component {
         btnContainer.appendChild(fileBtn);
         btnContainer.appendChild(uploadBtn);
         btnContainer.appendChild(this.a);
-        this.a.setAttribute('href', '/user');
+        this.a.setAttribute('href', '/');
         this.a.setAttribute('class', 'ir');
 
         return [btnContainer, fileinp];

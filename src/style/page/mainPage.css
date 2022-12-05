@@ -23,6 +23,7 @@
     gap: 8px;
     background-color: white;
     border-bottom: 1px solid black;
+    transition: 0.3s;
 }
 
 .main_sect_menu button.on {
@@ -38,24 +39,4 @@
     border: 1px solid black;
     border-radius: 5px;
     padding: 8px;
-}
-
-.main_sect_post {
-    /* padding: 10px 110px; */
-}
-
-.testDrop {
-    color: #444;
-    background-color: #fff;
-
-    padding: 0.6em 1.4em 0.5em 0.8em;
-    margin: 0;
-
-    border: 1px solid #aaa;
-    border-radius: 0.5em;
-    box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
-}
-
-.testDrop option {
-    color: red;
 }

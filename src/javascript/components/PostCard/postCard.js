@@ -43,26 +43,37 @@ class PostCard extends Component {
                     break;
             }
         }
-        const postImg = new PostCardThumbnail({ src: this.props.item.img });
-        const postTitle = new PostCardTitle({ title: this.props.item.title });
-        const postCont = new PostCardContent({
-            content: this.props.item.content,
-        });
-        const postCate = new PostCardCategory({
-            category: this.props.item.category,
-        });
-        const postInfo = new PostCardReaction({
-            like: this.props.item.like.participateCount,
-            comment: this.props.item.scrap.participateCount,
-        });
-        const postDate = new PostCardDate({ date: this.props.item.date });
-
-        post.appendChild(postImg.render());
-        post.appendChild(postCate.render());
-        post.appendChild(postTitle.render());
-        post.appendChild(postCont.render());
-        post.appendChild(postDate.render());
-        post.appendChild(postInfo.render());
+        if (this.props.item.img) {
+            const postImg = new PostCardThumbnail({ src: this.props.item.img });
+            post.appendChild(postImg.render());
+        }
+        if (this.props.item.title) {
+            const postTitle = new PostCardTitle({ title: this.props.item.title });
+            post.appendChild(postTitle.render());
+        }
+        if (this.props.item.content) {
+            const postCont = new PostCardContent({
+                content: this.props.item.content,
+            });
+            post.appendChild(postCont.render());
+        }
+        if (this.props.item.category) {
+            const postCate = new PostCardCategory({
+                category: this.props.item.category,
+            });
+            post.appendChild(postCate.render());
+        }
+        if (this.props.item.like.participateCount && this.props.item.scrap.participateCount) {
+            const postInfo = new PostCardReaction({
+                like: this.props.item.like.participateCount,
+                comment: this.props.item.scrap.participateCount,
+            });
+            post.appendChild(postInfo.render());
+        }
+        if (this.props.item.date) {
+            const postDate = new PostCardDate({ date: this.props.item.date });
+            post.appendChild(postDate.render());
+        }
 
         this.getUser().then((el) => {
             const postUser = new PostCardWriter({ user: el });
