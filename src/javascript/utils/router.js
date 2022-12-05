@@ -28,6 +28,7 @@ class Router {
         }
         this.rootElementId = rootElementId;
         this.routing(change(window.location.pathname));
+        console.log(change(window.location.pathname));
         window.addEventListener('click', (e) => {
             if (e.target.closest('a')) {
                 // closest('태그') 가까운 해당 태그를 찾는다
