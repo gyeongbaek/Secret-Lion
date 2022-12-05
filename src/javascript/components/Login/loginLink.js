@@ -9,7 +9,8 @@ class LoginLink extends Component {
         searchLink.href = '#';
         searchLink.setAttribute('class', 'loginPage_a_search');
         searchLink.textContent = '아이디·비밀번호 찾기';
-
+        searchLink.addEventListener('click',searchLinkAlert);
+        
         const signUpLink = document.createElement('a');
         signUpLink.href = '/signup';
         signUpLink.setAttribute('class', 'loginPage_a_signUp');
@@ -17,6 +18,10 @@ class LoginLink extends Component {
 
         linkCont.appendChild(searchLink);
         linkCont.appendChild(signUpLink);
+
+        function searchLinkAlert(){
+            alert('아직 개발중입니다 히히');
+        }
 
         return linkCont;
     }

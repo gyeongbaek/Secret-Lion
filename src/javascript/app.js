@@ -37,7 +37,6 @@ export default class App {
     async setup() {
         const { el } = this.props;
         const router = new Router(this.loginCheck());
-        
         router.init(el);
     }
 }
