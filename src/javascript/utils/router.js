@@ -23,7 +23,7 @@ class Router {
             return null;
         }
         this.rootElementId = rootElementId;
-        this.routing(window.location.pathname);
+        this.routing(window.location.pathname.replace('/Secret-Lion/', '/'));
 
         window.addEventListener('click', (e) => {
             if (e.target.closest('a')) {
@@ -33,11 +33,14 @@ class Router {
             }
         });
 
-        window.onpopstate = () => this.routing(window.location.pathname); // 뒤로가기
+        window.onpopstate = () =>
+            this.routing(
+                window.location.pathname.replace('/Secret-Lion/', '/')
+            ); // 뒤로가기
     }
     routePush(pathname) {
         window.history.pushState({}, null, pathname);
-        this.routing(window.location.pathname);
+        this.routing(window.location.pathname.replace('/Secret-Lion/', '/'));
     }
 
     routing(pathname) {

@@ -23,9 +23,6 @@ export default class App {
                 '/': StartPage,
                 '/login': LoginPage,
                 '/signup': SignupPage,
-                // '/Secret-Lion/': StartPage,
-                // '/Secret-Lion/login': LoginPage,
-                // '/Secret-Lion/signup': SignupPage,
             };
         } else {
             return {
@@ -34,11 +31,6 @@ export default class App {
                 '/upload': PostUploadpage,
                 '/user': UserInfo,
                 '/setting': UserEdit,
-                // '/Secret-Lion/': MainPage,
-                // '/Secret-Lion/post/:id': PostDetailPage,
-                // '/Secret-Lion/upload': PostUploadpage,
-                // '/Secret-Lion/user': UserInfo,
-                // '/Secret-Lion/setting': UserEdit,
             };
         }
     }
