@@ -77,7 +77,7 @@ class MainPost extends Component {
         btnHot.setAttribute('class', 'main_btn_hot on');
         btnHot.setAttribute('data-order', '인기');
         const imgHot = document.createElement('img');
-        imgHot.setAttribute('src', '/src/assets/hot.svg');
+        imgHot.setAttribute('src', 'src/assets/hot.svg');
         imgHot.setAttribute('alt', '');
         btnHot.innerText = '인기';
         btnHot.appendChild(imgHot);
@@ -95,7 +95,7 @@ class MainPost extends Component {
         btnRecent.setAttribute('class', 'main_btn_recent');
         btnRecent.setAttribute('data-order', '최신');
         const imgRecent = document.createElement('img');
-        imgRecent.setAttribute('src', '/src/assets/recent.svg');
+        imgRecent.setAttribute('src', 'src/assets/recent.svg');
         imgRecent.setAttribute('alt', '');
         btnRecent.innerText = '최신';
         btnRecent.appendChild(imgRecent);
