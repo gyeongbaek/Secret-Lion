@@ -1,6 +1,6 @@
 import Component from '../../core/Component.js';
 import { UserInfoIcon } from '../UserInfoIcon/index.js';
-import { PostBoard } from '../../common/index.js';
+import { PostBoard, MainContainer } from '../../common/index.js';
 import { productData } from '../../data.js';
 import {
     auth,
@@ -36,7 +36,7 @@ class UserInfoMain extends Component {
                     }
                 }
             });
-            console.log(posts);
+            // console.log(posts);
         });
         return posts;
     }
@@ -53,13 +53,17 @@ class UserInfoMain extends Component {
         // this.getPostData();
 
         // 메인 컨테이너
-        const userInfoMain = document.createElement('main');
-        userInfoMain.setAttribute('class', 'info_main_container');
+
+        const mainCont = new MainContainer();
+        const mainEl = mainCont.render();
+
+        // const userInfoMain = document.createElement('main');
+        // userInfoMain.setAttribute('class', 'info_main_container');
 
         const userInfoh1 = document.createElement('h1');
         userInfoh1.setAttribute('class', 'ir');
         userInfoh1.textContent = '유저 프로필 페이지';
-        userInfoMain.appendChild(userInfoh1);
+        mainEl.appendChild(userInfoh1);
 
         // 유저 프로필 섹션
         const profileSection = document.createElement('section');
@@ -131,10 +135,10 @@ class UserInfoMain extends Component {
         // postListSection.appendChild(postBoard.render());
 
         // 메인 안
-        userInfoMain.appendChild(profileSection);
-        userInfoMain.appendChild(postListSection);
+        mainEl.appendChild(profileSection);
+        mainEl.appendChild(postListSection);
 
-        return userInfoMain;
+        return mainEl;
     }
 }
 

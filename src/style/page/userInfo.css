@@ -1,7 +1,6 @@
-.info_main_container {
+/* .main_container {
     padding: 140px 200px;
-    /* position: relative; */
-}
+} */
 
 /* 유저 프로필 섹션 */
 .info_sect_profile {
@@ -96,10 +95,6 @@
 /* 게시글 목록 섹션 */
 .info_sect_postList {
     margin: 50px 0;
-}
-
-.info_sect_postList ul {
-    gap: 40px;
 }
 
 /* 반응형 */
