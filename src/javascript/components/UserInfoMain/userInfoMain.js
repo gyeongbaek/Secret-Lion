@@ -98,7 +98,9 @@ class UserInfoMain extends Component {
         const auth = getAuth();
         logOutBtn.addEventListener('click', () => {
             signOut(auth).then(() => {
-                console.log('로그아웃되었습니다.');
+                localStorage.removeItem('token');
+                alert('로그아웃되었습니다');
+                location.href = '/';
             });
         });
 
