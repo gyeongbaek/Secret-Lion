@@ -113,11 +113,6 @@ class SignupForm extends Component {
             const newNickname = inpNickname.value;
 
             try{
-                const createUser = await createUserWithEmailAndPassword(auth, newId, newPwd);
-                emailErr.textContent = '';
-                emailErr.style.margin = '0';
-                pwdErr.textContent = '';
-                pwdErr.style.margin = '0';
                 if(newPwd!==newPwdCheck){
                     pwdCheckErr.textContent = '비밀번호가 일치하지 않습니다.';
                     pwdCheckErr.style.margin = '5px 0 0 5px';
@@ -132,6 +127,7 @@ class SignupForm extends Component {
                     unchecked.style.lineHeight = '130%';
                     return
                 }
+                const createUser = await createUserWithEmailAndPassword(auth, newId, newPwd);
 
                 const userData = {
                     displayName : newNickname,
@@ -139,8 +135,6 @@ class SignupForm extends Component {
                     email: newId,
                     uid: createUser.user.uid
                 };
-                console.log(createUser);
-                console.log('회원가입 완.');
                 await setDoc(doc(db, 'users', createUser.user.uid), userData);
                 
                 localStorage.setItem('token', userData.uid);
@@ -148,7 +142,7 @@ class SignupForm extends Component {
                 location.reload();
 
             }catch(error){
-                console.log(error.code);
+                //console.log(error.code);
                 if(error.code === 'auth/invalid-email' || error.code === 'auth/internal-error'){
                     emailErr.textContent = '올바른 이메일 형식이 아닙니다.';
                     emailErr.style.margin = '5px 0 0 5px';
@@ -160,11 +154,6 @@ class SignupForm extends Component {
                     pwdErr.style.margin = '5px 0 0 5px';
                 }
             }
-
-            pwdCheckErr.textContent = '';
-            pwdCheckErr.style.margin = '0';
-            nickNameErr.textContent = '';
-            nickNameErr.style.margin = '0';
         }
 
         signupBtn.addEventListener('click', handleToDoSubmit);
