@@ -20,7 +20,7 @@ class ProfileImgForm extends Component {
         this.token = localStorage.getItem('token');
     }
     async getUserImg() {
-        const docRef = doc(db, 'users', this.token);
+        const docRef = doc(db, 'users', auth.currentUser.uid);
         const docSnap = await getDoc(docRef);
 
         this.photoURL = docSnap.data().photoURL;
@@ -32,27 +32,9 @@ class ProfileImgForm extends Component {
         // console.log(e.target.files[0]);
         const userStorageRef = ref(
             storage,
-            // `user_images/${auth.currentUser.uid}`
-            `user_images/${this.token}`
+            `user_images/${auth.currentUser.uid}`
+            // `user_images/${this.token}`
         );
-
-        // uploadBytes(userStorageRef, e.target.files[0]).then((snapshot) => {
-        //     console.log('Uploaded a blob or file!');
-        //     getDownloadURL(userStorageRef).then(async (downloadURL) => {
-        //         // 얻은거 storage 저장
-        //         // downloadURL을 얻었다
-        //         // auth 정보 변경
-        //         // database 정보 변경
-        //         updateProfile(auth.currentUser, {
-        //             photoURL: downloadURL,
-        //         });
-        //         const userProfile = doc(db, 'users', auth.currentUser.uid);
-        //         await updateDoc(userProfile, {
-        //             photoURL: downloadURL,
-        //         });
-        //     });
-        // });
-        // console.log('완료');
 
         // 예외 처리
         try {
@@ -88,29 +70,24 @@ class ProfileImgForm extends Component {
         // updateDoc : firestore database에서 유저 이미지 변경
     }
     async deleteImg() {
-        // const userStorageRef = ref(
-        //     storage,
-        //     // `user_images/${auth.currentUser.uid}`
-        //     `user_images/${this.token}`
-        // );
-        // userStorageRef.delete().then(() => {
-        //     console.log('삭제완');
-        // });
-
-        // const userStorageRef = firebase.storage().ref();
-
-        // userStorageRef
-        //     .child(`user_images/ ${this.token}`)
-        //     .delete()
-        //     .then(() => {
-        //         console.log('삭제완');
-        //     });
+        const docRef = doc(db, 'users', auth.currentUser.uid);
+        const docSnap = await getDoc(docRef);
 
         const storage = getStorage();
 
-        const userImgRef = ref(storage, `user_images/ ${this.token}`);
+        updateProfile(auth.currentUser, {
+            photoURL: null,
+        });
+
+        await updateDoc(docRef, {
+            photoURL: null,
+        });
+
+        const userImgRef = ref(storage, `user_images/${auth.currentUser.uid}`);
 
         deleteObject(userImgRef).then(() => {
+            const image = document.querySelector('.edit_img');
+            image.src = '/src/assets/user.svg';
             console.log('삭제 완!!!');
         });
     }
@@ -160,8 +137,6 @@ class ProfileImgForm extends Component {
         // 기본 이미지로 변경하기
         deleteBtn.addEventListener('click', () => {
             event.preventDefault();
-            // profileImg.src =
-            //     'https://images.unsplash.com/photo-1606225457115-9b0de873c5db?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80';
             this.deleteImg();
         });
 
