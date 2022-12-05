@@ -73,10 +73,6 @@
     margin-top: 0;
 }
 
-#signupPage_inp_nickname{
-    margin-bottom: 15px;
-}
-
 .signupPage_checkCont{
     display: flex;
     margin-top: 10px;
@@ -104,6 +100,7 @@
 
 .socialRuleDiv1{
     display: flex;
+    margin-top: 15px;
 }
 
 .privacyDiv2{
