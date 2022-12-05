@@ -55,7 +55,7 @@ class ProfileImgForm extends Component {
                     image.src = downloadURL;
                 });
             });
-            console.log('이미지 변경 완료');
+            alert('프로필 이미지가 변경되었습니다.');
         } catch (error) {
             console.log(error);
         }
@@ -75,20 +75,23 @@ class ProfileImgForm extends Component {
 
         const storage = getStorage();
 
+        // auth에서 프로필 이미지 삭제
         updateProfile(auth.currentUser, {
             photoURL: null,
         });
 
+        // firestore에서 프로필 이미지 삭제
         await updateDoc(docRef, {
             photoURL: null,
         });
 
+        // storage에서 프로필 이미지 삭제
         const userImgRef = ref(storage, `user_images/${auth.currentUser.uid}`);
 
         deleteObject(userImgRef).then(() => {
             const image = document.querySelector('.edit_img');
             image.src = '/src/assets/user.svg';
-            console.log('삭제 완!!!');
+            alert('프로필 이미지가 삭제되었습니다.');
         });
     }
     render() {

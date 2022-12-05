@@ -31,7 +31,7 @@ class NicknameForm extends Component {
             await updateDoc(userProfile, {
                 displayName: nameInp.value,
             });
-            alert('닉네임이 변경되었습니다!');
+            alert('닉네임이 변경되었습니다.');
         } catch (error) {
             console.log(error);
         }
