@@ -12,6 +12,8 @@ import {
     orderBy,
     query,
     where,
+    getAuth,
+    signOut,
 } from '../../firebase.js';
 
 class UserInfoMain extends Component {
@@ -92,16 +94,28 @@ class UserInfoMain extends Component {
         logOutBtn.setAttribute('class', 'info_a_logout');
         logOutBtn.textContent = '로그아웃';
 
+        // 로그아웃 함수
+        const auth = getAuth();
+        logOutBtn.addEventListener('click', () => {
+            signOut(auth).then(() => {
+                console.log('로그아웃되었습니다.');
+            });
+        });
+
         const userInfoIcon = new UserInfoIcon();
-        const [icon, btn] = userInfoIcon.render();
-        // console.log(btn);
-        btn.addEventListener('click', () => {
+        const [icons, postIcon, likeIcon, scrapIcon] = userInfoIcon.render();
+
+        // postIcon.addEventListener
+
+        likeIcon.addEventListener('click', () => {
             this.getPostsData().then((posts) => {
                 this.posts = posts;
                 const postBoard = new PostBoard({ posts: this.posts });
                 postListSection.appendChild(postBoard.render());
             });
         });
+
+        // scrapIcon.addEventListener
 
         // 게시글 목록 섹션
         const postListSection = document.createElement('section');
@@ -117,7 +131,7 @@ class UserInfoMain extends Component {
         profileSection.appendChild(nicknameTxt);
         profileSection.appendChild(editAnchor);
         profileSection.appendChild(logOutBtn);
-        profileSection.appendChild(icon);
+        profileSection.appendChild(icons);
         // 게시글 목록 섹션 안
         postListSection.appendChild(posth2);
 
