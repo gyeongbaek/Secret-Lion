@@ -17,7 +17,9 @@ class Router {
 
     init(rootElementId) {
         if (!rootElementId) {
-            console.error('Can not initiailize Route, not define rootElementId');
+            console.error(
+                'Can not initiailize Route, not define rootElementId'
+            );
             return null;
         }
         this.rootElementId = rootElementId;
@@ -45,10 +47,8 @@ class Router {
         if (this.routes[pathname]) {
             const component = new this.routes[pathname]();
             page = component.render();
-
         } else if (param) {
             // detail/:id 페이지를 처리하기 위해
-            console.log(param, routeName);
             const component = new this.routes['/' + routeName](param);
             page = component.render();
         }
