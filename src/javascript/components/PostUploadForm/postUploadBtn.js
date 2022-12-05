@@ -81,7 +81,6 @@ class PostUploadBtn extends Component {
                 };
                 await setDoc(postRef, postData);
                 this.a.click();
-                location.reload();
             });
         });
     }
