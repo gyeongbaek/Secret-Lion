@@ -20,10 +20,6 @@ class UserInfoMain extends Component {
         this.posts = [];
         this.token = localStorage.getItem('token');
     }
-    // async getPostData() {
-    //     // 나중에 json 형태로 받아올 예정
-    //     this.posts = productData;
-    // }
     async getPostsData() {
         const posts = [];
         const postRef = collection(db, 'posts');
@@ -36,7 +32,6 @@ class UserInfoMain extends Component {
                     }
                 }
             });
-            // console.log(posts);
         });
         return posts;
     }
@@ -50,15 +45,9 @@ class UserInfoMain extends Component {
         return;
     }
     render() {
-        // this.getPostData();
-
         // 메인 컨테이너
-
         const mainCont = new MainContainer();
         const mainEl = mainCont.render();
-
-        // const userInfoMain = document.createElement('main');
-        // userInfoMain.setAttribute('class', 'info_main_container');
 
         const userInfoh1 = document.createElement('h1');
         userInfoh1.setAttribute('class', 'ir');
@@ -128,11 +117,9 @@ class UserInfoMain extends Component {
         profileSection.appendChild(nicknameTxt);
         profileSection.appendChild(editAnchor);
         profileSection.appendChild(logOutBtn);
-        // profileSection.appendChild(userInfoIcon.render());
         profileSection.appendChild(icon);
         // 게시글 목록 섹션 안
         postListSection.appendChild(posth2);
-        // postListSection.appendChild(postBoard.render());
 
         // 메인 안
         mainEl.appendChild(profileSection);
