@@ -2,7 +2,7 @@ import Component from '../../core/Component.js';
 import { auth, doc, signInWithEmailAndPassword, signOut } from '../../firebase.js';
 
 class LoginForm extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
     }
 
@@ -19,7 +19,7 @@ class LoginForm extends Component {
         const emailErr = document.createElement('p');
         emailErr.style.color = 'red';
         emailErr.style.fontSize = '14px';
-        
+
         const inpPwd = document.createElement('input');
         inpPwd.setAttribute('type', 'password');
         inpPwd.setAttribute('placeholder', '비밀번호');
@@ -37,10 +37,10 @@ class LoginForm extends Component {
         const logoutBtn = document.createElement('button');
         logoutBtn.textContent = '로그아웃!';
 
-        //url main페이지로 가게 만들어줘야 한다 
+        //url main페이지로 가게 만들어줘야 한다
         const loginLink = document.createElement('a');
-        loginLink.setAttribute('class','ir');
-        loginLink.setAttribute('href','/');
+        loginLink.setAttribute('class', 'ir');
+        loginLink.setAttribute('href', '/');
 
         formCont.appendChild(inpId);
         formCont.appendChild(emailErr);
@@ -64,20 +64,18 @@ class LoginForm extends Component {
                 localStorage.setItem('token', userInfo.user.uid);
                 loginLink.click();
                 location.reload();
-
             } catch (error) {
                 console.log(error);
-                if(error.code === 'auth/invalid-email'){
+                if (error.code === 'auth/invalid-email') {
                     emailErr.textContent = '올바른 이메일 형식이 아닙니다.';
                     emailErr.style.marginBottom = '15px';
-                }else if(error.code==='auth/wrong-password'){
+                } else if (error.code === 'auth/wrong-password') {
                     pwdErr.textContent = '비밀번호가 틀립니다.';
                     pwdErr.style.marginBottom = '15px';
-                }else if(error.code==='auth/too-many-requests'){
+                } else if (error.code === 'auth/too-many-requests') {
                     window.alert('비밀번호 3회 이상 틀렸습니다. 잠시 후 시도하세요.');
                 }
             }
-            
         }
 
         loginBtn.addEventListener('click', login);
@@ -87,10 +85,10 @@ class LoginForm extends Component {
             console.log('로그아웃!');
             localStorage.removeItem('token');
         });
-        const frag = document.createDocumentFragment()
+        const frag = document.createDocumentFragment();
         // formCont.appendChild(this.a);
-        frag.appendChild(formCont)
-        
+        frag.appendChild(formCont);
+
         return formCont;
     }
 }
