@@ -10,7 +10,7 @@ class PostCardWriter extends Component {
         if (this.props.user.photoURL) {
             profileImg.setAttribute('src', this.props.user.photoURL);
         } else {
-            profileImg.setAttribute('src', '../../../assets/profile/profile.png');
+            profileImg.setAttribute('src', './src/assets/profile/profile.png');
         }
         profileImg.setAttribute('alt', '');
 

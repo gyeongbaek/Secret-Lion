@@ -90,8 +90,9 @@
 }
 .post_section_mid .post_div_likeFavorite_con .post_btn_fav {
     margin-left: 10px;
-    margin-top: 5px;
     background-color: transparent;
+    display: flex;
+    align-items: center;
 }
 .post_div_likeFavorite_con .post_btn_fav .post_img_fav {
     width: 24px;
