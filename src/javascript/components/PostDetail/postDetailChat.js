@@ -34,7 +34,7 @@ class PostDetailChat extends Component {
             'src',
             this.props.photoURL
                 ? this.props.photoURL
-                : '/src/assets/profile/profile.png'
+                : 'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_1280.jpg'
         );
         commentUserImg.setAttribute('alt', '');
 

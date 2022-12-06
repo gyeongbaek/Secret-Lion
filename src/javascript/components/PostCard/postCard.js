@@ -29,19 +29,19 @@ class PostCard extends Component {
         if (!this.props.item.img) {
             switch (this.props.item.category) {
                 case '학습':
-                    this.props.item.img = './src/assets/thumbnail/study.png';
+                    this.props.item.img = 'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_1280.jpg';
                     break;
                 case '연애':
-                    this.props.item.img = './src/assets/thumbnail/love.png';
+                    this.props.item.img = 'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_1280.jpg';
                     break;
                 case '관계':
-                    this.props.item.img = './src/assets/thumbnail/relation.png';
+                    this.props.item.img = 'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_1280.jpg';
                     break;
                 case '취업':
-                    this.props.item.img = './src/assets/thumbnail/job.png';
+                    this.props.item.img = 'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_1280.jpg';
                     break;
                 case '자유':
-                    this.props.item.img = './src/assets/thumbnail/free.png';
+                    this.props.item.img = 'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_1280.jpg';
                     break;
                 default:
                     break;

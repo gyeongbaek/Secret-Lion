@@ -2,19 +2,7 @@ import Component from '../../core/Component.js';
 import { UserInfoIcon } from '../UserInfoIcon/index.js';
 import { PostBoard, MainContainer } from '../../common/index.js';
 import { productData } from '../../data.js';
-import {
-    auth,
-    collection,
-    db,
-    doc,
-    getDocs,
-    getDoc,
-    orderBy,
-    query,
-    where,
-    getAuth,
-    signOut,
-} from '../../firebase.js';
+import { auth, collection, db, doc, getDocs, getDoc, orderBy, query, where, getAuth, signOut } from '../../firebase.js';
 
 class UserInfoMain extends Component {
     constructor(props) {
@@ -76,10 +64,7 @@ class UserInfoMain extends Component {
             if (this.photoURL) {
                 profileImg.setAttribute('src', this.photoURL);
             } else {
-                profileImg.setAttribute(
-                    'src',
-                    './src/assets/profile/profile.png'
-                );
+                profileImg.setAttribute('src', 'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_1280.jpg');
             }
         });
 

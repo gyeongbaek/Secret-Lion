@@ -4,23 +4,17 @@ import { auth, db, doc, updateDoc } from '../../firebase.js';
 class PostDetailMid extends Component {
     constructor(props) {
         super(props);
-        this.isLikeParty =
-            this.props.like && this.included(this.props.like.participants);
-        this.isScrapParty =
-            this.props.scrap && this.included(this.props.scrap.participants);
+        this.isLikeParty = this.props.like && this.included(this.props.like.participants);
+        this.isScrapParty = this.props.scrap && this.included(this.props.scrap.participants);
     }
     included(participants) {
-        const include = participants.find(
-            (participant) => participant === auth.currentUser.uid
-        );
+        const include = participants.find((participant) => participant === auth.currentUser.uid);
         return include;
     }
     async partyBtn(isParty, participants, party, icon) {
         let newParty;
         if (isParty) {
-            const cancel = participants.filter(
-                (v) => v !== auth.currentUser.uid
-            );
+            const cancel = participants.filter((v) => v !== auth.currentUser.uid);
             newParty = {
                 ...party,
                 participants: [...cancel],
@@ -65,12 +59,7 @@ class PostDetailMid extends Component {
         postLikeBtn.setAttribute('class', 'post_btn_like');
 
         postLikeBtn.addEventListener('click', (e) => {
-            this.partyBtn(
-                this.isLikeParty,
-                this.props.like.participants,
-                this.props.like,
-                'like'
-            );
+            this.partyBtn(this.isLikeParty, this.props.like.participants, this.props.like, 'like');
         });
 
         const postLikeImg = document.createElement('img');
@@ -79,14 +68,13 @@ class PostDetailMid extends Component {
         postLikeImg.setAttribute(
             'src',
             this.isLikeParty
-                ? '/src/assets/heart_fill.svg'
-                : '/src/assets/heart.svg'
+                ? 'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_1280.jpg'
+                : 'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_1280.jpg'
         );
 
         const postLikeCount = document.createElement('span');
         postLikeCount.setAttribute('class', 'post_btn_lie_count');
-        postLikeCount.textContent =
-            this.props.like && this.props.like.participateCount;
+        postLikeCount.textContent = this.props.like && this.props.like.participateCount;
 
         postLikeBtn.appendChild(postLikeImg);
         postLikeBtn.appendChild(postLikeCount);
@@ -95,18 +83,12 @@ class PostDetailMid extends Component {
         postFavBtn.setAttribute('class', 'post_btn_fav');
 
         postFavBtn.addEventListener('click', () => {
-            this.partyBtn(
-                this.isScrapParty,
-                this.props.scrap.participants,
-                this.props.scrap,
-                'scrap'
-            );
+            this.partyBtn(this.isScrapParty, this.props.scrap.participants, this.props.scrap, 'scrap');
         });
 
         const postFavCount = document.createElement('span');
         postFavCount.setAttribute('class', 'post_btn_fav_count');
-        postFavCount.textContent =
-            this.props.scrap && this.props.scrap.participateCount;
+        postFavCount.textContent = this.props.scrap && this.props.scrap.participateCount;
 
         const postFavImg = document.createElement('img');
         postFavImg.setAttribute('class', 'post_img_fav');
@@ -114,8 +96,8 @@ class PostDetailMid extends Component {
         postFavImg.setAttribute(
             'src',
             this.isScrapParty
-                ? '/src/assets/scrap_fill.svg'
-                : '/src/assets/scrap.svg'
+                ? 'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_1280.jpg'
+                : 'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_1280.jpg'
         );
 
         postFavBtn.appendChild(postFavImg);

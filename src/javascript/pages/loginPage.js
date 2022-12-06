@@ -13,7 +13,7 @@ class LoginPage {
         const logo = document.createElement('h1');
 
         const logoImg = document.createElement('img');
-        logoImg.setAttribute('src', '../../assets/logo300.svg');
+        logoImg.setAttribute('src', 'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_1280.jpg');
         logoImg.setAttribute('alt', '비밀멋사 로고이미지');
         logoImg.setAttribute('class', 'loginPage_img_headerLogo');
 
