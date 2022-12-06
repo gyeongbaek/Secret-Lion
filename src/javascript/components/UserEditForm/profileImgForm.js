@@ -90,7 +90,7 @@ class ProfileImgForm extends Component {
 
         deleteObject(userImgRef).then(() => {
             const image = document.querySelector('.edit_img');
-            image.src = './src/assets/profile/profile.png';
+            image.src = 'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_1280.jpg';
             alert('프로필 이미지가 삭제되었습니다.');
         });
     }
@@ -111,10 +111,7 @@ class ProfileImgForm extends Component {
             if (this.photoURL) {
                 profileImg.setAttribute('src', this.photoURL);
             } else {
-                profileImg.setAttribute(
-                    'src',
-                    './src/assets/profile/profile.png'
-                );
+                profileImg.setAttribute('src', 'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_1280.jpg');
             }
         });
 

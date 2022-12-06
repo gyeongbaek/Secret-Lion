@@ -6,14 +6,14 @@ class PostCardReaction extends Component {
         postCardReaction.setAttribute('class', 'board_post_reac');
 
         const imgLike = document.createElement('img');
-        imgLike.setAttribute('src', './src/assets/heart.svg');
+        imgLike.setAttribute('src', 'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_1280.jpg');
         const cntLike = document.createElement('p');
         cntLike.innerText = this.props.like;
         postCardReaction.appendChild(imgLike);
         postCardReaction.appendChild(cntLike);
 
         const imgComment = document.createElement('img');
-        imgComment.setAttribute('src', './src/assets/scrap.svg');
+        imgComment.setAttribute('src', 'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_1280.jpg');
         const cntComment = document.createElement('p');
         cntComment.innerText = this.props.comment;
         postCardReaction.appendChild(imgComment);

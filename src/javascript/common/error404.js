@@ -2,14 +2,14 @@ class Error404 {
     constructor(props) {
         this.props = props;
     }
-    
+
     render() {
-       const errorWrapper = document.createElement('div');
-       errorWrapper.setAttribute('class', 'error_div_wrapper');
-       
-       const logoImg = document.createElement('img');
+        const errorWrapper = document.createElement('div');
+        errorWrapper.setAttribute('class', 'error_div_wrapper');
+
+        const logoImg = document.createElement('img');
         logoImg.setAttribute('class', 'error_img_logo');
-        logoImg.setAttribute('src', 'src/assets/logo-color.svg');
+        logoImg.setAttribute('src', 'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_1280.jpg');
         logoImg.setAttribute('alt', '비밀멋사 로고 이미지');
 
         const errorCon = document.createElement('div');
@@ -39,5 +39,3 @@ class Error404 {
 }
 
 export default Error404;
-
-

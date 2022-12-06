@@ -1,4 +1,4 @@
-.header_wrapper{
+.header_wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -7,53 +7,53 @@
     width: 100%;
     z-index: 99;
     height: 58px;
-    background-color: #FFBD3E;
+    background-color: #ffbd3e;
     height: 64px;
     background-color: #ffbd3e;
 }
 
-.header_a_mainGo{
+.header_a_mainGo {
     width: 180px;
     height: 160px;
-    background: url(../../assets/home-logo.svg) center/ 160px 180px;
+    background: url('https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_1280.jpg') center/ 160px 180px;
 }
 
-.header_a_searchLink{
+.header_a_searchLink {
     display: inline-block;
     vertical-align: top;
     width: 33px;
     height: 33px;
     margin: 20px 0 18px 18px;
-    background: url(../../assets/search.svg) center/ 33px 33px;
+    background: url('https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_1280.jpg') center/ 33px 33px;
     cursor: pointer;
 }
 
-.header_a_writeLink{
+.header_a_writeLink {
     display: inline-block;
     vertical-align: top;
     width: 30px;
     height: 30px;
     margin: 20px 0 23px 18px;
-    background: url(../../assets/write.svg) center/ 30px 30px;
+    background: url('https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_1280.jpg') center/ 30px 30px;
     cursor: pointer;
 }
 
-.header_a_notificationLink{
+.header_a_notificationLink {
     display: inline-block;
     vertical-align: top;
     width: 31px;
     height: 31px;
     margin: 20px 0 18px 23px;
-    background: url(../../assets/notifications.svg) center/ 31px 31px;
+    background: url('https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_1280.jpg') center/ 31px 31px;
     cursor: pointer;
 }
 
-.header_a_userLink{
+.header_a_userLink {
     display: inline-block;
     vertical-align: top;
     width: 35px;
     height: 35px;
     margin: 18px 24px 18px 18px;
-    background: url(../../assets/user.svg) center/ 35px 35px;
+    background: url('https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_1280.jpg') center/ 35px 35px;
     cursor: pointer;
 }

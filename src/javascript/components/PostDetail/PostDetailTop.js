@@ -51,7 +51,7 @@ class PostDetailTop extends Component {
         writerProfileImg.setAttribute('class', 'post_img_profile');
         writerProfileImg.setAttribute(
             'src',
-            this.props.writer.photoURL || '/src/assets/profile/profile.png'
+            this.props.writer.photoURL || 'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_1280.jpg'
         );
         writerProfileImg.setAttribute('class', 'post_img_profile');
 
@@ -83,8 +83,7 @@ class PostDetailTop extends Component {
         topSection.appendChild(postWriterInfoCon);
         topSection.appendChild(postWriterInfoCon);
 
-        this.props.postData.writerId === this.token &&
-            topSection.appendChild(trashlBtn);
+        this.props.postData.writerId === this.token && topSection.appendChild(trashlBtn);
 
         trashlBtn.appendChild(trashBtnlIr);
         // // topsection 안
