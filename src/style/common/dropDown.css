@@ -33,7 +33,7 @@
     height: 20px;
     right: 10px;
     top: 9px;
-    background: url('../../assets/arrow_drop_down.svg') center/cover;
+    background: url('https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_1280.jpg') center/cover;
 }
 .div_dropDown_wrapper .ul_drop {
     position: absolute;
