@@ -119,19 +119,13 @@ class UserInfoMain extends Component {
         logOutBtn.setAttribute('class', 'info_a_logout');
         logOutBtn.textContent = '로그아웃';
 
-        console.log(auth);
         // 로그아웃 함수
-        // const auth = getAuth();
         logOutBtn.addEventListener('click', () => {
-            localStorage.removeItem('token');
-            alert('로그아웃되었습니다');
-            location.href = '/';
-
-            // signOut(auth).then(() => {
-            //     localStorage.removeItem('token');
-            //     alert('로그아웃되었습니다');
-            //     location.href = '/';
-            // });
+            signOut(auth).then(() => {
+                localStorage.removeItem('token');
+                alert('로그아웃되었습니다');
+                location.href = '/';
+            });
         });
 
         const userInfoIcon = new UserInfoIcon();
