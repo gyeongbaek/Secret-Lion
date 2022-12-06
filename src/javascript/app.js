@@ -21,17 +21,17 @@ export default class App {
     loginCheck() {
         if (this.token === null) {
             return {
-                '/Secrit-Lion/': StartPage,
-                '/Secrit-Lion/login': LoginPage,
-                '/Secrit-Lion/signup': SignupPage,
+                '/': StartPage,
+                '/login': LoginPage,
+                '/signup': SignupPage,
             };
         } else {
             return {
-                '/Secrit-Lion/': MainPage,
-                '/Secrit-Lion/post/:id': PostDetailPage,
-                '/Secrit-Lion/upload': PostUploadpage,
-                '/Secrit-Lion/user': UserInfo,
-                '/Secrit-Lion/setting': UserEdit,
+                '/': MainPage,
+                '/post/:id': PostDetailPage,
+                '/upload': PostUploadpage,
+                '/user': UserInfo,
+                '/setting': UserEdit,
             };
         }
     }
