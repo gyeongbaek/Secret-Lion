@@ -90,7 +90,7 @@ class ProfileImgForm extends Component {
 
         deleteObject(userImgRef).then(() => {
             const image = document.querySelector('.edit_img');
-            image.src = '/src/assets/profile/profile.png';
+            image.src = './src/assets/profile/profile.png';
             alert('프로필 이미지가 삭제되었습니다.');
         });
     }
@@ -113,7 +113,7 @@ class ProfileImgForm extends Component {
             } else {
                 profileImg.setAttribute(
                     'src',
-                    '/src/assets/profile/profile.png'
+                    './src/assets/profile/profile.png'
                 );
             }
         });

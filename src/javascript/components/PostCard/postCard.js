@@ -23,7 +23,7 @@ class PostCard extends Component {
     render() {
         const postItem = document.createElement('li');
         const post = document.createElement('a');
-        post.setAttribute('href', `/Secrit-Lion/post/${this.props.item.postId}`);
+        post.setAttribute('href', `/post/${this.props.item.postId}`);
         post.setAttribute('class', 'board_post_item');
 
         if (!this.props.item.img) {
