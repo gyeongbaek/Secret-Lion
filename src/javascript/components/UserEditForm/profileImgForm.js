@@ -68,6 +68,8 @@ class ProfileImgForm extends Component {
         // getDownloadURL : 이미지의 URL을 얻는다
         // updateProfile : auth에서 유저 이미지 변경
         // updateDoc : firestore database에서 유저 이미지 변경
+
+        return;
     }
     async deleteImg() {
         const docRef = doc(db, 'users', auth.currentUser.uid);
@@ -139,6 +141,23 @@ class ProfileImgForm extends Component {
         // 기본 이미지로 변경하기
         deleteBtn.addEventListener('click', () => {
             event.preventDefault();
+            // if (this.photoURL === null) {
+            //     // console.log('프로필 이미지가 없습니다.');
+            //     alert('프로필 이미지가 없습니다.');
+            // } else {
+            //     this.deleteImg();
+            // }
+
+            // deleteImg 함수는 잘되는데 this.photoURL이 안 사라지는 문제
+
+            // if ((profileImg.src = './src/assets/profile/profile.png')) {
+            //     alert('프로필 이미지가 없습니다.');
+            //     console.log('1-', this.photoURL);
+            // } else {
+            //     console.log('2-', this.photoURL);
+            //     this.deleteImg();
+            // }
+
             this.deleteImg();
         });
 

@@ -8,32 +8,25 @@ class NicknameForm extends Component {
     // 닉네임 변경 함수
     async changeNickname(e) {
         // form이 기본적으로 제출하고 리로드하는 것 방지
-        // event.preventDefault();
-        // const nameInp = document.querySelector('#edit_inp_nickname');
-        // updateProfile(auth.currentUser, {
-        //     displayName: nameInp.value,
-        // });
-        // const userProfile = doc(db, 'users', auth.currentUser.uid);
-        // await updateDoc(userProfile, {
-        //     displayName: nameInp.value,
-        // });
-        // console.log('완료');
-
-        // 예외 처리
         e.preventDefault();
         const nameInp = document.querySelector('#edit_inp_nickname');
         const userProfile = doc(db, 'users', auth.currentUser.uid);
 
-        try {
-            updateProfile(auth.currentUser, {
-                displayName: nameInp.value,
-            });
-            await updateDoc(userProfile, {
-                displayName: nameInp.value,
-            });
-            alert('닉네임이 변경되었습니다.');
-        } catch (error) {
-            console.log(error);
+        // 예외 처리
+        if (nameInp.value === '') {
+            alert('닉네임을 입력해주세요.');
+        } else {
+            try {
+                updateProfile(auth.currentUser, {
+                    displayName: nameInp.value,
+                });
+                await updateDoc(userProfile, {
+                    displayName: nameInp.value,
+                });
+                alert('닉네임이 변경되었습니다.');
+            } catch (error) {
+                console.log(error);
+            }
         }
 
         // 닉네임 변경 로직
