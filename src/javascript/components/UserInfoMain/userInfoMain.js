@@ -22,19 +22,44 @@ class UserInfoMain extends Component {
         this.posts = [];
         this.token = localStorage.getItem('token');
     }
-    async getPostsData() {
+    async getPostsData(buttonLabel) {
         const posts = [];
         const postRef = collection(db, 'posts');
 
-        await getDocs(postRef).then((snapshot) => {
-            snapshot.docs.forEach((doc) => {
-                for (let i = 0; i < doc.data().like.participateCount; i++) {
-                    if (doc.data().like.participants[i] === this.token) {
+        if (buttonLabel === 'write') {
+            await getDocs(postRef).then((snapshot) => {
+                snapshot.docs.forEach((doc) => {
+                    if (doc.data().writerId === this.token) {
                         posts.push(doc.data());
                     }
-                }
+                });
             });
-        });
+        } else if (buttonLabel === 'like') {
+            await getDocs(postRef).then((snapshot) => {
+                snapshot.docs.forEach((doc) => {
+                    for (let i = 0; i < doc.data().like.participateCount; i++) {
+                        if (doc.data().like.participants[i] === this.token) {
+                            posts.push(doc.data());
+                        }
+                    }
+                });
+            });
+        } else if (buttonLabel === 'scrap') {
+            await getDocs(postRef).then((snapshot) => {
+                snapshot.docs.forEach((doc) => {
+                    for (
+                        let i = 0;
+                        i < doc.data().scrap.participateCount;
+                        i++
+                    ) {
+                        if (doc.data().scrap.participants[i] === this.token) {
+                            posts.push(doc.data());
+                        }
+                    }
+                });
+            });
+        }
+
         return posts;
     }
     async getUser() {
@@ -95,33 +120,43 @@ class UserInfoMain extends Component {
         logOutBtn.textContent = '로그아웃';
 
         // 로그아웃 함수
-        // const auth = getAuth();
         logOutBtn.addEventListener('click', () => {
-            localStorage.removeItem('token');
-            alert('로그아웃되었습니다');
-            location.href = '/';
-
-            // signOut(auth).then(() => {
-            //     localStorage.removeItem('token');
-            //     alert('로그아웃되었습니다');
-            //     location.href = '/';
-            // });
+            signOut(auth).then(() => {
+                localStorage.removeItem('token');
+                alert('로그아웃되었습니다');
+                location.href = '/';
+            });
         });
 
         const userInfoIcon = new UserInfoIcon();
-        const [icons, postIcon, likeIcon, scrapIcon] = userInfoIcon.render();
+        const [icons, writeIcon, likeIcon, scrapIcon] = userInfoIcon.render();
 
-        // postIcon.addEventListener
-
-        likeIcon.addEventListener('click', () => {
-            this.getPostsData().then((posts) => {
+        writeIcon.addEventListener('click', () => {
+            this.getPostsData('write').then((posts) => {
+                postListSection.innerHTML = '';
                 this.posts = posts;
                 const postBoard = new PostBoard({ posts: this.posts });
                 postListSection.appendChild(postBoard.render());
             });
         });
 
-        // scrapIcon.addEventListener
+        likeIcon.addEventListener('click', () => {
+            this.getPostsData('like').then((posts) => {
+                postListSection.innerHTML = '';
+                this.posts = posts;
+                const postBoard = new PostBoard({ posts: this.posts });
+                postListSection.appendChild(postBoard.render());
+            });
+        });
+
+        scrapIcon.addEventListener('click', () => {
+            this.getPostsData('scrap').then((posts) => {
+                postListSection.innerHTML = '';
+                this.posts = posts;
+                const postBoard = new PostBoard({ posts: this.posts });
+                postListSection.appendChild(postBoard.render());
+            });
+        });
 
         // 게시글 목록 섹션
         const postListSection = document.createElement('section');
