@@ -113,7 +113,7 @@ class PostUploadBtn extends Component {
         btnContainer.appendChild(fileBtn);
         btnContainer.appendChild(uploadBtn);
         btnContainer.appendChild(this.a);
-        this.a.setAttribute('href', '/Secret-Lion/');
+        this.a.setAttribute('href', '/');
         this.a.setAttribute('class', 'ir');
 
         return [btnContainer, fileinp];

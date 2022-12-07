@@ -26,7 +26,6 @@ class MainPost extends Component {
         if (this.categoryList.includes(category)) {
             newList = this.props.posts.filter((el) => el.category === category);
         } else {
-            // 쿠키 값 컨트롤 방지
             localStorage.setItem('selectCategory', '전체');
             newList = this.props.posts;
         }
@@ -62,7 +61,6 @@ class MainPost extends Component {
     }
 
     render() {
-        // const docFrag = new DocumentFragment();
         const docFrag = document.createElement('div');
 
         // 게시판 선택 메뉴
@@ -85,10 +83,6 @@ class MainPost extends Component {
             localStorage.setItem('postOrder', e.currentTarget.dataset.order);
             this.changeOrder(e.currentTarget.dataset.order);
         });
-        // btnHot.addEventListener('click', (e) => {
-        //     localStorage.setItem('postOrder', e.currentTarget.dataset.order);
-        //     this.changeOrder(e.currentTarget.dataset.order);
-        // });
 
         // 최신순 게시판 버튼
         const btnRecent = document.createElement('button');
@@ -103,10 +97,6 @@ class MainPost extends Component {
             localStorage.setItem('postOrder', e.currentTarget.dataset.order);
             this.changeOrder(e.currentTarget.dataset.order);
         });
-        // btnRecent.addEventListener('click', (e) => {
-        //     localStorage.setItem('postOrder', e.currentTarget.dataset.order);
-        //     this.changeOrder(e.currentTarget.dataset.order);
-        // });
 
         const [dropDown, dropContent, dropItem] = new DropDown({ page: 1 }).render();
         dropItem.addEventListener('click', (e) => {

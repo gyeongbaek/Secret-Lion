@@ -10,7 +10,6 @@ class PostUploadForm extends Component {
             prevPhoto: null,
             photoData: null,
         };
-        // this.dropDown = new DropDown({ page: 0 }).render();
         this.inputTit = document.createElement('input');
         this.inputTit.setAttribute('required', 'true');
         this.postContent = document.createElement('textarea');
@@ -30,12 +29,10 @@ class PostUploadForm extends Component {
         const postUploadForm = document.createElement('form');
         postUploadForm.setAttribute('class', 'post_form_upload');
 
-        // const inputTit = document.createElement('input');
         this.inputTit.setAttribute('type', 'text');
         this.inputTit.setAttribute('placeholder', '제목을 입력해주세요.');
         this.inputTit.setAttribute('class', 'post_inp_tit');
 
-        // const postContent = document.createElement('textarea');
         this.postContent.setAttribute('class', 'post_area_content');
         this.postContent.setAttribute('placeholder', '내용을 입력해주세요.');
 
