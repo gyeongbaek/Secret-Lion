@@ -124,6 +124,8 @@ class SignupForm extends Component {
                 pwdCheckErr.style.margin = '0';
                 nickNameErr.textContent = '';
                 nickNameErr.style.margin = '0';
+                unchecked.textContent = '';
+                unchecked.style.margin = '0';
                 if(newPwd!==newPwdCheck){
                     pwdCheckErr.textContent = '비밀번호가 일치하지 않습니다.';
                     pwdCheckErr.style.margin = '5px 0 0 5px';
@@ -132,15 +134,16 @@ class SignupForm extends Component {
                     nickNameErr.textContent = '닉네임은 필수항목입니다.';
                     nickNameErr.style.margin = '5px 0 0 5px';
                     return 
-                }else if(newNickname in userData.displayName){
-                    nickNameErr.textContent = '중복된 닉네임입니다.';
-                    nickNameErr.style.margin = '5px 0 0 5px';
-                    return 
-                }else if(acceptCheck.checked === false){
-                    unchecked.textContent = '커뮤니티 규칙과 개인정보 수집 및 이용에 대한 안내에 동의해주세요.';
-                    unchecked.style.margin = '20px 0 0 5px';
-                    unchecked.style.lineHeight = '130%';
-                    return
+                }
+                // else if(newNickname in userData.displayName){
+                //     nickNameErr.textContent = '중복된 닉네임입니다.';
+                //     nickNameErr.style.margin = '5px 0 0 5px';
+                //     return}
+                else if(acceptCheck.checked === false){
+                unchecked.textContent = '커뮤니티 규칙과 개인정보 수집 및 이용에 대한 안내에 동의해주세요.';
+                unchecked.style.margin = '20px 0 0 5px';
+                unchecked.style.lineHeight = '130%';
+                return
                 }
                 const createUser = await createUserWithEmailAndPassword(auth, newId, newPwd);
 
