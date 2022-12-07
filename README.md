@@ -3,8 +3,6 @@
 
 '비밀멋사'는 온라인으로 진행하는 부트캠프 훈련생간의 더욱 활발한 소통을 위한 익명 커뮤니티 앱 입니다.
 
-- 배포: https://secret-lion.netlify.app/
-- 미리보기 계정: id / pw
 
 <br>
 
@@ -17,11 +15,24 @@
 왜 그 기술을 사용했는지,
 여러분이 당면했던 문제나 나중에 추가하고 싶은 기능이 무엇인지
 
-1.1 프로젝트 시작 배경
-1.2 프로젝트의 간략한 설명
-1.3 프로젝트 사용 기술
-- FrontEnd: ![HTML](https://img.shields.io/badge/html5-style=for-the-badge&logo=html5)  
-1.4 해당 기술 사용 이유
+### 1.1 프로젝트 시작 배경  
+
+### 1.2 프로젝트의 간략한 설명  
+
+### 1.3 프로젝트 사용 기술  
+**FrontEnd** <div><img src="https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=HTML5&logoColor=white">
+  <img src="https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=CSS3&logoColor=white">
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white"></div>
+  <br>
+**BackEnd** <div>
+  <img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=Firebase&logoColor=white"></div>
+  <br>
+**Collaboration** <div><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=white">
+  <img src="https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=Notion&logoColor=white"></div>
+  <br>
+### 1.4 해당 기술 사용 이유
+
+<br>
 
 ## 2. 목차 (선택)
 
@@ -45,12 +56,5 @@
 
 ## 5. 역할분담
 
-## 6. 디렉토리 구조
 
-## 8. 뱃지
-
-뱃지는 꼭 필요하진 않지만, 뱃지를 사용하면 다른 개발자들이 프로젝트에 대해 쉽게 알 수 있습니다.
-이 섹션이 있으면 중요한 툴로 연결해 주거나 포크, 기여자, 오픈된 이슈 등 여러분의 프로젝트와 관련된 간단한 통계를 보여줄 수도 있습니다.
-다음 사진은 뱃지 사용 방법을 보여주는 제 프로젝트의 스크린샷입니다:
-이 부분의 좋은 점은 자동으로 업데이트된다는 점입니다.
-어디서 뱃지를 받는지 모르시겠다고요? shields.io에서 제공하는 뱃지를 확인해 보세요. 바로 사용할 수 있는 수많은 뱃지가 있습니다. 지금은 다 이해할 수 없어도 시간이 지나면 다 알게 될 것입니다.
+## 6. 뱃지
