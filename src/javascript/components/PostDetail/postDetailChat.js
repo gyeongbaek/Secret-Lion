@@ -21,7 +21,6 @@ class PostDetailChat extends Component {
         const commentLi = document.createElement('li');
         commentLi.setAttribute('class', 'post_li_comment');
 
-        // 유저 정보 및 댓글 내용
         const commentLiRight = document.createElement('div');
         commentLiRight.setAttribute('class', 'post_div_comment_right');
 
