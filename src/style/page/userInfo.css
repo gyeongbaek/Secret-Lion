@@ -11,7 +11,6 @@
     left: 10px;
     width: 100px;
     height: 100px;
-    /* margin: -30px 36px 68px 40px; */
     border-radius: 120px;
     object-fit: cover;
 }
@@ -20,7 +19,6 @@
     position: relative;
     top: -100px;
     left: 40px;
-    /* margin: 0 28px 40px 0; */
     font-weight: 700;
     font-size: 28px;
     line-height: 34px;
@@ -62,7 +60,6 @@
     top: -180px;
     left: -40px;
     float: right;
-    /* margin: -215px -680px 0 0; */
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -96,11 +93,23 @@
 }
 
 /* 게시글 목록 섹션 */
-/* .info_sect_postList {
-    margin: 0;
-} */
+.info_sect_postList {
+    position: relative;
+    top: -80px;
+}
 
 /* 반응형 */
-/* @media (max-width:1000px) {
-    
-} */
+@media (max-width: 1075px) {
+    .info_div_iconWrap {
+        position: absolute;
+        top: 90px;
+        left: 50px;
+    }
+
+    .info_sect_profile {
+        height: 180px;
+    }
+    .info_sect_postList {
+        top: 50px;
+    }
+}
