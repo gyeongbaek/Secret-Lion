@@ -116,6 +116,14 @@ class SignupForm extends Component {
             const newNickname = inpNickname.value;
 
             try{
+                emailErr.textContent = '';
+                emailErr.style.margin = '0';
+                pwdErr.textContent = '';
+                pwdErr.style.margin = '0';
+                pwdCheckErr.textContent = '';
+                pwdCheckErr.style.margin = '0';
+                nickNameErr.textContent = '';
+                nickNameErr.style.margin = '0';
                 if(newPwd!==newPwdCheck){
                     pwdCheckErr.textContent = '비밀번호가 일치하지 않습니다.';
                     pwdCheckErr.style.margin = '5px 0 0 5px';
