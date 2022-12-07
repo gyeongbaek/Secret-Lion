@@ -65,6 +65,9 @@ class LoginForm extends Component {
                 if (error.code === 'auth/invalid-email') {
                     emailErr.textContent = '올바른 이메일 형식이 아닙니다.';
                     emailErr.style.marginTop = '7px';
+                }else if(error.code === 'auth/internal-error'){
+                    emailErr.textContent = '유효한 접근이 아닙니다. 다시 시도하세요.';
+                    emailErr.style.marginTop = '7px';
                 }else if(error.code === 'auth/user-not-found'){
                     emailErr.textContent = '존재하지 않는 이메일입니다.';
                     emailErr.style.marginTop = '7px';
@@ -72,7 +75,7 @@ class LoginForm extends Component {
                     pwdErr.textContent = '비밀번호가 틀립니다.';
                     pwdErr.style.marginTop = '7px';
                 }else if(error.code==='auth/too-many-requests'){
-                    window.alert('비밀번호 3회 이상 틀렸습니다. 잠시 후 시도하세요.');
+                    window.alert('비밀번호 5회 이상 틀렸습니다. 새로고침 후 시도하세요.');
                 }
             }
         }
