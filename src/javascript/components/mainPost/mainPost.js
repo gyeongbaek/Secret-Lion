@@ -1,6 +1,6 @@
 import PostBoard from '../../common/postBoard.js';
 import Component from '../../core/Component.js';
-import { DropDown, MainContainer, TestDrop } from '../../common/index.js';
+import { DropDown, MainContainer } from '../../common/index.js';
 
 class MainPost extends Component {
     constructor(props) {
