@@ -28,7 +28,6 @@ class SignupForm extends Component {
         inpPwd.setAttribute('placeholder', '비밀번호');
         inpPwd.setAttribute('name', 'password');
         inpPwd.minLength = '6';
-        inpPwd.maxLength = '8';
         inpPwd.setAttribute('id', 'signupPage_inp_pwd');
         inpPwd.required = true;
 
@@ -41,7 +40,6 @@ class SignupForm extends Component {
         inpPwdCheck.setAttribute('placeholder', '비밀번호 확인');
         inpPwdCheck.setAttribute('name', 'password-check');
         inpPwdCheck.minLength = '6';
-        inpPwdCheck.maxLength = '8';
         inpPwdCheck.setAttribute('id', 'signupPage_inp_pwdCheck');
         inpPwdCheck.required = true;
 
