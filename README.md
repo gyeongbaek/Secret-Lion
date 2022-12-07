@@ -1,5 +1,6 @@
 # 비밀멋사
-<img width="741" alt="image" src="https://user-images.githubusercontent.com/96777064/205946394-cf529a05-7b8a-4d31-807e-0e7cad9bbb64.png">
+![결과1](https://user-images.githubusercontent.com/96777064/206225813-571d5768-167d-4a2c-acc8-321b89f087b7.png)
+
 
 '비밀멋사'는 온라인으로 진행하는 부트캠프 훈련생간의 더욱 활발한 소통을 위한 익명 커뮤니티 앱 입니다.
 
