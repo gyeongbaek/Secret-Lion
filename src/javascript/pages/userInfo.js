@@ -1,5 +1,5 @@
 // import Header from '../common/header.js';
-import { Header, MainContainer } from '../common/index.js';
+import { Header } from '../common/index.js';
 import { UserInfoMain } from '../components/UserInfoMain/index.js';
 import Component from '../core/Component.js';
 

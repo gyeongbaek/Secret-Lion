@@ -29,21 +29,15 @@ class ProfileImgForm extends Component {
     }
     // 프로필 이미지 변경 함수
     async changeProfileImg(e) {
-        // console.log(e.target.files[0]);
         const userStorageRef = ref(
             storage,
             `user_images/${auth.currentUser.uid}`
-            // `user_images/${this.token}`
         );
 
         // 예외 처리
         try {
             uploadBytes(userStorageRef, e.target.files[0]).then((snapshot) => {
                 getDownloadURL(userStorageRef).then(async (downloadURL) => {
-                    // 얻은거 storage 저장
-                    // downloadURL을 얻었다
-                    // auth 정보 변경
-                    // database 정보 변경
                     updateProfile(auth.currentUser, {
                         photoURL: downloadURL,
                     });
@@ -60,14 +54,7 @@ class ProfileImgForm extends Component {
             console.log(error);
         }
 
-        // 프로필 이미지 변경 로직
-
-        // userStrorageRef : Storage에 프로필 이미지를 저장하는 폴더를 만들고,
-        // 그 안에 유저의 고유번호에 맞게 이미지가 들어가도록 경로를 설정한다
-        // uploadBytes : 이미지를 Storage에 저장한다
-        // getDownloadURL : 이미지의 URL을 얻는다
-        // updateProfile : auth에서 유저 이미지 변경
-        // updateDoc : firestore database에서 유저 이미지 변경
+        return;
     }
     async deleteImg() {
         const docRef = doc(db, 'users', auth.currentUser.uid);
@@ -136,7 +123,7 @@ class ProfileImgForm extends Component {
             fileinp.click();
         });
 
-        // 기본 이미지로 변경하기
+        // 기본 이미지로 변경
         deleteBtn.addEventListener('click', () => {
             event.preventDefault();
             this.deleteImg();

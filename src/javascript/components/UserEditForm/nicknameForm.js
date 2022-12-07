@@ -1,5 +1,13 @@
 import Component from '../../core/Component.js';
-import { auth, db, doc, updateDoc, updateProfile } from '../../firebase.js';
+import {
+    auth,
+    collection,
+    db,
+    doc,
+    getDocs,
+    updateDoc,
+    updateProfile,
+} from '../../firebase.js';
 
 class NicknameForm extends Component {
     constructor(props) {
@@ -8,39 +16,38 @@ class NicknameForm extends Component {
     // 닉네임 변경 함수
     async changeNickname(e) {
         // form이 기본적으로 제출하고 리로드하는 것 방지
-        // event.preventDefault();
-        // const nameInp = document.querySelector('#edit_inp_nickname');
-        // updateProfile(auth.currentUser, {
-        //     displayName: nameInp.value,
-        // });
-        // const userProfile = doc(db, 'users', auth.currentUser.uid);
-        // await updateDoc(userProfile, {
-        //     displayName: nameInp.value,
-        // });
-        // console.log('완료');
-
-        // 예외 처리
         e.preventDefault();
         const nameInp = document.querySelector('#edit_inp_nickname');
         const userProfile = doc(db, 'users', auth.currentUser.uid);
 
-        try {
-            updateProfile(auth.currentUser, {
-                displayName: nameInp.value,
+        const users = [];
+
+        // 모든 유저를 돌면서 displayname을 가져오기
+        const userRef = collection(db, 'users');
+        await getDocs(userRef).then((snapshot) => {
+            snapshot.docs.forEach((doc) => {
+                users.push(doc.data().displayName);
             });
-            await updateDoc(userProfile, {
-                displayName: nameInp.value,
-            });
-            alert('닉네임이 변경되었습니다.');
-        } catch (error) {
-            console.log(error);
+        });
+
+        // 예외 처리
+        if (nameInp.value === '') {
+            alert('닉네임을 입력해주세요.');
+        } else if (users.includes(nameInp.value)) {
+            alert('중복된 닉네임입니다.');
+        } else {
+            try {
+                updateProfile(auth.currentUser, {
+                    displayName: nameInp.value,
+                });
+                await updateDoc(userProfile, {
+                    displayName: nameInp.value,
+                });
+                alert('닉네임이 변경되었습니다.');
+            } catch (error) {
+                console.log(error);
+            }
         }
-
-        // 닉네임 변경 로직
-
-        // updateProfile : auth에서 닉네임 변경
-        // userProfile : firestore database에서 유저의 고유번호에 맞는 데이터를 가져옴
-        // updateDoc : 그 데이터에서 유저의 닉네임 부분만 변경
     }
     render() {
         // 닉네임 폼
