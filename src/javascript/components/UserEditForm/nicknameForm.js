@@ -22,7 +22,7 @@ class NicknameForm extends Component {
 
         const users = [];
 
-        // 모든 유저를 돌면서 displayname을 가져와야 함
+        // 모든 유저를 돌면서 displayname을 가져오기
         const userRef = collection(db, 'users');
         await getDocs(userRef).then((snapshot) => {
             snapshot.docs.forEach((doc) => {
@@ -48,12 +48,6 @@ class NicknameForm extends Component {
                 console.log(error);
             }
         }
-
-        // 닉네임 변경 로직
-
-        // updateProfile : auth에서 닉네임 변경
-        // userProfile : firestore database에서 유저의 고유번호에 맞는 데이터를 가져옴
-        // updateDoc : 그 데이터에서 유저의 닉네임 부분만 변경
     }
     render() {
         // 닉네임 폼
