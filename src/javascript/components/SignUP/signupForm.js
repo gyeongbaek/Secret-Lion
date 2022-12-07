@@ -28,6 +28,7 @@ class SignupForm extends Component {
         inpPwd.setAttribute('placeholder', '비밀번호');
         inpPwd.setAttribute('name', 'password');
         inpPwd.minLength = '6';
+        inpPwd.maxLength = '8';
         inpPwd.setAttribute('id', 'signupPage_inp_pwd');
         inpPwd.required = true;
 
@@ -39,6 +40,8 @@ class SignupForm extends Component {
         inpPwdCheck.setAttribute('type', 'password');
         inpPwdCheck.setAttribute('placeholder', '비밀번호 확인');
         inpPwdCheck.setAttribute('name', 'password-check');
+        inpPwdCheck.minLength = '6';
+        inpPwdCheck.maxLength = '8';
         inpPwdCheck.setAttribute('id', 'signupPage_inp_pwdCheck');
         inpPwdCheck.required = true;
 
@@ -113,12 +116,24 @@ class SignupForm extends Component {
             const newNickname = inpNickname.value;
 
             try{
+                emailErr.textContent = '';
+                emailErr.style.margin = '0';
+                pwdErr.textContent = '';
+                pwdErr.style.margin = '0';
+                pwdCheckErr.textContent = '';
+                pwdCheckErr.style.margin = '0';
+                nickNameErr.textContent = '';
+                nickNameErr.style.margin = '0';
                 if(newPwd!==newPwdCheck){
                     pwdCheckErr.textContent = '비밀번호가 일치하지 않습니다.';
                     pwdCheckErr.style.margin = '5px 0 0 5px';
                     return
                 }else if(newNickname===''){
                     nickNameErr.textContent = '닉네임은 필수항목입니다.';
+                    nickNameErr.style.margin = '5px 0 0 5px';
+                    return 
+                }else if(newNickname in userData.displayName){
+                    nickNameErr.textContent = '중복된 닉네임입니다.';
                     nickNameErr.style.margin = '5px 0 0 5px';
                     return 
                 }else if(acceptCheck.checked === false){
@@ -142,7 +157,7 @@ class SignupForm extends Component {
                 location.reload();
 
             }catch(error){
-                //console.log(error.code);
+                console.log(error.code);
                 if(error.code === 'auth/invalid-email' || error.code === 'auth/internal-error'){
                     emailErr.textContent = '올바른 이메일 형식이 아닙니다.';
                     emailErr.style.margin = '5px 0 0 5px';
