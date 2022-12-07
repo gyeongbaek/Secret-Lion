@@ -70,7 +70,7 @@ class MainPost extends Component {
         menuTitle.setAttribute('class', 'ir');
         menuTitle.innerText = '게시판 분류 선택';
 
-        // 인기게시판 버튼
+        // 인기 게시판
         const btnHot = document.createElement('button');
         btnHot.setAttribute('class', 'main_btn_hot on');
         btnHot.setAttribute('data-order', '인기');
@@ -84,7 +84,7 @@ class MainPost extends Component {
             this.changeOrder(e.currentTarget.dataset.order);
         });
 
-        // 최신순 게시판 버튼
+        // 최신 게시판
         const btnRecent = document.createElement('button');
         btnRecent.setAttribute('class', 'main_btn_recent');
         btnRecent.setAttribute('data-order', '최신');
