@@ -73,7 +73,7 @@ class PostCard extends Component {
         this.getUser().then((el) => {
             const postUser = new PostCardWriter({ user: el });
             post.appendChild(postUser.render());
-        }); //유저아이디->유저정보 가져오기
+        });
 
         postItem.append(post);
         return postItem;
