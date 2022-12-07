@@ -23,11 +23,9 @@ class SignupPage {
         signupSubtit.setAttribute('class', 'signupPage_p_subTit');
         signupSubtit.textContent = '프론트엔드스쿨의 비밀 이야기';
 
-        //main
         const signupMain = document.createElement('main');
         signupMain.setAttribute('class', 'signupPage_main_wrapper');
 
-        // main > titWrapper
         const titWrapper = document.createElement('div');
         titWrapper.setAttribute('class', 'signupPage_div_titWrapper');
 
@@ -37,14 +35,11 @@ class SignupPage {
 
         const detailPlz = document.createElement('p');
         detailPlz.setAttribute('class', 'signupPage_p_detailPlz');
-        detailPlz.textContent =
-            '회원가입을 위해 아래의 세부 정보를 작성해주세요.';
+        detailPlz.textContent = '회원가입을 위해 아래의 세부 정보를 작성해주세요.';
 
-        //header
         signupHeader.appendChild(signupTit);
         signupHeader.appendChild(signupSubtit);
 
-        //main
         const signupForm = new SignupForm();
         let [form, socialRuleBtn, privacyBtn] = signupForm.render();
 
@@ -52,16 +47,12 @@ class SignupPage {
             e.preventDefault();
             const socialRuleModal = new SocialRuleModal();
             bodybgc.appendChild(socialRuleModal.render());
-            // socialRuleModal.render().style.backgroundColor = 'rgba(255, 255, 255, 0.25)';
-            // socialRuleModal.render().style.boxShadow = '0 8px 32px 0 rgba(31, 38, 135, 0.37)';
-            // socialRuleModal.render().style.backdrop-filter = 'blur(1.5px)';
         });
 
         privacyBtn.addEventListener('click', (e) => {
             e.preventDefault();
             const privacyModal = new PrivacyModal();
             bodybgc.appendChild(privacyModal.render());
-            // privacyModal.render().style.backgroundColor = 'rgba(255, 255, 255, 0.25)';
         });
 
         signupMain.appendChild(titWrapper);

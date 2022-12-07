@@ -61,7 +61,6 @@ class LoginForm extends Component {
                 loginLink.click();
                 location.reload();
             } catch (error) {
-                console.log(error);
                 if (error.code === 'auth/invalid-email') {
                     emailErr.textContent = '올바른 이메일 형식이 아닙니다.';
                     emailErr.style.marginTop = '7px';

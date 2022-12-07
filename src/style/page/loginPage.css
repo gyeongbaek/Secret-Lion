@@ -1,4 +1,4 @@
-/* hedaer */
+/* header */
 .loginPage_img_headerLogo{
     display: block;
     margin: 0 auto;
@@ -89,7 +89,6 @@
     justify-content: space-between;
     margin-top: 30px;
     color: #6a6a6a;
-    /* 왜 color 적용 안 되지?.. */
 }
 
 /* // main */

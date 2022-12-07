@@ -26,14 +26,12 @@ class StartPage {
         startLink.textContent = '시작하기';
         startLink.href = '/login';
 
-        //start Section
         startSection.appendChild(logoCont);
         startSection.appendChild(startTit);
         startSection.appendChild(startLink);
 
         logoCont.appendChild(logoImg);
 
-        //전체
         frag.appendChild(bodybgc);
         bodybgc.appendChild(startSection);
 
