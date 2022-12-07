@@ -29,7 +29,6 @@ class ProfileImgForm extends Component {
     }
     // 프로필 이미지 변경 함수
     async changeProfileImg(e) {
-        // console.log(e.target.files[0]);
         const userStorageRef = ref(
             storage,
             `user_images/${auth.currentUser.uid}`

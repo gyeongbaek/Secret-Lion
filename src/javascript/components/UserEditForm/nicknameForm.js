@@ -1,5 +1,13 @@
 import Component from '../../core/Component.js';
-import { auth, db, doc, updateDoc, updateProfile } from '../../firebase.js';
+import {
+    auth,
+    collection,
+    db,
+    doc,
+    getDocs,
+    updateDoc,
+    updateProfile,
+} from '../../firebase.js';
 
 class NicknameForm extends Component {
     constructor(props) {
@@ -12,9 +20,21 @@ class NicknameForm extends Component {
         const nameInp = document.querySelector('#edit_inp_nickname');
         const userProfile = doc(db, 'users', auth.currentUser.uid);
 
+        const users = [];
+
+        // 모든 유저를 돌면서 displayname을 가져와야 함
+        const userRef = collection(db, 'users');
+        await getDocs(userRef).then((snapshot) => {
+            snapshot.docs.forEach((doc) => {
+                users.push(doc.data().displayName);
+            });
+        });
+
         // 예외 처리
         if (nameInp.value === '') {
             alert('닉네임을 입력해주세요.');
+        } else if (users.includes(nameInp.value)) {
+            alert('중복된 닉네임입니다.');
         } else {
             try {
                 updateProfile(auth.currentUser, {
