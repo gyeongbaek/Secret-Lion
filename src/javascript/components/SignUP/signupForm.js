@@ -1,5 +1,5 @@
 import Component from "../../core/Component.js";
-import { auth, createUserWithEmailAndPassword, db, doc, setDoc } from "../../firebase.js";
+import { auth, collection, createUserWithEmailAndPassword, db, doc, getDocs, setDoc } from "../../firebase.js";
 import PrivacyModal from "./privacyModal.js";
 import SocialRuleModal from "./socialRuleModal.js";
 
@@ -115,6 +115,15 @@ class SignupForm extends Component {
             const newPwdCheck = inpPwdCheck.value;   
             const newNickname = inpNickname.value;
 
+            const users = [];
+            // 모든 유저를 돌면서 displayname을 가져오기
+            const userRef = collection(db, 'users');
+            await getDocs(userRef).then((snapshot) => {
+                snapshot.docs.forEach((doc) => {
+                    users.push(doc.data().displayName);
+                });
+            });
+
             try{
                 emailErr.textContent = '';
                 emailErr.style.margin = '0';
@@ -124,6 +133,9 @@ class SignupForm extends Component {
                 pwdCheckErr.style.margin = '0';
                 nickNameErr.textContent = '';
                 nickNameErr.style.margin = '0';
+                unchecked.textContent = '';
+                unchecked.style.margin = '0';
+
                 if(newPwd!==newPwdCheck){
                     pwdCheckErr.textContent = '비밀번호가 일치하지 않습니다.';
                     pwdCheckErr.style.margin = '5px 0 0 5px';
@@ -132,7 +144,7 @@ class SignupForm extends Component {
                     nickNameErr.textContent = '닉네임은 필수항목입니다.';
                     nickNameErr.style.margin = '5px 0 0 5px';
                     return 
-                }else if(newNickname in userData.displayName){
+                }else if(users.includes(newNickname)){
                     nickNameErr.textContent = '중복된 닉네임입니다.';
                     nickNameErr.style.margin = '5px 0 0 5px';
                     return 
@@ -157,7 +169,6 @@ class SignupForm extends Component {
                 location.reload();
 
             }catch(error){
-                console.log(error.code);
                 if(error.code === 'auth/invalid-email' || error.code === 'auth/internal-error'){
                     emailErr.textContent = '올바른 이메일 형식이 아닙니다.';
                     emailErr.style.margin = '5px 0 0 5px';

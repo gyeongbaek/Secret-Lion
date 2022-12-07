@@ -24,11 +24,6 @@
 
 /* main */
 .signupPage_main_wrapper{
-    /* display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    flex-direction: column; */
     margin: 30px auto;
     padding: 30px 50px;
     width: 430px;
@@ -57,7 +52,6 @@
 /* input */
 .signupPage_form{
     display: flex;
-    /* justify-content: center; */
     flex-direction: column;
 }
 
@@ -130,7 +124,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: center; */
     position: absolute;
     width: 100%;
     height: 100%;
