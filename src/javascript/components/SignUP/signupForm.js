@@ -51,9 +51,10 @@ class SignupForm extends Component {
 
         const inpNickname = document.createElement('input');
         inpNickname.setAttribute('type', 'text');
-        inpNickname.setAttribute('placeholder', '닉네임 (필수)');
+        inpNickname.setAttribute('placeholder', '닉네임 (8글자 이내 필수)');
         inpNickname.setAttribute('name', 'nickname');
         inpNickname.setAttribute('id', 'signupPage_inp_nickname');
+        inpNickname.maxLength = '8';
         inpNickname.required = true;
 
         const nickNameErr = document.createElement('p');
