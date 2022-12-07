@@ -13,7 +13,7 @@ class Header {
 
         const mainGoLink = document.createElement('a');
         mainGoLink.setAttribute('class', 'header_a_mainGo');
-        mainGoLink.href='/Secret-Lion/';
+        mainGoLink.href='/';
 
         // 링크 
         const linkCon = document.createElement('div');
