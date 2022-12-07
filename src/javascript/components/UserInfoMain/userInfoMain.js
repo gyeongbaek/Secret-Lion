@@ -125,6 +125,10 @@ class UserInfoMain extends Component {
         const [icons, writeIcon, likeIcon, scrapIcon] = userInfoIcon.render();
 
         writeIcon.addEventListener('click', () => {
+            likeIcon.firstChild.src = './src/assets/heart.svg';
+            scrapIcon.firstChild.src = './src/assets/scrap.svg';
+
+            writeIcon.firstChild.src = './src/assets/write_fill.svg';
             this.getPostsData('write').then((posts) => {
                 postListSection.innerHTML = '';
                 this.posts = posts;
@@ -134,6 +138,10 @@ class UserInfoMain extends Component {
         });
 
         likeIcon.addEventListener('click', () => {
+            writeIcon.firstChild.src = './src/assets/write.svg';
+            scrapIcon.firstChild.src = './src/assets/scrap.svg';
+
+            likeIcon.firstChild.src = './src/assets/heart_fill.svg';
             this.getPostsData('like').then((posts) => {
                 postListSection.innerHTML = '';
                 this.posts = posts;
@@ -143,6 +151,11 @@ class UserInfoMain extends Component {
         });
 
         scrapIcon.addEventListener('click', () => {
+            writeIcon.firstChild.src = './src/assets/write.svg';
+            likeIcon.firstChild.src = './src/assets/heart.svg';
+
+            scrapIcon.firstChild.src = './src/assets/scrap_fill.svg';
+
             this.getPostsData('scrap').then((posts) => {
                 postListSection.innerHTML = '';
                 this.posts = posts;
