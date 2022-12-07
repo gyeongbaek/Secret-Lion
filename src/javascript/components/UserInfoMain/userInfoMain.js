@@ -1,7 +1,6 @@
 import Component from '../../core/Component.js';
 import { UserInfoIcon } from '../UserInfoIcon/index.js';
 import { PostBoard, MainContainer } from '../../common/index.js';
-import { productData } from '../../data.js';
 import {
     auth,
     collection,
@@ -9,10 +8,6 @@ import {
     doc,
     getDocs,
     getDoc,
-    orderBy,
-    query,
-    where,
-    getAuth,
     signOut,
 } from '../../firebase.js';
 
@@ -109,8 +104,6 @@ class UserInfoMain extends Component {
         });
 
         const editAnchor = document.createElement('a');
-        // changeBtn.setAttribute('type', 'button');
-        // changeBtn.setAttribute('onclick', "location.href='/setting'");
         editAnchor.href = '/setting';
         editAnchor.setAttribute('class', 'info_a_move');
         editAnchor.textContent = '프로필 수정';

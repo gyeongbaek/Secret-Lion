@@ -21,7 +21,6 @@
     margin-top: 27px;
     display: flex;
     align-items: center;
-    /* gap: 16px; */
 }
 
 .post_section_top .post_div_info_con .post_img_profile {
@@ -70,7 +69,6 @@
     max-width: 900px;
 }
 
-/* 게시글 좋아요, 즐겨찾기 버튼 */
 .post_section_mid .post_div_likeFavorite_con {
     position: absolute;
     bottom: 10px;
@@ -140,11 +138,9 @@
     flex-direction: column;
     gap: 5px;
 }
-/* 유저이름 */
 .post_div_comment_right .post_strong_name {
     font-size: 18px;
     font-weight: 600;
-    /* margin-bottom: 28px; */
 }
 
 .post_li_comment .post_time_comment {

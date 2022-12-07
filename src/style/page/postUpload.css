@@ -1,5 +1,3 @@
-/* postUpload main */
-
 .post_inp_tit {
     width: 100%;
     padding: 10px 14px;
@@ -59,11 +57,3 @@
 .post_btn:first-child {
     margin-right: 10px;
 }
-
-.post_btn_fav_count {
-    /* margin-bottom: 10px; */
-}
-/* 끝 */
-/* .post_form_upload {
-    padding: 110px;
-} */

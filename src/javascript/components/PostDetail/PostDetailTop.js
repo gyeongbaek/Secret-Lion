@@ -36,17 +36,14 @@ class PostDetailTop extends Component {
         categorySpan.textContent = this.props.postData.category;
         topSection.appendChild(categorySpan);
 
-        // 제목
         const postTit = document.createElement('h2');
         postTit.setAttribute('class', 'post_h2_tit');
         postTit.textContent = this.props.postData.title;
         topSection.appendChild(postTit);
 
-        // 유저정보 및 게시날짜
         const postWriterInfoCon = document.createElement('div');
         postWriterInfoCon.setAttribute('class', 'post_div_info_con');
 
-        // 유저 이미지
         const writerProfileImg = document.createElement('img');
         writerProfileImg.setAttribute('class', 'post_img_profile');
         writerProfileImg.setAttribute(
@@ -55,22 +52,18 @@ class PostDetailTop extends Component {
         );
         writerProfileImg.setAttribute('class', 'post_img_profile');
 
-        // 유저 이름
         const writerName = document.createElement('strong');
         writerName.setAttribute('class', 'post_strong_writer_name');
         writerName.textContent = this.props.writer.displayName;
 
-        // 게시 날짜
         const writeDate = document.createElement('time');
         writeDate.setAttribute('class', 'post_time_date');
         writeDate.textContent = this.date;
 
-        // 유저 정보 및 날짜
         postWriterInfoCon.appendChild(writerProfileImg);
         postWriterInfoCon.appendChild(writerName);
         postWriterInfoCon.appendChild(writeDate);
 
-        // vertical 버튼
         const trashlBtn = document.createElement('button');
         trashlBtn.setAttribute('class', 'post_btn_trash');
 
@@ -87,7 +80,6 @@ class PostDetailTop extends Component {
             topSection.appendChild(trashlBtn);
 
         trashlBtn.appendChild(trashBtnlIr);
-        // // topsection 안
 
         return topSection;
     }
