@@ -26,7 +26,6 @@ class MainPage extends Component {
         const header = new Header();
         docFrag.appendChild(header.render());
 
-        // 메인 페이지
         const main = new MainContainer();
         const mainEl = main.render();
 
