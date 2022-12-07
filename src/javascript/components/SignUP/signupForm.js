@@ -103,7 +103,7 @@ class SignupForm extends Component {
         //url main페이지로 가게 만들어줘야 한다 
         const loginLink = document.createElement('a');
         loginLink.setAttribute('class','ir');
-        loginLink.setAttribute('href','/Secret-Lion/');
+        loginLink.setAttribute('href','/');
         
         async function handleToDoSubmit(event){
             event.preventDefault();
