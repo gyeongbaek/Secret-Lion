@@ -46,7 +46,6 @@ class PostDetailMid extends Component {
         postContenth2.setAttribute('class', 'ir');
         postContenth2.textContent = '게시글 내용';
 
-        // postContentTxt
         const postContentTxt = document.createElement('pre');
         postContentTxt.setAttribute('class', 'post_p_content_txt');
         postContentTxt.textContent = this.props.content;
@@ -56,11 +55,9 @@ class PostDetailMid extends Component {
         postContentImg.setAttribute('alt', '');
         postContentImg.setAttribute('class', 'post_img_content');
 
-        // bottom btns
         const postLikeFavorite = document.createElement('div');
         postLikeFavorite.setAttribute('class', 'post_div_likeFavorite_con');
 
-        // like button
         const postLikeBtn = document.createElement('button');
         postLikeBtn.setAttribute('class', 'post_btn_like');
 
@@ -124,7 +121,6 @@ class PostDetailMid extends Component {
         postLikeFavorite.appendChild(postLikeBtn);
         postLikeFavorite.appendChild(postFavBtn);
 
-        // midSection
         midSection.appendChild(postContenth2);
         midSection.appendChild(postContentTxt);
         this.props.img && midSection.appendChild(postContentImg);

@@ -7,7 +7,6 @@ import {
     PostDetailChat,
 } from './index.js';
 import {
-    auth,
     collectionGroup,
     db,
     doc,
@@ -34,7 +33,7 @@ class PostDetailMain extends Component {
     }
     async getPostData() {
         const unsub = onSnapshot(
-            doc(db, 'posts', this.props.id), // url id값넣어주기
+            doc(db, 'posts', this.props.id),
             async (postDoc) => {
                 const writer = await this.getUser(postDoc.data().writerId);
                 this.writer = writer;
@@ -89,13 +88,11 @@ class PostDetailMain extends Component {
         postDetailh1.textContent = '게시판 상세 페이지';
         mainEl.appendChild(postDetailh1);
 
-        // section top
         const postDetailTop = new PostDetailTop({
             postData: this.state.postData,
             writer: this.writer,
         });
 
-        // section mid
         const postDetailMid = new PostDetailMid({
             content: this.state.postData.content,
             like: this.state.postData.like,
@@ -104,7 +101,6 @@ class PostDetailMain extends Component {
             postId: this.state.postData.postId,
         });
 
-        // 댓글
         const commentCon = document.createElement('section');
         commentCon.setAttribute('class', 'post_section_bottom');
 
@@ -135,7 +131,6 @@ class PostDetailMain extends Component {
             postId: this.state.postData.postId,
         });
 
-        // 메인 안
         mainEl.appendChild(postDetailTop.render());
         mainEl.appendChild(postDetailMid.render());
         mainEl.appendChild(commentCon);
