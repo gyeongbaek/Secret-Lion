@@ -9,18 +9,10 @@
 
 ## 1. 프로젝트 설명
 
-프로젝트의 주요 요소입니다.
-설명은 프로젝트에서 굉장히 중요한 부분을 차지합니다. 잘 다듬어진 설명을 통해 미래의 인사 담당자뿐만 아니라 다른 개발자들에게도 여러분의 작업물을 자랑할 수 있습니다.
-리드미에서 설명의 질은 좋은 프로젝트와 그렇지 못한 프로젝트를 구분 짓습니다. 잘 쓰인 리드미를 통해 다음과 같은 내용을 설명하고 소개할 수 있습니다.
-여러분의 애플리케이션이 무엇을 하는지,
-왜 그 기술을 사용했는지,
-여러분이 당면했던 문제나 나중에 추가하고 싶은 기능이 무엇인지
+멋쟁이사자처럼은 온라인으로 진행되는 부트캠프입니다. 수강생들은 디스코드라는 플랫폼으로 함께 수업을 듣고, 정보를 공유하거나 대화를 할 수 있습니다. 하지만 100명의 수강생들이 다같이 소통하는 데에는 한계가 있다고 생각했습니다. 우리에게는 차마 나누지 못한 학업이나 취업에만 국한되지 않는 더 많은 이야기가 있을 것입니다. 비록 온라인에서 만났지만 같은 곳을 바라보며 나아가는 우리는 결속력과 친밀감을 느낍니다. 그렇기에 우리가 친구처럼 편하게 얘기할 수 있는 또다른 플랫폼을 만들고 싶었습니다. 익명으로 자유롭게 고민과 일상을 나누면서 서로의 힘이 되어주는 든든한 동료들의 존재를 느낄 수 있을 것입니다. 더 나아가 다른 온라인 부트캠프에서도 동료 훈련생분들과 함께 사용할 수 있는 앱으로 확장하는 것을 목표로 합니다.
 
-### 1.1 프로젝트 시작 배경  
 
-### 1.2 프로젝트의 간략한 설명  
-
-### 1.3 프로젝트 사용 기술  
+### 1.1 프로젝트 사용 기술  
 **FrontEnd** <div><img src="https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=HTML5&logoColor=white">
   <img src="https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=CSS3&logoColor=white">
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white"></div>
@@ -31,7 +23,7 @@
 **Collaboration** <div><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=white">
   <img src="https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=Notion&logoColor=white"></div>
   <br>
-### 1.4 해당 기술 사용 이유
+### 1.2 해당 기술 사용 이유
 
 <br>
 
@@ -61,56 +53,86 @@
 ## 6. 세부 기능
 ### 6-1. 홈
 <table>
-    <thead>
-        <tr>
-            <th >홈/스플래시</th>
-            <th >로그인</th>
-            <th >회원가입r</th>
-        </tr>
-    </thead>
     <tbody>
+      <tr></tr>
+      <tr>
+            <th >시연</th>
+            <th >설명</th>
+        </tr>
         <tr>
           <td><img src="https://user-images.githubusercontent.com/96777064/206344279-4330a9ed-b3f8-445c-a7f3-0384daa01fc6.gif" alt=""></td>
-          <td><img src="https://user-images.githubusercontent.com/96777064/206355449-5fe6f44e-7889-4cdc-ad9f-234ca9e6283f.gif" alt=""></td>
-          <td><img src="https://user-images.githubusercontent.com/96777064/206355477-ddc09a89-3938-4988-85bc-7e87eedb4b47.gif" alt=""></td>
+          <td>홈/스플래쉬<ul><li>설명이 들어갈 공간입니다 룰루랄라라라랄라</li><li>설명이 들어갈 공간입니다 룰루랄라라라랄라 근데 폭 조정이 안되네요ㅠ</li></ul></td>
         </tr>
+       <tr></tr>
       <tr>
-        <td><ul><li>설명이 들어갈 공간입니다 엔터없이 길어지면 배치이상해짐</li></ul></td>
-        <td><ul><li>설명이 들어갈 공간입니다 룰루랄라라라랄라</li><li>설명이 들어갈 공간입니다 룰루랄라라라랄라</li></ul></td>
-        <td><ul><li>설명이 들어갈 공간입니다 룰루랄라라라랄라</li></ul></td>
-      </tr>
-    </tbody>
-</table>
-
-<hr>
-<table>
-    <thead>
-        <tr>
-            <th >홈/스플래시</th>
-            <th >로그인</th>
+          <td><img src="https://user-images.githubusercontent.com/96777064/206355449-5fe6f44e-7889-4cdc-ad9f-234ca9e6283f.gif" alt=""></td>
+          <td>로그인<ul><li>설명이 들어갈 공간입니다 룰루랄라라라랄라</li><li>설명이 들어갈 공간입니다 룰루랄라라라랄라 근데 폭 조정이 안되네요ㅠ</li></ul></td>
         </tr>
-    </thead>
-    <tbody>
-        <tr>
-          <td><img src="https://user-images.githubusercontent.com/96777064/206355449-5fe6f44e-7889-4cdc-ad9f-234ca9e6283f.gif" alt=""/></td>
-          <td>홈화면<ul><li>설명이 들어갈 공간입니다 룰루랄라라라랄라</li><li>설명이 들어갈 공간입니다 룰루랄라라라랄라 근데 폭 조정이 안되네요ㅠ</li></ul></td>
+       <tr></tr>
+      <tr>
+          <td><img src="https://user-images.githubusercontent.com/96777064/206355477-ddc09a89-3938-4988-85bc-7e87eedb4b47.gif" alt=""></td>
+          <td>회원가입<ul><li>설명이 들어갈 공간입니다 룰루랄라라라랄라</li><li>설명이 들어갈 공간입니다 룰루랄라라라랄라 근데 폭 조정이 안되네요ㅠ</li></ul></td>
         </tr>
     </tbody>
 </table>
-<hr>
 
 ### 6-2. 게시판
-![메인](https://user-images.githubusercontent.com/96777064/206344310-8c4508f1-47c1-47b8-bd8a-e1a455f46d91.gif)
+<table>
+   <tbody>
+      <tr></tr>
+      <tr>
+            <th >시연</th>
+            <th >설명</th>
+        </tr>
+        <tr>
+          <td><img src="https://user-images.githubusercontent.com/96777064/206344310-8c4508f1-47c1-47b8-bd8a-e1a455f46d91.gif" alt=""></td>
+          <td>게시판<ul><li>설명이 들어갈 공간입니다 룰루랄라라라랄라</li><li>설명이 들어갈 공간입니다 룰루랄라라라랄라 근데 폭 조정이 안되네요ㅠ</li></ul></td>
+        </tr>
+    </tbody>
+</table>
 
 
 ### 6-3. 게시글
-![게시글](https://user-images.githubusercontent.com/96777064/206354247-296065ce-be92-4790-9432-45d33eadc14d.gif)
-![게시글작성](https://user-images.githubusercontent.com/96777064/206354877-737f6910-d0d4-4e7c-9f54-74781ae4e4df.gif)
+<table>
+    <tbody>
+      <tr></tr>
+      <tr>
+            <th >시연</th>
+            <th >설명</th>
+        </tr>
+        <tr>
+          <td><img src="https://user-images.githubusercontent.com/96777064/206354247-296065ce-be92-4790-9432-45d33eadc14d.gif" alt=""></td>
+          <td>게시글<ul><li>설명이 들어갈 공간입니다 룰루랄라라라랄라</li><li>설명이 들어갈 공간입니다 룰루랄라라라랄라 근데 폭 조정이 안되네요ㅠ</li></ul></td>
+        </tr>
+       <tr></tr>
+      <tr>
+          <td><img src="https://user-images.githubusercontent.com/96777064/206354877-737f6910-d0d4-4e7c-9f54-74781ae4e4df.gif" alt=""></td>
+          <td>업로드<ul><li>설명이 들어갈 공간입니다 룰루랄라라라랄라</li><li>설명이 들어갈 공간입니다 룰루랄라라라랄라 근데 폭 조정이 안되네요ㅠ</li></ul></td>
+        </tr>
+    </tbody>
+</table>
 
 
 ### 6-4. 프로필
-![프로필](https://user-images.githubusercontent.com/96777064/206344291-c7bdd58d-6f7f-45ea-b134-d3174a6454d2.gif)
-![편집](https://user-images.githubusercontent.com/96777064/206353847-cb9b30fc-8294-4457-8132-2e7ddc323ff8.gif)
+<table>
+   <tbody>
+      <tr></tr>
+      <tr>
+            <th >시연</th>
+            <th >설명</th>
+        </tr>
+        <tr>
+          <td><img src="https://user-images.githubusercontent.com/96777064/206344291-c7bdd58d-6f7f-45ea-b134-d3174a6454d2.gif" alt=""></td>
+          <td>프로필<ul><li>설명이 들어갈 공간입니다 룰루랄라라라랄라</li><li>설명이 들어갈 공간입니다 룰루랄라라라랄라 근데 폭 조정이 안되네요ㅠ</li></ul></td>
+        </tr>
+      <tr></tr>
+      <tr>
+          <td><img src="https://user-images.githubusercontent.com/96777064/206353847-cb9b30fc-8294-4457-8132-2e7ddc323ff8.gif" alt=""></td>
+          <td>프로필 편집<ul><li>설명이 들어갈 공간입니다 룰루랄라라라랄라</li><li>설명이 들어갈 공간입니다 룰루랄라라라랄라 근데 폭 조정이 안되네요ㅠ</li></ul></td>
+        </tr>
+    </tbody>
+</table>
+
 
 
 
