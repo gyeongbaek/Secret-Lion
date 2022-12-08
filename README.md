@@ -85,7 +85,7 @@
             <th >설명</th>
         </tr>
         <tr>
-          <td><img src="https://user-images.githubusercontent.com/96777064/206344310-8c4508f1-47c1-47b8-bd8a-e1a455f46d91.gif" alt=""></td>
+          <td><img src="https://user-images.githubusercontent.com/96777064/206362695-bb6ce29b-e237-4a84-9484-510dccd71902.gif" alt=""></td>
           <td>게시판<ul><li>설명이 들어갈 공간입니다 룰루랄라라라랄라</li><li>설명이 들어갈 공간입니다 룰루랄라라라랄라 근데 폭 조정이 안되네요ㅠ</li></ul></td>
         </tr>
     </tbody>
@@ -101,17 +101,16 @@
             <th >설명</th>
         </tr>
         <tr>
-          <td><img src="https://user-images.githubusercontent.com/96777064/206354247-296065ce-be92-4790-9432-45d33eadc14d.gif" alt=""></td>
-          <td>게시글<ul><li>설명이 들어갈 공간입니다 룰루랄라라라랄라</li><li>설명이 들어갈 공간입니다 룰루랄라라라랄라 근데 폭 조정이 안되네요ㅠ</li></ul></td>
+          <td><img src="https://user-images.githubusercontent.com/96777064/206362715-29245407-b1b6-498b-96db-adff583e1cde.gif" alt=""></td>
+          <td>업로드<ul><li>설명이 들어갈 공간입니다 룰루랄라라라랄라</li><li>설명이 들어갈 공간입니다 룰루랄라라라랄라 근데 폭 조정이 안되네요ㅠ</li></ul></td>
         </tr>
        <tr></tr>
       <tr>
-          <td><img src="https://user-images.githubusercontent.com/96777064/206354877-737f6910-d0d4-4e7c-9f54-74781ae4e4df.gif" alt=""></td>
-          <td>업로드<ul><li>설명이 들어갈 공간입니다 룰루랄라라라랄라</li><li>설명이 들어갈 공간입니다 룰루랄라라라랄라 근데 폭 조정이 안되네요ㅠ</li></ul></td>
+          <td><img src="https://user-images.githubusercontent.com/96777064/206362705-c6db6f3f-e2db-4891-af76-e4f6eb4d8f76.gif" alt=""></td>
+          <td>게시글<ul><li>설명이 들어갈 공간입니다 룰루랄라라라랄라</li><li>설명이 들어갈 공간입니다 룰루랄라라라랄라 근데 폭 조정이 안되네요ㅠ</li></ul></td>
         </tr>
     </tbody>
 </table>
-
 
 ### 6-4. 프로필
 <table>
@@ -122,18 +121,13 @@
             <th >설명</th>
         </tr>
         <tr>
-          <td><img src="https://user-images.githubusercontent.com/96777064/206344291-c7bdd58d-6f7f-45ea-b134-d3174a6454d2.gif" alt=""></td>
+          <td><img src="https://user-images.githubusercontent.com/96777064/206362738-6603d18b-5f62-4a34-9f55-6d2c4f7cecbc.gif" alt=""></td>
           <td>프로필<ul><li>설명이 들어갈 공간입니다 룰루랄라라라랄라</li><li>설명이 들어갈 공간입니다 룰루랄라라라랄라 근데 폭 조정이 안되네요ㅠ</li></ul></td>
         </tr>
       <tr></tr>
       <tr>
-          <td><img src="https://user-images.githubusercontent.com/96777064/206353847-cb9b30fc-8294-4457-8132-2e7ddc323ff8.gif" alt=""></td>
+          <td><img src="https://user-images.githubusercontent.com/96777064/206362728-9f41d01b-eabe-41c6-8507-54f612dc4fdd.gif" alt=""></td>
           <td>프로필 편집<ul><li>설명이 들어갈 공간입니다 룰루랄라라라랄라</li><li>설명이 들어갈 공간입니다 룰루랄라라라랄라 근데 폭 조정이 안되네요ㅠ</li></ul></td>
         </tr>
     </tbody>
 </table>
-
-
-
-
-](https://user-images.githubusercontent.com/96777064/206362219-0d844640-70c6-4157-9bc7-291defac6783.gif)](https://user-images.githubusercontent.com/96777064/206362219-0d844640-70c6-4157-9bc7-291defac6783.gif)
