@@ -12,6 +12,7 @@
 
 ## 1. 프로젝트 소개
 
+<br>
 
 ### [기획의도]
 
@@ -26,7 +27,7 @@
 + [📁 팀 워크스페이스](https://b110.notion.site/b110/90fa0d2f30f142d2bfcd9fb5897469af)
 + [🎨 디자인 피그마](https://www.figma.com/file/I9chPnoDui3uW80BrkDHPL/%EC%9E%91%EC%9A%B0%EC%86%8C-Project?node-id=320%3A11&t=I3aQVugqIbhBSdGd-0)
 
-
+<br>
 
 ### 1.1 프로젝트 사용 기술  
 **FrontEnd** <div><img src="https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=HTML5&logoColor=white">
