@@ -7,7 +7,6 @@
 
 '비밀멋사'는 온라인으로 진행하는 부트캠프 훈련생간의 더욱 활발한 소통을 위한 익명 커뮤니티 앱 입니다.
 
-
 <br>
 
 ## 1. 프로젝트 소개
@@ -24,7 +23,7 @@
 
 <br>
 
-## 2. 프로젝트 사용 기술  
+## 2. 사용 기술  
 **FrontEnd** <div><img src="https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=HTML5&logoColor=white">
   <img src="https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=CSS3&logoColor=white">
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white"></div>  
@@ -41,7 +40,7 @@
 <br>
 
 
-## 3. 팀원
+## 3. 팀원 소개
 | **✅ 강수정** | **💫  김민제** | **🦾 문승규** | **🐳 백경현** |
 | :------: |  :------: | :------: | :------: |
 | [<img src="https://avatars.githubusercontent.com/u/110231276?v=4" height=150 width=150> <br/> @kngsujng](https://github.com/kngsujng) | [<img src="https://avatars.githubusercontent.com/u/112460466?v=4" height=150 width=150> <br/> @Cheorizzang](https://github.com/Cheorizzang) | [<img src="https://avatars.githubusercontent.com/u/84954439?v=4" height=150 width=150> <br/> @munseunggyu](https://github.com/munseunggyu) | [<img src="https://avatars.githubusercontent.com/u/96777064?v=4" height=150 width=150> <br/> @baekg6](https://github.com/baekg6) |
