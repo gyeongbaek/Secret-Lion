@@ -22,6 +22,8 @@ class postCardCategory extends Component {
                 break;
             case '자유':
                 bgColor = 'var(--cate-free-color)';
+                break;
+
             case '공지':
                 bgColor = 'var(--cate-notice-color)';
                 break;
