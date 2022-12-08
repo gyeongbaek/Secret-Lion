@@ -5,7 +5,7 @@ import { DropDown, MainContainer } from '../../common/index.js';
 class MainPost extends Component {
     constructor(props) {
         super(props);
-        this.categoryList = ['자유', '학습', '취업', '연애', '관계'];
+        this.categoryList = ['공지', '자유', '학습', '취업', '연애', '관계'];
         this.state = {
             displayPost: this.checkCategory(),
         };

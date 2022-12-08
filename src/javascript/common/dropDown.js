@@ -47,6 +47,7 @@ class DropDown {
         let testList = ['자유', '학습', '취업', '연애', '관계'];
         if (this.props.page === 1) {
             // 메인 페이지일 때, 전체 옵션을 추가
+            testList.unshift('공지');
             testList.unshift('전체');
         }
         const testFrag = document.createDocumentFragment();
