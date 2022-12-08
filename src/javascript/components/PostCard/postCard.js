@@ -43,6 +43,9 @@ class PostCard extends Component {
                 case '자유':
                     this.props.item.img = './src/assets/thumbnail/free.png';
                     break;
+                case '공지':
+                    this.props.item.img = './src/assets/thumbnail/notice.png';
+                    break;
                 default:
                     break;
             }
