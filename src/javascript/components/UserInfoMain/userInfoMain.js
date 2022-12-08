@@ -114,10 +114,10 @@ class UserInfoMain extends Component {
 
         // 로그아웃 함수
         logOutBtn.addEventListener('click', () => {
+            alert('로그아웃되었습니다');
+            location.href = '/';
             signOut(auth).then(() => {
                 localStorage.removeItem('token');
-                alert('로그아웃되었습니다');
-                location.href = '/';
             });
         });
 
