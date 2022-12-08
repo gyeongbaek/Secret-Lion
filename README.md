@@ -58,4 +58,24 @@
 ## 5. 역할분담
 
 
-## 6. 뱃지
+## 6. 세부 기능
+### 6-1. 홈
+![시작](https://user-images.githubusercontent.com/96777064/206344279-4330a9ed-b3f8-445c-a7f3-0384daa01fc6.gif)
+![로그인](https://user-images.githubusercontent.com/96777064/206355449-5fe6f44e-7889-4cdc-ad9f-234ca9e6283f.gif)
+![회원가입](https://user-images.githubusercontent.com/96777064/206355477-ddc09a89-3938-4988-85bc-7e87eedb4b47.gif)
+
+### 6-2. 게시판
+![메인](https://user-images.githubusercontent.com/96777064/206344310-8c4508f1-47c1-47b8-bd8a-e1a455f46d91.gif)
+
+
+### 6-3. 게시글
+![게시글](https://user-images.githubusercontent.com/96777064/206354247-296065ce-be92-4790-9432-45d33eadc14d.gif)
+![게시글작성](https://user-images.githubusercontent.com/96777064/206354877-737f6910-d0d4-4e7c-9f54-74781ae4e4df.gif)
+
+
+### 6-4. 프로필
+![프로필](https://user-images.githubusercontent.com/96777064/206344291-c7bdd58d-6f7f-45ea-b134-d3174a6454d2.gif)
+![편집](https://user-images.githubusercontent.com/96777064/206353847-cb9b30fc-8294-4457-8132-2e7ddc323ff8.gif)
+
+
+
