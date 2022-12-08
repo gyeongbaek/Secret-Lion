@@ -54,104 +54,123 @@
 ### 6-1. 홈
 <table>
     <tbody>
-      <tr></tr>
-      <tr>
-            <th >시연</th>
-            <th >설명</th>
+        <tr></tr>
+        <tr>
+            <th>시연</th>
+            <th>설명</th>
         </tr>
         <tr>
-          <td><img src="https://user-images.githubusercontent.com/96777064/206344279-4330a9ed-b3f8-445c-a7f3-0384daa01fc6.gif" alt=""></td>
-          <td>홈/스플래쉬<ul>
-            <li>시작하기 버튼을 통해 서비스에 접속할 수 있습니다.</li>
-            <li>로그인이 되어 있는 경우 게시판으로, 로그인이 되어있지 않은 경우에는 로그인 화면으로 이동합니다.</li></ul></td>
+            <td><img src="https://user-images.githubusercontent.com/96777064/206344279-4330a9ed-b3f8-445c-a7f3-0384daa01fc6.gif"
+                    alt=""></td>
+            <td>홈/스플래쉬<ul>
+                    <li>시작하기 버튼을 통해 서비스에 접속할 수 있습니다.</li>
+                    <li>로그인: 게시판으로 이동</li>
+                    <li>비로그인: 로그인화면으로 이동</li>
+                </ul>
+            </td>
         </tr>
-       <tr></tr>
-      <tr>
-          <td><img src="https://user-images.githubusercontent.com/96777064/206368007-9db9431e-b994-4722-b8cd-4c736fbbf838.gif" alt=""></td>
-          <td>로그인<ul>
-            <li>이메일 값과 비밀번호의 유효성 검사를 진행하고, 오류 메시지를 제공합니다. </li>
-            <li>이메일과 비밀번호가 유효한 경우 게시판 화면으로 이동합니다.</li>
-            </ul></td>
+        <tr></tr>
+        <tr>
+            <td><img src="https://user-images.githubusercontent.com/96777064/206368007-9db9431e-b994-4722-b8cd-4c736fbbf838.gif"
+                    alt=""></td>
+            <td>로그인<ul>
+                    <li>유효성 검사를 진행하고, 오류 메시지를 제공합니다. </li>
+                    <li>이메일과 비밀번호가 유효한 경우 게시판 화면으로 이동합니다.</li>
+                </ul>
+            </td>
         </tr>
-       <tr></tr>
-      <tr>
-          <td><img src="https://user-images.githubusercontent.com/96777064/206364349-eee1a076-cad5-4557-a64a-c6849be2b31e.gif" alt=""></td>
-          <td>회원가입<ul>
-            <li>사용자의 정보를 입력받아 회원가입을 진행합니다.</li>
-            <li>입력받는 값의 유효성 검사를 진행하고, 오류 메시지를 전달합니다.</li>
-            <li>모달창을 이용하여 커뮤니티 규칙과 개인정보 수집/이용 동의를 제공합니다.</li>
-            </ul></td>
+        <tr></tr>
+        <tr>
+            <td><img src="https://user-images.githubusercontent.com/96777064/206364349-eee1a076-cad5-4557-a64a-c6849be2b31e.gif"
+                    alt=""></td>
+            <td>회원가입<ul>
+                    <li>사용자의 정보를 입력받아 회원가입을 진행합니다.</li>
+                    <li>유효성 검사를 진행하고, 오류 메시지를 전달합니다.</li>
+                    <li>모달창을 이용하여 커뮤니티 규칙과 개인정보 수집/이용 동의를 제공합니다.</li>
+                </ul>
+            </td>
         </tr>
     </tbody>
 </table>
-
+    
+    
 ### 6-2. 게시판
 <table>
-   <tbody>
-      <tr></tr>
-      <tr>
-            <th >시연</th>
-            <th >설명</th>
+    <tbody>
+        <tr></tr>
+        <tr>
+            <th>시연</th>
+            <th>설명</th>
         </tr>
         <tr>
-          <td><img src="https://user-images.githubusercontent.com/96777064/206362695-bb6ce29b-e237-4a84-9484-510dccd71902.gif" alt=""></td>
-          <td>게시판<ul>
-            <li>인기/최신으로 게시글 정렬 순서를 변경할 수 있습니다.</li>
-            <li>드롭다운 메뉴로 카테고리를 선택할 수 있습니다. 전체를 선택하여 모든 게시글을 보여줍니다./li>
-            <li>이미지가 업로드되지 않는 게시글은 카테고리별로 기본 이미지를 제공합니다./li>
-            </ul></td>
+            <td><img src="https://user-images.githubusercontent.com/96777064/206362695-bb6ce29b-e237-4a84-9484-510dccd71902.gif"
+                    alt=""></td>
+            <td>게시판<ul>
+                    <li>인기/최신으로 게시글 정렬 순서를 변경할 수 있습니다.</li>
+                    <li>드롭다운으로 카테고리를 지정할 수 있습니다.</li>
+                    <li>이미지가 업로드 되지 않은 게시글은 카테고리별 기본 이미지를 제공합니다.</li>
+                </ul>
+            </td>
         </tr>
     </tbody>
 </table>
-
 
 ### 6-3. 게시글
 <table>
     <tbody>
-      <tr></tr>
-      <tr>
-            <th >시연</th>
-            <th >설명</th>
+        <tr></tr>
+        <tr>
+            <th>시연</th>
+            <th>설명</th>
         </tr>
         <tr>
-          <td><img src="https://user-images.githubusercontent.com/96777064/206362715-29245407-b1b6-498b-96db-adff583e1cde.gif" alt=""></td>
-          <td>업로드<ul>
-            <li>드롭다운 메뉴로 게시글의 카테고리를 설정합니다.</li>
-            <li>첨부파일 선택 버튼을 이용하여 이미지를 업로드할 수 있습니다.</li>
-            </ul></td>
+            <td><img src="https://user-images.githubusercontent.com/96777064/206362715-29245407-b1b6-498b-96db-adff583e1cde.gif"
+                    alt=""></td>
+            <td>업로드<ul>
+                    <li>드롭다운 메뉴를 통해 게시글의 카테고리를 설정합니다.</li>
+                    <li>첨부파일 선택 버튼을 이용하여 이미지를 업로드할 수 있습니다.</li>
+                </ul>
+            </td>
         </tr>
-       <tr></tr>
-      <tr>
-          <td><img src="https://user-images.githubusercontent.com/96777064/206362705-c6db6f3f-e2db-4891-af76-e4f6eb4d8f76.gif" alt=""></td>
-          <td>게시글<ul>
-            <li>좋아요/스크랩이 가능하며, 댓글을 게시할 수 있습니다.</li>
-            <li>자신이 작성한 게시글에만 삭제 버튼이 활성화됩니다.</li></ul></td>
+        <tr></tr>
+        <tr>
+            <td><img src="https://user-images.githubusercontent.com/96777064/206362705-c6db6f3f-e2db-4891-af76-e4f6eb4d8f76.gif"
+                    alt=""></td>
+            <td>게시글<ul>
+                    <li>좋아요/스크랩이 가능하며, 댓글을 게시할 수 있습니다.</li>
+                    <li>작성한 게시글에만 삭제 버튼이 활성화되어, 작성자만 삭제할 수 있습니다.</li>
+                </ul>
+            </td>
         </tr>
     </tbody>
 </table>
 
 ### 6-4. 프로필
 <table>
-   <tbody>
-      <tr></tr>
-      <tr>
-            <th >시연</th>
-            <th >설명</th>
+    <tbody>
+        <tr></tr>
+        <tr>
+            <th>시연</th>
+            <th>설명</th>
         </tr>
         <tr>
-          <td><img src="https://user-images.githubusercontent.com/96777064/206362738-6603d18b-5f62-4a34-9f55-6d2c4f7cecbc.gif" alt=""></td>
-          <td>프로필<ul>
-            <li>사용자의 정보를 제공합니다.</li>
-            <li>작성한 게시글, 좋아요, 스크랩한 게시글 목록을 확인할 수 있습니다.</li>
-            </ul></td>
+            <td><img src="https://user-images.githubusercontent.com/96777064/206362738-6603d18b-5f62-4a34-9f55-6d2c4f7cecbc.gif"
+                    alt=""></td>
+            <td>프로필<ul>
+                    <li>사용자의 프로필 정보를 제공합니다.</li>
+                    <li>작성한 게시글, 좋아요, 스크랩한 게시글의 목록을 확인할 수 있습니다.</li>
+                </ul>
+            </td>
         </tr>
-      <tr></tr>
-      <tr>
-          <td><img src="https://user-images.githubusercontent.com/96777064/206362728-9f41d01b-eabe-41c6-8507-54f612dc4fdd.gif" alt=""></td>
-          <td>프로필 편집<ul>
-            <li>프로필 이미지를 변경하거나 삭제할 수 있습니다.</li>
-            <li>새로운 닉네임의 중복 여부를 확인한 후 변경합니다.</li>
-            </ul></td>
+        <tr></tr>
+        <tr>
+            <td><img src="https://user-images.githubusercontent.com/96777064/206362728-9f41d01b-eabe-41c6-8507-54f612dc4fdd.gif"
+                    alt=""></td>
+            <td>프로필 편집<ul>
+                    <li>프로필 이미지를 변경하거나, 업로드한 이미지를 삭제할 수 있습니다.</li>
+                    <li>새로운 닉네임의 중복 여부를 확인한 후 변경합니다.</li>
+                </ul>
+            </td>
         </tr>
     </tbody>
 </table>
