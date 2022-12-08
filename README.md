@@ -1,4 +1,4 @@
-[[# 비밀멋사
+# 비밀멋사
 ![결과1](https://user-images.githubusercontent.com/96777064/206225813-571d5768-167d-4a2c-acc8-321b89f087b7.png)
 
 
@@ -70,7 +70,7 @@
         </tr>
        <tr></tr>
       <tr>
-          <td><img src="https://user-images.githubusercontent.com/96777064/206355477-ddc09a89-3938-4988-85bc-7e87eedb4b47.gif" alt=""></td>
+          <td><img src="https://user-images.githubusercontent.com/96777064/206364349-eee1a076-cad5-4557-a64a-c6849be2b31e.gif" alt=""></td>
           <td>회원가입<ul><li>설명이 들어갈 공간입니다 룰루랄라라라랄라</li><li>설명이 들어갈 공간입니다 룰루랄라라라랄라 근데 폭 조정이 안되네요ㅠ</li></ul></td>
         </tr>
     </tbody>
