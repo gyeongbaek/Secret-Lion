@@ -30,29 +30,20 @@
 
 <br>
 
-## 2. 목차 (선택)
-
-만약 리드미가 너무 길다면, 사용자들이 다른 섹션으로 쉽게 이동할 수 있게 목차를 만들 수도 있습니다. 목차를 통해 독자들이 쉽게 프로젝트를 살펴볼 수 있을 것입니다.
 
 
-## 3. 프로젝트 사용 방법
-하단의 배포 링크를 통해 서비스를 이용할 수 있습니다. 회원가입을 통해 서비스를 이용하거나, 하단의 테스트 계정을 이용하실 수 있습니다.
-
-
-<br>
-
-## 4. 팀원
+## 2. 팀원
 | **강수정** | **김민제** | **문승규** | **백경현** |
 | :------: |  :------: | :------: | :------: |
 | [<img src="https://avatars.githubusercontent.com/u/110231276?v=4" height=150 width=150> <br/> @kngsujng](https://github.com/kngsujng) | [<img src="https://avatars.githubusercontent.com/u/112460466?v=4" height=150 width=150> <br/> @Cheorizzang](https://github.com/Cheorizzang) | [<img src="https://avatars.githubusercontent.com/u/84954439?v=4" height=150 width=150> <br/> @munseunggyu](https://github.com/munseunggyu) | [<img src="https://avatars.githubusercontent.com/u/96777064?v=4" height=150 width=150> <br/> @baekg6](https://github.com/baekg6) |
 
 <br>
 
-## 5. 역할분담
+## 3. 역할분담
 
 
-## 6. 세부 기능
-### 6-1. 홈
+## 4. 세부 기능
+### 4-1. 홈
 <table>
     <tbody>
         <tr></tr>
@@ -95,7 +86,7 @@
 </table>
     
     
-### 6-2. 게시판
+### 4-2. 게시판
 <table>
     <tbody>
         <tr></tr>
@@ -116,7 +107,7 @@
     </tbody>
 </table>
 
-### 6-3. 게시글
+### 4-3. 게시글
 <table>
     <tbody>
         <tr></tr>
@@ -146,7 +137,7 @@
     </tbody>
 </table>
 
-### 6-4. 프로필
+### 4-4. 프로필
 <table>
     <tbody>
         <tr></tr>
