@@ -60,9 +60,44 @@
 
 ## 6. 세부 기능
 ### 6-1. 홈
-![시작](https://user-images.githubusercontent.com/96777064/206344279-4330a9ed-b3f8-445c-a7f3-0384daa01fc6.gif)
-![로그인](https://user-images.githubusercontent.com/96777064/206355449-5fe6f44e-7889-4cdc-ad9f-234ca9e6283f.gif)
-![회원가입](https://user-images.githubusercontent.com/96777064/206355477-ddc09a89-3938-4988-85bc-7e87eedb4b47.gif)
+<table>
+    <thead>
+        <tr>
+            <th >홈/스플래시</th>
+            <th >로그인</th>
+            <th >회원가입r</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><img src="https://user-images.githubusercontent.com/96777064/206344279-4330a9ed-b3f8-445c-a7f3-0384daa01fc6.gif" alt=""></td>
+          <td><img src="https://user-images.githubusercontent.com/96777064/206355449-5fe6f44e-7889-4cdc-ad9f-234ca9e6283f.gif" alt=""></td>
+          <td><img src="https://user-images.githubusercontent.com/96777064/206355477-ddc09a89-3938-4988-85bc-7e87eedb4b47.gif" alt=""></td>
+        </tr>
+      <tr>
+        <td><ul><li>설명이 들어갈 공간입니다 엔터없이 길어지면 배치이상해짐</li></ul></td>
+        <td><ul><li>설명이 들어갈 공간입니다 룰루랄라라라랄라</li><li>설명이 들어갈 공간입니다 룰루랄라라라랄라</li></ul></td>
+        <td><ul><li>설명이 들어갈 공간입니다 룰루랄라라라랄라</li></ul></td>
+      </tr>
+    </tbody>
+</table>
+
+<hr>
+<table>
+    <thead>
+        <tr>
+            <th >홈/스플래시</th>
+            <th >로그인</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><img src="https://user-images.githubusercontent.com/96777064/206355449-5fe6f44e-7889-4cdc-ad9f-234ca9e6283f.gif" alt=""/></td>
+          <td>홈화면<ul><li>설명이 들어갈 공간입니다 룰루랄라라라랄라</li><li>설명이 들어갈 공간입니다 룰루랄라라라랄라 근데 폭 조정이 안되네요ㅠ</li></ul></td>
+        </tr>
+    </tbody>
+</table>
+<hr>
 
 ### 6-2. 게시판
 ![메인](https://user-images.githubusercontent.com/96777064/206344310-8c4508f1-47c1-47b8-bd8a-e1a455f46d91.gif)
