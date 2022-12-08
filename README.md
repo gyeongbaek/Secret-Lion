@@ -1,3 +1,6 @@
+
+플랫폼으로 함께 수업을 듣고, 정보를 공유하거나 대화를 할 수 있습니다. 하지만 100명의 수강생들이 다같이 소통하는 데에는 한계가 있다고 생각했습니다.
+
 # 비밀멋사
 - 배포: https://secret-lion.netlify.app/
 - 테스트 계정: bmms@test.com || 비밀번호 : bmms1234
@@ -12,15 +15,10 @@
 
 ## 1. 프로젝트 소개
 
-<br>
-
 ### [기획의도]
-
-
-멋쟁이사자처럼은 온라인으로 진행되는 부트캠프입니다. 수강생들은 디스코드라는 플랫폼으로 함께 수업을 듣고, 정보를 공유하거나 대화를 할 수 있습니다. 하지만 100명의 수강생들이 다같이 소통하는 데에는 한계가 있다고 생각했습니다. 우리에게는 차마 나누지 못한 학업이나 취업에만 국한되지 않는 더 많은 이야기가 있을 것입니다. 비록 온라인에서 만났지만 같은 곳을 바라보며 나아가는 우리는 결속력과 친밀감을 느낍니다. 그렇기에 우리가 친구처럼 편하게 얘기할 수 있는 또다른 플랫폼을 만들고 싶었습니다. 익명으로 자유롭게 고민과 일상을 나누면서 서로의 힘이 되어주는 든든한 동료들의 존재를 느낄 수 있을 것입니다. 
-
-더 나아가 부트캠프 훈련생들을 위해 개발부터 일상적인 고민까지 나눌 수 있는 익명의 소통창구를 지원하는 것이 저희의 최종적인 목표입니다. 현재 '비밀멋사'는 멋쟁이사자처럼 프론트엔드 스쿨 부트캠프에 국한되어 있지만, 추후 온라인으로 진행하는 다른 부트캠프 훈련생들의 원할한 소통을 지원하기 위해 확장성을 갖는 것이 목표입니다. 
-이를 위해 여러 부트캠프별로 카테고리를 구분하여 각 부트캠프마다의 특성을 살리되, '부트캠프'라는 큰 공통점을 잃지 않도록 하여 소속감을 느낄 수 있도록 할 것입니다. 
+> 저희는 온라인으로 진행하는 부트캠프 '멋쟁이사자처럼 프론트엔드 스쿨'의 수강생으로, 디스코드를 통해 함께 수업을 듣고 정보를 공유하거나 대화를 나누고 있습니다. 하지만 100명의 수강생들이 다같이 소통하는 데에는 한계가 있음을 느꼈습니다. 너무 쉬운 질문일까봐, 또는 자신만 어렵다고 생각할까봐 등 같은 고민을 가지고 있음에도 쉽게 나누지 못하는 훈련생들이 많았습니다. 비록 온라인을 통해 만났지만 같은 꿈을 가지고 있기 때문에 친밀감을 느끼고, 학업이나 취업 고민뿐만 아니라 함께 나누고 싶은 더 많은 이야기가 있을 것이라고 생각합니다. 훈련생들이 친구처럼 편하고 활발하게 소통할 수 있는 서비스가 있으면 좋겠다고 생각이 들었고, 익명을 통해 자유롭게 고민과 일상을 나누고 서로에게 힘이 되어주는 든든한 동료같은 서비스인 <비밀멋사>를 만들게 되었습니다.
+>
+> 더 나아가 다양한 부트캠프의 훈련생들이 개발부터 일상적인 고민까지 나눌 수 있는 소통 창구를 지원하는 것이 최종적인 목표입니다. 현재 <비밀멋사>는 '멋쟁이사자처럼 프론트엔드 스쿨'에만 국한되어 있지만, 추후에는 온라인으로 진행하는 여러 부트캠프 훈련생들 간의 원활한 소통을 지원하며 소속감을 느낄 수 있는 소통 창구이자, 원활한 소통을 지원하는 커뮤니티로 성장하는 것이 목표입니다.
 
 
 ### [링크]
@@ -32,25 +30,22 @@
 ### 1.1 프로젝트 사용 기술  
 **FrontEnd** <div><img src="https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=HTML5&logoColor=white">
   <img src="https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=CSS3&logoColor=white">
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white"></div>
-  <br>
-**BackEnd** <div>
-  <img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=Firebase&logoColor=white"></div>
-  <br>
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white"></div>  
+  
+**BackEnd** <div><img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=Firebase&logoColor=white"></div>  
+
 **Collaboration** <div><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=white">
   <img src="https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=Notion&logoColor=white">
-   <img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=Discord&logoColor=white"></div>
-  <br>
-  **ETC** <div><img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=Figma&logoColor=white">
+   <img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=Discord&logoColor=white"></div>  
+   
+**ETC** <div><img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=Figma&logoColor=white">
   <img src="https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=Netlify&logoColor=white"></div>
-### 1.2 해당 기술 사용 이유
 
 <br>
 
 
-
 ## 2. 팀원
-| **강수정** | **김민제** | **문승규** | **백경현** |
+| **✅ 강수정** | **💫  김민제** | **🦾 문승규** | **🐳 백경현** |
 | :------: |  :------: | :------: | :------: |
 | [<img src="https://avatars.githubusercontent.com/u/110231276?v=4" height=150 width=150> <br/> @kngsujng](https://github.com/kngsujng) | [<img src="https://avatars.githubusercontent.com/u/112460466?v=4" height=150 width=150> <br/> @Cheorizzang](https://github.com/Cheorizzang) | [<img src="https://avatars.githubusercontent.com/u/84954439?v=4" height=150 width=150> <br/> @munseunggyu](https://github.com/munseunggyu) | [<img src="https://avatars.githubusercontent.com/u/96777064?v=4" height=150 width=150> <br/> @baekg6](https://github.com/baekg6) |
 
@@ -58,39 +53,47 @@
 
 ## 3. 역할분담
 **✅ 강수정**
-- 사후설문조사지 작성 및 결과 분석, 프로필 대체 이미지 제작 
+- 사후 설문 조사지 작성 및 결과 분석, 프로필 대체 이미지 제작 
 - UI
-  - 페이지 : 시작, 로그인, 회원가입 페이지 구현
+  - 페이지 : 시작, 로그인, 회원가입 페이지
   - 공통 : Header 구현 
 - 기능
-  - 로그인, 회원가입
-  - 커뮤니티 규칙, 개인정보 이용/수집 모달창
+  - 로그인, 회원가입  
 
-**김민제**
+<br>
+
+**💫  김민제**
 - 사전설문조사지 작성 및 결과 분석
 - UI
   - 유저 프로필 페이지, 유저 프로필 편집 페이지 구현
 - 기능
   - 유저가 작성, 좋아요, 스크랩한 게시글 출력
   - 프로필 이미지 및 닉네임 수정
-  - 로그아웃
+  - 로그아웃  
 
-**문승규**
+<br>
+
+
+**🦾 문승규**
 - Firebase 강의
 - UI  
   - 게시판 업로드 페이지, 게시판 상세 페이지
 - 기능
    - 게시물 업로드
    - 댓글
-   - 좋아요, 즐겨찾기 버튼
+   - 좋아요, 즐겨찾기 버튼  
 
-**백경현**
+<br>
+
+
+**🐳 백경현**
 - 프로젝트 기획 및 문서화
 - UI  
-  - 게시판 컴포넌트화
-  - 메인 페이지 구현
+  - 메인 페이지
+  - 게시판, 게시글 카드 컴포넌트
 - 기능
-  - 게시판 정렬, 카테고리 
+  - 게시판 정렬, 카테고리
+  - 상태 관리
 
 <br>
 
@@ -137,6 +140,7 @@
     </tbody>
 </table>
     
+<br>
     
 ### 4-2. 게시판
 <table>
@@ -158,6 +162,7 @@
         </tr>
     </tbody>
 </table>
+<br>
 
 ### 4-3. 게시글
 <table>
@@ -188,6 +193,7 @@
         </tr>
     </tbody>
 </table>
+<br>
 
 ### 4-4. 프로필
 <table>
@@ -227,12 +233,12 @@
 ### 1. 하위 컴포넌트의 요소를 가져오지 못 하는 이슈
 
 -   문제 상황
-    -   상위 컴포넌트에서 하위 컴포넌트의 요소를 선택해서 클릭 이벤트 또는 textContent를 가져와야 하는 상황에서 원하는 요소만 가져올 수 없다.
+    -   상위 컴포넌트에서 하위 컴포넌트의 요소에 돔 조작을 해야하는 상황(이벤트 추가, textContent를 가져오는 등)에서 원하는 요소를 불러올 수 없습니다.
 -   원인 추론
-    -   클래스로 컴포넌트화하여 해당 컴포넌트를 render(or initialize) 하여야 요소들이 만들어지고 appendChild 하여야 해당 index.html에 그려져 querySelector로 가져올 수 없다.
+    - 클래스로 컴포넌트화했기 때문에 해당 컴포넌트를 render(또는 initialize)를 해야만 요소가 만들어지고, appendChild를 통해 document에 그려주기 때문에 querySelector를 이용하여 요소를 불러올 수 없습니다.
 -   해결 방법
-    -   render 할 때 배열 형태로 보내주고 싶은 요소를 같이 보내준 후 해당 컴포넌트를 부를 때 구조 분해 할당으로 가져와 준다.
--   적용 코드)
+    - render를 진행할 때, 상위 컴포넌트에서 컨트롤 해야 하는 요소를 배열의 형태로 반환합니다. 상위 컴포넌트에서 해당 컴포넌트를 생성할 때, 구조 분해 할당으로 요소에 접근할 수 있습니다.
+-   적용 코드
 
     ```js
     // ./src/components/PostUploadForm/postUploadPreview.js
@@ -268,16 +274,17 @@
     // ./src/components/PostUploadForm/postUploadForm.js
     const [postUploadPreviewEl, imgCancelBtn] = postUploadPreview.initialize();
     ```
+<br>
 
 ### 2. state로 상태 관리하여 리랜더링 시 정적인 데이터 초기화되는 이슈
 
 -   문제상황
-    -   state를 이용한 상태 관리에서 정적인 데이터를 지정하는 경우, 이벤트 발생으로 리렌더링을 진행하는 경우 정적인 데이터로 초기화된다.
+    -   state를 이용한 상태 관리에서 정적인 데이터를 지정하는 경우, 해당 값을 바꾸더라도 리렌더링이 되는 경우 기존의 데이터 값을 가져옵니다.
 -   원인 추론
-    -   그 리렌더링 될 때 constructor까지 새로 실행되면서 정적인 값으로 변경이 되버린다.
+    -  리렌더링이 진행 되면서 이벤트에 따른 값이 아닌 consturctor에서 지정해둔 정적인 데이터를 불러오면서 기존의 데이터로 초기화됩니다.
 -   해결 방법
-    -   이벤트가 발생했을 때, 조건을 로컬 스토리지에 저장하여 해당 값을 이용해 상태 관리 변수의 값을 동적으로 할당하는 방식으로 오류를 해결했다.
--   적용 코드)
+    -  변경되어야 하는 변수를 메소드를 이용하여 동적으로 할당했습니다. 선택한 메뉴와 카테고리의 정보를 로컬 스토리지에 저장하고, 이벤트가 발생하여 리렌더링 되는 경우 조건에 따라 변수의 값을 지정합니다.
+-   적용 코드
 
     ```js
     // ./src/javascript/components/mainPost/mainPst.js
@@ -328,17 +335,10 @@
     }
     ```
 
+<br>
 
-## 6. 보완
-추후 기능 업데이트를 통해 익명 소통창구의 장점은 극대화하고 단점은 보완할 수 있도록 노력할 것입니다. 
-<ul>
- <li><strong>아이디/비밀번호 찾기 : </strong>가입한 닉네임을 통한 이메일 찾기와 등록한 이메일을 통한 새 비밀번호 발급 기능 추가</li>
- <li><strong>검색 기능 : </strong>특정 검색어를 이용하여 게시물 내용, 작성자, 날짜를 검색할 수 있는 기능 추가
- <li><strong>알림 기능 : </strong>사용자가 작성한 게시물에 새롭게 추가된 댓글, 하트, 스크랩과 사용자를 언급한 멘션 등이 추가될 때마다 알림 기능 추가 
- <li><strong>신고 기능 : </strong>사용자가 비밀멋사 운영규칙에 부합하지 않은 게시물을 신고할 때 누적 신고 횟수에 따라 특정 사용자를 제한할 수 있는 기능 추가 
- <li><strong>게시글 추가 기능 : </strong>사용자가 작성한 게시글 수정
- <li><strong>댓글 추가 기능 : </strong>댓글 삭제, 수정, 이미지 등록 
- <li><strong>내 프로필 추가 기능 : </strong>사용자가 댓글 단 게시글 나열하는 기능 
- <li><strong>부트캠프 분류 기능 : </strong>부트캠프별 훈련생 전용 이메일로 가입 기능, 부트캠프별 페이지가 전환되는 카테고리 기능 설정 
-</ul>
-
+## 6. 보완점
+익명 소통 창구의 장점은 극대화하고 단점은 보완할 수 있도록 지속적으로 기능을 업데이트할 예정입니다.
+- 계정: 아이디/비밀번호 찾기, 신고 누적 횟수에 따른 사용자 제한 기능, 댓글 작성 게시글
+- 게시판: 부트캠프별 전용 게시판
+- 게시글: 게시글 검색 기능
