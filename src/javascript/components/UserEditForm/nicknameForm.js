@@ -30,11 +30,15 @@ class NicknameForm extends Component {
             });
         });
 
+        const reg = /(운영)/g;
+
         // 예외 처리
         if (nameInp.value === '') {
             alert('닉네임을 입력해주세요.');
         } else if (users.includes(nameInp.value)) {
             alert('중복된 닉네임입니다.');
+        } else if (reg.test(nameInp.value)) {
+            alert('운영진 사칭하지 마세욧!!!!!');
         } else {
             try {
                 updateProfile(auth.currentUser, {
