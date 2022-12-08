@@ -52,6 +52,7 @@
     text-align: center;
     background-color: #fff;
     color: #909090;
+    cursor: pointer;
 }
 
 /* 게시글 목록으로 이동하는 아이콘 */
