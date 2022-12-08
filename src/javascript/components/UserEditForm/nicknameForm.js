@@ -44,6 +44,7 @@ class NicknameForm extends Component {
                     displayName: nameInp.value,
                 });
                 alert('닉네임이 변경되었습니다.');
+                nameInp.value = '';
             } catch (error) {
                 console.log(error);
             }
