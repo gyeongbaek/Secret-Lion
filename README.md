@@ -1,4 +1,7 @@
 # 비밀멋사
+- 배포: https://secret-lion.netlify.app/
+- 테스트 계정: bmms@test.com || 비밀번호 : bmms1234
+ 
 ![결과1](https://user-images.githubusercontent.com/96777064/206225813-571d5768-167d-4a2c-acc8-321b89f087b7.png)
 
 
@@ -34,8 +37,7 @@
 
 ## 3. 프로젝트 사용 방법
 하단의 배포 링크를 통해 서비스를 이용할 수 있습니다. 회원가입을 통해 서비스를 이용하거나, 하단의 테스트 계정을 이용하실 수 있습니다.
-- 배포: https://secret-lion.netlify.app/
-- 미리보기 계정: id / pw
+
 
 <br>
 
