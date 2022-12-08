@@ -1,15 +1,7 @@
 import Component from '../../core/Component.js';
 import { UserInfoIcon } from '../UserInfoIcon/index.js';
 import { PostBoard, MainContainer } from '../../common/index.js';
-import {
-    auth,
-    collection,
-    db,
-    doc,
-    getDocs,
-    getDoc,
-    signOut,
-} from '../../firebase.js';
+import { auth, collection, db, doc, getDocs, getDoc, signOut } from '../../firebase.js';
 
 class UserInfoMain extends Component {
     constructor(props) {
@@ -42,11 +34,7 @@ class UserInfoMain extends Component {
         } else if (buttonLabel === 'scrap') {
             await getDocs(postRef).then((snapshot) => {
                 snapshot.docs.forEach((doc) => {
-                    for (
-                        let i = 0;
-                        i < doc.data().scrap.participateCount;
-                        i++
-                    ) {
+                    for (let i = 0; i < doc.data().scrap.participateCount; i++) {
                         if (doc.data().scrap.participants[i] === this.token) {
                             posts.push(doc.data());
                         }
@@ -96,10 +84,7 @@ class UserInfoMain extends Component {
             if (this.photoURL) {
                 profileImg.setAttribute('src', this.photoURL);
             } else {
-                profileImg.setAttribute(
-                    'src',
-                    './src/assets/profile/profile.png'
-                );
+                profileImg.setAttribute('src', './src/assets/profile/profile.png');
             }
         });
 
@@ -116,6 +101,9 @@ class UserInfoMain extends Component {
         logOutBtn.addEventListener('click', () => {
             alert('로그아웃되었습니다');
             location.href = '/';
+
+            localStorage.removeItem('selectCategory');
+            localStorage.removeItem('postOrder');
             signOut(auth).then(() => {
                 localStorage.removeItem('token');
             });
