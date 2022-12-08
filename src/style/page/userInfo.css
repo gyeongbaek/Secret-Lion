@@ -1,11 +1,11 @@
 /* 유저 프로필 섹션 */
-.info_sect_profile {
+.main_container .info_sect_profile {
     position: relative;
     height: 100px;
     border-bottom: 1px solid #bdbdbd;
 }
 
-.info_img_profile {
+.info_sect_profile .info_img_profile {
     position: relative;
     top: -30px;
     left: 10px;
@@ -15,7 +15,7 @@
     object-fit: cover;
 }
 
-.info_strong_nickname {
+.info_sect_profile .info_strong_nickname {
     position: relative;
     top: -100px;
     left: 40px;
@@ -24,7 +24,7 @@
     line-height: 34px;
 }
 
-.info_a_move {
+.info_sect_profile .info_a_move {
     position: relative;
     top: -80px;
     left: 150px;
@@ -39,7 +39,7 @@
     color: #909090;
 }
 
-.info_a_logout {
+.info_sect_profile .info_a_logout {
     position: relative;
     top: -110px;
     left: 250px;
@@ -56,7 +56,7 @@
 }
 
 /* 게시글 목록으로 이동하는 아이콘 */
-.info_div_iconWrap {
+.info_sect_profile .info_div_iconWrap {
     position: relative;
     top: -180px;
     left: -40px;
@@ -68,49 +68,49 @@
     gap: 70px;
 }
 
-.info_div_post,
-.info_div_like,
-.info_div_scrap {
+.info_div_iconWrap .info_div_post,
+.info_div_iconWrap .info_div_like,
+.info_div_iconWrap .info_div_scrap {
     display: flex;
     flex-direction: column;
     align-items: center;
     cursor: pointer;
 }
 
-.info_img_post,
-.info_img_like,
-.info_img_scrap {
+.info_div_iconWrap .info_div_post {
+    gap: 13px;
+}
+
+.info_div_iconWrap .info_div_like,
+.info_div_iconWrap .info_div_scrap {
+    gap: 8px;
+}
+
+.info_div_post .info_img_post,
+.info_div_like .info_img_like,
+.info_div_scrap .info_img_scrap {
     width: 30px;
     height: 30px;
 }
 
-.info_div_post {
-    gap: 13px;
-}
-
-.info_div_like,
-.info_div_scrap {
-    gap: 8px;
-}
-
 /* 게시글 목록 섹션 */
-.info_sect_postList {
+.main_container .info_sect_postList {
     position: relative;
     top: -80px;
 }
 
 /* 반응형 */
 @media (max-width: 1075px) {
-    .info_div_iconWrap {
+    .info_sect_profile .info_div_iconWrap {
         position: absolute;
         top: 90px;
         left: 50px;
     }
 
-    .info_sect_profile {
+    .main_container .info_sect_profile {
         height: 180px;
     }
-    .info_sect_postList {
+    .main_container .info_sect_postList {
         top: 50px;
     }
 }

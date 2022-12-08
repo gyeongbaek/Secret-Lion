@@ -5,7 +5,7 @@
 }
 
 /* 메인 컨테이너 */
-.edit_main_wrapper {
+.edit_div_colorwrap .edit_main_wrapper {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -18,21 +18,21 @@
     background-color: #fff;
 }
 
-.edit_strong {
+.edit_main_wrapper .edit_strong {
     display: inline-block;
     font-size: 25px;
     line-height: 24px;
     margin: 100px 0 0 92px;
 }
 
-.edit_p_profile {
+.edit_main_wrapper .edit_p_profile {
     font-size: 18px;
     line-height: 17px;
     margin: 20px 0 0 93px;
     color: #6a6a6a;
 }
 
-.edit_a_move {
+.edit_main_wrapper .edit_a_move {
     position: relative;
     top: -70px;
     left: 625px;
@@ -43,19 +43,19 @@
 }
 
 /* 이미지 폼 */
-.edit_form_img {
+.edit_main_wrapper .edit_form_img {
     position: relative;
     top: -10px;
 }
 
-.edit_lab_img {
+.edit_form_img .edit_lab_img {
     color: #3e3e3e;
     position: absolute;
     top: 60px;
     left: 100px;
 }
 
-.edit_img {
+.edit_form_img .edit_img {
     width: 72px;
     height: 72px;
     border-radius: 120px;
@@ -63,8 +63,8 @@
     object-fit: cover;
 }
 
-.edit_btn_change,
-.edit_btn_delete {
+.edit_form_img .edit_btn_change,
+.edit_form_img .edit_btn_delete {
     position: relative;
     top: -90px;
     left: 0px;
@@ -79,7 +79,7 @@
 }
 
 /* 닉네임 폼 */
-.edit_form_nickname {
+.edit_main_wrapper .edit_form_nickname {
     position: relative;
     top: -10px;
 }
@@ -90,7 +90,7 @@
     left: 115px;
 }
 
-#edit_inp_nickname {
+.edit_form_nickname #edit_inp_nickname {
     position: relative;
     left: 181px;
     width: 300px;
@@ -101,11 +101,11 @@
     font-size: 14px;
 }
 
-#edit_inp_nickname::placeholder {
+.edit_form_nickname #edit_inp_nickname::placeholder {
     opacity: 0.3;
 }
 
-.edit_p_nickname {
+.edit_form_nickname .edit_p_nickname {
     position: relative;
     top: 12px;
     left: 222px;
@@ -114,7 +114,7 @@
     color: #909090;
 }
 
-.edit_btn_confirm {
+.edit_form_nickname .edit_btn_confirm {
     position: relative;
     top: -47px;
     left: 570px;
