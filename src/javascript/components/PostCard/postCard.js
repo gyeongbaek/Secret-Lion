@@ -60,8 +60,8 @@ class PostCard extends Component {
         });
         post.appendChild(postCate.render());
         const postInfo = new PostCardReaction({
-            like: this.props.item.like.participateCount,
-            comment: this.props.item.scrap.participateCount,
+            like: this.props.item.like.participants,
+            scrap: this.props.item.scrap.participants,
         });
         post.appendChild(postInfo.render());
 
