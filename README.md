@@ -67,7 +67,7 @@
         </tr>
        <tr></tr>
       <tr>
-          <td><img src="https://user-images.githubusercontent.com/96777064/206355449-5fe6f44e-7889-4cdc-ad9f-234ca9e6283f.gif" alt=""></td>
+          <td><img src="https://user-images.githubusercontent.com/96777064/206368007-9db9431e-b994-4722-b8cd-4c736fbbf838.gif" alt=""></td>
           <td>로그인<ul>
             <li>이메일 값과 비밀번호의 유효성 검사를 진행하고, 오류 메시지를 제공합니다. </li>
             <li>이메일과 비밀번호가 유효한 경우 게시판 화면으로 이동합니다.</li>
