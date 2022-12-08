@@ -117,6 +117,7 @@ class SignupForm extends Component {
             const users = [];
             // 모든 유저를 돌면서 displayname을 가져오기
             const userRef = collection(db, 'users');
+            const reg = /(운영)/g;
             await getDocs(userRef).then((snapshot) => {
                 snapshot.docs.forEach((doc) => {
                     users.push(doc.data().displayName);
@@ -143,6 +144,9 @@ class SignupForm extends Component {
                     nickNameErr.textContent = '닉네임은 필수항목입니다.';
                     nickNameErr.style.margin = '5px 0 0 5px';
                     return 
+                }else if(reg.test(newNickname)){
+                    alert("운영진을 사칭하지 마세요!");
+                    return
                 }else if(users.includes(newNickname)){
                     nickNameErr.textContent = '중복된 닉네임입니다.';
                     nickNameErr.style.margin = '5px 0 0 5px';
