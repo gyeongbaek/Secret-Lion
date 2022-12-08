@@ -24,7 +24,7 @@
 
 <br>
 
-### 1.1 프로젝트 사용 기술  
+## 2. 프로젝트 사용 기술  
 **FrontEnd** <div><img src="https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=HTML5&logoColor=white">
   <img src="https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=CSS3&logoColor=white">
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white"></div>  
@@ -41,14 +41,14 @@
 <br>
 
 
-## 2. 팀원
+## 3. 팀원
 | **✅ 강수정** | **💫  김민제** | **🦾 문승규** | **🐳 백경현** |
 | :------: |  :------: | :------: | :------: |
 | [<img src="https://avatars.githubusercontent.com/u/110231276?v=4" height=150 width=150> <br/> @kngsujng](https://github.com/kngsujng) | [<img src="https://avatars.githubusercontent.com/u/112460466?v=4" height=150 width=150> <br/> @Cheorizzang](https://github.com/Cheorizzang) | [<img src="https://avatars.githubusercontent.com/u/84954439?v=4" height=150 width=150> <br/> @munseunggyu](https://github.com/munseunggyu) | [<img src="https://avatars.githubusercontent.com/u/96777064?v=4" height=150 width=150> <br/> @baekg6](https://github.com/baekg6) |
 
 <br>
 
-## 3. 역할분담
+## 4. 역할분담
 **✅ 강수정**
 - 사후 설문 조사지 작성 및 결과 분석, 프로필 대체 이미지 제작 
 - UI
@@ -94,8 +94,8 @@
 
 <br>
 
-## 4. 세부 기능
-### 4-1. 홈
+## 5. 세부 기능
+### 5-1. 홈
 <table>
     <tbody>
         <tr></tr>
@@ -139,7 +139,7 @@
     
 <br>
     
-### 4-2. 게시판
+### 5-2. 게시판
 <table>
     <tbody>
         <tr></tr>
@@ -161,7 +161,7 @@
 </table>
 <br>
 
-### 4-3. 게시글
+### 5-3. 게시글
 <table>
     <tbody>
         <tr></tr>
@@ -192,7 +192,7 @@
 </table>
 <br>
 
-### 4-4. 프로필
+### 5-4. 프로필
 <table>
     <tbody>
         <tr></tr>
@@ -225,9 +225,9 @@
 
 <br>
 
-## 5. 트러블 슈팅
+## 6. 트러블 슈팅
 
-### 1. 하위 컴포넌트의 요소를 가져오지 못 하는 이슈
+### 6-1. 하위 컴포넌트의 요소를 가져오지 못 하는 이슈
 
 -   문제 상황
     -   상위 컴포넌트에서 하위 컴포넌트의 요소에 돔 조작을 해야하는 상황(이벤트 추가, textContent를 가져오는 등)에서 원하는 요소를 불러올 수 없습니다.
@@ -273,7 +273,7 @@
     ```
 <br>
 
-### 2. state로 상태 관리하여 리랜더링 시 정적인 데이터 초기화되는 이슈
+### 6-2. state로 상태 관리하여 리랜더링 시 정적인 데이터 초기화되는 이슈
 
 -   문제상황
     -   state를 이용한 상태 관리에서 정적인 데이터를 지정하는 경우, 해당 값을 바꾸더라도 리렌더링이 되는 경우 기존의 데이터 값을 가져옵니다.
@@ -334,7 +334,7 @@
 
 <br>
 
-## 6. 보완점
+## 7. 보완점
 익명 소통 창구의 장점은 극대화하고 단점은 보완할 수 있도록 지속적으로 기능을 업데이트할 예정입니다.
 - 계정: 아이디/비밀번호 찾기, 신고 누적 횟수에 따른 사용자 제한 기능, 댓글 작성 게시글
 - 게시판: 부트캠프별 전용 게시판
