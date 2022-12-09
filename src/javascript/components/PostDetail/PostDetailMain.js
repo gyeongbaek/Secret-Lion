@@ -11,6 +11,7 @@ import {
     db,
     doc,
     getDoc,
+    getDocs,
     onSnapshot,
     orderBy,
     query,
@@ -60,23 +61,24 @@ class PostDetailMain extends Component {
             where('id', '==', id),
             orderBy('CreateAt', 'asc')
         );
-        onSnapshot(q, (querySnapshot) => {
-            const newarr = [];
-            querySnapshot.docs.forEach(async (result, i) => {
-                newarr.push(
-                    Object.assign(
-                        result.data({ serverTimestamps: 'estimate' }),
-                        await this.getUser(result.data().writerId)
-                    )
-                );
-                if (i === querySnapshot.docs.length - 1) {
-                    this.setState({
-                        ...this.state,
-                        chatList: [...newarr],
-                    });
-                }
-            });
-        });
+        const querySnapshot = await getDocs(q);
+        const newarr = [];
+        for (let i = 0; i < querySnapshot.docs.length; i++) {
+            newarr.push(
+                Object.assign(
+                    querySnapshot.docs[i].data({
+                        serverTimestamps: 'estimate',
+                    }),
+                    await this.getUser(querySnapshot.docs[i].data().writerId)
+                )
+            );
+            if (i === querySnapshot.docs.length - 1) {
+                this.setState({
+                    ...this.state,
+                    chatList: [...newarr],
+                });
+            }
+        }
     }
 
     render() {
@@ -129,12 +131,13 @@ class PostDetailMain extends Component {
 
         const postDetailChatForm = new PostDetailChatForm({
             postId: this.state.postData.postId,
+            active: this.state.postData.active,
         });
 
         mainEl.appendChild(postDetailTop.render());
         mainEl.appendChild(postDetailMid.render());
         mainEl.appendChild(commentCon);
-        mainEl.appendChild(postDetailChatForm.render());
+        mainEl.appendChild(postDetailChatForm.initialize());
 
         const loadingEl = document.createElement('div');
         loadingEl.setAttribute('class', 'loading');
