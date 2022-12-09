@@ -26,7 +26,7 @@ class PostCardReaction extends Component {
         } else {
             imgComment.setAttribute('src', './src/assets/scrap.svg');
         }
-        img.Comment.setAttribute('alt', '');
+        imgComment.setAttribute('alt', '');
         const cntComment = document.createElement('p');
         cntComment.innerText = this.props.scrap.length;
         postCardReaction.appendChild(imgComment);
