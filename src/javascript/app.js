@@ -5,8 +5,8 @@ import {
     PostDetailPage,
     PostUploadpage,
     SignupPage,
-    UserEdit,
-    UserInfo,
+    UserEditPage,
+    UserInfoPage,
 } from './pages/index.js';
 import { Router } from './utils/index.js';
 
@@ -28,8 +28,8 @@ export default class App {
                 '/': MainPage,
                 '/post/:id': PostDetailPage,
                 '/upload': PostUploadpage,
-                '/user': UserInfo,
-                '/setting': UserEdit,
+                '/user': UserInfoPage,
+                '/setting': UserEditPage,
             };
         }
     }
