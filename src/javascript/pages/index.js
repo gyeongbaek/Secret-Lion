@@ -5,5 +5,5 @@ export { default as MainPage } from './mainPage.js';
 export { default as PostDetailPage } from './postDetailPage.js';
 export { default as PostUploadpage } from './postUploadPage.js';
 export { default as SignupPage } from './signupPage.js';
-export { default as UserEdit } from './userEdit.js';
-export { default as UserInfo } from './userInfo.js';
+export { default as UserEditPage } from './userEditPage.js';
+export { default as UserInfoPage } from './userInfoPage.js';

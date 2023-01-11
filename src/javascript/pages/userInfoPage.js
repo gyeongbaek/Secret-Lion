@@ -3,7 +3,7 @@ import { Header } from '../common/index.js';
 import { UserInfoMain } from '../components/UserInfoMain/index.js';
 import Component from '../core/Component.js';
 
-class UserInfo extends Component {
+class UserInfoPage extends Component {
     render() {
         const fragCon = document.createDocumentFragment();
 
@@ -19,4 +19,4 @@ class UserInfo extends Component {
     }
 }
 
-export default UserInfo;
+export default UserInfoPage;

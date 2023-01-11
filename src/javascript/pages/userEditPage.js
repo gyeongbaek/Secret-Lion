@@ -1,7 +1,7 @@
 import { ProfileImgForm } from '../components/UserEditForm/index.js';
 import { NicknameForm } from '../components/UserEditForm/index.js';
 
-class UserEdit {
+class UserEditPage {
     render() {
         // 배경색용 div
         const colorWrapper = document.createElement('div');
@@ -49,4 +49,4 @@ class UserEdit {
     }
 }
 
-export default UserEdit;
+export default UserEditPage;
